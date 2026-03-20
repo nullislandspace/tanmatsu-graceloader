@@ -48,6 +48,7 @@ fi
 COMPONENTS=(
     badgeteam__badge-bsp
     robotman2412__pax-gfx
+    robotman2412__pax-codecs
     nicolaielectronics__tanmatsu_coprocessor
     nvs_flash
 )

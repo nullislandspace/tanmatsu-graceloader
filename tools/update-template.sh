@@ -72,7 +72,9 @@ HEADER_COMPONENTS=(
     # Exported component APIs
     badgeteam__badge-bsp
     badgeteam__custom-certificates
+    kbelf
     robotman2412__pax-gfx
+    robotman2412__pax-codecs
     nicolaielectronics__tanmatsu_coprocessor
     nvs_flash
 

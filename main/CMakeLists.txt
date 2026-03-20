@@ -9,6 +9,7 @@ idf_component_register(
         appfs
         esp_lcd
         badge-bsp
+        pax-codecs
         esp_driver_sdmmc
         sdmmc
         vfs
