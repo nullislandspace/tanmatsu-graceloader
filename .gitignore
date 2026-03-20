@@ -1,6 +1,8 @@
 build/
 tags
 main/kbelf_lib.c
+output/
+main/__pycache__
 sdkconfig.old
 *.bak
 *.old

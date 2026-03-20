@@ -56,14 +56,34 @@ badgelink:
 	git clone https://github.com/badgeteam/esp32-component-badgelink.git badgelink
 	cd badgelink/tools; ./install.sh
 
+GRACELOADER_SLUG ?= at.cavac.graceloader
+APP_INSTALL_BASE_PATH ?= /int/apps/
+APP_INSTALL_PATH = $(APP_INSTALL_BASE_PATH)$(GRACELOADER_SLUG)
+
 .PHONY: install
 install: build
-install:
-	cd badgelink/tools; ./badgelink.sh appfs upload application "template application" 0 ../../$(BUILD)/application.bin
+	@echo "=== Installing graceloader ==="
+	@echo "Creating directory $(APP_INSTALL_PATH)..."
+	cd badgelink/tools; ./badgelink.sh fs mkdir $(APP_INSTALL_PATH) || true
+	@echo "Uploading metadata.json..."
+	cd badgelink/tools; ./badgelink.sh fs upload $(APP_INSTALL_PATH)/metadata.json ../../metadata/metadata.json
+	@echo "Uploading icon16.png..."
+	cd badgelink/tools; ./badgelink.sh fs upload $(APP_INSTALL_PATH)/icon16.png ../../metadata/icon16.png
+	@echo "Uploading icon32.png..."
+	cd badgelink/tools; ./badgelink.sh fs upload $(APP_INSTALL_PATH)/icon32.png ../../metadata/icon32.png
+	@echo "Uploading icon64.png..."
+	cd badgelink/tools; ./badgelink.sh fs upload $(APP_INSTALL_PATH)/icon64.png ../../metadata/icon64.png
+	@echo "Uploading application.bin to appfs as $(GRACELOADER_SLUG)..."
+	cd badgelink/tools; ./badgelink.sh appfs upload $(GRACELOADER_SLUG) "Graceloader" 0 ../../$(BUILD)/application.bin
+	@echo "=== Installation complete ==="
 
 .PHONY: run
 run:
-	cd badgelink/tools; ./badgelink.sh start application
+	cd badgelink/tools; ./badgelink.sh start $(GRACELOADER_SLUG)
+
+.PHONY: regenerate-symbols
+regenerate-symbols:
+	source "$(IDF_PATH)/export.sh" >/dev/null && cd main && bash symbol_export.sh
 
 # Preparation
 

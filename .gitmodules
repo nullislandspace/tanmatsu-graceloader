@@ -1,0 +1,4 @@
+[submodule "lib/kbelf"]
+	path = lib/kbelf
+	url = git@github.com:nullislandspace/KiloElfLoader.git
+	branch = graceloader

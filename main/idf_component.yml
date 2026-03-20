@@ -3,3 +3,4 @@ dependencies:
   badgeteam/badge-bsp: "^0.8.0"
   nicolaielectronics/tanmatsu-wifi: "^1.1.2"
   robotman2412/pax-gfx: "^2.0.6"
+  badgeteam/appfs: "^1.0.2"
