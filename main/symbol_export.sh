@@ -18,7 +18,7 @@ echo "Assembler: $assembler"
 # Ensure output directories exist
 mkdir -p ../../output/fakelib
 
-for libname in *; do
+for libname in $(ls | sort); do
     [ -f "$libname" ] || continue
     echo "Exporting symbols in $libname"
     ident=$(echo "$libname" | sed 's/-/_/g')

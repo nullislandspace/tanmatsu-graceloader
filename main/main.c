@@ -23,6 +23,7 @@
 #include "fastopen.h"
 #include "esp_system.h"
 #include "sdkconfig.h"
+#include "bsp/device.h"
 
 static const char TAG[] = "graceloader";
 
@@ -36,9 +37,7 @@ const char* graceloader_get_install_basepath(void) {
 // Restart the device back to the launcher
 static void restart_to_launcher(void) {
     ESP_LOGI(TAG, "Restarting to launcher...");
-    appfsInit(APPFS_PART_TYPE, APPFS_PART_SUBTYPE);
-    appfsBootSelect(APPFS_INVALID_FD, NULL);
-    esp_restart();
+    bsp_device_restart_to_launcher();
 }
 
 static wl_handle_t wl_handle = WL_INVALID_HANDLE;

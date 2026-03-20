@@ -29,4 +29,7 @@ idf_component_register(
         esp_hw_support
         heap
 )
+# Uncomment to log all missing symbols instead of stopping on the first one:
+target_compile_definitions(${COMPONENT_LIB} PRIVATE KBELF_CONTINUE_ON_MISSING_SYMBOLS)
+
 endif()

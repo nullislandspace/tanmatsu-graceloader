@@ -1,8 +1,3 @@
-idf_build_get_property(idf_target IDF_TARGET)
-if("${idf_target}" STREQUAL "esp32p4")
-  list(APPEND extra_requires esp-hosted-tanmatsu)
-endif()
-
 idf_component_register(
     SRCS
         "main.c"
@@ -13,24 +8,30 @@ idf_component_register(
         kbelf
         appfs
         esp_lcd
-        bt
         badge-bsp
-        tanmatsu-wifi
         esp_driver_sdmmc
         sdmmc
         vfs
         esp_system
         heap
-        ${extra_requires}
     INCLUDE_DIRS
         "."
 )
 
 # Force-include exported symbols so the linker doesn't strip them.
 # These symbols are only referenced at runtime by the dynamically-loaded app.
+#
+# exported_symbols.cmake: manually curated --undefined flags (committed to git,
+#   provides baseline symbol inclusion for clean builds)
+# exported_symbols.ld: auto-generated EXTERN() directives from extract-symbols
+#   (covers all symbols from component archives, uses linker script to avoid
+#   command-line length limits)
 include(${CMAKE_CURRENT_SOURCE_DIR}/exported_symbols.cmake OPTIONAL)
+target_link_options(${COMPONENT_LIB} INTERFACE
+    "-T${CMAKE_CURRENT_SOURCE_DIR}/exported_symbols.ld"
+)
 
-# Force-include libc functions the app.so needs but graceloader doesn't use directly
+# Force-include libc/system functions the app.so needs but graceloader doesn't use directly
 target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=asprintf"
     "-Wl,--undefined=exit"

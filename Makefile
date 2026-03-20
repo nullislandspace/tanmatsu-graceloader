@@ -85,6 +85,43 @@ run:
 regenerate-symbols:
 	source "$(IDF_PATH)/export.sh" >/dev/null && cd main && bash symbol_export.sh
 
+TEMPLATE_PATH ?= $(shell cd "$(CURDIR)/.." && pwd)/tanmatsu-template-grace
+
+.PHONY: extract-symbols
+extract-symbols:
+	bash tools/extract-symbols.sh
+
+.PHONY: update-template
+update-template:
+	TEMPLATE_PATH="$(TEMPLATE_PATH)" DEVICE="$(DEVICE)" bash tools/update-template.sh
+
+.PHONY: sync-template
+sync-template: build
+	@echo ""
+	@echo "=== Step 1/6: Extracting archive symbols -> exported_symbols.ld ==="
+	bash tools/extract-symbols.sh
+	@echo ""
+	@echo "=== Step 2/6: Rebuilding with EXTERN'd symbols ==="
+	rm -f $(BUILD)/application.elf
+	$(MAKE) build
+	@echo ""
+	@echo "=== Step 3/6: Extracting ELF symbols -> symbol_export/all ==="
+	bash tools/extract-symbols.sh --all
+	@echo ""
+	@echo "=== Step 4/6: Regenerating kbelf tables and fakelib ==="
+	source "$(IDF_PATH)/export.sh" >/dev/null && cd main && bash symbol_export.sh
+	@echo ""
+	@echo "=== Step 5/6: Final rebuild with updated kbelf tables ==="
+	rm -f $(BUILD)/application.elf
+	$(MAKE) build
+	@echo ""
+	@echo "=== Step 6/6: Updating template app ==="
+	TEMPLATE_PATH="$(TEMPLATE_PATH)" DEVICE="$(DEVICE)" bash tools/update-template.sh
+	@echo ""
+	@echo "=== Template synced ==="
+	@echo "Fakelib and headers copied to $(TEMPLATE_PATH)"
+	@echo "Remember to commit changes in both repos."
+
 # Preparation
 
 .PHONY: prepare

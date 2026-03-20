@@ -159,4 +159,6 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=pax_store_font"
     "-Wl,--undefined=pax_draw_text_adv"
     "-Wl,--undefined=pax_text_size_adv"
+    "-Wl,--undefined=pax_font_sky_mono_raw"
+    "-Wl,--undefined=bsp_power_set_radio_state"
 )
