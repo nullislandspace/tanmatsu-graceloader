@@ -10,6 +10,8 @@ extern char const __attribute__((weak)) symbol_abs[] asm("abs");
 extern char const __attribute__((weak)) symbol___absvdi2[] asm("__absvdi2");
 extern char const __attribute__((weak)) symbol___absvsi2[] asm("__absvsi2");
 extern char const __attribute__((weak)) symbol_access[] asm("access");
+extern char const __attribute__((weak)) symbol_acos[] asm("acos");
+extern char const __attribute__((weak)) symbol_acosf[] asm("acosf");
 extern char const __attribute__((weak)) symbol___action_table[] asm("__action_table");
 extern char const __attribute__((weak)) symbol___adddf3[] asm("__adddf3");
 extern char const __attribute__((weak)) symbol___addvdi3[] asm("__addvdi3");
@@ -46,11 +48,19 @@ extern char const __attribute__((weak)) symbol_argtable3_xfree[] asm("argtable3_
 extern char const __attribute__((weak)) symbol_argtable3_xmalloc[] asm("argtable3_xmalloc");
 extern char const __attribute__((weak)) symbol___ascii_mbtowc[] asm("__ascii_mbtowc");
 extern char const __attribute__((weak)) symbol___ascii_wctomb[] asm("__ascii_wctomb");
+extern char const __attribute__((weak)) symbol_asctime[] asm("asctime");
+extern char const __attribute__((weak)) symbol_asctime_r[] asm("asctime_r");
 extern char const __attribute__((weak)) symbol___ashldi3[] asm("__ashldi3");
 extern char const __attribute__((weak)) symbol___ashrdi3[] asm("__ashrdi3");
+extern char const __attribute__((weak)) symbol_asin[] asm("asin");
+extern char const __attribute__((weak)) symbol_asinf[] asm("asinf");
 extern char const __attribute__((weak)) symbol_asprintf[] asm("asprintf");
 extern char const __attribute__((weak)) symbol__asprintf_r[] asm("_asprintf_r");
 extern char const __attribute__((weak)) symbol___assert_func[] asm("__assert_func");
+extern char const __attribute__((weak)) symbol_atan[] asm("atan");
+extern char const __attribute__((weak)) symbol_atan2[] asm("atan2");
+extern char const __attribute__((weak)) symbol_atan2f[] asm("atan2f");
+extern char const __attribute__((weak)) symbol_atanf[] asm("atanf");
 extern char const __attribute__((weak)) symbol___atexit[] asm("__atexit");
 extern char const __attribute__((weak)) symbol___atexit_recursive_mutex[] asm("__atexit_recursive_mutex");
 extern char const __attribute__((weak)) symbol_atoi[] asm("atoi");
@@ -580,6 +590,8 @@ extern char const __attribute__((weak)) symbol_calloc[] asm("calloc");
 extern char const __attribute__((weak)) symbol__calloc_r[] asm("_calloc_r");
 extern char const __attribute__((weak)) symbol_call_start_cpu0[] asm("call_start_cpu0");
 extern char const __attribute__((weak)) symbol_call_start_cpu1[] asm("call_start_cpu1");
+extern char const __attribute__((weak)) symbol_cbrt[] asm("cbrt");
+extern char const __attribute__((weak)) symbol_cbrtf[] asm("cbrtf");
 extern char const __attribute__((weak)) symbol_cdc_acm_class_handle_req[] asm("cdc_acm_class_handle_req");
 extern char const __attribute__((weak)) symbol_cdc_acm_fifo_fill[] asm("cdc_acm_fifo_fill");
 extern char const __attribute__((weak)) symbol_cdc_acm_fifo_read[] asm("cdc_acm_fifo_read");
@@ -598,6 +610,7 @@ extern char const __attribute__((weak)) symbol_cdc_acm_line_ctrl_get[] asm("cdc_
 extern char const __attribute__((weak)) symbol_cdc_acm_line_ctrl_set[] asm("cdc_acm_line_ctrl_set");
 extern char const __attribute__((weak)) symbol_cdc_acm_poll_out[] asm("cdc_acm_poll_out");
 extern char const __attribute__((weak)) symbol_cdc_acm_rx_fifo_cnt[] asm("cdc_acm_rx_fifo_cnt");
+extern char const __attribute__((weak)) symbol_ceil[] asm("ceil");
 extern char const __attribute__((weak)) symbol_ceilf[] asm("ceilf");
 extern char const __attribute__((weak)) symbol_cfree[] asm("cfree");
 extern char const __attribute__((weak)) symbol_chan_arr[] asm("chan_arr");
@@ -616,7 +629,9 @@ extern char const __attribute__((weak)) symbol_clk_hal_cpu_get_freq_hz[] asm("cl
 extern char const __attribute__((weak)) symbol_clk_hal_lp_slow_get_freq_hz[] asm("clk_hal_lp_slow_get_freq_hz");
 extern char const __attribute__((weak)) symbol_clk_hal_soc_root_get_freq_mhz[] asm("clk_hal_soc_root_get_freq_mhz");
 extern char const __attribute__((weak)) symbol_clk_hal_xtal_get_freq_mhz[] asm("clk_hal_xtal_get_freq_mhz");
+extern char const __attribute__((weak)) symbol_clock[] asm("clock");
 extern char const __attribute__((weak)) symbol_clock_gettime[] asm("clock_gettime");
+extern char const __attribute__((weak)) symbol_clock_settime[] asm("clock_settime");
 extern char const __attribute__((weak)) symbol_close[] asm("close");
 extern char const __attribute__((weak)) symbol__close_r[] asm("_close_r");
 extern char const __attribute__((weak)) symbol___clrsbdi2[] asm("__clrsbdi2");
@@ -643,6 +658,8 @@ extern char const __attribute__((weak)) symbol_console_tcgetattr[] asm("console_
 extern char const __attribute__((weak)) symbol_console_tcsetattr[] asm("console_tcsetattr");
 extern char const __attribute__((weak)) symbol_console_write[] asm("console_write");
 extern char const __attribute__((weak)) symbol___copybits[] asm("__copybits");
+extern char const __attribute__((weak)) symbol_copysign[] asm("copysign");
+extern char const __attribute__((weak)) symbol_copysignf[] asm("copysignf");
 extern char const __attribute__((weak)) symbol__coredump_dram_end[] asm("_coredump_dram_end");
 extern char const __attribute__((weak)) symbol__coredump_dram_start[] asm("_coredump_dram_start");
 extern char const __attribute__((weak)) symbol__coredump_iram_end[] asm("_coredump_iram_end");
@@ -653,6 +670,8 @@ extern char const __attribute__((weak)) symbol__coredump_rtc_fast_start[] asm("_
 extern char const __attribute__((weak)) symbol__coredump_rtc_start[] asm("_coredump_rtc_start");
 extern char const __attribute__((weak)) symbol_cos[] asm("cos");
 extern char const __attribute__((weak)) symbol_cosf[] asm("cosf");
+extern char const __attribute__((weak)) symbol_cosh[] asm("cosh");
+extern char const __attribute__((weak)) symbol_coshf[] asm("coshf");
 extern char const __attribute__((weak)) symbol_cpio_destroy[] asm("cpio_destroy");
 extern char const __attribute__((weak)) symbol_cpio_done[] asm("cpio_done");
 extern char const __attribute__((weak)) symbol_cpio_feed[] asm("cpio_feed");
@@ -672,6 +691,8 @@ extern char const __attribute__((weak)) symbol_crc8_be_table_ptr[] asm("crc8_be_
 extern char const __attribute__((weak)) symbol_crc8_le[] asm("crc8_le");
 extern char const __attribute__((weak)) symbol_crc8_le_table_ptr[] asm("crc8_le_table_ptr");
 extern char const __attribute__((weak)) symbol_create_debugging_tasks[] asm("create_debugging_tasks");
+extern char const __attribute__((weak)) symbol_ctime[] asm("ctime");
+extern char const __attribute__((weak)) symbol__C_time_locale[] asm("_C_time_locale");
 extern char const __attribute__((weak)) symbol__ctype_[] asm("_ctype_");
 extern char const __attribute__((weak)) symbol___ctzdi2[] asm("__ctzdi2");
 extern char const __attribute__((weak)) symbol___ctzsi2[] asm("__ctzsi2");
@@ -715,6 +736,7 @@ extern char const __attribute__((weak)) symbol_dfu_updater_feed[] asm("dfu_updat
 extern char const __attribute__((weak)) symbol_dfu_updater_flash_read[] asm("dfu_updater_flash_read");
 extern char const __attribute__((weak)) symbol_dfu_updater_get_err[] asm("dfu_updater_get_err");
 extern char const __attribute__((weak)) symbol_dfu_updater_set_raw_addr[] asm("dfu_updater_set_raw_addr");
+extern char const __attribute__((weak)) symbol_difftime[] asm("difftime");
 extern char const __attribute__((weak)) symbol_disable_default_watchdog[] asm("disable_default_watchdog");
 extern char const __attribute__((weak)) symbol_Disable_QMode[] asm("Disable_QMode");
 extern char const __attribute__((weak)) symbol__dist_code[] asm("_dist_code");
@@ -778,6 +800,10 @@ extern char const __attribute__((weak)) symbol_environ[] asm("environ");
 extern char const __attribute__((weak)) symbol___env_lock[] asm("__env_lock");
 extern char const __attribute__((weak)) symbol___env_unlock[] asm("__env_unlock");
 extern char const __attribute__((weak)) symbol___eqdf2[] asm("__eqdf2");
+extern char const __attribute__((weak)) symbol_erf[] asm("erf");
+extern char const __attribute__((weak)) symbol_erfc[] asm("erfc");
+extern char const __attribute__((weak)) symbol_erfcf[] asm("erfcf");
+extern char const __attribute__((weak)) symbol_erff[] asm("erff");
 extern char const __attribute__((weak)) symbol___errno[] asm("__errno");
 extern char const __attribute__((weak)) symbol_err_to_errno[] asm("err_to_errno");
 extern char const __attribute__((weak)) symbol_es8156_configure[] asm("es8156_configure");
@@ -1370,6 +1396,12 @@ extern char const __attribute__((weak)) symbol_ets_update_cpu_frequency[] asm("e
 extern char const __attribute__((weak)) symbol_ets_write_char_uart[] asm("ets_write_char_uart");
 extern char const __attribute__((weak)) symbol__exit[] asm("_exit");
 extern char const __attribute__((weak)) symbol_exit[] asm("exit");
+extern char const __attribute__((weak)) symbol_exp[] asm("exp");
+extern char const __attribute__((weak)) symbol_exp2[] asm("exp2");
+extern char const __attribute__((weak)) symbol_exp2f[] asm("exp2f");
+extern char const __attribute__((weak)) symbol_expf[] asm("expf");
+extern char const __attribute__((weak)) symbol_expm1[] asm("expm1");
+extern char const __attribute__((weak)) symbol_expm1f[] asm("expm1f");
 extern char const __attribute__((weak)) symbol___extenddftf2[] asm("__extenddftf2");
 extern char const __attribute__((weak)) symbol___extendsfdf2[] asm("__extendsfdf2");
 extern char const __attribute__((weak)) symbol___extendsftf2[] asm("__extendsftf2");
@@ -1383,6 +1415,8 @@ extern char const __attribute__((weak)) symbol_f_closedir[] asm("f_closedir");
 extern char const __attribute__((weak)) symbol__fclose_r[] asm("_fclose_r");
 extern char const __attribute__((weak)) symbol_fcntl[] asm("fcntl");
 extern char const __attribute__((weak)) symbol__fcntl_r[] asm("_fcntl_r");
+extern char const __attribute__((weak)) symbol_fdim[] asm("fdim");
+extern char const __attribute__((weak)) symbol_fdimf[] asm("fdimf");
 extern char const __attribute__((weak)) symbol_feof[] asm("feof");
 extern char const __attribute__((weak)) symbol_f_fdisk[] asm("f_fdisk");
 extern char const __attribute__((weak)) symbol_ff_disk_initialize[] asm("ff_disk_initialize");
@@ -1412,6 +1446,7 @@ extern char const __attribute__((weak)) symbol_ff_wtoupper[] asm("ff_wtoupper");
 extern char const __attribute__((weak)) symbol__findenv[] asm("_findenv");
 extern char const __attribute__((weak)) symbol__findenv_r[] asm("_findenv_r");
 extern char const __attribute__((weak)) symbol_finite[] asm("finite");
+extern char const __attribute__((weak)) symbol_finitef[] asm("finitef");
 extern char const __attribute__((weak)) symbol___fixdfdi[] asm("__fixdfdi");
 extern char const __attribute__((weak)) symbol___fixdfsi[] asm("__fixdfsi");
 extern char const __attribute__((weak)) symbol___fixsfdi[] asm("__fixsfdi");
@@ -1437,8 +1472,15 @@ extern char const __attribute__((weak)) symbol___floatunsidf[] asm("__floatunsid
 extern char const __attribute__((weak)) symbol_floor[] asm("floor");
 extern char const __attribute__((weak)) symbol_floorf[] asm("floorf");
 extern char const __attribute__((weak)) symbol_f_lseek[] asm("f_lseek");
+extern char const __attribute__((weak)) symbol_fma[] asm("fma");
+extern char const __attribute__((weak)) symbol_fmaf[] asm("fmaf");
+extern char const __attribute__((weak)) symbol_fmax[] asm("fmax");
+extern char const __attribute__((weak)) symbol_fmaxf[] asm("fmaxf");
+extern char const __attribute__((weak)) symbol_fmin[] asm("fmin");
+extern char const __attribute__((weak)) symbol_fminf[] asm("fminf");
 extern char const __attribute__((weak)) symbol_f_mkdir[] asm("f_mkdir");
 extern char const __attribute__((weak)) symbol_f_mkfs[] asm("f_mkfs");
+extern char const __attribute__((weak)) symbol_fmod[] asm("fmod");
 extern char const __attribute__((weak)) symbol_fmodf[] asm("fmodf");
 extern char const __attribute__((weak)) symbol_f_mount[] asm("f_mount");
 extern char const __attribute__((weak)) symbol_font_bitmap_raw_7x9[] asm("font_bitmap_raw_7x9");
@@ -1446,6 +1488,8 @@ extern char const __attribute__((weak)) symbol_f_open[] asm("f_open");
 extern char const __attribute__((weak)) symbol_fopen[] asm("fopen");
 extern char const __attribute__((weak)) symbol_f_opendir[] asm("f_opendir");
 extern char const __attribute__((weak)) symbol__fopen_r[] asm("_fopen_r");
+extern char const __attribute__((weak)) symbol___fpclassifyd[] asm("__fpclassifyd");
+extern char const __attribute__((weak)) symbol___fpclassifyf[] asm("__fpclassifyf");
 extern char const __attribute__((weak)) symbol___fp_lock_all[] asm("__fp_lock_all");
 extern char const __attribute__((weak)) symbol_fprintf[] asm("fprintf");
 extern char const __attribute__((weak)) symbol__fprintf_r[] asm("_fprintf_r");
@@ -1463,6 +1507,7 @@ extern char const __attribute__((weak)) symbol__free_r[] asm("_free_r");
 extern char const __attribute__((weak)) symbol_FreeRTOS_openocd_params[] asm("FreeRTOS_openocd_params");
 extern char const __attribute__((weak)) symbol_f_rename[] asm("f_rename");
 extern char const __attribute__((weak)) symbol_frexp[] asm("frexp");
+extern char const __attribute__((weak)) symbol_frexpf[] asm("frexpf");
 extern char const __attribute__((weak)) symbol_fseek[] asm("fseek");
 extern char const __attribute__((weak)) symbol_fseeko[] asm("fseeko");
 extern char const __attribute__((weak)) symbol__fseeko_r[] asm("_fseeko_r");
@@ -1600,6 +1645,7 @@ extern char const __attribute__((weak)) symbol_g_max_tx_octets[] asm("g_max_tx_o
 extern char const __attribute__((weak)) symbol_g_max_tx_time[] asm("g_max_tx_time");
 extern char const __attribute__((weak)) symbol_g_mmu_mem_regions[] asm("g_mmu_mem_regions");
 extern char const __attribute__((weak)) symbol_g_msys_pool_list[] asm("g_msys_pool_list");
+extern char const __attribute__((weak)) symbol_gmtime[] asm("gmtime");
 extern char const __attribute__((weak)) symbol_gmtime_r[] asm("gmtime_r");
 extern char const __attribute__((weak)) symbol_g_panic_abort[] asm("g_panic_abort");
 extern char const __attribute__((weak)) symbol_g_panic_abort_details[] asm("g_panic_abort_details");
@@ -1756,6 +1802,8 @@ extern char const __attribute__((weak)) symbol_hosted_wifi_event_post[] asm("hos
 extern char const __attribute__((weak)) symbol_hosted_write_gpio[] asm("hosted_write_gpio");
 extern char const __attribute__((weak)) symbol_HP_SYS_CLKRST[] asm("HP_SYS_CLKRST");
 extern char const __attribute__((weak)) symbol_HP_SYSTEM[] asm("HP_SYSTEM");
+extern char const __attribute__((weak)) symbol_hypot[] asm("hypot");
+extern char const __attribute__((weak)) symbol_hypotf[] asm("hypotf");
 extern char const __attribute__((weak)) symbol___i2b[] asm("__i2b");
 extern char const __attribute__((weak)) symbol_I2C0[] asm("I2C0");
 extern char const __attribute__((weak)) symbol_I2C1[] asm("I2C1");
@@ -1812,16 +1860,44 @@ extern char const __attribute__((weak)) symbol_icmp6_param_problem[] asm("icmp6_
 extern char const __attribute__((weak)) symbol_icmp_dest_unreach[] asm("icmp_dest_unreach");
 extern char const __attribute__((weak)) symbol_icmp_input[] asm("icmp_input");
 extern char const __attribute__((weak)) symbol_IDF_TARGET_ESP32P4[] asm("IDF_TARGET_ESP32P4");
+extern char const __attribute__((weak)) symbol___ieee754_acos[] asm("__ieee754_acos");
+extern char const __attribute__((weak)) symbol___ieee754_acosf[] asm("__ieee754_acosf");
+extern char const __attribute__((weak)) symbol___ieee754_asin[] asm("__ieee754_asin");
+extern char const __attribute__((weak)) symbol___ieee754_asinf[] asm("__ieee754_asinf");
+extern char const __attribute__((weak)) symbol___ieee754_atan2[] asm("__ieee754_atan2");
+extern char const __attribute__((weak)) symbol___ieee754_atan2f[] asm("__ieee754_atan2f");
+extern char const __attribute__((weak)) symbol___ieee754_cosh[] asm("__ieee754_cosh");
+extern char const __attribute__((weak)) symbol___ieee754_coshf[] asm("__ieee754_coshf");
+extern char const __attribute__((weak)) symbol___ieee754_exp[] asm("__ieee754_exp");
+extern char const __attribute__((weak)) symbol___ieee754_expf[] asm("__ieee754_expf");
+extern char const __attribute__((weak)) symbol___ieee754_fmod[] asm("__ieee754_fmod");
 extern char const __attribute__((weak)) symbol___ieee754_fmodf[] asm("__ieee754_fmodf");
+extern char const __attribute__((weak)) symbol___ieee754_hypot[] asm("__ieee754_hypot");
+extern char const __attribute__((weak)) symbol___ieee754_hypotf[] asm("__ieee754_hypotf");
+extern char const __attribute__((weak)) symbol___ieee754_lgammaf_r[] asm("__ieee754_lgammaf_r");
+extern char const __attribute__((weak)) symbol___ieee754_lgamma_r[] asm("__ieee754_lgamma_r");
+extern char const __attribute__((weak)) symbol___ieee754_log[] asm("__ieee754_log");
+extern char const __attribute__((weak)) symbol___ieee754_log10[] asm("__ieee754_log10");
+extern char const __attribute__((weak)) symbol___ieee754_log10f[] asm("__ieee754_log10f");
+extern char const __attribute__((weak)) symbol___ieee754_logf[] asm("__ieee754_logf");
 extern char const __attribute__((weak)) symbol___ieee754_pow[] asm("__ieee754_pow");
+extern char const __attribute__((weak)) symbol___ieee754_powf[] asm("__ieee754_powf");
+extern char const __attribute__((weak)) symbol___ieee754_remainder[] asm("__ieee754_remainder");
+extern char const __attribute__((weak)) symbol___ieee754_remainderf[] asm("__ieee754_remainderf");
 extern char const __attribute__((weak)) symbol___ieee754_rem_pio2[] asm("__ieee754_rem_pio2");
 extern char const __attribute__((weak)) symbol___ieee754_rem_pio2f[] asm("__ieee754_rem_pio2f");
+extern char const __attribute__((weak)) symbol___ieee754_sinh[] asm("__ieee754_sinh");
+extern char const __attribute__((weak)) symbol___ieee754_sinhf[] asm("__ieee754_sinhf");
 extern char const __attribute__((weak)) symbol___ieee754_sqrt[] asm("__ieee754_sqrt");
 extern char const __attribute__((weak)) symbol___ieee754_sqrtf[] asm("__ieee754_sqrtf");
+extern char const __attribute__((weak)) symbol___ieee754_tgamma[] asm("__ieee754_tgamma");
+extern char const __attribute__((weak)) symbol___ieee754_tgammaf[] asm("__ieee754_tgammaf");
 extern char const __attribute__((weak)) symbol_igmp_input[] asm("igmp_input");
 extern char const __attribute__((weak)) symbol_igmp_lookfor_group[] asm("igmp_lookfor_group");
 extern char const __attribute__((weak)) symbol_igmp_report_groups[] asm("igmp_report_groups");
 extern char const __attribute__((weak)) symbol_igmp_tmr[] asm("igmp_tmr");
+extern char const __attribute__((weak)) symbol_ilogb[] asm("ilogb");
+extern char const __attribute__((weak)) symbol_ilogbf[] asm("ilogbf");
 extern char const __attribute__((weak)) symbol__impure_data[] asm("_impure_data");
 extern char const __attribute__((weak)) symbol__impure_ptr[] asm("_impure_ptr");
 extern char const __attribute__((weak)) symbol_inet_chksum[] asm("inet_chksum");
@@ -1966,6 +2042,8 @@ extern char const __attribute__((weak)) symbol___kernel_rem_pio2[] asm("__kernel
 extern char const __attribute__((weak)) symbol___kernel_rem_pio2f[] asm("__kernel_rem_pio2f");
 extern char const __attribute__((weak)) symbol___kernel_sin[] asm("__kernel_sin");
 extern char const __attribute__((weak)) symbol___kernel_sinf[] asm("__kernel_sinf");
+extern char const __attribute__((weak)) symbol___kernel_tan[] asm("__kernel_tan");
+extern char const __attribute__((weak)) symbol___kernel_tanf[] asm("__kernel_tanf");
 extern char const __attribute__((weak)) symbol__kill_r[] asm("_kill_r");
 extern char const __attribute__((weak)) symbol_labs[] asm("labs");
 extern char const __attribute__((weak)) symbol_LCD_CAM[] asm("LCD_CAM");
@@ -1974,15 +2052,24 @@ extern char const __attribute__((weak)) symbol_lcd_com_remove_device[] asm("lcd_
 extern char const __attribute__((weak)) symbol_lcd_hal_cal_pclk_freq[] asm("lcd_hal_cal_pclk_freq");
 extern char const __attribute__((weak)) symbol_lcd_hal_init[] asm("lcd_hal_init");
 extern char const __attribute__((weak)) symbol_lcd_periph_rgb_signals[] asm("lcd_periph_rgb_signals");
+extern char const __attribute__((weak)) symbol_ldexp[] asm("ldexp");
+extern char const __attribute__((weak)) symbol_ldexpf[] asm("ldexpf");
 extern char const __attribute__((weak)) symbol_ldiv[] asm("ldiv");
 extern char const __attribute__((weak)) symbol___ledf2[] asm("__ledf2");
 extern char const __attribute__((weak)) symbol__length_code[] asm("_length_code");
+extern char const __attribute__((weak)) symbol_lgamma[] asm("lgamma");
+extern char const __attribute__((weak)) symbol_lgammaf[] asm("lgammaf");
 extern char const __attribute__((weak)) symbol__link_r[] asm("_link_r");
+extern char const __attribute__((weak)) symbol_llrint[] asm("llrint");
+extern char const __attribute__((weak)) symbol_llrintf[] asm("llrintf");
+extern char const __attribute__((weak)) symbol_llround[] asm("llround");
+extern char const __attribute__((weak)) symbol_llroundf[] asm("llroundf");
 extern char const __attribute__((weak)) symbol___lo0bits[] asm("__lo0bits");
 extern char const __attribute__((weak)) symbol_localeconv[] asm("localeconv");
 extern char const __attribute__((weak)) symbol___localeconv_l[] asm("__localeconv_l");
 extern char const __attribute__((weak)) symbol__localeconv_r[] asm("_localeconv_r");
 extern char const __attribute__((weak)) symbol___locale_mb_cur_max[] asm("__locale_mb_cur_max");
+extern char const __attribute__((weak)) symbol_localtime[] asm("localtime");
 extern char const __attribute__((weak)) symbol_localtime_r[] asm("localtime_r");
 extern char const __attribute__((weak)) symbol__lock_acquire[] asm("_lock_acquire");
 extern char const __attribute__((weak)) symbol__lock_acquire_recursive[] asm("_lock_acquire_recursive");
@@ -2003,6 +2090,16 @@ extern char const __attribute__((weak)) symbol___lock___sinit_recursive_mutex[] 
 extern char const __attribute__((weak)) symbol__lock_try_acquire[] asm("_lock_try_acquire");
 extern char const __attribute__((weak)) symbol__lock_try_acquire_recursive[] asm("_lock_try_acquire_recursive");
 extern char const __attribute__((weak)) symbol___lock___tz_mutex[] asm("__lock___tz_mutex");
+extern char const __attribute__((weak)) symbol_log[] asm("log");
+extern char const __attribute__((weak)) symbol_log10[] asm("log10");
+extern char const __attribute__((weak)) symbol_log10f[] asm("log10f");
+extern char const __attribute__((weak)) symbol_log1p[] asm("log1p");
+extern char const __attribute__((weak)) symbol_log1pf[] asm("log1pf");
+extern char const __attribute__((weak)) symbol_log2[] asm("log2");
+extern char const __attribute__((weak)) symbol_log2f[] asm("log2f");
+extern char const __attribute__((weak)) symbol_logb[] asm("logb");
+extern char const __attribute__((weak)) symbol_logbf[] asm("logbf");
+extern char const __attribute__((weak)) symbol_logf[] asm("logf");
 extern char const __attribute__((weak)) symbol_longjmp[] asm("longjmp");
 extern char const __attribute__((weak)) symbol_LP_ADC[] asm("LP_ADC");
 extern char const __attribute__((weak)) symbol_LP_ANA_PERI[] asm("LP_ANA_PERI");
@@ -2019,6 +2116,10 @@ extern char const __attribute__((weak)) symbol_lp_timer_hal_get_cycle_count[] as
 extern char const __attribute__((weak)) symbol_LP_TOUCH[] asm("LP_TOUCH");
 extern char const __attribute__((weak)) symbol_LP_UART[] asm("LP_UART");
 extern char const __attribute__((weak)) symbol_LP_WDT[] asm("LP_WDT");
+extern char const __attribute__((weak)) symbol_lrint[] asm("lrint");
+extern char const __attribute__((weak)) symbol_lrintf[] asm("lrintf");
+extern char const __attribute__((weak)) symbol_lround[] asm("lround");
+extern char const __attribute__((weak)) symbol_lroundf[] asm("lroundf");
 extern char const __attribute__((weak)) symbol__lseek_r[] asm("_lseek_r");
 extern char const __attribute__((weak)) symbol___lshift[] asm("__lshift");
 extern char const __attribute__((weak)) symbol___lshrdi3[] asm("__lshrdi3");
@@ -2047,10 +2148,14 @@ extern char const __attribute__((weak)) symbol_mallopt[] asm("mallopt");
 extern char const __attribute__((weak)) symbol___math_check_oflow[] asm("__math_check_oflow");
 extern char const __attribute__((weak)) symbol___math_check_uflow[] asm("__math_check_uflow");
 extern char const __attribute__((weak)) symbol___math_divzero[] asm("__math_divzero");
+extern char const __attribute__((weak)) symbol___math_divzerof[] asm("__math_divzerof");
 extern char const __attribute__((weak)) symbol___math_invalid[] asm("__math_invalid");
+extern char const __attribute__((weak)) symbol___math_invalidf[] asm("__math_invalidf");
 extern char const __attribute__((weak)) symbol___math_may_uflow[] asm("__math_may_uflow");
 extern char const __attribute__((weak)) symbol___math_oflow[] asm("__math_oflow");
+extern char const __attribute__((weak)) symbol___math_oflowf[] asm("__math_oflowf");
 extern char const __attribute__((weak)) symbol___math_uflow[] asm("__math_uflow");
+extern char const __attribute__((weak)) symbol___math_uflowf[] asm("__math_uflowf");
 extern char const __attribute__((weak)) symbol_matrix_2d_multiply[] asm("matrix_2d_multiply");
 extern char const __attribute__((weak)) symbol_matrix_2d_rotate[] asm("matrix_2d_rotate");
 extern char const __attribute__((weak)) symbol_matrix_2d_transform[] asm("matrix_2d_transform");
@@ -2288,6 +2393,8 @@ extern char const __attribute__((weak)) symbol_mmu_hal_paddr_to_vaddr[] asm("mmu
 extern char const __attribute__((weak)) symbol_mmu_hal_pages_to_bytes[] asm("mmu_hal_pages_to_bytes");
 extern char const __attribute__((weak)) symbol_mmu_hal_unmap_region[] asm("mmu_hal_unmap_region");
 extern char const __attribute__((weak)) symbol___moddi3[] asm("__moddi3");
+extern char const __attribute__((weak)) symbol_modf[] asm("modf");
+extern char const __attribute__((weak)) symbol_modff[] asm("modff");
 extern char const __attribute__((weak)) symbol___modsi3[] asm("__modsi3");
 extern char const __attribute__((weak)) symbol___month_lengths[] asm("__month_lengths");
 extern char const __attribute__((weak)) symbol_MPI_BLOCK_BASES[] asm("MPI_BLOCK_BASES");
@@ -2371,11 +2478,15 @@ extern char const __attribute__((weak)) symbol___mulvdi3[] asm("__mulvdi3");
 extern char const __attribute__((weak)) symbol___mulvsi3[] asm("__mulvsi3");
 extern char const __attribute__((weak)) symbol_mz_adler32[] asm("mz_adler32");
 extern char const __attribute__((weak)) symbol_mz_free[] asm("mz_free");
+extern char const __attribute__((weak)) symbol_nan[] asm("nan");
+extern char const __attribute__((weak)) symbol_nanf[] asm("nanf");
 extern char const __attribute__((weak)) symbol_nd6_adjust_mld_membership[] asm("nd6_adjust_mld_membership");
 extern char const __attribute__((weak)) symbol_nd6_find_route[] asm("nd6_find_route");
 extern char const __attribute__((weak)) symbol_nd6_get_destination_mtu[] asm("nd6_get_destination_mtu");
 extern char const __attribute__((weak)) symbol_nd6_input[] asm("nd6_input");
 extern char const __attribute__((weak)) symbol_nd6_reachability_hint[] asm("nd6_reachability_hint");
+extern char const __attribute__((weak)) symbol_nearbyint[] asm("nearbyint");
+extern char const __attribute__((weak)) symbol_nearbyintf[] asm("nearbyintf");
 extern char const __attribute__((weak)) symbol___nedf2[] asm("__nedf2");
 extern char const __attribute__((weak)) symbol___negdf2[] asm("__negdf2");
 extern char const __attribute__((weak)) symbol___negdi2[] asm("__negdi2");
@@ -2396,6 +2507,8 @@ extern char const __attribute__((weak)) symbol_netif_ip6_addr_set_state[] asm("n
 extern char const __attribute__((weak)) symbol_netif_list[] asm("netif_list");
 extern char const __attribute__((weak)) symbol_netif_loop_output[] asm("netif_loop_output");
 extern char const __attribute__((weak)) symbol_netif_poll[] asm("netif_poll");
+extern char const __attribute__((weak)) symbol_nextafter[] asm("nextafter");
+extern char const __attribute__((weak)) symbol_nextafterf[] asm("nextafterf");
 extern char const __attribute__((weak)) symbol__noinit_end[] asm("_noinit_end");
 extern char const __attribute__((weak)) symbol__noinit_start[] asm("_noinit_start");
 extern char const __attribute__((weak)) symbol__noload_keep_in_elf_end[] asm("_noload_keep_in_elf_end");
@@ -2826,6 +2939,7 @@ extern char const __attribute__((weak)) symbol_port_xSchedulerRunning[] asm("por
 extern char const __attribute__((weak)) symbol_pow[] asm("pow");
 extern char const __attribute__((weak)) symbol___pow5mult[] asm("__pow5mult");
 extern char const __attribute__((weak)) symbol_power_supply_periph_signal[] asm("power_supply_periph_signal");
+extern char const __attribute__((weak)) symbol_powf[] asm("powf");
 extern char const __attribute__((weak)) symbol___powidf2[] asm("__powidf2");
 extern char const __attribute__((weak)) symbol_prefix_list[] asm("prefix_list");
 extern char const __attribute__((weak)) symbol_printf[] asm("printf");
@@ -2966,6 +3080,8 @@ extern char const __attribute__((weak)) symbol_regi2c_read_mask_impl[] asm("regi
 extern char const __attribute__((weak)) symbol_regi2c_write_impl[] asm("regi2c_write_impl");
 extern char const __attribute__((weak)) symbol_regi2c_write_mask_impl[] asm("regi2c_write_mask_impl");
 extern char const __attribute__((weak)) symbol_registered_heaps[] asm("registered_heaps");
+extern char const __attribute__((weak)) symbol_remainder[] asm("remainder");
+extern char const __attribute__((weak)) symbol_remainderf[] asm("remainderf");
 extern char const __attribute__((weak)) symbol__rename_r[] asm("_rename_r");
 extern char const __attribute__((weak)) symbol_restart_after_slave_ota[] asm("restart_after_slave_ota");
 extern char const __attribute__((weak)) symbol___retarget_lock_acquire[] asm("__retarget_lock_acquire");
@@ -2979,6 +3095,8 @@ extern char const __attribute__((weak)) symbol___retarget_lock_release_recursive
 extern char const __attribute__((weak)) symbol___retarget_lock_try_acquire[] asm("__retarget_lock_try_acquire");
 extern char const __attribute__((weak)) symbol___retarget_lock_try_acquire_recursive[] asm("__retarget_lock_try_acquire_recursive");
 extern char const __attribute__((weak)) symbol_retrans_timer[] asm("retrans_timer");
+extern char const __attribute__((weak)) symbol_rint[] asm("rint");
+extern char const __attribute__((weak)) symbol_rintf[] asm("rintf");
 extern char const __attribute__((weak)) symbol_rmdir[] asm("rmdir");
 extern char const __attribute__((weak)) symbol__rodata_end[] asm("_rodata_end");
 extern char const __attribute__((weak)) symbol__rodata_reserved_end[] asm("_rodata_reserved_end");
@@ -2994,6 +3112,7 @@ extern char const __attribute__((weak)) symbol_rom_flash_chip_dummy_hpm[] asm("r
 extern char const __attribute__((weak)) symbol_rom_spiflash_api_funcs[] asm("rom_spiflash_api_funcs");
 extern char const __attribute__((weak)) symbol_rom_spiflash_legacy_data[] asm("rom_spiflash_legacy_data");
 extern char const __attribute__((weak)) symbol_rom_spiflash_legacy_funcs[] asm("rom_spiflash_legacy_funcs");
+extern char const __attribute__((weak)) symbol_round[] asm("round");
 extern char const __attribute__((weak)) symbol_roundf[] asm("roundf");
 extern char const __attribute__((weak)) symbol_roundup2[] asm("roundup2");
 extern char const __attribute__((weak)) symbol_rpc_copy_wifi_sta_config[] asm("rpc_copy_wifi_sta_config");
@@ -3535,6 +3654,8 @@ extern char const __attribute__((weak)) symbol___s2b[] asm("__s2b");
 extern char const __attribute__((weak)) symbol_sbrk[] asm("sbrk");
 extern char const __attribute__((weak)) symbol__sbrk_r[] asm("_sbrk_r");
 extern char const __attribute__((weak)) symbol_s_cache_hal_init_ctx[] asm("s_cache_hal_init_ctx");
+extern char const __attribute__((weak)) symbol_scalbln[] asm("scalbln");
+extern char const __attribute__((weak)) symbol_scalblnf[] asm("scalblnf");
 extern char const __attribute__((weak)) symbol_scalbn[] asm("scalbn");
 extern char const __attribute__((weak)) symbol_scalbnf[] asm("scalbnf");
 extern char const __attribute__((weak)) symbol___sccl[] asm("__sccl");
@@ -3709,8 +3830,13 @@ extern char const __attribute__((weak)) symbol_sha_hal_sha512_init_hash[] asm("s
 extern char const __attribute__((weak)) symbol_sha_hal_wait_idle[] asm("sha_hal_wait_idle");
 extern char const __attribute__((weak)) symbol_sha_hal_write_digest[] asm("sha_hal_write_digest");
 extern char const __attribute__((weak)) symbol_s_head[] asm("s_head");
+extern char const __attribute__((weak)) symbol_sin[] asm("sin");
 extern char const __attribute__((weak)) symbol_sinf[] asm("sinf");
+extern char const __attribute__((weak)) symbol_sinh[] asm("sinh");
+extern char const __attribute__((weak)) symbol_sinhf[] asm("sinhf");
 extern char const __attribute__((weak)) symbol___sinit[] asm("__sinit");
+extern char const __attribute__((weak)) symbol_siprintf[] asm("siprintf");
+extern char const __attribute__((weak)) symbol__siprintf_r[] asm("_siprintf_r");
 extern char const __attribute__((weak)) symbol_siscanf[] asm("siscanf");
 extern char const __attribute__((weak)) symbol__siscanf_r[] asm("_siscanf_r");
 extern char const __attribute__((weak)) symbol_s_keys[] asm("s_keys");
@@ -3724,6 +3850,8 @@ extern char const __attribute__((weak)) symbol_sleep_retention_get_inited_module
 extern char const __attribute__((weak)) symbol_sleep_retention_module_init[] asm("sleep_retention_module_init");
 extern char const __attribute__((weak)) symbol___smakebuf_r[] asm("__smakebuf_r");
 extern char const __attribute__((weak)) symbol_s_microseconds_offset[] asm("s_microseconds_offset");
+extern char const __attribute__((weak)) symbol_sniprintf[] asm("sniprintf");
+extern char const __attribute__((weak)) symbol__sniprintf_r[] asm("_sniprintf_r");
 extern char const __attribute__((weak)) symbol_snprintf[] asm("snprintf");
 extern char const __attribute__((weak)) symbol__snprintf_r[] asm("_snprintf_r");
 extern char const __attribute__((weak)) symbol_soc_get_available_memory_region_max_count[] asm("soc_get_available_memory_region_max_count");
@@ -3926,6 +4054,7 @@ extern char const __attribute__((weak)) symbol_spng_version_string[] asm("spng_v
 extern char const __attribute__((weak)) symbol_sprintf[] asm("sprintf");
 extern char const __attribute__((weak)) symbol__sprintf_r[] asm("_sprintf_r");
 extern char const __attribute__((weak)) symbol___sprint_r[] asm("__sprint_r");
+extern char const __attribute__((weak)) symbol_sqrt[] asm("sqrt");
 extern char const __attribute__((weak)) symbol_sqrtf[] asm("sqrtf");
 extern char const __attribute__((weak)) symbol_srand[] asm("srand");
 extern char const __attribute__((weak)) symbol___sread[] asm("__sread");
@@ -3960,6 +4089,8 @@ extern char const __attribute__((weak)) symbol_strdup[] asm("strdup");
 extern char const __attribute__((weak)) symbol_strerror[] asm("strerror");
 extern char const __attribute__((weak)) symbol_strerror_l[] asm("strerror_l");
 extern char const __attribute__((weak)) symbol__strerror_r[] asm("_strerror_r");
+extern char const __attribute__((weak)) symbol_strftime[] asm("strftime");
+extern char const __attribute__((weak)) symbol_strftime_l[] asm("strftime_l");
 extern char const __attribute__((weak)) symbol_strlcat[] asm("strlcat");
 extern char const __attribute__((weak)) symbol_strlcpy[] asm("strlcpy");
 extern char const __attribute__((weak)) symbol_strlen[] asm("strlen");
@@ -4041,6 +4172,10 @@ extern char const __attribute__((weak)) symbol_systimer_hal_set_tick_rate_ops[] 
 extern char const __attribute__((weak)) symbol_systimer_ticks_to_us[] asm("systimer_ticks_to_us");
 extern char const __attribute__((weak)) symbol_systimer_us_to_ticks[] asm("systimer_us_to_ticks");
 extern char const __attribute__((weak)) symbol_sys_untimeout[] asm("sys_untimeout");
+extern char const __attribute__((weak)) symbol_tan[] asm("tan");
+extern char const __attribute__((weak)) symbol_tanf[] asm("tanf");
+extern char const __attribute__((weak)) symbol_tanh[] asm("tanh");
+extern char const __attribute__((weak)) symbol_tanhf[] asm("tanhf");
 extern char const __attribute__((weak)) symbol_tanmatsu_coprocessor_get_alarm_time[] asm("tanmatsu_coprocessor_get_alarm_time");
 extern char const __attribute__((weak)) symbol_tanmatsu_coprocessor_get_amplifier_enable[] asm("tanmatsu_coprocessor_get_amplifier_enable");
 extern char const __attribute__((weak)) symbol_tanmatsu_coprocessor_get_backup_registers[] asm("tanmatsu_coprocessor_get_backup_registers");
@@ -4170,6 +4305,8 @@ extern char const __attribute__((weak)) symbol_tdefl_write_image_to_png_file_in_
 extern char const __attribute__((weak)) symbol__tee_interrupt_handler[] asm("_tee_interrupt_handler");
 extern char const __attribute__((weak)) symbol__text_end[] asm("_text_end");
 extern char const __attribute__((weak)) symbol__text_start[] asm("_text_start");
+extern char const __attribute__((weak)) symbol_tgamma[] asm("tgamma");
+extern char const __attribute__((weak)) symbol_tgammaf[] asm("tgammaf");
 extern char const __attribute__((weak)) symbol__thread_local_bss_end[] asm("_thread_local_bss_end");
 extern char const __attribute__((weak)) symbol__thread_local_bss_start[] asm("_thread_local_bss_start");
 extern char const __attribute__((weak)) symbol__thread_local_data_end[] asm("_thread_local_data_end");
@@ -4215,7 +4352,9 @@ extern char const __attribute__((weak)) symbol__tr_flush_bits[] asm("_tr_flush_b
 extern char const __attribute__((weak)) symbol__tr_flush_block[] asm("_tr_flush_block");
 extern char const __attribute__((weak)) symbol__tr_init[] asm("_tr_init");
 extern char const __attribute__((weak)) symbol__tr_stored_block[] asm("_tr_stored_block");
+extern char const __attribute__((weak)) symbol_trunc[] asm("trunc");
 extern char const __attribute__((weak)) symbol___truncdfsf2[] asm("__truncdfsf2");
+extern char const __attribute__((weak)) symbol_truncf[] asm("truncf");
 extern char const __attribute__((weak)) symbol___trunctfdf2[] asm("__trunctfdf2");
 extern char const __attribute__((weak)) symbol___trunctfsf2[] asm("__trunctfsf2");
 extern char const __attribute__((weak)) symbol___tzcalc_limits[] asm("__tzcalc_limits");
@@ -4798,6 +4937,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__absvdi2", .vaddr = (size_t) symbol___absvdi2 },
     { .name = "__absvsi2", .vaddr = (size_t) symbol___absvsi2 },
     { .name = "access", .vaddr = (size_t) symbol_access },
+    { .name = "acos", .vaddr = (size_t) symbol_acos },
+    { .name = "acosf", .vaddr = (size_t) symbol_acosf },
     { .name = "__action_table", .vaddr = (size_t) symbol___action_table },
     { .name = "__adddf3", .vaddr = (size_t) symbol___adddf3 },
     { .name = "__addvdi3", .vaddr = (size_t) symbol___addvdi3 },
@@ -4834,11 +4975,19 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "argtable3_xmalloc", .vaddr = (size_t) symbol_argtable3_xmalloc },
     { .name = "__ascii_mbtowc", .vaddr = (size_t) symbol___ascii_mbtowc },
     { .name = "__ascii_wctomb", .vaddr = (size_t) symbol___ascii_wctomb },
+    { .name = "asctime", .vaddr = (size_t) symbol_asctime },
+    { .name = "asctime_r", .vaddr = (size_t) symbol_asctime_r },
     { .name = "__ashldi3", .vaddr = (size_t) symbol___ashldi3 },
     { .name = "__ashrdi3", .vaddr = (size_t) symbol___ashrdi3 },
+    { .name = "asin", .vaddr = (size_t) symbol_asin },
+    { .name = "asinf", .vaddr = (size_t) symbol_asinf },
     { .name = "asprintf", .vaddr = (size_t) symbol_asprintf },
     { .name = "_asprintf_r", .vaddr = (size_t) symbol__asprintf_r },
     { .name = "__assert_func", .vaddr = (size_t) symbol___assert_func },
+    { .name = "atan", .vaddr = (size_t) symbol_atan },
+    { .name = "atan2", .vaddr = (size_t) symbol_atan2 },
+    { .name = "atan2f", .vaddr = (size_t) symbol_atan2f },
+    { .name = "atanf", .vaddr = (size_t) symbol_atanf },
     { .name = "__atexit", .vaddr = (size_t) symbol___atexit },
     { .name = "__atexit_recursive_mutex", .vaddr = (size_t) symbol___atexit_recursive_mutex },
     { .name = "atoi", .vaddr = (size_t) symbol_atoi },
@@ -5368,6 +5517,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_calloc_r", .vaddr = (size_t) symbol__calloc_r },
     { .name = "call_start_cpu0", .vaddr = (size_t) symbol_call_start_cpu0 },
     { .name = "call_start_cpu1", .vaddr = (size_t) symbol_call_start_cpu1 },
+    { .name = "cbrt", .vaddr = (size_t) symbol_cbrt },
+    { .name = "cbrtf", .vaddr = (size_t) symbol_cbrtf },
     { .name = "cdc_acm_class_handle_req", .vaddr = (size_t) symbol_cdc_acm_class_handle_req },
     { .name = "cdc_acm_fifo_fill", .vaddr = (size_t) symbol_cdc_acm_fifo_fill },
     { .name = "cdc_acm_fifo_read", .vaddr = (size_t) symbol_cdc_acm_fifo_read },
@@ -5386,6 +5537,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "cdc_acm_line_ctrl_set", .vaddr = (size_t) symbol_cdc_acm_line_ctrl_set },
     { .name = "cdc_acm_poll_out", .vaddr = (size_t) symbol_cdc_acm_poll_out },
     { .name = "cdc_acm_rx_fifo_cnt", .vaddr = (size_t) symbol_cdc_acm_rx_fifo_cnt },
+    { .name = "ceil", .vaddr = (size_t) symbol_ceil },
     { .name = "ceilf", .vaddr = (size_t) symbol_ceilf },
     { .name = "cfree", .vaddr = (size_t) symbol_cfree },
     { .name = "chan_arr", .vaddr = (size_t) symbol_chan_arr },
@@ -5404,7 +5556,9 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "clk_hal_lp_slow_get_freq_hz", .vaddr = (size_t) symbol_clk_hal_lp_slow_get_freq_hz },
     { .name = "clk_hal_soc_root_get_freq_mhz", .vaddr = (size_t) symbol_clk_hal_soc_root_get_freq_mhz },
     { .name = "clk_hal_xtal_get_freq_mhz", .vaddr = (size_t) symbol_clk_hal_xtal_get_freq_mhz },
+    { .name = "clock", .vaddr = (size_t) symbol_clock },
     { .name = "clock_gettime", .vaddr = (size_t) symbol_clock_gettime },
+    { .name = "clock_settime", .vaddr = (size_t) symbol_clock_settime },
     { .name = "close", .vaddr = (size_t) symbol_close },
     { .name = "_close_r", .vaddr = (size_t) symbol__close_r },
     { .name = "__clrsbdi2", .vaddr = (size_t) symbol___clrsbdi2 },
@@ -5431,6 +5585,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "console_tcsetattr", .vaddr = (size_t) symbol_console_tcsetattr },
     { .name = "console_write", .vaddr = (size_t) symbol_console_write },
     { .name = "__copybits", .vaddr = (size_t) symbol___copybits },
+    { .name = "copysign", .vaddr = (size_t) symbol_copysign },
+    { .name = "copysignf", .vaddr = (size_t) symbol_copysignf },
     { .name = "_coredump_dram_end", .vaddr = (size_t) symbol__coredump_dram_end },
     { .name = "_coredump_dram_start", .vaddr = (size_t) symbol__coredump_dram_start },
     { .name = "_coredump_iram_end", .vaddr = (size_t) symbol__coredump_iram_end },
@@ -5441,6 +5597,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_coredump_rtc_start", .vaddr = (size_t) symbol__coredump_rtc_start },
     { .name = "cos", .vaddr = (size_t) symbol_cos },
     { .name = "cosf", .vaddr = (size_t) symbol_cosf },
+    { .name = "cosh", .vaddr = (size_t) symbol_cosh },
+    { .name = "coshf", .vaddr = (size_t) symbol_coshf },
     { .name = "cpio_destroy", .vaddr = (size_t) symbol_cpio_destroy },
     { .name = "cpio_done", .vaddr = (size_t) symbol_cpio_done },
     { .name = "cpio_feed", .vaddr = (size_t) symbol_cpio_feed },
@@ -5460,6 +5618,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "crc8_le", .vaddr = (size_t) symbol_crc8_le },
     { .name = "crc8_le_table_ptr", .vaddr = (size_t) symbol_crc8_le_table_ptr },
     { .name = "create_debugging_tasks", .vaddr = (size_t) symbol_create_debugging_tasks },
+    { .name = "ctime", .vaddr = (size_t) symbol_ctime },
+    { .name = "_C_time_locale", .vaddr = (size_t) symbol__C_time_locale },
     { .name = "_ctype_", .vaddr = (size_t) symbol__ctype_ },
     { .name = "__ctzdi2", .vaddr = (size_t) symbol___ctzdi2 },
     { .name = "__ctzsi2", .vaddr = (size_t) symbol___ctzsi2 },
@@ -5503,6 +5663,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "dfu_updater_flash_read", .vaddr = (size_t) symbol_dfu_updater_flash_read },
     { .name = "dfu_updater_get_err", .vaddr = (size_t) symbol_dfu_updater_get_err },
     { .name = "dfu_updater_set_raw_addr", .vaddr = (size_t) symbol_dfu_updater_set_raw_addr },
+    { .name = "difftime", .vaddr = (size_t) symbol_difftime },
     { .name = "disable_default_watchdog", .vaddr = (size_t) symbol_disable_default_watchdog },
     { .name = "Disable_QMode", .vaddr = (size_t) symbol_Disable_QMode },
     { .name = "_dist_code", .vaddr = (size_t) symbol__dist_code },
@@ -5566,6 +5727,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__env_lock", .vaddr = (size_t) symbol___env_lock },
     { .name = "__env_unlock", .vaddr = (size_t) symbol___env_unlock },
     { .name = "__eqdf2", .vaddr = (size_t) symbol___eqdf2 },
+    { .name = "erf", .vaddr = (size_t) symbol_erf },
+    { .name = "erfc", .vaddr = (size_t) symbol_erfc },
+    { .name = "erfcf", .vaddr = (size_t) symbol_erfcf },
+    { .name = "erff", .vaddr = (size_t) symbol_erff },
     { .name = "__errno", .vaddr = (size_t) symbol___errno },
     { .name = "err_to_errno", .vaddr = (size_t) symbol_err_to_errno },
     { .name = "es8156_configure", .vaddr = (size_t) symbol_es8156_configure },
@@ -6158,6 +6323,12 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "ets_write_char_uart", .vaddr = (size_t) symbol_ets_write_char_uart },
     { .name = "_exit", .vaddr = (size_t) symbol__exit },
     { .name = "exit", .vaddr = (size_t) symbol_exit },
+    { .name = "exp", .vaddr = (size_t) symbol_exp },
+    { .name = "exp2", .vaddr = (size_t) symbol_exp2 },
+    { .name = "exp2f", .vaddr = (size_t) symbol_exp2f },
+    { .name = "expf", .vaddr = (size_t) symbol_expf },
+    { .name = "expm1", .vaddr = (size_t) symbol_expm1 },
+    { .name = "expm1f", .vaddr = (size_t) symbol_expm1f },
     { .name = "__extenddftf2", .vaddr = (size_t) symbol___extenddftf2 },
     { .name = "__extendsfdf2", .vaddr = (size_t) symbol___extendsfdf2 },
     { .name = "__extendsftf2", .vaddr = (size_t) symbol___extendsftf2 },
@@ -6171,6 +6342,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_fclose_r", .vaddr = (size_t) symbol__fclose_r },
     { .name = "fcntl", .vaddr = (size_t) symbol_fcntl },
     { .name = "_fcntl_r", .vaddr = (size_t) symbol__fcntl_r },
+    { .name = "fdim", .vaddr = (size_t) symbol_fdim },
+    { .name = "fdimf", .vaddr = (size_t) symbol_fdimf },
     { .name = "feof", .vaddr = (size_t) symbol_feof },
     { .name = "f_fdisk", .vaddr = (size_t) symbol_f_fdisk },
     { .name = "ff_disk_initialize", .vaddr = (size_t) symbol_ff_disk_initialize },
@@ -6200,6 +6373,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_findenv", .vaddr = (size_t) symbol__findenv },
     { .name = "_findenv_r", .vaddr = (size_t) symbol__findenv_r },
     { .name = "finite", .vaddr = (size_t) symbol_finite },
+    { .name = "finitef", .vaddr = (size_t) symbol_finitef },
     { .name = "__fixdfdi", .vaddr = (size_t) symbol___fixdfdi },
     { .name = "__fixdfsi", .vaddr = (size_t) symbol___fixdfsi },
     { .name = "__fixsfdi", .vaddr = (size_t) symbol___fixsfdi },
@@ -6225,8 +6399,15 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "floor", .vaddr = (size_t) symbol_floor },
     { .name = "floorf", .vaddr = (size_t) symbol_floorf },
     { .name = "f_lseek", .vaddr = (size_t) symbol_f_lseek },
+    { .name = "fma", .vaddr = (size_t) symbol_fma },
+    { .name = "fmaf", .vaddr = (size_t) symbol_fmaf },
+    { .name = "fmax", .vaddr = (size_t) symbol_fmax },
+    { .name = "fmaxf", .vaddr = (size_t) symbol_fmaxf },
+    { .name = "fmin", .vaddr = (size_t) symbol_fmin },
+    { .name = "fminf", .vaddr = (size_t) symbol_fminf },
     { .name = "f_mkdir", .vaddr = (size_t) symbol_f_mkdir },
     { .name = "f_mkfs", .vaddr = (size_t) symbol_f_mkfs },
+    { .name = "fmod", .vaddr = (size_t) symbol_fmod },
     { .name = "fmodf", .vaddr = (size_t) symbol_fmodf },
     { .name = "f_mount", .vaddr = (size_t) symbol_f_mount },
     { .name = "font_bitmap_raw_7x9", .vaddr = (size_t) symbol_font_bitmap_raw_7x9 },
@@ -6234,6 +6415,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "fopen", .vaddr = (size_t) symbol_fopen },
     { .name = "f_opendir", .vaddr = (size_t) symbol_f_opendir },
     { .name = "_fopen_r", .vaddr = (size_t) symbol__fopen_r },
+    { .name = "__fpclassifyd", .vaddr = (size_t) symbol___fpclassifyd },
+    { .name = "__fpclassifyf", .vaddr = (size_t) symbol___fpclassifyf },
     { .name = "__fp_lock_all", .vaddr = (size_t) symbol___fp_lock_all },
     { .name = "fprintf", .vaddr = (size_t) symbol_fprintf },
     { .name = "_fprintf_r", .vaddr = (size_t) symbol__fprintf_r },
@@ -6251,6 +6434,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "FreeRTOS_openocd_params", .vaddr = (size_t) symbol_FreeRTOS_openocd_params },
     { .name = "f_rename", .vaddr = (size_t) symbol_f_rename },
     { .name = "frexp", .vaddr = (size_t) symbol_frexp },
+    { .name = "frexpf", .vaddr = (size_t) symbol_frexpf },
     { .name = "fseek", .vaddr = (size_t) symbol_fseek },
     { .name = "fseeko", .vaddr = (size_t) symbol_fseeko },
     { .name = "_fseeko_r", .vaddr = (size_t) symbol__fseeko_r },
@@ -6388,6 +6572,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "g_max_tx_time", .vaddr = (size_t) symbol_g_max_tx_time },
     { .name = "g_mmu_mem_regions", .vaddr = (size_t) symbol_g_mmu_mem_regions },
     { .name = "g_msys_pool_list", .vaddr = (size_t) symbol_g_msys_pool_list },
+    { .name = "gmtime", .vaddr = (size_t) symbol_gmtime },
     { .name = "gmtime_r", .vaddr = (size_t) symbol_gmtime_r },
     { .name = "g_panic_abort", .vaddr = (size_t) symbol_g_panic_abort },
     { .name = "g_panic_abort_details", .vaddr = (size_t) symbol_g_panic_abort_details },
@@ -6544,6 +6729,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "hosted_write_gpio", .vaddr = (size_t) symbol_hosted_write_gpio },
     { .name = "HP_SYS_CLKRST", .vaddr = (size_t) symbol_HP_SYS_CLKRST },
     { .name = "HP_SYSTEM", .vaddr = (size_t) symbol_HP_SYSTEM },
+    { .name = "hypot", .vaddr = (size_t) symbol_hypot },
+    { .name = "hypotf", .vaddr = (size_t) symbol_hypotf },
     { .name = "__i2b", .vaddr = (size_t) symbol___i2b },
     { .name = "I2C0", .vaddr = (size_t) symbol_I2C0 },
     { .name = "I2C1", .vaddr = (size_t) symbol_I2C1 },
@@ -6600,16 +6787,44 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "icmp_dest_unreach", .vaddr = (size_t) symbol_icmp_dest_unreach },
     { .name = "icmp_input", .vaddr = (size_t) symbol_icmp_input },
     { .name = "IDF_TARGET_ESP32P4", .vaddr = (size_t) symbol_IDF_TARGET_ESP32P4 },
+    { .name = "__ieee754_acos", .vaddr = (size_t) symbol___ieee754_acos },
+    { .name = "__ieee754_acosf", .vaddr = (size_t) symbol___ieee754_acosf },
+    { .name = "__ieee754_asin", .vaddr = (size_t) symbol___ieee754_asin },
+    { .name = "__ieee754_asinf", .vaddr = (size_t) symbol___ieee754_asinf },
+    { .name = "__ieee754_atan2", .vaddr = (size_t) symbol___ieee754_atan2 },
+    { .name = "__ieee754_atan2f", .vaddr = (size_t) symbol___ieee754_atan2f },
+    { .name = "__ieee754_cosh", .vaddr = (size_t) symbol___ieee754_cosh },
+    { .name = "__ieee754_coshf", .vaddr = (size_t) symbol___ieee754_coshf },
+    { .name = "__ieee754_exp", .vaddr = (size_t) symbol___ieee754_exp },
+    { .name = "__ieee754_expf", .vaddr = (size_t) symbol___ieee754_expf },
+    { .name = "__ieee754_fmod", .vaddr = (size_t) symbol___ieee754_fmod },
     { .name = "__ieee754_fmodf", .vaddr = (size_t) symbol___ieee754_fmodf },
+    { .name = "__ieee754_hypot", .vaddr = (size_t) symbol___ieee754_hypot },
+    { .name = "__ieee754_hypotf", .vaddr = (size_t) symbol___ieee754_hypotf },
+    { .name = "__ieee754_lgammaf_r", .vaddr = (size_t) symbol___ieee754_lgammaf_r },
+    { .name = "__ieee754_lgamma_r", .vaddr = (size_t) symbol___ieee754_lgamma_r },
+    { .name = "__ieee754_log", .vaddr = (size_t) symbol___ieee754_log },
+    { .name = "__ieee754_log10", .vaddr = (size_t) symbol___ieee754_log10 },
+    { .name = "__ieee754_log10f", .vaddr = (size_t) symbol___ieee754_log10f },
+    { .name = "__ieee754_logf", .vaddr = (size_t) symbol___ieee754_logf },
     { .name = "__ieee754_pow", .vaddr = (size_t) symbol___ieee754_pow },
+    { .name = "__ieee754_powf", .vaddr = (size_t) symbol___ieee754_powf },
+    { .name = "__ieee754_remainder", .vaddr = (size_t) symbol___ieee754_remainder },
+    { .name = "__ieee754_remainderf", .vaddr = (size_t) symbol___ieee754_remainderf },
     { .name = "__ieee754_rem_pio2", .vaddr = (size_t) symbol___ieee754_rem_pio2 },
     { .name = "__ieee754_rem_pio2f", .vaddr = (size_t) symbol___ieee754_rem_pio2f },
+    { .name = "__ieee754_sinh", .vaddr = (size_t) symbol___ieee754_sinh },
+    { .name = "__ieee754_sinhf", .vaddr = (size_t) symbol___ieee754_sinhf },
     { .name = "__ieee754_sqrt", .vaddr = (size_t) symbol___ieee754_sqrt },
     { .name = "__ieee754_sqrtf", .vaddr = (size_t) symbol___ieee754_sqrtf },
+    { .name = "__ieee754_tgamma", .vaddr = (size_t) symbol___ieee754_tgamma },
+    { .name = "__ieee754_tgammaf", .vaddr = (size_t) symbol___ieee754_tgammaf },
     { .name = "igmp_input", .vaddr = (size_t) symbol_igmp_input },
     { .name = "igmp_lookfor_group", .vaddr = (size_t) symbol_igmp_lookfor_group },
     { .name = "igmp_report_groups", .vaddr = (size_t) symbol_igmp_report_groups },
     { .name = "igmp_tmr", .vaddr = (size_t) symbol_igmp_tmr },
+    { .name = "ilogb", .vaddr = (size_t) symbol_ilogb },
+    { .name = "ilogbf", .vaddr = (size_t) symbol_ilogbf },
     { .name = "_impure_data", .vaddr = (size_t) symbol__impure_data },
     { .name = "_impure_ptr", .vaddr = (size_t) symbol__impure_ptr },
     { .name = "inet_chksum", .vaddr = (size_t) symbol_inet_chksum },
@@ -6754,6 +6969,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__kernel_rem_pio2f", .vaddr = (size_t) symbol___kernel_rem_pio2f },
     { .name = "__kernel_sin", .vaddr = (size_t) symbol___kernel_sin },
     { .name = "__kernel_sinf", .vaddr = (size_t) symbol___kernel_sinf },
+    { .name = "__kernel_tan", .vaddr = (size_t) symbol___kernel_tan },
+    { .name = "__kernel_tanf", .vaddr = (size_t) symbol___kernel_tanf },
     { .name = "_kill_r", .vaddr = (size_t) symbol__kill_r },
     { .name = "labs", .vaddr = (size_t) symbol_labs },
     { .name = "LCD_CAM", .vaddr = (size_t) symbol_LCD_CAM },
@@ -6762,15 +6979,24 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "lcd_hal_cal_pclk_freq", .vaddr = (size_t) symbol_lcd_hal_cal_pclk_freq },
     { .name = "lcd_hal_init", .vaddr = (size_t) symbol_lcd_hal_init },
     { .name = "lcd_periph_rgb_signals", .vaddr = (size_t) symbol_lcd_periph_rgb_signals },
+    { .name = "ldexp", .vaddr = (size_t) symbol_ldexp },
+    { .name = "ldexpf", .vaddr = (size_t) symbol_ldexpf },
     { .name = "ldiv", .vaddr = (size_t) symbol_ldiv },
     { .name = "__ledf2", .vaddr = (size_t) symbol___ledf2 },
     { .name = "_length_code", .vaddr = (size_t) symbol__length_code },
+    { .name = "lgamma", .vaddr = (size_t) symbol_lgamma },
+    { .name = "lgammaf", .vaddr = (size_t) symbol_lgammaf },
     { .name = "_link_r", .vaddr = (size_t) symbol__link_r },
+    { .name = "llrint", .vaddr = (size_t) symbol_llrint },
+    { .name = "llrintf", .vaddr = (size_t) symbol_llrintf },
+    { .name = "llround", .vaddr = (size_t) symbol_llround },
+    { .name = "llroundf", .vaddr = (size_t) symbol_llroundf },
     { .name = "__lo0bits", .vaddr = (size_t) symbol___lo0bits },
     { .name = "localeconv", .vaddr = (size_t) symbol_localeconv },
     { .name = "__localeconv_l", .vaddr = (size_t) symbol___localeconv_l },
     { .name = "_localeconv_r", .vaddr = (size_t) symbol__localeconv_r },
     { .name = "__locale_mb_cur_max", .vaddr = (size_t) symbol___locale_mb_cur_max },
+    { .name = "localtime", .vaddr = (size_t) symbol_localtime },
     { .name = "localtime_r", .vaddr = (size_t) symbol_localtime_r },
     { .name = "_lock_acquire", .vaddr = (size_t) symbol__lock_acquire },
     { .name = "_lock_acquire_recursive", .vaddr = (size_t) symbol__lock_acquire_recursive },
@@ -6791,6 +7017,16 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_lock_try_acquire", .vaddr = (size_t) symbol__lock_try_acquire },
     { .name = "_lock_try_acquire_recursive", .vaddr = (size_t) symbol__lock_try_acquire_recursive },
     { .name = "__lock___tz_mutex", .vaddr = (size_t) symbol___lock___tz_mutex },
+    { .name = "log", .vaddr = (size_t) symbol_log },
+    { .name = "log10", .vaddr = (size_t) symbol_log10 },
+    { .name = "log10f", .vaddr = (size_t) symbol_log10f },
+    { .name = "log1p", .vaddr = (size_t) symbol_log1p },
+    { .name = "log1pf", .vaddr = (size_t) symbol_log1pf },
+    { .name = "log2", .vaddr = (size_t) symbol_log2 },
+    { .name = "log2f", .vaddr = (size_t) symbol_log2f },
+    { .name = "logb", .vaddr = (size_t) symbol_logb },
+    { .name = "logbf", .vaddr = (size_t) symbol_logbf },
+    { .name = "logf", .vaddr = (size_t) symbol_logf },
     { .name = "longjmp", .vaddr = (size_t) symbol_longjmp },
     { .name = "LP_ADC", .vaddr = (size_t) symbol_LP_ADC },
     { .name = "LP_ANA_PERI", .vaddr = (size_t) symbol_LP_ANA_PERI },
@@ -6807,6 +7043,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "LP_TOUCH", .vaddr = (size_t) symbol_LP_TOUCH },
     { .name = "LP_UART", .vaddr = (size_t) symbol_LP_UART },
     { .name = "LP_WDT", .vaddr = (size_t) symbol_LP_WDT },
+    { .name = "lrint", .vaddr = (size_t) symbol_lrint },
+    { .name = "lrintf", .vaddr = (size_t) symbol_lrintf },
+    { .name = "lround", .vaddr = (size_t) symbol_lround },
+    { .name = "lroundf", .vaddr = (size_t) symbol_lroundf },
     { .name = "_lseek_r", .vaddr = (size_t) symbol__lseek_r },
     { .name = "__lshift", .vaddr = (size_t) symbol___lshift },
     { .name = "__lshrdi3", .vaddr = (size_t) symbol___lshrdi3 },
@@ -6835,10 +7075,14 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__math_check_oflow", .vaddr = (size_t) symbol___math_check_oflow },
     { .name = "__math_check_uflow", .vaddr = (size_t) symbol___math_check_uflow },
     { .name = "__math_divzero", .vaddr = (size_t) symbol___math_divzero },
+    { .name = "__math_divzerof", .vaddr = (size_t) symbol___math_divzerof },
     { .name = "__math_invalid", .vaddr = (size_t) symbol___math_invalid },
+    { .name = "__math_invalidf", .vaddr = (size_t) symbol___math_invalidf },
     { .name = "__math_may_uflow", .vaddr = (size_t) symbol___math_may_uflow },
     { .name = "__math_oflow", .vaddr = (size_t) symbol___math_oflow },
+    { .name = "__math_oflowf", .vaddr = (size_t) symbol___math_oflowf },
     { .name = "__math_uflow", .vaddr = (size_t) symbol___math_uflow },
+    { .name = "__math_uflowf", .vaddr = (size_t) symbol___math_uflowf },
     { .name = "matrix_2d_multiply", .vaddr = (size_t) symbol_matrix_2d_multiply },
     { .name = "matrix_2d_rotate", .vaddr = (size_t) symbol_matrix_2d_rotate },
     { .name = "matrix_2d_transform", .vaddr = (size_t) symbol_matrix_2d_transform },
@@ -7076,6 +7320,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "mmu_hal_pages_to_bytes", .vaddr = (size_t) symbol_mmu_hal_pages_to_bytes },
     { .name = "mmu_hal_unmap_region", .vaddr = (size_t) symbol_mmu_hal_unmap_region },
     { .name = "__moddi3", .vaddr = (size_t) symbol___moddi3 },
+    { .name = "modf", .vaddr = (size_t) symbol_modf },
+    { .name = "modff", .vaddr = (size_t) symbol_modff },
     { .name = "__modsi3", .vaddr = (size_t) symbol___modsi3 },
     { .name = "__month_lengths", .vaddr = (size_t) symbol___month_lengths },
     { .name = "MPI_BLOCK_BASES", .vaddr = (size_t) symbol_MPI_BLOCK_BASES },
@@ -7159,11 +7405,15 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__mulvsi3", .vaddr = (size_t) symbol___mulvsi3 },
     { .name = "mz_adler32", .vaddr = (size_t) symbol_mz_adler32 },
     { .name = "mz_free", .vaddr = (size_t) symbol_mz_free },
+    { .name = "nan", .vaddr = (size_t) symbol_nan },
+    { .name = "nanf", .vaddr = (size_t) symbol_nanf },
     { .name = "nd6_adjust_mld_membership", .vaddr = (size_t) symbol_nd6_adjust_mld_membership },
     { .name = "nd6_find_route", .vaddr = (size_t) symbol_nd6_find_route },
     { .name = "nd6_get_destination_mtu", .vaddr = (size_t) symbol_nd6_get_destination_mtu },
     { .name = "nd6_input", .vaddr = (size_t) symbol_nd6_input },
     { .name = "nd6_reachability_hint", .vaddr = (size_t) symbol_nd6_reachability_hint },
+    { .name = "nearbyint", .vaddr = (size_t) symbol_nearbyint },
+    { .name = "nearbyintf", .vaddr = (size_t) symbol_nearbyintf },
     { .name = "__nedf2", .vaddr = (size_t) symbol___nedf2 },
     { .name = "__negdf2", .vaddr = (size_t) symbol___negdf2 },
     { .name = "__negdi2", .vaddr = (size_t) symbol___negdi2 },
@@ -7184,6 +7434,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "netif_list", .vaddr = (size_t) symbol_netif_list },
     { .name = "netif_loop_output", .vaddr = (size_t) symbol_netif_loop_output },
     { .name = "netif_poll", .vaddr = (size_t) symbol_netif_poll },
+    { .name = "nextafter", .vaddr = (size_t) symbol_nextafter },
+    { .name = "nextafterf", .vaddr = (size_t) symbol_nextafterf },
     { .name = "_noinit_end", .vaddr = (size_t) symbol__noinit_end },
     { .name = "_noinit_start", .vaddr = (size_t) symbol__noinit_start },
     { .name = "_noload_keep_in_elf_end", .vaddr = (size_t) symbol__noload_keep_in_elf_end },
@@ -7614,6 +7866,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "pow", .vaddr = (size_t) symbol_pow },
     { .name = "__pow5mult", .vaddr = (size_t) symbol___pow5mult },
     { .name = "power_supply_periph_signal", .vaddr = (size_t) symbol_power_supply_periph_signal },
+    { .name = "powf", .vaddr = (size_t) symbol_powf },
     { .name = "__powidf2", .vaddr = (size_t) symbol___powidf2 },
     { .name = "prefix_list", .vaddr = (size_t) symbol_prefix_list },
     { .name = "printf", .vaddr = (size_t) symbol_printf },
@@ -7754,6 +8007,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "regi2c_write_impl", .vaddr = (size_t) symbol_regi2c_write_impl },
     { .name = "regi2c_write_mask_impl", .vaddr = (size_t) symbol_regi2c_write_mask_impl },
     { .name = "registered_heaps", .vaddr = (size_t) symbol_registered_heaps },
+    { .name = "remainder", .vaddr = (size_t) symbol_remainder },
+    { .name = "remainderf", .vaddr = (size_t) symbol_remainderf },
     { .name = "_rename_r", .vaddr = (size_t) symbol__rename_r },
     { .name = "restart_after_slave_ota", .vaddr = (size_t) symbol_restart_after_slave_ota },
     { .name = "__retarget_lock_acquire", .vaddr = (size_t) symbol___retarget_lock_acquire },
@@ -7767,6 +8022,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__retarget_lock_try_acquire", .vaddr = (size_t) symbol___retarget_lock_try_acquire },
     { .name = "__retarget_lock_try_acquire_recursive", .vaddr = (size_t) symbol___retarget_lock_try_acquire_recursive },
     { .name = "retrans_timer", .vaddr = (size_t) symbol_retrans_timer },
+    { .name = "rint", .vaddr = (size_t) symbol_rint },
+    { .name = "rintf", .vaddr = (size_t) symbol_rintf },
     { .name = "rmdir", .vaddr = (size_t) symbol_rmdir },
     { .name = "_rodata_end", .vaddr = (size_t) symbol__rodata_end },
     { .name = "_rodata_reserved_end", .vaddr = (size_t) symbol__rodata_reserved_end },
@@ -7782,6 +8039,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "rom_spiflash_api_funcs", .vaddr = (size_t) symbol_rom_spiflash_api_funcs },
     { .name = "rom_spiflash_legacy_data", .vaddr = (size_t) symbol_rom_spiflash_legacy_data },
     { .name = "rom_spiflash_legacy_funcs", .vaddr = (size_t) symbol_rom_spiflash_legacy_funcs },
+    { .name = "round", .vaddr = (size_t) symbol_round },
     { .name = "roundf", .vaddr = (size_t) symbol_roundf },
     { .name = "roundup2", .vaddr = (size_t) symbol_roundup2 },
     { .name = "rpc_copy_wifi_sta_config", .vaddr = (size_t) symbol_rpc_copy_wifi_sta_config },
@@ -8323,6 +8581,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "sbrk", .vaddr = (size_t) symbol_sbrk },
     { .name = "_sbrk_r", .vaddr = (size_t) symbol__sbrk_r },
     { .name = "s_cache_hal_init_ctx", .vaddr = (size_t) symbol_s_cache_hal_init_ctx },
+    { .name = "scalbln", .vaddr = (size_t) symbol_scalbln },
+    { .name = "scalblnf", .vaddr = (size_t) symbol_scalblnf },
     { .name = "scalbn", .vaddr = (size_t) symbol_scalbn },
     { .name = "scalbnf", .vaddr = (size_t) symbol_scalbnf },
     { .name = "__sccl", .vaddr = (size_t) symbol___sccl },
@@ -8497,8 +8757,13 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "sha_hal_wait_idle", .vaddr = (size_t) symbol_sha_hal_wait_idle },
     { .name = "sha_hal_write_digest", .vaddr = (size_t) symbol_sha_hal_write_digest },
     { .name = "s_head", .vaddr = (size_t) symbol_s_head },
+    { .name = "sin", .vaddr = (size_t) symbol_sin },
     { .name = "sinf", .vaddr = (size_t) symbol_sinf },
+    { .name = "sinh", .vaddr = (size_t) symbol_sinh },
+    { .name = "sinhf", .vaddr = (size_t) symbol_sinhf },
     { .name = "__sinit", .vaddr = (size_t) symbol___sinit },
+    { .name = "siprintf", .vaddr = (size_t) symbol_siprintf },
+    { .name = "_siprintf_r", .vaddr = (size_t) symbol__siprintf_r },
     { .name = "siscanf", .vaddr = (size_t) symbol_siscanf },
     { .name = "_siscanf_r", .vaddr = (size_t) symbol__siscanf_r },
     { .name = "s_keys", .vaddr = (size_t) symbol_s_keys },
@@ -8512,6 +8777,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "sleep_retention_module_init", .vaddr = (size_t) symbol_sleep_retention_module_init },
     { .name = "__smakebuf_r", .vaddr = (size_t) symbol___smakebuf_r },
     { .name = "s_microseconds_offset", .vaddr = (size_t) symbol_s_microseconds_offset },
+    { .name = "sniprintf", .vaddr = (size_t) symbol_sniprintf },
+    { .name = "_sniprintf_r", .vaddr = (size_t) symbol__sniprintf_r },
     { .name = "snprintf", .vaddr = (size_t) symbol_snprintf },
     { .name = "_snprintf_r", .vaddr = (size_t) symbol__snprintf_r },
     { .name = "soc_get_available_memory_region_max_count", .vaddr = (size_t) symbol_soc_get_available_memory_region_max_count },
@@ -8714,6 +8981,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "sprintf", .vaddr = (size_t) symbol_sprintf },
     { .name = "_sprintf_r", .vaddr = (size_t) symbol__sprintf_r },
     { .name = "__sprint_r", .vaddr = (size_t) symbol___sprint_r },
+    { .name = "sqrt", .vaddr = (size_t) symbol_sqrt },
     { .name = "sqrtf", .vaddr = (size_t) symbol_sqrtf },
     { .name = "srand", .vaddr = (size_t) symbol_srand },
     { .name = "__sread", .vaddr = (size_t) symbol___sread },
@@ -8748,6 +9016,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "strerror", .vaddr = (size_t) symbol_strerror },
     { .name = "strerror_l", .vaddr = (size_t) symbol_strerror_l },
     { .name = "_strerror_r", .vaddr = (size_t) symbol__strerror_r },
+    { .name = "strftime", .vaddr = (size_t) symbol_strftime },
+    { .name = "strftime_l", .vaddr = (size_t) symbol_strftime_l },
     { .name = "strlcat", .vaddr = (size_t) symbol_strlcat },
     { .name = "strlcpy", .vaddr = (size_t) symbol_strlcpy },
     { .name = "strlen", .vaddr = (size_t) symbol_strlen },
@@ -8829,6 +9099,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "systimer_ticks_to_us", .vaddr = (size_t) symbol_systimer_ticks_to_us },
     { .name = "systimer_us_to_ticks", .vaddr = (size_t) symbol_systimer_us_to_ticks },
     { .name = "sys_untimeout", .vaddr = (size_t) symbol_sys_untimeout },
+    { .name = "tan", .vaddr = (size_t) symbol_tan },
+    { .name = "tanf", .vaddr = (size_t) symbol_tanf },
+    { .name = "tanh", .vaddr = (size_t) symbol_tanh },
+    { .name = "tanhf", .vaddr = (size_t) symbol_tanhf },
     { .name = "tanmatsu_coprocessor_get_alarm_time", .vaddr = (size_t) symbol_tanmatsu_coprocessor_get_alarm_time },
     { .name = "tanmatsu_coprocessor_get_amplifier_enable", .vaddr = (size_t) symbol_tanmatsu_coprocessor_get_amplifier_enable },
     { .name = "tanmatsu_coprocessor_get_backup_registers", .vaddr = (size_t) symbol_tanmatsu_coprocessor_get_backup_registers },
@@ -8958,6 +9232,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_tee_interrupt_handler", .vaddr = (size_t) symbol__tee_interrupt_handler },
     { .name = "_text_end", .vaddr = (size_t) symbol__text_end },
     { .name = "_text_start", .vaddr = (size_t) symbol__text_start },
+    { .name = "tgamma", .vaddr = (size_t) symbol_tgamma },
+    { .name = "tgammaf", .vaddr = (size_t) symbol_tgammaf },
     { .name = "_thread_local_bss_end", .vaddr = (size_t) symbol__thread_local_bss_end },
     { .name = "_thread_local_bss_start", .vaddr = (size_t) symbol__thread_local_bss_start },
     { .name = "_thread_local_data_end", .vaddr = (size_t) symbol__thread_local_data_end },
@@ -9003,7 +9279,9 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_tr_flush_block", .vaddr = (size_t) symbol__tr_flush_block },
     { .name = "_tr_init", .vaddr = (size_t) symbol__tr_init },
     { .name = "_tr_stored_block", .vaddr = (size_t) symbol__tr_stored_block },
+    { .name = "trunc", .vaddr = (size_t) symbol_trunc },
     { .name = "__truncdfsf2", .vaddr = (size_t) symbol___truncdfsf2 },
+    { .name = "truncf", .vaddr = (size_t) symbol_truncf },
     { .name = "__trunctfdf2", .vaddr = (size_t) symbol___trunctfdf2 },
     { .name = "__trunctfsf2", .vaddr = (size_t) symbol___trunctfsf2 },
     { .name = "__tzcalc_limits", .vaddr = (size_t) symbol___tzcalc_limits },
@@ -9583,6 +9861,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 4786,
+    .symbols_len = 4925,
     .symbols     = symbols,
 };
