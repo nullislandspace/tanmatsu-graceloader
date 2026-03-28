@@ -51,6 +51,7 @@ COMPONENTS=(
     robotman2412__pax-codecs
     nicolaielectronics__tanmatsu_coprocessor
     nvs_flash
+    esp_driver_i2s
 )
 
 # Find nm from the IDF toolchain

@@ -77,6 +77,19 @@ install: build
 	cd badgelink/tools; ./badgelink.sh appfs upload $(GRACELOADER_SLUG) "Graceloader" 0 ../../$(BUILD)/application.bin
 	@echo "=== Installation complete ==="
 
+APP_REPO_PATH ?= ../tanmatsu-app-repository/$(GRACELOADER_SLUG)
+
+.PHONY: apprepo
+apprepo: build
+	@echo "=== Updating app repository ==="
+	mkdir -p $(APP_REPO_PATH)
+	cp metadata/metadata.json $(APP_REPO_PATH)/metadata.json
+	cp metadata/icon16.png $(APP_REPO_PATH)/icon16.png
+	cp metadata/icon32.png $(APP_REPO_PATH)/icon32.png
+	cp metadata/icon64.png $(APP_REPO_PATH)/icon64.png
+	cp $(BUILD)/application.bin $(APP_REPO_PATH)/application.bin
+	@echo "=== App repository updated at $(APP_REPO_PATH) ==="
+
 .PHONY: run
 run:
 	cd badgelink/tools; ./badgelink.sh start $(GRACELOADER_SLUG)
@@ -98,24 +111,30 @@ update-template:
 .PHONY: sync-template
 sync-template: build
 	@echo ""
-	@echo "=== Step 1/6: Extracting archive symbols -> exported_symbols.ld ==="
+	@echo "=== Step 1/8: Extracting archive symbols -> exported_symbols.ld ==="
 	bash tools/extract-symbols.sh
 	@echo ""
-	@echo "=== Step 2/6: Rebuilding with EXTERN'd symbols ==="
+	@echo "=== Step 2/8: Rebuilding with EXTERN'd symbols ==="
 	rm -f $(BUILD)/application.elf
 	$(MAKE) build
 	@echo ""
-	@echo "=== Step 3/6: Extracting ELF symbols -> symbol_export/all ==="
+	@echo "=== Step 3/8: Extracting ELF symbols -> symbol_export/all ==="
 	bash tools/extract-symbols.sh --all
 	@echo ""
-	@echo "=== Step 4/6: Regenerating kbelf tables and fakelib ==="
+	@echo "=== Step 4/8: Regenerating kbelf tables and fakelib ==="
 	source "$(IDF_PATH)/export.sh" >/dev/null && cd main && bash symbol_export.sh
 	@echo ""
-	@echo "=== Step 5/6: Final rebuild with updated kbelf tables ==="
+	@echo "=== Step 5/8: Rebuilding with updated kbelf tables ==="
 	rm -f $(BUILD)/application.elf
 	$(MAKE) build
 	@echo ""
-	@echo "=== Step 6/6: Updating template app ==="
+	@echo "=== Step 6/8: Re-extracting final ELF symbols ==="
+	bash tools/extract-symbols.sh --all
+	@echo ""
+	@echo "=== Step 7/8: Regenerating fakelib from final ELF ==="
+	source "$(IDF_PATH)/export.sh" >/dev/null && cd main && bash symbol_export.sh
+	@echo ""
+	@echo "=== Step 8/8: Updating template app ==="
 	TEMPLATE_PATH="$(TEMPLATE_PATH)" DEVICE="$(DEVICE)" bash tools/update-template.sh
 	@echo ""
 	@echo "=== Template synced ==="
