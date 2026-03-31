@@ -21,6 +21,7 @@
 #include "appfs.h"
 #include "sdcard.h"
 #include "fastopen.h"
+#include "graceloader.h"
 #include "esp_system.h"
 #include "sdkconfig.h"
 #include "bsp/device.h"
