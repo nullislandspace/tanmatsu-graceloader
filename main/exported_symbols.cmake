@@ -283,4 +283,8 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=clock_settime"
     "-Wl,--undefined=gettimeofday"
     "-Wl,--undefined=settimeofday"
+    # esp_async_memcpy
+    "-Wl,--undefined=esp_async_memcpy"
+    "-Wl,--undefined=esp_async_memcpy_install"
+    "-Wl,--undefined=esp_async_memcpy_uninstall"
 )

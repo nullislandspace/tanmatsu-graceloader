@@ -1635,6 +1635,10 @@ extern char const __attribute__((weak)) symbol_esp_app_get_elf_sha256[] asm("esp
 extern char const __attribute__((weak)) symbol_esp_async_fbcpy[] asm("esp_async_fbcpy");
 extern char const __attribute__((weak)) symbol_esp_async_fbcpy_install[] asm("esp_async_fbcpy_install");
 extern char const __attribute__((weak)) symbol_esp_async_fbcpy_uninstall[] asm("esp_async_fbcpy_uninstall");
+extern char const __attribute__((weak)) symbol_esp_async_memcpy[] asm("esp_async_memcpy");
+extern char const __attribute__((weak)) symbol_esp_async_memcpy_install[] asm("esp_async_memcpy_install");
+extern char const __attribute__((weak)) symbol_esp_async_memcpy_install_gdma_ahb[] asm("esp_async_memcpy_install_gdma_ahb");
+extern char const __attribute__((weak)) symbol_esp_async_memcpy_uninstall[] asm("esp_async_memcpy_uninstall");
 extern char const __attribute__((weak)) symbol_esp_backtrace_print[] asm("esp_backtrace_print");
 extern char const __attribute__((weak)) symbol_esp_brownout_init[] asm("esp_brownout_init");
 extern char const __attribute__((weak)) symbol_esp_cache_err_get_cpuid[] asm("esp_cache_err_get_cpuid");
@@ -1692,6 +1696,8 @@ extern char const __attribute__((weak)) symbol_esp_deep_sleep_register_hook[] as
 extern char const __attribute__((weak)) symbol_esp_deep_sleep_wakeup_io_reset[] asm("esp_deep_sleep_wakeup_io_reset");
 extern char const __attribute__((weak)) symbol_esp_deregister_freertos_idle_hook_for_cpu[] asm("esp_deregister_freertos_idle_hook_for_cpu");
 extern char const __attribute__((weak)) symbol_esp_dma_calculate_node_count[] asm("esp_dma_calculate_node_count");
+extern char const __attribute__((weak)) symbol_esp_dma_merge_aligned_rx_buffers[] asm("esp_dma_merge_aligned_rx_buffers");
+extern char const __attribute__((weak)) symbol_esp_dma_split_rx_buffer_to_cache_aligned[] asm("esp_dma_split_rx_buffer_to_cache_aligned");
 extern char const __attribute__((weak)) symbol_esp_ecc_point_multiply[] asm("esp_ecc_point_multiply");
 extern char const __attribute__((weak)) symbol_esp_ecc_point_verify[] asm("esp_ecc_point_verify");
 extern char const __attribute__((weak)) symbol_esp_efuse_check_errors[] asm("esp_efuse_check_errors");
@@ -2316,6 +2322,7 @@ extern char const __attribute__((weak)) symbol_gdma_del_channel[] asm("gdma_del_
 extern char const __attribute__((weak)) symbol_gdma_del_link_list[] asm("gdma_del_link_list");
 extern char const __attribute__((weak)) symbol_gdma_disconnect[] asm("gdma_disconnect");
 extern char const __attribute__((weak)) symbol_gdma_get_alignment_constraints[] asm("gdma_get_alignment_constraints");
+extern char const __attribute__((weak)) symbol_gdma_get_free_m2m_trig_id_mask[] asm("gdma_get_free_m2m_trig_id_mask");
 extern char const __attribute__((weak)) symbol_gdma_get_group_channel_id[] asm("gdma_get_group_channel_id");
 extern char const __attribute__((weak)) symbol_gdma_hal_build_parallel_crc_matrix[] asm("gdma_hal_build_parallel_crc_matrix");
 extern char const __attribute__((weak)) symbol_gdma_hal_clear_intr[] asm("gdma_hal_clear_intr");
@@ -2342,6 +2349,7 @@ extern char const __attribute__((weak)) symbol_gdma_link_mount_buffers[] asm("gd
 extern char const __attribute__((weak)) symbol_gdma_new_ahb_channel[] asm("gdma_new_ahb_channel");
 extern char const __attribute__((weak)) symbol_gdma_new_axi_channel[] asm("gdma_new_axi_channel");
 extern char const __attribute__((weak)) symbol_gdma_new_channel[] asm("gdma_new_channel");
+extern char const __attribute__((weak)) symbol_gdma_new_etm_event[] asm("gdma_new_etm_event");
 extern char const __attribute__((weak)) symbol_gdma_new_link_list[] asm("gdma_new_link_list");
 extern char const __attribute__((weak)) symbol_gdma_periph_signals[] asm("gdma_periph_signals");
 extern char const __attribute__((weak)) symbol_gdma_register_rx_event_callbacks[] asm("gdma_register_rx_event_callbacks");
@@ -6976,6 +6984,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_async_fbcpy", .vaddr = (size_t) symbol_esp_async_fbcpy },
     { .name = "esp_async_fbcpy_install", .vaddr = (size_t) symbol_esp_async_fbcpy_install },
     { .name = "esp_async_fbcpy_uninstall", .vaddr = (size_t) symbol_esp_async_fbcpy_uninstall },
+    { .name = "esp_async_memcpy", .vaddr = (size_t) symbol_esp_async_memcpy },
+    { .name = "esp_async_memcpy_install", .vaddr = (size_t) symbol_esp_async_memcpy_install },
+    { .name = "esp_async_memcpy_install_gdma_ahb", .vaddr = (size_t) symbol_esp_async_memcpy_install_gdma_ahb },
+    { .name = "esp_async_memcpy_uninstall", .vaddr = (size_t) symbol_esp_async_memcpy_uninstall },
     { .name = "esp_backtrace_print", .vaddr = (size_t) symbol_esp_backtrace_print },
     { .name = "esp_brownout_init", .vaddr = (size_t) symbol_esp_brownout_init },
     { .name = "esp_cache_err_get_cpuid", .vaddr = (size_t) symbol_esp_cache_err_get_cpuid },
@@ -7033,6 +7045,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_deep_sleep_wakeup_io_reset", .vaddr = (size_t) symbol_esp_deep_sleep_wakeup_io_reset },
     { .name = "esp_deregister_freertos_idle_hook_for_cpu", .vaddr = (size_t) symbol_esp_deregister_freertos_idle_hook_for_cpu },
     { .name = "esp_dma_calculate_node_count", .vaddr = (size_t) symbol_esp_dma_calculate_node_count },
+    { .name = "esp_dma_merge_aligned_rx_buffers", .vaddr = (size_t) symbol_esp_dma_merge_aligned_rx_buffers },
+    { .name = "esp_dma_split_rx_buffer_to_cache_aligned", .vaddr = (size_t) symbol_esp_dma_split_rx_buffer_to_cache_aligned },
     { .name = "esp_ecc_point_multiply", .vaddr = (size_t) symbol_esp_ecc_point_multiply },
     { .name = "esp_ecc_point_verify", .vaddr = (size_t) symbol_esp_ecc_point_verify },
     { .name = "esp_efuse_check_errors", .vaddr = (size_t) symbol_esp_efuse_check_errors },
@@ -7657,6 +7671,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "gdma_del_link_list", .vaddr = (size_t) symbol_gdma_del_link_list },
     { .name = "gdma_disconnect", .vaddr = (size_t) symbol_gdma_disconnect },
     { .name = "gdma_get_alignment_constraints", .vaddr = (size_t) symbol_gdma_get_alignment_constraints },
+    { .name = "gdma_get_free_m2m_trig_id_mask", .vaddr = (size_t) symbol_gdma_get_free_m2m_trig_id_mask },
     { .name = "gdma_get_group_channel_id", .vaddr = (size_t) symbol_gdma_get_group_channel_id },
     { .name = "gdma_hal_build_parallel_crc_matrix", .vaddr = (size_t) symbol_gdma_hal_build_parallel_crc_matrix },
     { .name = "gdma_hal_clear_intr", .vaddr = (size_t) symbol_gdma_hal_clear_intr },
@@ -7683,6 +7698,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "gdma_new_ahb_channel", .vaddr = (size_t) symbol_gdma_new_ahb_channel },
     { .name = "gdma_new_axi_channel", .vaddr = (size_t) symbol_gdma_new_axi_channel },
     { .name = "gdma_new_channel", .vaddr = (size_t) symbol_gdma_new_channel },
+    { .name = "gdma_new_etm_event", .vaddr = (size_t) symbol_gdma_new_etm_event },
     { .name = "gdma_new_link_list", .vaddr = (size_t) symbol_gdma_new_link_list },
     { .name = "gdma_periph_signals", .vaddr = (size_t) symbol_gdma_periph_signals },
     { .name = "gdma_register_rx_event_callbacks", .vaddr = (size_t) symbol_gdma_register_rx_event_callbacks },
@@ -10689,6 +10705,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 5339,
+    .symbols_len = 5347,
     .symbols     = symbols,
 };

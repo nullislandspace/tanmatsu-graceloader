@@ -1628,6 +1628,10 @@ esp_app_get_elf_sha256
 esp_async_fbcpy
 esp_async_fbcpy_install
 esp_async_fbcpy_uninstall
+esp_async_memcpy
+esp_async_memcpy_install
+esp_async_memcpy_install_gdma_ahb
+esp_async_memcpy_uninstall
 esp_backtrace_print
 esp_brownout_init
 esp_cache_err_get_cpuid
@@ -1685,6 +1689,8 @@ esp_deep_sleep_register_hook
 esp_deep_sleep_wakeup_io_reset
 esp_deregister_freertos_idle_hook_for_cpu
 esp_dma_calculate_node_count
+esp_dma_merge_aligned_rx_buffers
+esp_dma_split_rx_buffer_to_cache_aligned
 esp_ecc_point_multiply
 esp_ecc_point_verify
 esp_efuse_check_errors
@@ -2309,6 +2315,7 @@ gdma_del_channel
 gdma_del_link_list
 gdma_disconnect
 gdma_get_alignment_constraints
+gdma_get_free_m2m_trig_id_mask
 gdma_get_group_channel_id
 gdma_hal_build_parallel_crc_matrix
 gdma_hal_clear_intr
@@ -2335,6 +2342,7 @@ gdma_link_mount_buffers
 gdma_new_ahb_channel
 gdma_new_axi_channel
 gdma_new_channel
+gdma_new_etm_event
 gdma_new_link_list
 gdma_periph_signals
 gdma_register_rx_event_callbacks
