@@ -286,5 +286,6 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     # esp_async_memcpy
     "-Wl,--undefined=esp_async_memcpy"
     "-Wl,--undefined=esp_async_memcpy_install"
+    "-Wl,--undefined=esp_async_memcpy_install_gdma_axi"
     "-Wl,--undefined=esp_async_memcpy_uninstall"
 )
