@@ -25,6 +25,9 @@
 #include "esp_system.h"
 #include "sdkconfig.h"
 #include "bsp/device.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "hal/usb_serial_jtag_ll.h"
 
 static const char TAG[] = "graceloader";
 
@@ -51,6 +54,18 @@ static bool file_exists(const char* path) {
 
 void app_main(void) {
     ESP_LOGI(TAG, "Graceloader starting...");
+
+    // Switch USB from badgelink mode to flash/monitor mode
+    const usb_serial_jtag_pull_override_vals_t override_disable_usb = {
+        .dm_pd = true, .dm_pu = false, .dp_pd = true, .dp_pu = false};
+    const usb_serial_jtag_pull_override_vals_t override_enable_usb = {
+        .dm_pd = false, .dm_pu = false, .dp_pd = false, .dp_pu = true};
+    usb_serial_jtag_ll_phy_enable_pull_override(&override_disable_usb);
+    usb_serial_jtag_ll_phy_select(0);
+    vTaskDelay(pdMS_TO_TICKS(500));
+    usb_serial_jtag_ll_phy_enable_pull_override(&override_enable_usb);
+    usb_serial_jtag_ll_phy_disable_pull_override();
+    ESP_LOGI(TAG, "USB switched to flash/monitor mode");
 
     // 1. Mount internal flash filesystem at /int
     esp_vfs_fat_mount_config_t fat_config = {
