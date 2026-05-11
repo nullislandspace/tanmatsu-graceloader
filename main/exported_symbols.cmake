@@ -288,4 +288,11 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=esp_async_memcpy_install"
     "-Wl,--undefined=esp_async_memcpy_install_gdma_axi"
     "-Wl,--undefined=esp_async_memcpy_uninstall"
+    # esp_driver_ppa (Pixel Processing Accelerator)
+    "-Wl,--undefined=ppa_register_client"
+    "-Wl,--undefined=ppa_unregister_client"
+    "-Wl,--undefined=ppa_client_register_event_callbacks"
+    "-Wl,--undefined=ppa_do_scale_rotate_mirror"
+    "-Wl,--undefined=ppa_do_blend"
+    "-Wl,--undefined=ppa_do_fill"
 )

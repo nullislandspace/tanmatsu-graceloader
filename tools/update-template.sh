@@ -104,6 +104,7 @@ HEADER_COMPONENTS=(
     esp_driver_sdmmc
     esp_driver_gptimer
     esp_driver_uart
+    esp_driver_ppa
     sdmmc
 
     # Filesystem
