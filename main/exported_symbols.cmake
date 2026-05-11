@@ -295,4 +295,7 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=ppa_do_scale_rotate_mirror"
     "-Wl,--undefined=ppa_do_blend"
     "-Wl,--undefined=ppa_do_fill"
+    # esp_cache (needed for PPA DMA buffer sync / alignment)
+    "-Wl,--undefined=esp_cache_msync"
+    "-Wl,--undefined=esp_cache_get_alignment"
 )
