@@ -66,6 +66,7 @@ void app_main(void) {
     usb_serial_jtag_ll_phy_enable_pull_override(&override_enable_usb);
     usb_serial_jtag_ll_phy_disable_pull_override();
     ESP_LOGI(TAG, "USB switched to flash/monitor mode");
+    //vTaskDelay(pdMS_TO_TICKS(8000));
 
     // 1. Mount internal flash filesystem at /int
     esp_vfs_fat_mount_config_t fat_config = {
@@ -75,6 +76,7 @@ void app_main(void) {
         .disk_status_check_enable = false,
         .use_one_fat              = false,
     };
+
 
     esp_err_t res = esp_vfs_fat_spiflash_mount_rw_wl("/int", "locfd", &fat_config, &wl_handle);
     if (res != ESP_OK) {
