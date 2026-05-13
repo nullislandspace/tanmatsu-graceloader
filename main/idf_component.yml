@@ -5,3 +5,4 @@ dependencies:
   robotman2412/pax-gfx: "^2.0.9"
   robotman2412/pax-codecs: "^1.0.1"
   badgeteam/appfs: "^1.0.2"
+  nicolaielectronics/tanmatsu-settings: "^1.0.0"

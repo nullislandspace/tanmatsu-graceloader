@@ -76,6 +76,7 @@ HEADER_COMPONENTS=(
     robotman2412__pax-gfx
     robotman2412__pax-codecs
     nicolaielectronics__tanmatsu_coprocessor
+    nicolaielectronics__tanmatsu-settings
     nvs_flash
 
     # ESP-IDF platform essentials
