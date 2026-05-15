@@ -169,9 +169,11 @@ if [ -f "$BUILD_DIR/config/sdkconfig.h" ]; then
     echo "  Copied sdkconfig.h"
 fi
 
-# Copy graceloader's own exported header
+# Copy graceloader's own exported headers
 cp "$PROJECT_DIR/main/graceloader.h" "$INCLUDE_DST/"
 echo "  Copied graceloader.h"
+cp "$PROJECT_DIR/main/graceloader_imu.h" "$INCLUDE_DST/"
+echo "  Copied graceloader_imu.h"
 
 header_count=$(find "$INCLUDE_DST" -type f \( -name "*.h" -o -name "*.inc" \) | wc -l)
 echo ""

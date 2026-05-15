@@ -1,5 +1,6 @@
-# AUTO-GENERATED - do not edit
-# Force-include exported symbols so linker doesn't strip them
+# Manually curated --undefined flags (committed to git).
+# Force-include exported symbols so linker doesn't strip them.
+# Edit by hand; this file is NOT auto-generated.
 target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=esp_log_write"
     "-Wl,--undefined=esp_log_timestamp"
@@ -161,6 +162,9 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=pax_text_size_adv"
     "-Wl,--undefined=pax_font_sky_mono_raw"
     "-Wl,--undefined=bsp_power_set_radio_state"
+    # Orientation sensor (BMI270). Graceloader brings the sensor up at startup;
+    # apps only ever call bsp_orientation_get() — see graceloader_imu.h.
+    "-Wl,--undefined=bsp_orientation_get"
     # math.h — double variants
     "-Wl,--undefined=acos"
     "-Wl,--undefined=asin"
