@@ -80,7 +80,7 @@ install: build
 	@echo "Uploading icon64.png..."
 	cd badgelink/tools; ./badgelink.sh $(BADGELINK_CONN) fs upload $(APP_INSTALL_PATH)/icon64.png ../../metadata/icon64.png
 	@echo "Uploading application.bin..."
-	cd badgelink/tools; ./badgelink.sh $(BADGELINK_CONN) fs upload $(APP_INSTALL_PATH)/application.bin ../../$(BUILD)/application.bin
+	cd badgelink/tools; ./badgelink.sh $(BADGELINK_CONN) appfs upload at.cavac.graceloader "Graceloader" 0 ../../$(BUILD)/application.bin
 	@echo "=== Installation complete ==="
 
 APP_REPO_PATH ?= ../tanmatsu-app-repository/$(GRACELOADER_SLUG)
