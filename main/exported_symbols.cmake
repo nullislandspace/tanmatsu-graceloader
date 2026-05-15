@@ -162,9 +162,14 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=pax_text_size_adv"
     "-Wl,--undefined=pax_font_sky_mono_raw"
     "-Wl,--undefined=bsp_power_set_radio_state"
-    # Orientation sensor (BMI270). Graceloader brings the sensor up at startup;
-    # apps only ever call bsp_orientation_get() — see graceloader_imu.h.
+    # Orientation sensor (BMI270). The BMI270 is initialized by the app's own
+    # bsp_device_initialize() call; the app then enables the sensors and reads
+    # them. See graceloader_imu.h for the documented usage flow.
     "-Wl,--undefined=bsp_orientation_get"
+    "-Wl,--undefined=bsp_orientation_enable_accelerometer"
+    "-Wl,--undefined=bsp_orientation_disable_accelerometer"
+    "-Wl,--undefined=bsp_orientation_enable_gyroscope"
+    "-Wl,--undefined=bsp_orientation_disable_gyroscope"
     # math.h — double variants
     "-Wl,--undefined=acos"
     "-Wl,--undefined=asin"

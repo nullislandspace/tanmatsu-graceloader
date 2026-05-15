@@ -2,23 +2,36 @@
 // Graceloader IMU API — orientation sensor access for dynamically-loaded apps
 #pragma once
 
-#include <stdbool.h>
-#include "esp_err.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+// The orientation API itself (enable/disable/get) is declared by badge-bsp.
+// This header adds the Tanmatsu-specific axis documentation and the usage
+// flow; include this header rather than bsp/orientation.h directly.
+#include "bsp/orientation.h"
 
 // ===========================================================================
 // Orientation sensor (Bosch BMI270 — 3-axis accelerometer + 3-axis gyroscope)
 // ===========================================================================
 //
-// Graceloader powers up the orientation sensor and enables BOTH the
-// accelerometer and the gyroscope before your app starts. The sensor draws
-// negligible power, so it simply runs for the whole lifetime of the app.
+// Usage
+// -----
+// The BMI270 is brought up by the BSP as part of bsp_device_initialize() —
+// the call your app already makes to initialize the display, input, etc.
+// Graceloader itself initializes no hardware, so do NOT call any I2C or
+// orientation init function yourself; that would collide with the BSP.
 //
-// That means there is NOTHING to initialize, start or stop. The entire
-// app-facing API is a single function: bsp_orientation_get().
+// After bsp_device_initialize() the sensor is initialized but idle. Enable
+// the accelerometer and/or gyroscope once at startup, then read whenever:
+//
+//     bsp_device_initialize(&cfg);            // app already does this
+//     bsp_orientation_enable_accelerometer(); // once, at startup
+//     bsp_orientation_enable_gyroscope();     // once, at startup
+//
+//     bool g_ready, a_ready;
+//     float gx, gy, gz, ax, ay, az;
+//     bsp_orientation_get(&g_ready, &a_ready, &gx, &gy, &gz, &ax, &ay, &az);
+//
+// The accelerometer and gyroscope draw negligible power, so leaving both
+// enabled for the whole app lifetime is fine. bsp_orientation_disable_*()
+// is available if you want to turn a sensor off anyway.
 //
 // ---------------------------------------------------------------------------
 // Axis orientation (how the BMI270 is mounted in the Tanmatsu)
@@ -57,28 +70,38 @@ extern "C" {
 // rate in degrees per second. The sensor reports raw, instantaneous readings:
 // there is no sensor fusion, no orientation/attitude estimate and no position.
 // Any such filtering (complementary, Mahony, Madgwick, ...) is up to the app.
-
-/// @brief Read the current orientation sensor data.
-///
-/// The sensor is already initialized and running — just call this whenever you
-/// want a fresh sample. Any out_* pointer may be NULL if you don't need it.
-///
-/// @param[out] out_gyro_ready  true if fresh gyroscope data was available
-/// @param[out] out_accel_ready true if fresh accelerometer data was available
-/// @param[out] out_gyro_x  Gyroscope X axis (degrees per second)
-/// @param[out] out_gyro_y  Gyroscope Y axis (degrees per second)
-/// @param[out] out_gyro_z  Gyroscope Z axis (degrees per second)
-/// @param[out] out_accel_x Accelerometer X axis (m/s2)
-/// @param[out] out_accel_y Accelerometer Y axis (m/s2)
-/// @param[out] out_accel_z Accelerometer Z axis (m/s2)
-/// @return ESP_OK on success, or an ESP-IDF error code on failure.
-///
-/// @note Signature must stay in sync with bsp_orientation_get() in
-///       badge-bsp's bsp/orientation.h — that is the authoritative definition.
-esp_err_t bsp_orientation_get(bool* out_gyro_ready, bool* out_accel_ready,
-                              float* out_gyro_x, float* out_gyro_y, float* out_gyro_z,
-                              float* out_accel_x, float* out_accel_y, float* out_accel_z);
-
-#ifdef __cplusplus
-}
-#endif
+//
+// ---------------------------------------------------------------------------
+// API reference
+// ---------------------------------------------------------------------------
+// All functions are declared by bsp/orientation.h (included above) and return
+// ESP_OK on success or an ESP-IDF error code on failure.
+//
+//   esp_err_t bsp_orientation_enable_accelerometer(void);
+//       Enable the accelerometer. Call once before reading accel data.
+//
+//   esp_err_t bsp_orientation_disable_accelerometer(void);
+//       Disable the accelerometer (optional — power draw is negligible).
+//
+//   esp_err_t bsp_orientation_enable_gyroscope(void);
+//       Enable the gyroscope. Call once before reading gyro data.
+//
+//   esp_err_t bsp_orientation_disable_gyroscope(void);
+//       Disable the gyroscope (optional — power draw is negligible).
+//
+//   esp_err_t bsp_orientation_get(bool* out_gyro_ready, bool* out_accel_ready,
+//                                 float* out_gyro_x, float* out_gyro_y, float* out_gyro_z,
+//                                 float* out_accel_x, float* out_accel_y, float* out_accel_z);
+//       Read the current sensor data. Any out_* pointer may be NULL if that
+//       value is not needed. Parameters (all [out]):
+//         out_gyro_ready   true if fresh gyroscope data was available
+//         out_accel_ready  true if fresh accelerometer data was available
+//         out_gyro_x       Gyroscope X axis (degrees per second)
+//         out_gyro_y       Gyroscope Y axis (degrees per second)
+//         out_gyro_z       Gyroscope Z axis (degrees per second)
+//         out_accel_x      Accelerometer X axis (m/s2)
+//         out_accel_y      Accelerometer Y axis (m/s2)
+//         out_accel_z      Accelerometer Z axis (m/s2)
+//       See the axis diagram above for the meaning of the X/Y/Z directions.
+//
+// ===========================================================================

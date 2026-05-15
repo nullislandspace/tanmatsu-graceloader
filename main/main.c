@@ -25,7 +25,6 @@
 #include "esp_system.h"
 #include "sdkconfig.h"
 #include "bsp/device.h"
-#include "bsp/orientation.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "hal/usb_serial_jtag_ll.h"
@@ -46,39 +45,6 @@ static void restart_to_launcher(void) {
 }
 
 static wl_handle_t wl_handle = WL_INVALID_HANDLE;
-
-// BSP bring-up functions that are not exposed in any public header — they are
-// normally called only from bsp_device_initialize(). Graceloader does not run
-// the full device init (the app decides what to bring up), so we declare these
-// directly to start just the orientation sensor.
-extern esp_err_t bsp_i2c_primary_bus_initialize(void);
-extern esp_err_t bsp_orientation_initialize(void);
-
-// Bring up the BMI270 orientation sensor so apps can read it with a single
-// bsp_orientation_get() call and nothing else. The gyroscope and accelerometer
-// draw negligible power, so both run for the entire app lifetime — this keeps
-// the app-facing API as small as possible (see graceloader_imu.h).
-//
-// Non-fatal: an app that never reads orientation is unaffected if this fails.
-static void orientation_init(void) {
-    esp_err_t res = bsp_i2c_primary_bus_initialize();
-    if (res != ESP_OK) {
-        ESP_LOGW(TAG, "I2C primary bus init failed: %s", esp_err_to_name(res));
-        return;
-    }
-    res = bsp_orientation_initialize();
-    if (res != ESP_OK) {
-        ESP_LOGW(TAG, "Orientation sensor init failed: %s", esp_err_to_name(res));
-        return;
-    }
-    if (bsp_orientation_enable_accelerometer() != ESP_OK) {
-        ESP_LOGW(TAG, "Failed to enable accelerometer");
-    }
-    if (bsp_orientation_enable_gyroscope() != ESP_OK) {
-        ESP_LOGW(TAG, "Failed to enable gyroscope");
-    }
-    ESP_LOGI(TAG, "Orientation sensor ready");
-}
 
 // Check if a file exists
 static bool file_exists(const char* path) {
@@ -127,10 +93,7 @@ void app_main(void) {
         ESP_LOGI(TAG, "SD card mounted at /sd");
     }
 
-    // 3. Bring up the orientation sensor so apps can use bsp_orientation_get()
-    orientation_init();
-
-    // 4. Determine app path from boot selection
+    // 3. Determine app path from boot selection
     char elf_path[256];
     bool found = false;
 
@@ -177,7 +140,7 @@ void app_main(void) {
     ESP_LOGI(TAG, "Loading app from: %s", elf_path);
     ESP_LOGI(TAG, "Install basepath: %s", install_basepath);
 
-    // 5. Load ELF library via kbelf
+    // 4. Load ELF library via kbelf
     kbelf_dyn dyn = kbelf_dyn_create(0);
     if (!dyn) {
         ESP_LOGE(TAG, "Failed to create kbelf dynamic context");
@@ -220,12 +183,12 @@ void app_main(void) {
         }
     }
 
-    // 6. Jump to app entry point
+    // 5. Jump to app entry point
     void (*entry)(int, char const**, char const**) = (void*)kbelf_dyn_entrypoint(dyn);
     ESP_LOGI(TAG, "Jumping to app @ %p", entry);
     entry(1, (char const*[]){elf_path}, (char const*[]){NULL});
 
-    // 7. Cleanup after app returns
+    // 6. Cleanup after app returns
     ESP_LOGI(TAG, "App returned, cleaning up");
 
     size_t fini_count = kbelf_dyn_fini_len(dyn);
