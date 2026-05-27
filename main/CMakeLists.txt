@@ -15,6 +15,7 @@ idf_component_register(
         vfs
         esp_system
         heap
+        gl_input
     INCLUDE_DIRS
         "."
 )

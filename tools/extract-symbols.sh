@@ -52,6 +52,7 @@ COMPONENTS=(
     nicolaielectronics__tanmatsu_coprocessor
     nvs_flash
     esp_driver_i2s
+    gl_input
 )
 
 # Find nm from the IDF toolchain

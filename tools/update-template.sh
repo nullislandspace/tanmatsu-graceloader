@@ -78,6 +78,7 @@ HEADER_COMPONENTS=(
     nicolaielectronics__tanmatsu_coprocessor
     nicolaielectronics__tanmatsu-settings
     nvs_flash
+    gl_input
 
     # ESP-IDF platform essentials
     newlib

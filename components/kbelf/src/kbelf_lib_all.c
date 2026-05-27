@@ -109,7 +109,10 @@ extern char const __attribute__((weak)) symbol_DMA2D[] asm("DMA2D");
 extern char const __attribute__((weak)) symbol_DW_GDMA[] asm("DW_GDMA");
 extern char const __attribute__((weak)) symbol_Disable_QMode[] asm("Disable_QMode");
 extern char const __attribute__((weak)) symbol_EFUSE[] asm("EFUSE");
+extern char const __attribute__((weak)) symbol_ENUM_TAG[] asm("ENUM_TAG");
 extern char const __attribute__((weak)) symbol_ESP_HOSTED_EVENT[] asm("ESP_HOSTED_EVENT");
+extern char const __attribute__((weak)) symbol_EXT_HUB_TAG[] asm("EXT_HUB_TAG");
+extern char const __attribute__((weak)) symbol_EXT_PORT_TAG[] asm("EXT_PORT_TAG");
 extern char const __attribute__((weak)) symbol_Enable_QMode[] asm("Enable_QMode");
 extern char const __attribute__((weak)) symbol_FreeRTOS_openocd_params[] asm("FreeRTOS_openocd_params");
 extern char const __attribute__((weak)) symbol_GPIO[] asm("GPIO");
@@ -118,8 +121,10 @@ extern char const __attribute__((weak)) symbol_GPSPI2[] asm("GPSPI2");
 extern char const __attribute__((weak)) symbol_GPSPI3[] asm("GPSPI3");
 extern char const __attribute__((weak)) symbol_GetSecurityInfoProc[] asm("GetSecurityInfoProc");
 extern char const __attribute__((weak)) symbol_GetUartDevice[] asm("GetUartDevice");
+extern char const __attribute__((weak)) symbol_HCD_DWC_TAG[] asm("HCD_DWC_TAG");
 extern char const __attribute__((weak)) symbol_HP_SYSTEM[] asm("HP_SYSTEM");
 extern char const __attribute__((weak)) symbol_HP_SYS_CLKRST[] asm("HP_SYS_CLKRST");
+extern char const __attribute__((weak)) symbol_HUB_DRIVER_TAG[] asm("HUB_DRIVER_TAG");
 extern char const __attribute__((weak)) symbol_I2C0[] asm("I2C0");
 extern char const __attribute__((weak)) symbol_I2C1[] asm("I2C1");
 extern char const __attribute__((weak)) symbol_I2S0[] asm("I2S0");
@@ -188,8 +193,12 @@ extern char const __attribute__((weak)) symbol_UART1[] asm("UART1");
 extern char const __attribute__((weak)) symbol_UART2[] asm("UART2");
 extern char const __attribute__((weak)) symbol_UART3[] asm("UART3");
 extern char const __attribute__((weak)) symbol_UART4[] asm("UART4");
+extern char const __attribute__((weak)) symbol_USBH_TAG[] asm("USBH_TAG");
+extern char const __attribute__((weak)) symbol_USB_DWC_FS[] asm("USB_DWC_FS");
 extern char const __attribute__((weak)) symbol_USB_DWC_HS[] asm("USB_DWC_HS");
+extern char const __attribute__((weak)) symbol_USB_HOST_TAG[] asm("USB_HOST_TAG");
 extern char const __attribute__((weak)) symbol_USB_SERIAL_JTAG[] asm("USB_SERIAL_JTAG");
+extern char const __attribute__((weak)) symbol_USB_UTMI[] asm("USB_UTMI");
 extern char const __attribute__((weak)) symbol_USB_WRAP[] asm("USB_WRAP");
 extern char const __attribute__((weak)) symbol_UartDwnLdProc[] asm("UartDwnLdProc");
 extern char const __attribute__((weak)) symbol_UartGetCmdLn[] asm("UartGetCmdLn");
@@ -263,23 +272,6 @@ extern char const __attribute__((weak)) symbol__ZN3nvs12NVSPartitionC2EPK15esp_p
 extern char const __attribute__((weak)) symbol__ZN3nvs12NVSPartitionD0Ev[] asm("_ZN3nvs12NVSPartitionD0Ev");
 extern char const __attribute__((weak)) symbol__ZN3nvs12NVSPartitionD1Ev[] asm("_ZN3nvs12NVSPartitionD1Ev");
 extern char const __attribute__((weak)) symbol__ZN3nvs12NVSPartitionD2Ev[] asm("_ZN3nvs12NVSPartitionD2Ev");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked10erase_itemEPKc[] asm("_ZN3nvs15NVSHandleLocked10erase_itemEPKc");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked10get_stringEPKcPcj[] asm("_ZN3nvs15NVSHandleLocked10get_stringEPKcPcj");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked10set_stringEPKcS2_[] asm("_ZN3nvs15NVSHandleLocked10set_stringEPKcS2_");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked13get_item_sizeENS_8ItemTypeEPKcRj[] asm("_ZN3nvs15NVSHandleLocked13get_item_sizeENS_8ItemTypeEPKcRj");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked14get_typed_itemENS_8ItemTypeEPKcPvj[] asm("_ZN3nvs15NVSHandleLocked14get_typed_itemENS_8ItemTypeEPKcPvj");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked14set_typed_itemENS_8ItemTypeEPKcPKvj[] asm("_ZN3nvs15NVSHandleLocked14set_typed_itemENS_8ItemTypeEPKcPKvj");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked20get_used_entry_countERj[] asm("_ZN3nvs15NVSHandleLocked20get_used_entry_countERj");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked6commitEv[] asm("_ZN3nvs15NVSHandleLocked6commitEv");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked8find_keyEPKcR10nvs_type_t[] asm("_ZN3nvs15NVSHandleLocked8find_keyEPKcR10nvs_type_t");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked8get_blobEPKcPvj[] asm("_ZN3nvs15NVSHandleLocked8get_blobEPKcPvj");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked8set_blobEPKcPKvj[] asm("_ZN3nvs15NVSHandleLocked8set_blobEPKcPKvj");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLocked9erase_allEv[] asm("_ZN3nvs15NVSHandleLocked9erase_allEv");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLockedC1EPNS_15NVSHandleSimpleE[] asm("_ZN3nvs15NVSHandleLockedC1EPNS_15NVSHandleSimpleE");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLockedC2EPNS_15NVSHandleSimpleE[] asm("_ZN3nvs15NVSHandleLockedC2EPNS_15NVSHandleSimpleE");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLockedD0Ev[] asm("_ZN3nvs15NVSHandleLockedD0Ev");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLockedD1Ev[] asm("_ZN3nvs15NVSHandleLockedD1Ev");
-extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleLockedD2Ev[] asm("_ZN3nvs15NVSHandleLockedD2Ev");
 extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleSimple10erase_itemEPKc[] asm("_ZN3nvs15NVSHandleSimple10erase_itemEPKc");
 extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleSimple10get_stringEPKcPcj[] asm("_ZN3nvs15NVSHandleSimple10get_stringEPKcPcj");
 extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleSimple10set_stringEPKcS2_[] asm("_ZN3nvs15NVSHandleSimple10set_stringEPKcS2_");
@@ -301,7 +293,6 @@ extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleSimple9nextEntr
 extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleSimpleD0Ev[] asm("_ZN3nvs15NVSHandleSimpleD0Ev");
 extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleSimpleD1Ev[] asm("_ZN3nvs15NVSHandleSimpleD1Ev");
 extern char const __attribute__((weak)) symbol__ZN3nvs15NVSHandleSimpleD2Ev[] asm("_ZN3nvs15NVSHandleSimpleD2Ev");
-extern char const __attribute__((weak)) symbol__ZN3nvs15open_nvs_handleEPKc15nvs_open_mode_tPi[] asm("_ZN3nvs15open_nvs_handleEPKc15nvs_open_mode_tPi");
 extern char const __attribute__((weak)) symbol__ZN3nvs16partition_lookup20lookup_nvs_partitionEPKcPPNS_12NVSPartitionE[] asm("_ZN3nvs16partition_lookup20lookup_nvs_partitionEPKcPPNS_12NVSPartitionE");
 extern char const __attribute__((weak)) symbol__ZN3nvs16partition_lookup30lookup_nvs_encrypted_partitionEPKcP13nvs_sec_cfg_tPPNS_12NVSPartitionE[] asm("_ZN3nvs16partition_lookup30lookup_nvs_encrypted_partitionEPKcP13nvs_sec_cfg_tPPNS_12NVSPartitionE");
 extern char const __attribute__((weak)) symbol__ZN3nvs19NVSPartitionManager11init_customEPNS_9PartitionEmm[] asm("_ZN3nvs19NVSPartitionManager11init_customEPNS_9PartitionEmm");
@@ -325,7 +316,6 @@ extern char const __attribute__((weak)) symbol__ZN3nvs21NVSEncryptedPartitionC2E
 extern char const __attribute__((weak)) symbol__ZN3nvs21NVSEncryptedPartitionD0Ev[] asm("_ZN3nvs21NVSEncryptedPartitionD0Ev");
 extern char const __attribute__((weak)) symbol__ZN3nvs21NVSEncryptedPartitionD1Ev[] asm("_ZN3nvs21NVSEncryptedPartitionD1Ev");
 extern char const __attribute__((weak)) symbol__ZN3nvs21NVSEncryptedPartitionD2Ev[] asm("_ZN3nvs21NVSEncryptedPartitionD2Ev");
-extern char const __attribute__((weak)) symbol__ZN3nvs30open_nvs_handle_from_partitionEPKcS1_15nvs_open_mode_tPi[] asm("_ZN3nvs30open_nvs_handle_from_partitionEPKcS1_15nvs_open_mode_tPi");
 extern char const __attribute__((weak)) symbol__ZN3nvs4Item14calculateCrc32EPKhj[] asm("_ZN3nvs4Item14calculateCrc32EPKhj");
 extern char const __attribute__((weak)) symbol__ZN3nvs4Item6getKeyEPcj[] asm("_ZN3nvs4Item6getKeyEPcj");
 extern char const __attribute__((weak)) symbol__ZN3nvs4ItemC1EhNS_8ItemTypeEhPKch[] asm("_ZN3nvs4ItemC1EhNS_8ItemTypeEhPKch");
@@ -486,8 +476,6 @@ extern char const __attribute__((weak)) symbol__ZNKSt9type_info14__is_pointer_pE
 extern char const __attribute__((weak)) symbol__ZNKSt9type_info15__is_function_pEv[] asm("_ZNKSt9type_info15__is_function_pEv");
 extern char const __attribute__((weak)) symbol__ZNSt10unique_ptrIA_N3nvs4PageESt14default_deleteIS2_EED1Ev[] asm("_ZNSt10unique_ptrIA_N3nvs4PageESt14default_deleteIS2_EED1Ev");
 extern char const __attribute__((weak)) symbol__ZNSt10unique_ptrIA_N3nvs4PageESt14default_deleteIS2_EED2Ev[] asm("_ZNSt10unique_ptrIA_N3nvs4PageESt14default_deleteIS2_EED2Ev");
-extern char const __attribute__((weak)) symbol__ZNSt10unique_ptrIN3nvs15NVSHandleLockedESt14default_deleteIS1_EED1Ev[] asm("_ZNSt10unique_ptrIN3nvs15NVSHandleLockedESt14default_deleteIS1_EED1Ev");
-extern char const __attribute__((weak)) symbol__ZNSt10unique_ptrIN3nvs15NVSHandleLockedESt14default_deleteIS1_EED2Ev[] asm("_ZNSt10unique_ptrIN3nvs15NVSHandleLockedESt14default_deleteIS1_EED2Ev");
 extern char const __attribute__((weak)) symbol__ZNSt9bad_allocD0Ev[] asm("_ZNSt9bad_allocD0Ev");
 extern char const __attribute__((weak)) symbol__ZNSt9bad_allocD1Ev[] asm("_ZNSt9bad_allocD1Ev");
 extern char const __attribute__((weak)) symbol__ZNSt9bad_allocD2Ev[] asm("_ZNSt9bad_allocD2Ev");
@@ -509,7 +497,6 @@ extern char const __attribute__((weak)) symbol__ZTV9Partition[] asm("_ZTV9Partit
 extern char const __attribute__((weak)) symbol__ZTVN10__cxxabiv117__class_type_infoE[] asm("_ZTVN10__cxxabiv117__class_type_infoE");
 extern char const __attribute__((weak)) symbol__ZTVN10__cxxabiv120__si_class_type_infoE[] asm("_ZTVN10__cxxabiv120__si_class_type_infoE");
 extern char const __attribute__((weak)) symbol__ZTVN3nvs12NVSPartitionE[] asm("_ZTVN3nvs12NVSPartitionE");
-extern char const __attribute__((weak)) symbol__ZTVN3nvs15NVSHandleLockedE[] asm("_ZTVN3nvs15NVSHandleLockedE");
 extern char const __attribute__((weak)) symbol__ZTVN3nvs15NVSHandleSimpleE[] asm("_ZTVN3nvs15NVSHandleSimpleE");
 extern char const __attribute__((weak)) symbol__ZTVN3nvs19NVSPartitionManagerE[] asm("_ZTVN3nvs19NVSPartitionManagerE");
 extern char const __attribute__((weak)) symbol__ZTVN3nvs21NVSEncryptedPartitionE[] asm("_ZTVN3nvs21NVSEncryptedPartitionE");
@@ -524,7 +511,6 @@ extern char const __attribute__((weak)) symbol__ZdlPvjSt11align_val_t[] asm("_Zd
 extern char const __attribute__((weak)) symbol__Znaj[] asm("_Znaj");
 extern char const __attribute__((weak)) symbol__ZnajRKSt9nothrow_t[] asm("_ZnajRKSt9nothrow_t");
 extern char const __attribute__((weak)) symbol__Znwj[] asm("_Znwj");
-extern char const __attribute__((weak)) symbol__ZnwjRKSt9nothrow_t[] asm("_ZnwjRKSt9nothrow_t");
 extern char const __attribute__((weak)) symbol___absvdi2[] asm("__absvdi2");
 extern char const __attribute__((weak)) symbol___absvsi2[] asm("__absvsi2");
 extern char const __attribute__((weak)) symbol___action_table[] asm("__action_table");
@@ -954,6 +940,10 @@ extern char const __attribute__((weak)) symbol__tzset_unlocked[] asm("_tzset_unl
 extern char const __attribute__((weak)) symbol__tzset_unlocked_r[] asm("_tzset_unlocked_r");
 extern char const __attribute__((weak)) symbol__ungetc_r[] asm("_ungetc_r");
 extern char const __attribute__((weak)) symbol__unlink_r[] asm("_unlink_r");
+extern char const __attribute__((weak)) symbol__usb_utmi_hal_disable[] asm("_usb_utmi_hal_disable");
+extern char const __attribute__((weak)) symbol__usb_utmi_hal_init[] asm("_usb_utmi_hal_init");
+extern char const __attribute__((weak)) symbol__usb_wrap_hal_disable[] asm("_usb_wrap_hal_disable");
+extern char const __attribute__((weak)) symbol__usb_wrap_hal_init[] asm("_usb_wrap_hal_init");
 extern char const __attribute__((weak)) symbol__user_strerror[] asm("_user_strerror");
 extern char const __attribute__((weak)) symbol__vector_table[] asm("_vector_table");
 extern char const __attribute__((weak)) symbol__vfiprintf_r[] asm("_vfiprintf_r");
@@ -1583,6 +1573,13 @@ extern char const __attribute__((weak)) symbol_efuse_hal_flash_encryption_enable
 extern char const __attribute__((weak)) symbol_efuse_hal_get_disable_wafer_version_major[] asm("efuse_hal_get_disable_wafer_version_major");
 extern char const __attribute__((weak)) symbol_efuse_hal_get_major_chip_version[] asm("efuse_hal_get_major_chip_version");
 extern char const __attribute__((weak)) symbol_efuse_hal_get_minor_chip_version[] asm("efuse_hal_get_minor_chip_version");
+extern char const __attribute__((weak)) symbol_enum_cancel[] asm("enum_cancel");
+extern char const __attribute__((weak)) symbol_enum_install[] asm("enum_install");
+extern char const __attribute__((weak)) symbol_enum_proceed[] asm("enum_proceed");
+extern char const __attribute__((weak)) symbol_enum_process[] asm("enum_process");
+extern char const __attribute__((weak)) symbol_enum_stage_strings[] asm("enum_stage_strings");
+extern char const __attribute__((weak)) symbol_enum_start[] asm("enum_start");
+extern char const __attribute__((weak)) symbol_enum_uninstall[] asm("enum_uninstall");
 extern char const __attribute__((weak)) symbol_environ[] asm("environ");
 extern char const __attribute__((weak)) symbol_erf[] asm("erf");
 extern char const __attribute__((weak)) symbol_erfc[] asm("erfc");
@@ -1935,6 +1932,7 @@ extern char const __attribute__((weak)) symbol_esp_rom_gpio_connect_out_signal[]
 extern char const __attribute__((weak)) symbol_esp_rom_gpio_pad_pullup_only[] asm("esp_rom_gpio_pad_pullup_only");
 extern char const __attribute__((weak)) symbol_esp_rom_gpio_pad_select_gpio[] asm("esp_rom_gpio_pad_select_gpio");
 extern char const __attribute__((weak)) symbol_esp_rom_gpio_pad_set_drv[] asm("esp_rom_gpio_pad_set_drv");
+extern char const __attribute__((weak)) symbol_esp_rom_gpio_pad_unhold[] asm("esp_rom_gpio_pad_unhold");
 extern char const __attribute__((weak)) symbol_esp_rom_install_uart_printf[] asm("esp_rom_install_uart_printf");
 extern char const __attribute__((weak)) symbol_esp_rom_km_huk_conf[] asm("esp_rom_km_huk_conf");
 extern char const __attribute__((weak)) symbol_esp_rom_km_huk_risk[] asm("esp_rom_km_huk_risk");
@@ -2181,6 +2179,29 @@ extern char const __attribute__((weak)) symbol_exp2f[] asm("exp2f");
 extern char const __attribute__((weak)) symbol_expf[] asm("expf");
 extern char const __attribute__((weak)) symbol_expm1[] asm("expm1");
 extern char const __attribute__((weak)) symbol_expm1f[] asm("expm1f");
+extern char const __attribute__((weak)) symbol_ext_hub_dev_gone[] asm("ext_hub_dev_gone");
+extern char const __attribute__((weak)) symbol_ext_hub_get_client[] asm("ext_hub_get_client");
+extern char const __attribute__((weak)) symbol_ext_hub_get_handle[] asm("ext_hub_get_handle");
+extern char const __attribute__((weak)) symbol_ext_hub_install[] asm("ext_hub_install");
+extern char const __attribute__((weak)) symbol_ext_hub_mark_all_free[] asm("ext_hub_mark_all_free");
+extern char const __attribute__((weak)) symbol_ext_hub_new_dev[] asm("ext_hub_new_dev");
+extern char const __attribute__((weak)) symbol_ext_hub_port_active[] asm("ext_hub_port_active");
+extern char const __attribute__((weak)) symbol_ext_hub_port_disable[] asm("ext_hub_port_disable");
+extern char const __attribute__((weak)) symbol_ext_hub_port_get_speed[] asm("ext_hub_port_get_speed");
+extern char const __attribute__((weak)) symbol_ext_hub_port_recycle[] asm("ext_hub_port_recycle");
+extern char const __attribute__((weak)) symbol_ext_hub_port_reset[] asm("ext_hub_port_reset");
+extern char const __attribute__((weak)) symbol_ext_hub_process[] asm("ext_hub_process");
+extern char const __attribute__((weak)) symbol_ext_hub_request[] asm("ext_hub_request");
+extern char const __attribute__((weak)) symbol_ext_hub_stage_strings[] asm("ext_hub_stage_strings");
+extern char const __attribute__((weak)) symbol_ext_hub_status_handle_complete[] asm("ext_hub_status_handle_complete");
+extern char const __attribute__((weak)) symbol_ext_hub_uninstall[] asm("ext_hub_uninstall");
+extern char const __attribute__((weak)) symbol_ext_port_driver[] asm("ext_port_driver");
+extern char const __attribute__((weak)) symbol_ext_port_get_context[] asm("ext_port_get_context");
+extern char const __attribute__((weak)) symbol_ext_port_get_driver[] asm("ext_port_get_driver");
+extern char const __attribute__((weak)) symbol_ext_port_get_port_num[] asm("ext_port_get_port_num");
+extern char const __attribute__((weak)) symbol_ext_port_install[] asm("ext_port_install");
+extern char const __attribute__((weak)) symbol_ext_port_process[] asm("ext_port_process");
+extern char const __attribute__((weak)) symbol_ext_port_uninstall[] asm("ext_port_uninstall");
 extern char const __attribute__((weak)) symbol_f_close[] asm("f_close");
 extern char const __attribute__((weak)) symbol_f_closedir[] asm("f_closedir");
 extern char const __attribute__((weak)) symbol_f_fdisk[] asm("f_fdisk");
@@ -2373,6 +2394,14 @@ extern char const __attribute__((weak)) symbol_get_vfs_for_index[] asm("get_vfs_
 extern char const __attribute__((weak)) symbol_get_vfs_for_path[] asm("get_vfs_for_path");
 extern char const __attribute__((weak)) symbol_getenv[] asm("getenv");
 extern char const __attribute__((weak)) symbol_gettimeofday[] asm("gettimeofday");
+extern char const __attribute__((weak)) symbol_gl_hidhost_init[] asm("gl_hidhost_init");
+extern char const __attribute__((weak)) symbol_gl_hidhost_navigation_held[] asm("gl_hidhost_navigation_held");
+extern char const __attribute__((weak)) symbol_gl_hidhost_scancode_held[] asm("gl_hidhost_scancode_held");
+extern char const __attribute__((weak)) symbol_gl_input_get_queue[] asm("gl_input_get_queue");
+extern char const __attribute__((weak)) symbol_gl_input_init[] asm("gl_input_init");
+extern char const __attribute__((weak)) symbol_gl_input_read_action[] asm("gl_input_read_action");
+extern char const __attribute__((weak)) symbol_gl_input_read_navigation_key[] asm("gl_input_read_navigation_key");
+extern char const __attribute__((weak)) symbol_gl_input_read_scancode[] asm("gl_input_read_scancode");
 extern char const __attribute__((weak)) symbol_gmtime[] asm("gmtime");
 extern char const __attribute__((weak)) symbol_gmtime_r[] asm("gmtime_r");
 extern char const __attribute__((weak)) symbol_gpio_bypass_matrix_in[] asm("gpio_bypass_matrix_in");
@@ -2428,6 +2457,26 @@ extern char const __attribute__((weak)) symbol_gpio_uninstall_isr_service[] asm(
 extern char const __attribute__((weak)) symbol_graceloader_get_install_basepath[] asm("graceloader_get_install_basepath");
 extern char const __attribute__((weak)) symbol_hal_utils_calc_clk_div_frac_accurate[] asm("hal_utils_calc_clk_div_frac_accurate");
 extern char const __attribute__((weak)) symbol_hal_utils_calc_clk_div_frac_fast[] asm("hal_utils_calc_clk_div_frac_fast");
+extern char const __attribute__((weak)) symbol_hcd_install[] asm("hcd_install");
+extern char const __attribute__((weak)) symbol_hcd_pipe_alloc[] asm("hcd_pipe_alloc");
+extern char const __attribute__((weak)) symbol_hcd_pipe_command[] asm("hcd_pipe_command");
+extern char const __attribute__((weak)) symbol_hcd_pipe_free[] asm("hcd_pipe_free");
+extern char const __attribute__((weak)) symbol_hcd_pipe_get_context[] asm("hcd_pipe_get_context");
+extern char const __attribute__((weak)) symbol_hcd_pipe_get_mps[] asm("hcd_pipe_get_mps");
+extern char const __attribute__((weak)) symbol_hcd_pipe_get_num_urbs[] asm("hcd_pipe_get_num_urbs");
+extern char const __attribute__((weak)) symbol_hcd_pipe_get_state[] asm("hcd_pipe_get_state");
+extern char const __attribute__((weak)) symbol_hcd_pipe_update_dev_addr[] asm("hcd_pipe_update_dev_addr");
+extern char const __attribute__((weak)) symbol_hcd_pipe_update_mps[] asm("hcd_pipe_update_mps");
+extern char const __attribute__((weak)) symbol_hcd_port_command[] asm("hcd_port_command");
+extern char const __attribute__((weak)) symbol_hcd_port_deinit[] asm("hcd_port_deinit");
+extern char const __attribute__((weak)) symbol_hcd_port_get_speed[] asm("hcd_port_get_speed");
+extern char const __attribute__((weak)) symbol_hcd_port_get_state[] asm("hcd_port_get_state");
+extern char const __attribute__((weak)) symbol_hcd_port_handle_event[] asm("hcd_port_handle_event");
+extern char const __attribute__((weak)) symbol_hcd_port_init[] asm("hcd_port_init");
+extern char const __attribute__((weak)) symbol_hcd_port_recover[] asm("hcd_port_recover");
+extern char const __attribute__((weak)) symbol_hcd_uninstall[] asm("hcd_uninstall");
+extern char const __attribute__((weak)) symbol_hcd_urb_dequeue[] asm("hcd_urb_dequeue");
+extern char const __attribute__((weak)) symbol_hcd_urb_enqueue[] asm("hcd_urb_enqueue");
 extern char const __attribute__((weak)) symbol_hci_drv_init[] asm("hci_drv_init");
 extern char const __attribute__((weak)) symbol_hci_drv_show_configuration[] asm("hci_drv_show_configuration");
 extern char const __attribute__((weak)) symbol_hci_rx_handler[] asm("hci_rx_handler");
@@ -2459,6 +2508,15 @@ extern char const __attribute__((weak)) symbol_heap_info__descriptor[] asm("heap
 extern char const __attribute__((weak)) symbol_heap_info__init[] asm("heap_info__init");
 extern char const __attribute__((weak)) symbol_heap_size_threshold__descriptor[] asm("heap_size_threshold__descriptor");
 extern char const __attribute__((weak)) symbol_heap_size_threshold__init[] asm("heap_size_threshold__init");
+extern char const __attribute__((weak)) symbol_hid_class_request_set_idle[] asm("hid_class_request_set_idle");
+extern char const __attribute__((weak)) symbol_hid_class_request_set_protocol[] asm("hid_class_request_set_protocol");
+extern char const __attribute__((weak)) symbol_hid_host_device_close[] asm("hid_host_device_close");
+extern char const __attribute__((weak)) symbol_hid_host_device_get_params[] asm("hid_host_device_get_params");
+extern char const __attribute__((weak)) symbol_hid_host_device_get_raw_input_report_data[] asm("hid_host_device_get_raw_input_report_data");
+extern char const __attribute__((weak)) symbol_hid_host_device_open[] asm("hid_host_device_open");
+extern char const __attribute__((weak)) symbol_hid_host_device_start[] asm("hid_host_device_start");
+extern char const __attribute__((weak)) symbol_hid_host_handle_events[] asm("hid_host_handle_events");
+extern char const __attribute__((weak)) symbol_hid_host_install[] asm("hid_host_install");
 extern char const __attribute__((weak)) symbol_hosted_calloc[] asm("hosted_calloc");
 extern char const __attribute__((weak)) symbol_hosted_config_gpio[] asm("hosted_config_gpio");
 extern char const __attribute__((weak)) symbol_hosted_config_host_power_save[] asm("hosted_config_host_power_save");
@@ -2521,6 +2579,18 @@ extern char const __attribute__((weak)) symbol_hosted_unlock_mutex[] asm("hosted
 extern char const __attribute__((weak)) symbol_hosted_usleep[] asm("hosted_usleep");
 extern char const __attribute__((weak)) symbol_hosted_wifi_event_post[] asm("hosted_wifi_event_post");
 extern char const __attribute__((weak)) symbol_hosted_write_gpio[] asm("hosted_write_gpio");
+extern char const __attribute__((weak)) symbol_hub_dev_gone[] asm("hub_dev_gone");
+extern char const __attribute__((weak)) symbol_hub_dev_new[] asm("hub_dev_new");
+extern char const __attribute__((weak)) symbol_hub_install[] asm("hub_install");
+extern char const __attribute__((weak)) symbol_hub_notify_all_free[] asm("hub_notify_all_free");
+extern char const __attribute__((weak)) symbol_hub_port_active[] asm("hub_port_active");
+extern char const __attribute__((weak)) symbol_hub_port_disable[] asm("hub_port_disable");
+extern char const __attribute__((weak)) symbol_hub_port_recycle[] asm("hub_port_recycle");
+extern char const __attribute__((weak)) symbol_hub_port_reset[] asm("hub_port_reset");
+extern char const __attribute__((weak)) symbol_hub_process[] asm("hub_process");
+extern char const __attribute__((weak)) symbol_hub_root_start[] asm("hub_root_start");
+extern char const __attribute__((weak)) symbol_hub_root_stop[] asm("hub_root_stop");
+extern char const __attribute__((weak)) symbol_hub_uninstall[] asm("hub_uninstall");
 extern char const __attribute__((weak)) symbol_hypot[] asm("hypot");
 extern char const __attribute__((weak)) symbol_hypotf[] asm("hypotf");
 extern char const __attribute__((weak)) symbol_i2c_acquire_bus_handle[] asm("i2c_acquire_bus_handle");
@@ -2545,12 +2615,24 @@ extern char const __attribute__((weak)) symbol_i2s_alloc_dma_desc[] asm("i2s_all
 extern char const __attribute__((weak)) symbol_i2s_channel_disable[] asm("i2s_channel_disable");
 extern char const __attribute__((weak)) symbol_i2s_channel_enable[] asm("i2s_channel_enable");
 extern char const __attribute__((weak)) symbol_i2s_channel_get_info[] asm("i2s_channel_get_info");
+extern char const __attribute__((weak)) symbol_i2s_channel_init_pdm_rx_mode[] asm("i2s_channel_init_pdm_rx_mode");
+extern char const __attribute__((weak)) symbol_i2s_channel_init_pdm_tx_mode[] asm("i2s_channel_init_pdm_tx_mode");
 extern char const __attribute__((weak)) symbol_i2s_channel_init_std_mode[] asm("i2s_channel_init_std_mode");
+extern char const __attribute__((weak)) symbol_i2s_channel_init_tdm_mode[] asm("i2s_channel_init_tdm_mode");
 extern char const __attribute__((weak)) symbol_i2s_channel_preload_data[] asm("i2s_channel_preload_data");
 extern char const __attribute__((weak)) symbol_i2s_channel_read[] asm("i2s_channel_read");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_pdm_rx_clock[] asm("i2s_channel_reconfig_pdm_rx_clock");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_pdm_rx_gpio[] asm("i2s_channel_reconfig_pdm_rx_gpio");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_pdm_rx_slot[] asm("i2s_channel_reconfig_pdm_rx_slot");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_pdm_tx_clock[] asm("i2s_channel_reconfig_pdm_tx_clock");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_pdm_tx_gpio[] asm("i2s_channel_reconfig_pdm_tx_gpio");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_pdm_tx_slot[] asm("i2s_channel_reconfig_pdm_tx_slot");
 extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_std_clock[] asm("i2s_channel_reconfig_std_clock");
 extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_std_gpio[] asm("i2s_channel_reconfig_std_gpio");
 extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_std_slot[] asm("i2s_channel_reconfig_std_slot");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_tdm_clock[] asm("i2s_channel_reconfig_tdm_clock");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_tdm_gpio[] asm("i2s_channel_reconfig_tdm_gpio");
+extern char const __attribute__((weak)) symbol_i2s_channel_reconfig_tdm_slot[] asm("i2s_channel_reconfig_tdm_slot");
 extern char const __attribute__((weak)) symbol_i2s_channel_register_event_callback[] asm("i2s_channel_register_event_callback");
 extern char const __attribute__((weak)) symbol_i2s_channel_tune_rate[] asm("i2s_channel_tune_rate");
 extern char const __attribute__((weak)) symbol_i2s_channel_write[] asm("i2s_channel_write");
@@ -2571,6 +2653,8 @@ extern char const __attribute__((weak)) symbol_i2s_hal_tdm_set_rx_slot[] asm("i2
 extern char const __attribute__((weak)) symbol_i2s_hal_tdm_set_tx_slot[] asm("i2s_hal_tdm_set_tx_slot");
 extern char const __attribute__((weak)) symbol_i2s_init_dma_intr[] asm("i2s_init_dma_intr");
 extern char const __attribute__((weak)) symbol_i2s_new_channel[] asm("i2s_new_channel");
+extern char const __attribute__((weak)) symbol_i2s_new_etm_event[] asm("i2s_new_etm_event");
+extern char const __attribute__((weak)) symbol_i2s_new_etm_task[] asm("i2s_new_etm_task");
 extern char const __attribute__((weak)) symbol_i2s_output_gpio_reserve[] asm("i2s_output_gpio_reserve");
 extern char const __attribute__((weak)) symbol_i2s_output_gpio_revoke[] asm("i2s_output_gpio_revoke");
 extern char const __attribute__((weak)) symbol_i2s_periph_signal[] asm("i2s_periph_signal");
@@ -2742,7 +2826,22 @@ extern char const __attribute__((weak)) symbol_logf[] asm("logf");
 extern char const __attribute__((weak)) symbol_longjmp[] asm("longjmp");
 extern char const __attribute__((weak)) symbol_lp_gpio_connect_in_signal[] asm("lp_gpio_connect_in_signal");
 extern char const __attribute__((weak)) symbol_lp_gpio_connect_out_signal[] asm("lp_gpio_connect_out_signal");
+extern char const __attribute__((weak)) symbol_lp_i2s_channel_disable[] asm("lp_i2s_channel_disable");
+extern char const __attribute__((weak)) symbol_lp_i2s_channel_enable[] asm("lp_i2s_channel_enable");
+extern char const __attribute__((weak)) symbol_lp_i2s_channel_init_pdm_rx_mode[] asm("lp_i2s_channel_init_pdm_rx_mode");
+extern char const __attribute__((weak)) symbol_lp_i2s_channel_init_std_mode[] asm("lp_i2s_channel_init_std_mode");
+extern char const __attribute__((weak)) symbol_lp_i2s_channel_read[] asm("lp_i2s_channel_read");
+extern char const __attribute__((weak)) symbol_lp_i2s_channel_read_until_bytes[] asm("lp_i2s_channel_read_until_bytes");
+extern char const __attribute__((weak)) symbol_lp_i2s_del_channel[] asm("lp_i2s_del_channel");
+extern char const __attribute__((weak)) symbol_lp_i2s_get_soc_handle[] asm("lp_i2s_get_soc_handle");
+extern char const __attribute__((weak)) symbol_lp_i2s_hal_init[] asm("lp_i2s_hal_init");
+extern char const __attribute__((weak)) symbol_lp_i2s_new_channel[] asm("lp_i2s_new_channel");
 extern char const __attribute__((weak)) symbol_lp_i2s_periph_signal[] asm("lp_i2s_periph_signal");
+extern char const __attribute__((weak)) symbol_lp_i2s_register_event_callbacks[] asm("lp_i2s_register_event_callbacks");
+extern char const __attribute__((weak)) symbol_lp_i2s_vad_del_unit[] asm("lp_i2s_vad_del_unit");
+extern char const __attribute__((weak)) symbol_lp_i2s_vad_disable[] asm("lp_i2s_vad_disable");
+extern char const __attribute__((weak)) symbol_lp_i2s_vad_enable[] asm("lp_i2s_vad_enable");
+extern char const __attribute__((weak)) symbol_lp_i2s_vad_new_unit[] asm("lp_i2s_vad_new_unit");
 extern char const __attribute__((weak)) symbol_lp_timer_hal_get_cycle_count[] asm("lp_timer_hal_get_cycle_count");
 extern char const __attribute__((weak)) symbol_lrint[] asm("lrint");
 extern char const __attribute__((weak)) symbol_lrintf[] asm("lrintf");
@@ -3091,25 +3190,6 @@ extern char const __attribute__((weak)) symbol_nextafter[] asm("nextafter");
 extern char const __attribute__((weak)) symbol_nextafterf[] asm("nextafterf");
 extern char const __attribute__((weak)) symbol_npl_funcs[] asm("npl_funcs");
 extern char const __attribute__((weak)) symbol_num_of_soc_mipi_dsi_phy_pll_ranges[] asm("num_of_soc_mipi_dsi_phy_pll_ranges");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_aes_crypt_ecb[] asm("nvs_bootloader_aes_crypt_ecb");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_aes_crypt_xts[] asm("nvs_bootloader_aes_crypt_xts");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_check_item_header_consistency[] asm("nvs_bootloader_check_item_header_consistency");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_check_parameters[] asm("nvs_bootloader_check_parameters");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_page_visitor_get_key_value_pairs[] asm("nvs_bootloader_page_visitor_get_key_value_pairs");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_page_visitor_get_namespaces[] asm("nvs_bootloader_page_visitor_get_namespaces");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_page_visitor_get_page_states[] asm("nvs_bootloader_page_visitor_get_page_states");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_read[] asm("nvs_bootloader_read");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_read_entries_block[] asm("nvs_bootloader_read_entries_block");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_read_next_single_entry_item[] asm("nvs_bootloader_read_next_single_entry_item");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_read_page_entry_states[] asm("nvs_bootloader_read_page_entry_states");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_read_page_header[] asm("nvs_bootloader_read_page_header");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_read_security_cfg[] asm("nvs_bootloader_read_security_cfg");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_secure_deinit[] asm("nvs_bootloader_secure_deinit");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_secure_init[] asm("nvs_bootloader_secure_init");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_visit_pages[] asm("nvs_bootloader_visit_pages");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_xts_aes_free[] asm("nvs_bootloader_xts_aes_free");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_xts_aes_init[] asm("nvs_bootloader_xts_aes_init");
-extern char const __attribute__((weak)) symbol_nvs_bootloader_xts_aes_setkey[] asm("nvs_bootloader_xts_aes_setkey");
 extern char const __attribute__((weak)) symbol_nvs_close[] asm("nvs_close");
 extern char const __attribute__((weak)) symbol_nvs_commit[] asm("nvs_commit");
 extern char const __attribute__((weak)) symbol_nvs_dump[] asm("nvs_dump");
@@ -3394,30 +3474,6 @@ extern char const __attribute__((weak)) symbol_pax_mark_clean[] asm("pax_mark_cl
 extern char const __attribute__((weak)) symbol_pax_mark_dirty0[] asm("pax_mark_dirty0");
 extern char const __attribute__((weak)) symbol_pax_mark_dirty1[] asm("pax_mark_dirty1");
 extern char const __attribute__((weak)) symbol_pax_mark_dirty2[] asm("pax_mark_dirty2");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_blit[] asm("pax_mcrw0_blit");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_blit_char[] asm("pax_mcrw0_blit_char");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_blit_raw[] asm("pax_mcrw0_blit_raw");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_shaded_line[] asm("pax_mcrw0_shaded_line");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_shaded_quad[] asm("pax_mcrw0_shaded_quad");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_shaded_rect[] asm("pax_mcrw0_shaded_rect");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_shaded_tri[] asm("pax_mcrw0_shaded_tri");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_sprite[] asm("pax_mcrw0_sprite");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_unshaded_line[] asm("pax_mcrw0_unshaded_line");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_unshaded_quad[] asm("pax_mcrw0_unshaded_quad");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_unshaded_rect[] asm("pax_mcrw0_unshaded_rect");
-extern char const __attribute__((weak)) symbol_pax_mcrw0_unshaded_tri[] asm("pax_mcrw0_unshaded_tri");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_blit[] asm("pax_mcrw1_blit");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_blit_char[] asm("pax_mcrw1_blit_char");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_blit_raw[] asm("pax_mcrw1_blit_raw");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_shaded_line[] asm("pax_mcrw1_shaded_line");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_shaded_quad[] asm("pax_mcrw1_shaded_quad");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_shaded_rect[] asm("pax_mcrw1_shaded_rect");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_shaded_tri[] asm("pax_mcrw1_shaded_tri");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_sprite[] asm("pax_mcrw1_sprite");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_unshaded_line[] asm("pax_mcrw1_unshaded_line");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_unshaded_quad[] asm("pax_mcrw1_unshaded_quad");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_unshaded_rect[] asm("pax_mcrw1_unshaded_rect");
-extern char const __attribute__((weak)) symbol_pax_mcrw1_unshaded_tri[] asm("pax_mcrw1_unshaded_tri");
 extern char const __attribute__((weak)) symbol_pax_merge_index[] asm("pax_merge_index");
 extern char const __attribute__((weak)) symbol_pax_merge_pixel[] asm("pax_merge_pixel");
 extern char const __attribute__((weak)) symbol_pax_n_fonts[] asm("pax_n_fonts");
@@ -3481,27 +3537,8 @@ extern char const __attribute__((weak)) symbol_pax_rectf_intersect[] asm("pax_re
 extern char const __attribute__((weak)) symbol_pax_recti_abs[] asm("pax_recti_abs");
 extern char const __attribute__((weak)) symbol_pax_recti_intersect[] asm("pax_recti_intersect");
 extern char const __attribute__((weak)) symbol_pax_render_engine_soft[] asm("pax_render_engine_soft");
-extern char const __attribute__((weak)) symbol_pax_render_engine_softasync[] asm("pax_render_engine_softasync");
-extern char const __attribute__((weak)) symbol_pax_render_funcs_mcr_thread0[] asm("pax_render_funcs_mcr_thread0");
-extern char const __attribute__((weak)) symbol_pax_render_funcs_mcr_thread1[] asm("pax_render_funcs_mcr_thread1");
 extern char const __attribute__((weak)) symbol_pax_render_funcs_soft[] asm("pax_render_funcs_soft");
-extern char const __attribute__((weak)) symbol_pax_render_funcs_softasync[] asm("pax_render_funcs_softasync");
 extern char const __attribute__((weak)) symbol_pax_reset_2d[] asm("pax_reset_2d");
-extern char const __attribute__((weak)) symbol_pax_sasr_blit[] asm("pax_sasr_blit");
-extern char const __attribute__((weak)) symbol_pax_sasr_blit_char[] asm("pax_sasr_blit_char");
-extern char const __attribute__((weak)) symbol_pax_sasr_blit_char_impl[] asm("pax_sasr_blit_char_impl");
-extern char const __attribute__((weak)) symbol_pax_sasr_blit_raw[] asm("pax_sasr_blit_raw");
-extern char const __attribute__((weak)) symbol_pax_sasr_join[] asm("pax_sasr_join");
-extern char const __attribute__((weak)) symbol_pax_sasr_shaded_line[] asm("pax_sasr_shaded_line");
-extern char const __attribute__((weak)) symbol_pax_sasr_shaded_quad[] asm("pax_sasr_shaded_quad");
-extern char const __attribute__((weak)) symbol_pax_sasr_shaded_rect[] asm("pax_sasr_shaded_rect");
-extern char const __attribute__((weak)) symbol_pax_sasr_shaded_tri[] asm("pax_sasr_shaded_tri");
-extern char const __attribute__((weak)) symbol_pax_sasr_sprite[] asm("pax_sasr_sprite");
-extern char const __attribute__((weak)) symbol_pax_sasr_unshaded_line[] asm("pax_sasr_unshaded_line");
-extern char const __attribute__((weak)) symbol_pax_sasr_unshaded_quad[] asm("pax_sasr_unshaded_quad");
-extern char const __attribute__((weak)) symbol_pax_sasr_unshaded_rect[] asm("pax_sasr_unshaded_rect");
-extern char const __attribute__((weak)) symbol_pax_sasr_unshaded_tri[] asm("pax_sasr_unshaded_tri");
-extern char const __attribute__((weak)) symbol_pax_sasr_worker[] asm("pax_sasr_worker");
 extern char const __attribute__((weak)) symbol_pax_set_err[] asm("pax_set_err");
 extern char const __attribute__((weak)) symbol_pax_set_index[] asm("pax_set_index");
 extern char const __attribute__((weak)) symbol_pax_set_index_conv[] asm("pax_set_index_conv");
@@ -3509,7 +3546,6 @@ extern char const __attribute__((weak)) symbol_pax_set_pixel[] asm("pax_set_pixe
 extern char const __attribute__((weak)) symbol_pax_set_pixel_raw[] asm("pax_set_pixel_raw");
 extern char const __attribute__((weak)) symbol_pax_set_render_engine_default[] asm("pax_set_render_engine_default");
 extern char const __attribute__((weak)) symbol_pax_set_renderer[] asm("pax_set_renderer");
-extern char const __attribute__((weak)) symbol_pax_set_renderer_async[] asm("pax_set_renderer_async");
 extern char const __attribute__((weak)) symbol_pax_shade_arc[] asm("pax_shade_arc");
 extern char const __attribute__((weak)) symbol_pax_shade_circle[] asm("pax_shade_circle");
 extern char const __attribute__((weak)) symbol_pax_shade_line[] asm("pax_shade_line");
@@ -3570,15 +3606,6 @@ extern char const __attribute__((weak)) symbol_pax_vectorise_arc[] asm("pax_vect
 extern char const __attribute__((weak)) symbol_pax_vectorise_bezier[] asm("pax_vectorise_bezier");
 extern char const __attribute__((weak)) symbol_pax_vectorise_bezier_part[] asm("pax_vectorise_bezier_part");
 extern char const __attribute__((weak)) symbol_pax_vectorise_circle[] asm("pax_vectorise_circle");
-extern char const __attribute__((weak)) symbol_paxmcr_line_shaded[] asm("paxmcr_line_shaded");
-extern char const __attribute__((weak)) symbol_paxmcr_line_unshaded[] asm("paxmcr_line_unshaded");
-extern char const __attribute__((weak)) symbol_paxmcr_overlay_buffer[] asm("paxmcr_overlay_buffer");
-extern char const __attribute__((weak)) symbol_paxmcr_quad_shaded[] asm("paxmcr_quad_shaded");
-extern char const __attribute__((weak)) symbol_paxmcr_quad_unshaded[] asm("paxmcr_quad_unshaded");
-extern char const __attribute__((weak)) symbol_paxmcr_rect_shaded[] asm("paxmcr_rect_shaded");
-extern char const __attribute__((weak)) symbol_paxmcr_rect_unshaded[] asm("paxmcr_rect_unshaded");
-extern char const __attribute__((weak)) symbol_paxmcr_tri_shaded[] asm("paxmcr_tri_shaded");
-extern char const __attribute__((weak)) symbol_paxmcr_tri_unshaded[] asm("paxmcr_tri_unshaded");
 extern char const __attribute__((weak)) symbol_pbuf_add_header[] asm("pbuf_add_header");
 extern char const __attribute__((weak)) symbol_pbuf_add_header_force[] asm("pbuf_add_header_force");
 extern char const __attribute__((weak)) symbol_pbuf_alloc[] asm("pbuf_alloc");
@@ -3622,136 +3649,6 @@ extern char const __attribute__((weak)) symbol_permanentmarker_r2_dims[] asm("pe
 extern char const __attribute__((weak)) symbol_permanentmarker_r2_len[] asm("permanentmarker_r2_len");
 extern char const __attribute__((weak)) symbol_permanentmarker_ranges[] asm("permanentmarker_ranges");
 extern char const __attribute__((weak)) symbol_permanentmarker_ranges_len[] asm("permanentmarker_ranges_len");
-extern char const __attribute__((weak)) symbol_pgui_adjust_scroll[] asm("pgui_adjust_scroll");
-extern char const __attribute__((weak)) symbol_pgui_adjust_scroll_2d[] asm("pgui_adjust_scroll_2d");
-extern char const __attribute__((weak)) symbol_pgui_calc1_button[] asm("pgui_calc1_button");
-extern char const __attribute__((weak)) symbol_pgui_calc1_dropdown[] asm("pgui_calc1_dropdown");
-extern char const __attribute__((weak)) symbol_pgui_calc1_grid[] asm("pgui_calc1_grid");
-extern char const __attribute__((weak)) symbol_pgui_calc1_image[] asm("pgui_calc1_image");
-extern char const __attribute__((weak)) symbol_pgui_calc1_text[] asm("pgui_calc1_text");
-extern char const __attribute__((weak)) symbol_pgui_calc2_dropdown[] asm("pgui_calc2_dropdown");
-extern char const __attribute__((weak)) symbol_pgui_calc2_grid[] asm("pgui_calc2_grid");
-extern char const __attribute__((weak)) symbol_pgui_calc2_overlay[] asm("pgui_calc2_overlay");
-extern char const __attribute__((weak)) symbol_pgui_calc2_textbox[] asm("pgui_calc2_textbox");
-extern char const __attribute__((weak)) symbol_pgui_calc_layout[] asm("pgui_calc_layout");
-extern char const __attribute__((weak)) symbol_pgui_child_append[] asm("pgui_child_append");
-extern char const __attribute__((weak)) symbol_pgui_child_dropdown[] asm("pgui_child_dropdown");
-extern char const __attribute__((weak)) symbol_pgui_child_get[] asm("pgui_child_get");
-extern char const __attribute__((weak)) symbol_pgui_child_grid[] asm("pgui_child_grid");
-extern char const __attribute__((weak)) symbol_pgui_child_insert[] asm("pgui_child_insert");
-extern char const __attribute__((weak)) symbol_pgui_child_remove_i[] asm("pgui_child_remove_i");
-extern char const __attribute__((weak)) symbol_pgui_child_remove_p[] asm("pgui_child_remove_p");
-extern char const __attribute__((weak)) symbol_pgui_child_replace[] asm("pgui_child_replace");
-extern char const __attribute__((weak)) symbol_pgui_clip_dropdown[] asm("pgui_clip_dropdown");
-extern char const __attribute__((weak)) symbol_pgui_del_grid[] asm("pgui_del_grid");
-extern char const __attribute__((weak)) symbol_pgui_del_image[] asm("pgui_del_image");
-extern char const __attribute__((weak)) symbol_pgui_del_overrides[] asm("pgui_del_overrides");
-extern char const __attribute__((weak)) symbol_pgui_del_text[] asm("pgui_del_text");
-extern char const __attribute__((weak)) symbol_pgui_delete[] asm("pgui_delete");
-extern char const __attribute__((weak)) symbol_pgui_delete_recursive[] asm("pgui_delete_recursive");
-extern char const __attribute__((weak)) symbol_pgui_disable_flags[] asm("pgui_disable_flags");
-extern char const __attribute__((weak)) symbol_pgui_draw[] asm("pgui_draw");
-extern char const __attribute__((weak)) symbol_pgui_draw_dropdown[] asm("pgui_draw_dropdown");
-extern char const __attribute__((weak)) symbol_pgui_draw_grid[] asm("pgui_draw_grid");
-extern char const __attribute__((weak)) symbol_pgui_draw_image[] asm("pgui_draw_image");
-extern char const __attribute__((weak)) symbol_pgui_draw_text[] asm("pgui_draw_text");
-extern char const __attribute__((weak)) symbol_pgui_draw_textbox[] asm("pgui_draw_textbox");
-extern char const __attribute__((weak)) symbol_pgui_drawutil_base[] asm("pgui_drawutil_base");
-extern char const __attribute__((weak)) symbol_pgui_drawutil_border[] asm("pgui_drawutil_border");
-extern char const __attribute__((weak)) symbol_pgui_drawutil_getcursor[] asm("pgui_drawutil_getcursor");
-extern char const __attribute__((weak)) symbol_pgui_drawutil_scrollbar[] asm("pgui_drawutil_scrollbar");
-extern char const __attribute__((weak)) symbol_pgui_drawutil_text[] asm("pgui_drawutil_text");
-extern char const __attribute__((weak)) symbol_pgui_drawutil_textbox[] asm("pgui_drawutil_textbox");
-extern char const __attribute__((weak)) symbol_pgui_effective_dd_prop[] asm("pgui_effective_dd_prop");
-extern char const __attribute__((weak)) symbol_pgui_effective_dims[] asm("pgui_effective_dims");
-extern char const __attribute__((weak)) symbol_pgui_effective_font[] asm("pgui_effective_font");
-extern char const __attribute__((weak)) symbol_pgui_effective_font_size[] asm("pgui_effective_font_size");
-extern char const __attribute__((weak)) symbol_pgui_effective_padding[] asm("pgui_effective_padding");
-extern char const __attribute__((weak)) symbol_pgui_effective_palette[] asm("pgui_effective_palette");
-extern char const __attribute__((weak)) symbol_pgui_effective_scroll[] asm("pgui_effective_scroll");
-extern char const __attribute__((weak)) symbol_pgui_enable_flags[] asm("pgui_enable_flags");
-extern char const __attribute__((weak)) symbol_pgui_event[] asm("pgui_event");
-extern char const __attribute__((weak)) symbol_pgui_event_button[] asm("pgui_event_button");
-extern char const __attribute__((weak)) symbol_pgui_event_dropdown[] asm("pgui_event_dropdown");
-extern char const __attribute__((weak)) symbol_pgui_event_grid[] asm("pgui_event_grid");
-extern char const __attribute__((weak)) symbol_pgui_event_textbox[] asm("pgui_event_textbox");
-extern char const __attribute__((weak)) symbol_pgui_get_callback[] asm("pgui_get_callback");
-extern char const __attribute__((weak)) symbol_pgui_get_col_growable[] asm("pgui_get_col_growable");
-extern char const __attribute__((weak)) symbol_pgui_get_default_theme[] asm("pgui_get_default_theme");
-extern char const __attribute__((weak)) symbol_pgui_get_flags[] asm("pgui_get_flags");
-extern char const __attribute__((weak)) symbol_pgui_get_halign[] asm("pgui_get_halign");
-extern char const __attribute__((weak)) symbol_pgui_get_pos[] asm("pgui_get_pos");
-extern char const __attribute__((weak)) symbol_pgui_get_row_growable[] asm("pgui_get_row_growable");
-extern char const __attribute__((weak)) symbol_pgui_get_selection[] asm("pgui_get_selection");
-extern char const __attribute__((weak)) symbol_pgui_get_size[] asm("pgui_get_size");
-extern char const __attribute__((weak)) symbol_pgui_get_text[] asm("pgui_get_text");
-extern char const __attribute__((weak)) symbol_pgui_get_userdata[] asm("pgui_get_userdata");
-extern char const __attribute__((weak)) symbol_pgui_get_valign[] asm("pgui_get_valign");
-extern char const __attribute__((weak)) symbol_pgui_get_variant[] asm("pgui_get_variant");
-extern char const __attribute__((weak)) symbol_pgui_grid_custominit[] asm("pgui_grid_custominit");
-extern char const __attribute__((weak)) symbol_pgui_new_box[] asm("pgui_new_box");
-extern char const __attribute__((weak)) symbol_pgui_new_button[] asm("pgui_new_button");
-extern char const __attribute__((weak)) symbol_pgui_new_custom[] asm("pgui_new_custom");
-extern char const __attribute__((weak)) symbol_pgui_new_dropdown[] asm("pgui_new_dropdown");
-extern char const __attribute__((weak)) symbol_pgui_new_grid[] asm("pgui_new_grid");
-extern char const __attribute__((weak)) symbol_pgui_new_image[] asm("pgui_new_image");
-extern char const __attribute__((weak)) symbol_pgui_new_overlay[] asm("pgui_new_overlay");
-extern char const __attribute__((weak)) symbol_pgui_new_text[] asm("pgui_new_text");
-extern char const __attribute__((weak)) symbol_pgui_new_textbox[] asm("pgui_new_textbox");
-extern char const __attribute__((weak)) symbol_pgui_override_dd_prop[] asm("pgui_override_dd_prop");
-extern char const __attribute__((weak)) symbol_pgui_override_dims[] asm("pgui_override_dims");
-extern char const __attribute__((weak)) symbol_pgui_override_font[] asm("pgui_override_font");
-extern char const __attribute__((weak)) symbol_pgui_override_font_size[] asm("pgui_override_font_size");
-extern char const __attribute__((weak)) symbol_pgui_override_padding1[] asm("pgui_override_padding1");
-extern char const __attribute__((weak)) symbol_pgui_override_padding4[] asm("pgui_override_padding4");
-extern char const __attribute__((weak)) symbol_pgui_override_palette[] asm("pgui_override_palette");
-extern char const __attribute__((weak)) symbol_pgui_override_scroll[] asm("pgui_override_scroll");
-extern char const __attribute__((weak)) symbol_pgui_override_theme[] asm("pgui_override_theme");
-extern char const __attribute__((weak)) symbol_pgui_print_debug_info[] asm("pgui_print_debug_info");
-extern char const __attribute__((weak)) symbol_pgui_print_debug_info_recursive[] asm("pgui_print_debug_info_recursive");
-extern char const __attribute__((weak)) symbol_pgui_redraw[] asm("pgui_redraw");
-extern char const __attribute__((weak)) symbol_pgui_run_callback[] asm("pgui_run_callback");
-extern char const __attribute__((weak)) symbol_pgui_set_callback[] asm("pgui_set_callback");
-extern char const __attribute__((weak)) symbol_pgui_set_col_growable[] asm("pgui_set_col_growable");
-extern char const __attribute__((weak)) symbol_pgui_set_flags[] asm("pgui_set_flags");
-extern char const __attribute__((weak)) symbol_pgui_set_halign[] asm("pgui_set_halign");
-extern char const __attribute__((weak)) symbol_pgui_set_pos[] asm("pgui_set_pos");
-extern char const __attribute__((weak)) symbol_pgui_set_row_growable[] asm("pgui_set_row_growable");
-extern char const __attribute__((weak)) symbol_pgui_set_selection[] asm("pgui_set_selection");
-extern char const __attribute__((weak)) symbol_pgui_set_size[] asm("pgui_set_size");
-extern char const __attribute__((weak)) symbol_pgui_set_text[] asm("pgui_set_text");
-extern char const __attribute__((weak)) symbol_pgui_set_userdata[] asm("pgui_set_userdata");
-extern char const __attribute__((weak)) symbol_pgui_set_valign[] asm("pgui_set_valign");
-extern char const __attribute__((weak)) symbol_pgui_set_variant[] asm("pgui_set_variant");
-extern char const __attribute__((weak)) symbol_pgui_text_ctrl_left[] asm("pgui_text_ctrl_left");
-extern char const __attribute__((weak)) symbol_pgui_text_ctrl_right[] asm("pgui_text_ctrl_right");
-extern char const __attribute__((weak)) symbol_pgui_theme_light[] asm("pgui_theme_light");
-extern char const __attribute__((weak)) symbol_pgui_type_box[] asm("pgui_type_box");
-extern char const __attribute__((weak)) symbol_pgui_type_button[] asm("pgui_type_button");
-extern char const __attribute__((weak)) symbol_pgui_type_create[] asm("pgui_type_create");
-extern char const __attribute__((weak)) symbol_pgui_type_dropdown[] asm("pgui_type_dropdown");
-extern char const __attribute__((weak)) symbol_pgui_type_get[] asm("pgui_type_get");
-extern char const __attribute__((weak)) symbol_pgui_type_get_attr[] asm("pgui_type_get_attr");
-extern char const __attribute__((weak)) symbol_pgui_type_get_calc1[] asm("pgui_type_get_calc1");
-extern char const __attribute__((weak)) symbol_pgui_type_get_calc2[] asm("pgui_type_get_calc2");
-extern char const __attribute__((weak)) symbol_pgui_type_get_child[] asm("pgui_type_get_child");
-extern char const __attribute__((weak)) symbol_pgui_type_get_clip[] asm("pgui_type_get_clip");
-extern char const __attribute__((weak)) symbol_pgui_type_get_del[] asm("pgui_type_get_del");
-extern char const __attribute__((weak)) symbol_pgui_type_get_draw[] asm("pgui_type_get_draw");
-extern char const __attribute__((weak)) symbol_pgui_type_get_event[] asm("pgui_type_get_event");
-extern char const __attribute__((weak)) symbol_pgui_type_grid[] asm("pgui_type_grid");
-extern char const __attribute__((weak)) symbol_pgui_type_image[] asm("pgui_type_image");
-extern char const __attribute__((weak)) symbol_pgui_type_overlay[] asm("pgui_type_overlay");
-extern char const __attribute__((weak)) symbol_pgui_type_set_attr[] asm("pgui_type_set_attr");
-extern char const __attribute__((weak)) symbol_pgui_type_set_calc1[] asm("pgui_type_set_calc1");
-extern char const __attribute__((weak)) symbol_pgui_type_set_calc2[] asm("pgui_type_set_calc2");
-extern char const __attribute__((weak)) symbol_pgui_type_set_child[] asm("pgui_type_set_child");
-extern char const __attribute__((weak)) symbol_pgui_type_set_clip[] asm("pgui_type_set_clip");
-extern char const __attribute__((weak)) symbol_pgui_type_set_del[] asm("pgui_type_set_del");
-extern char const __attribute__((weak)) symbol_pgui_type_set_draw[] asm("pgui_type_set_draw");
-extern char const __attribute__((weak)) symbol_pgui_type_set_event[] asm("pgui_type_set_event");
-extern char const __attribute__((weak)) symbol_pgui_type_text[] asm("pgui_type_text");
-extern char const __attribute__((weak)) symbol_pgui_type_textbox[] asm("pgui_type_textbox");
 extern char const __attribute__((weak)) symbol_pmu_enable_unhold_pads[] asm("pmu_enable_unhold_pads");
 extern char const __attribute__((weak)) symbol_pmu_hal_hp_set_sleep_active_backup_disable[] asm("pmu_hal_hp_set_sleep_active_backup_disable");
 extern char const __attribute__((weak)) symbol_pmu_hal_hp_set_sleep_active_backup_enable[] asm("pmu_hal_hp_set_sleep_active_backup_enable");
@@ -3767,6 +3664,7 @@ extern char const __attribute__((weak)) symbol_pmu_lp_system_init[] asm("pmu_lp_
 extern char const __attribute__((weak)) symbol_pmu_lp_system_power_param_default[] asm("pmu_lp_system_power_param_default");
 extern char const __attribute__((weak)) symbol_pmu_sleep_disable_regdma_backup[] asm("pmu_sleep_disable_regdma_backup");
 extern char const __attribute__((weak)) symbol_pmu_sleep_enable_regdma_backup[] asm("pmu_sleep_enable_regdma_backup");
+extern char const __attribute__((weak)) symbol_port_get_speed[] asm("port_get_speed");
 extern char const __attribute__((weak)) symbol_port_uxCoprocOwner[] asm("port_uxCoprocOwner");
 extern char const __attribute__((weak)) symbol_port_uxCriticalNesting[] asm("port_uxCriticalNesting");
 extern char const __attribute__((weak)) symbol_port_uxInterruptNesting[] asm("port_uxInterruptNesting");
@@ -3858,15 +3756,6 @@ extern char const __attribute__((weak)) symbol_pthread_self[] asm("pthread_self"
 extern char const __attribute__((weak)) symbol_pthread_setcancelstate[] asm("pthread_setcancelstate");
 extern char const __attribute__((weak)) symbol_pthread_setschedparam[] asm("pthread_setschedparam");
 extern char const __attribute__((weak)) symbol_pthread_setspecific[] asm("pthread_setspecific");
-extern char const __attribute__((weak)) symbol_ptq_create[] asm("ptq_create");
-extern char const __attribute__((weak)) symbol_ptq_create_max[] asm("ptq_create_max");
-extern char const __attribute__((weak)) symbol_ptq_destroy[] asm("ptq_destroy");
-extern char const __attribute__((weak)) symbol_ptq_get_length[] asm("ptq_get_length");
-extern char const __attribute__((weak)) symbol_ptq_join[] asm("ptq_join");
-extern char const __attribute__((weak)) symbol_ptq_receive_block[] asm("ptq_receive_block");
-extern char const __attribute__((weak)) symbol_ptq_receive_nonblock[] asm("ptq_receive_nonblock");
-extern char const __attribute__((weak)) symbol_ptq_send_block[] asm("ptq_send_block");
-extern char const __attribute__((weak)) symbol_ptq_send_nonblock[] asm("ptq_send_nonblock");
 extern char const __attribute__((weak)) symbol_put_le16[] asm("put_le16");
 extern char const __attribute__((weak)) symbol_put_le32[] asm("put_le32");
 extern char const __attribute__((weak)) symbol_putc[] asm("putc");
@@ -4717,6 +4606,7 @@ extern char const __attribute__((weak)) symbol_sleep_retention_entries_create[] 
 extern char const __attribute__((weak)) symbol_sleep_retention_get_created_modules[] asm("sleep_retention_get_created_modules");
 extern char const __attribute__((weak)) symbol_sleep_retention_get_inited_modules[] asm("sleep_retention_get_inited_modules");
 extern char const __attribute__((weak)) symbol_sleep_retention_module_init[] asm("sleep_retention_module_init");
+extern char const __attribute__((weak)) symbol_sleep_usb_suppress_deepsleep_leakage[] asm("sleep_usb_suppress_deepsleep_leakage");
 extern char const __attribute__((weak)) symbol_sniprintf[] asm("sniprintf");
 extern char const __attribute__((weak)) symbol_snprintf[] asm("snprintf");
 extern char const __attribute__((weak)) symbol_soc_get_available_memory_region_max_count[] asm("soc_get_available_memory_region_max_count");
@@ -5166,6 +5056,8 @@ extern char const __attribute__((weak)) symbol_udp_pcbs[] asm("udp_pcbs");
 extern char const __attribute__((weak)) symbol_udp_remove[] asm("udp_remove");
 extern char const __attribute__((weak)) symbol_ulTaskGenericNotifyTake[] asm("ulTaskGenericNotifyTake");
 extern char const __attribute__((weak)) symbol_ungetc[] asm("ungetc");
+extern char const __attribute__((weak)) symbol_urb_alloc[] asm("urb_alloc");
+extern char const __attribute__((weak)) symbol_urb_free[] asm("urb_free");
 extern char const __attribute__((weak)) symbol_usb_cancel_transfer[] asm("usb_cancel_transfer");
 extern char const __attribute__((weak)) symbol_usb_dc_attach[] asm("usb_dc_attach");
 extern char const __attribute__((weak)) symbol_usb_dc_check_poll_for_interrupts[] asm("usb_dc_check_poll_for_interrupts");
@@ -5191,6 +5083,7 @@ extern char const __attribute__((weak)) symbol_usb_dc_reset[] asm("usb_dc_reset"
 extern char const __attribute__((weak)) symbol_usb_dc_set_address[] asm("usb_dc_set_address");
 extern char const __attribute__((weak)) symbol_usb_dc_set_status_callback[] asm("usb_dc_set_status_callback");
 extern char const __attribute__((weak)) symbol_usb_deconfig[] asm("usb_deconfig");
+extern char const __attribute__((weak)) symbol_usb_del_phy[] asm("usb_del_phy");
 extern char const __attribute__((weak)) symbol_usb_dev_deinit[] asm("usb_dev_deinit");
 extern char const __attribute__((weak)) symbol_usb_dev_get_configuration[] asm("usb_dev_get_configuration");
 extern char const __attribute__((weak)) symbol_usb_dev_resume[] asm("usb_dev_resume");
@@ -5200,12 +5093,55 @@ extern char const __attribute__((weak)) symbol_usb_dfu_set_detach_cb[] asm("usb_
 extern char const __attribute__((weak)) symbol_usb_disable[] asm("usb_disable");
 extern char const __attribute__((weak)) symbol_usb_dw_ctrl_deinit[] asm("usb_dw_ctrl_deinit");
 extern char const __attribute__((weak)) symbol_usb_dw_isr_handler[] asm("usb_dw_isr_handler");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_chan_activate[] asm("usb_dwc_hal_chan_activate");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_chan_alloc[] asm("usb_dwc_hal_chan_alloc");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_chan_decode_intr[] asm("usb_dwc_hal_chan_decode_intr");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_chan_free[] asm("usb_dwc_hal_chan_free");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_chan_request_halt[] asm("usb_dwc_hal_chan_request_halt");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_chan_set_ep_char[] asm("usb_dwc_hal_chan_set_ep_char");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_core_soft_reset[] asm("usb_dwc_hal_core_soft_reset");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_decode_intr[] asm("usb_dwc_hal_decode_intr");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_deinit[] asm("usb_dwc_hal_deinit");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_fifo_config_is_valid[] asm("usb_dwc_hal_fifo_config_is_valid");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_get_chan_pending_intr[] asm("usb_dwc_hal_get_chan_pending_intr");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_get_mps_limits[] asm("usb_dwc_hal_get_mps_limits");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_init[] asm("usb_dwc_hal_init");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_port_enable[] asm("usb_dwc_hal_port_enable");
+extern char const __attribute__((weak)) symbol_usb_dwc_hal_set_fifo_config[] asm("usb_dwc_hal_set_fifo_config");
+extern char const __attribute__((weak)) symbol_usb_dwc_info[] asm("usb_dwc_info");
 extern char const __attribute__((weak)) symbol_usb_enable[] asm("usb_enable");
 extern char const __attribute__((weak)) symbol_usb_ep_clear_stall[] asm("usb_ep_clear_stall");
 extern char const __attribute__((weak)) symbol_usb_ep_read_continue[] asm("usb_ep_read_continue");
 extern char const __attribute__((weak)) symbol_usb_ep_read_wait[] asm("usb_ep_read_wait");
 extern char const __attribute__((weak)) symbol_usb_ep_set_stall[] asm("usb_ep_set_stall");
 extern char const __attribute__((weak)) symbol_usb_get_descriptor[] asm("usb_get_descriptor");
+extern char const __attribute__((weak)) symbol_usb_host_client_deregister[] asm("usb_host_client_deregister");
+extern char const __attribute__((weak)) symbol_usb_host_client_handle_events[] asm("usb_host_client_handle_events");
+extern char const __attribute__((weak)) symbol_usb_host_client_register[] asm("usb_host_client_register");
+extern char const __attribute__((weak)) symbol_usb_host_device_close[] asm("usb_host_device_close");
+extern char const __attribute__((weak)) symbol_usb_host_device_free_all[] asm("usb_host_device_free_all");
+extern char const __attribute__((weak)) symbol_usb_host_device_open[] asm("usb_host_device_open");
+extern char const __attribute__((weak)) symbol_usb_host_endpoint_clear[] asm("usb_host_endpoint_clear");
+extern char const __attribute__((weak)) symbol_usb_host_endpoint_flush[] asm("usb_host_endpoint_flush");
+extern char const __attribute__((weak)) symbol_usb_host_endpoint_halt[] asm("usb_host_endpoint_halt");
+extern char const __attribute__((weak)) symbol_usb_host_get_active_config_descriptor[] asm("usb_host_get_active_config_descriptor");
+extern char const __attribute__((weak)) symbol_usb_host_install[] asm("usb_host_install");
+extern char const __attribute__((weak)) symbol_usb_host_interface_claim[] asm("usb_host_interface_claim");
+extern char const __attribute__((weak)) symbol_usb_host_interface_release[] asm("usb_host_interface_release");
+extern char const __attribute__((weak)) symbol_usb_host_lib_handle_events[] asm("usb_host_lib_handle_events");
+extern char const __attribute__((weak)) symbol_usb_host_transfer_alloc[] asm("usb_host_transfer_alloc");
+extern char const __attribute__((weak)) symbol_usb_host_transfer_free[] asm("usb_host_transfer_free");
+extern char const __attribute__((weak)) symbol_usb_host_transfer_submit[] asm("usb_host_transfer_submit");
+extern char const __attribute__((weak)) symbol_usb_host_transfer_submit_control[] asm("usb_host_transfer_submit_control");
+extern char const __attribute__((weak)) symbol_usb_host_uninstall[] asm("usb_host_uninstall");
+extern char const __attribute__((weak)) symbol_usb_new_phy[] asm("usb_new_phy");
+extern char const __attribute__((weak)) symbol_usb_parse_endpoint_descriptor_by_address[] asm("usb_parse_endpoint_descriptor_by_address");
+extern char const __attribute__((weak)) symbol_usb_parse_endpoint_descriptor_by_index[] asm("usb_parse_endpoint_descriptor_by_index");
+extern char const __attribute__((weak)) symbol_usb_parse_interface_descriptor[] asm("usb_parse_interface_descriptor");
+extern char const __attribute__((weak)) symbol_usb_parse_next_descriptor[] asm("usb_parse_next_descriptor");
+extern char const __attribute__((weak)) symbol_usb_parse_next_descriptor_of_type[] asm("usb_parse_next_descriptor_of_type");
+extern char const __attribute__((weak)) symbol_usb_phy_get_phy_status[] asm("usb_phy_get_phy_status");
+extern char const __attribute__((weak)) symbol_usb_phy_otg_set_mode[] asm("usb_phy_otg_set_mode");
 extern char const __attribute__((weak)) symbol_usb_read[] asm("usb_read");
 extern char const __attribute__((weak)) symbol_usb_serial_device_rx_one_char[] asm("usb_serial_device_rx_one_char");
 extern char const __attribute__((weak)) symbol_usb_serial_device_rx_one_char_block[] asm("usb_serial_device_rx_one_char_block");
@@ -5229,6 +5165,35 @@ extern char const __attribute__((weak)) symbol_usb_transfer_ep_callback[] asm("u
 extern char const __attribute__((weak)) symbol_usb_transfer_sync[] asm("usb_transfer_sync");
 extern char const __attribute__((weak)) symbol_usb_write[] asm("usb_write");
 extern char const __attribute__((weak)) symbol_usb_write_would_block[] asm("usb_write_would_block");
+extern char const __attribute__((weak)) symbol_usbh_dev_close[] asm("usbh_dev_close");
+extern char const __attribute__((weak)) symbol_usbh_dev_enum_lock[] asm("usbh_dev_enum_lock");
+extern char const __attribute__((weak)) symbol_usbh_dev_enum_unlock[] asm("usbh_dev_enum_unlock");
+extern char const __attribute__((weak)) symbol_usbh_dev_get_addr[] asm("usbh_dev_get_addr");
+extern char const __attribute__((weak)) symbol_usbh_dev_get_config_desc[] asm("usbh_dev_get_config_desc");
+extern char const __attribute__((weak)) symbol_usbh_dev_get_info[] asm("usbh_dev_get_info");
+extern char const __attribute__((weak)) symbol_usbh_dev_set_addr[] asm("usbh_dev_set_addr");
+extern char const __attribute__((weak)) symbol_usbh_dev_set_config_desc[] asm("usbh_dev_set_config_desc");
+extern char const __attribute__((weak)) symbol_usbh_dev_set_desc[] asm("usbh_dev_set_desc");
+extern char const __attribute__((weak)) symbol_usbh_dev_set_ep0_mps[] asm("usbh_dev_set_ep0_mps");
+extern char const __attribute__((weak)) symbol_usbh_dev_set_str_desc[] asm("usbh_dev_set_str_desc");
+extern char const __attribute__((weak)) symbol_usbh_dev_submit_ctrl_urb[] asm("usbh_dev_submit_ctrl_urb");
+extern char const __attribute__((weak)) symbol_usbh_devs_add[] asm("usbh_devs_add");
+extern char const __attribute__((weak)) symbol_usbh_devs_is_uid_in_use[] asm("usbh_devs_is_uid_in_use");
+extern char const __attribute__((weak)) symbol_usbh_devs_mark_all_free[] asm("usbh_devs_mark_all_free");
+extern char const __attribute__((weak)) symbol_usbh_devs_new_dev_event[] asm("usbh_devs_new_dev_event");
+extern char const __attribute__((weak)) symbol_usbh_devs_num[] asm("usbh_devs_num");
+extern char const __attribute__((weak)) symbol_usbh_devs_open[] asm("usbh_devs_open");
+extern char const __attribute__((weak)) symbol_usbh_devs_remove[] asm("usbh_devs_remove");
+extern char const __attribute__((weak)) symbol_usbh_ep_alloc[] asm("usbh_ep_alloc");
+extern char const __attribute__((weak)) symbol_usbh_ep_command[] asm("usbh_ep_command");
+extern char const __attribute__((weak)) symbol_usbh_ep_dequeue_urb[] asm("usbh_ep_dequeue_urb");
+extern char const __attribute__((weak)) symbol_usbh_ep_enqueue_urb[] asm("usbh_ep_enqueue_urb");
+extern char const __attribute__((weak)) symbol_usbh_ep_free[] asm("usbh_ep_free");
+extern char const __attribute__((weak)) symbol_usbh_ep_get_context[] asm("usbh_ep_get_context");
+extern char const __attribute__((weak)) symbol_usbh_ep_get_handle[] asm("usbh_ep_get_handle");
+extern char const __attribute__((weak)) symbol_usbh_install[] asm("usbh_install");
+extern char const __attribute__((weak)) symbol_usbh_process[] asm("usbh_process");
+extern char const __attribute__((weak)) symbol_usbh_uninstall[] asm("usbh_uninstall");
 extern char const __attribute__((weak)) symbol_usleep[] asm("usleep");
 extern char const __attribute__((weak)) symbol_utoa[] asm("utoa");
 extern char const __attribute__((weak)) symbol_uxListRemove[] asm("uxListRemove");
@@ -5519,7 +5484,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "DW_GDMA", .vaddr = (size_t) symbol_DW_GDMA },
     { .name = "Disable_QMode", .vaddr = (size_t) symbol_Disable_QMode },
     { .name = "EFUSE", .vaddr = (size_t) symbol_EFUSE },
+    { .name = "ENUM_TAG", .vaddr = (size_t) symbol_ENUM_TAG },
     { .name = "ESP_HOSTED_EVENT", .vaddr = (size_t) symbol_ESP_HOSTED_EVENT },
+    { .name = "EXT_HUB_TAG", .vaddr = (size_t) symbol_EXT_HUB_TAG },
+    { .name = "EXT_PORT_TAG", .vaddr = (size_t) symbol_EXT_PORT_TAG },
     { .name = "Enable_QMode", .vaddr = (size_t) symbol_Enable_QMode },
     { .name = "FreeRTOS_openocd_params", .vaddr = (size_t) symbol_FreeRTOS_openocd_params },
     { .name = "GPIO", .vaddr = (size_t) symbol_GPIO },
@@ -5528,8 +5496,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "GPSPI3", .vaddr = (size_t) symbol_GPSPI3 },
     { .name = "GetSecurityInfoProc", .vaddr = (size_t) symbol_GetSecurityInfoProc },
     { .name = "GetUartDevice", .vaddr = (size_t) symbol_GetUartDevice },
+    { .name = "HCD_DWC_TAG", .vaddr = (size_t) symbol_HCD_DWC_TAG },
     { .name = "HP_SYSTEM", .vaddr = (size_t) symbol_HP_SYSTEM },
     { .name = "HP_SYS_CLKRST", .vaddr = (size_t) symbol_HP_SYS_CLKRST },
+    { .name = "HUB_DRIVER_TAG", .vaddr = (size_t) symbol_HUB_DRIVER_TAG },
     { .name = "I2C0", .vaddr = (size_t) symbol_I2C0 },
     { .name = "I2C1", .vaddr = (size_t) symbol_I2C1 },
     { .name = "I2S0", .vaddr = (size_t) symbol_I2S0 },
@@ -5598,8 +5568,12 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "UART2", .vaddr = (size_t) symbol_UART2 },
     { .name = "UART3", .vaddr = (size_t) symbol_UART3 },
     { .name = "UART4", .vaddr = (size_t) symbol_UART4 },
+    { .name = "USBH_TAG", .vaddr = (size_t) symbol_USBH_TAG },
+    { .name = "USB_DWC_FS", .vaddr = (size_t) symbol_USB_DWC_FS },
     { .name = "USB_DWC_HS", .vaddr = (size_t) symbol_USB_DWC_HS },
+    { .name = "USB_HOST_TAG", .vaddr = (size_t) symbol_USB_HOST_TAG },
     { .name = "USB_SERIAL_JTAG", .vaddr = (size_t) symbol_USB_SERIAL_JTAG },
+    { .name = "USB_UTMI", .vaddr = (size_t) symbol_USB_UTMI },
     { .name = "USB_WRAP", .vaddr = (size_t) symbol_USB_WRAP },
     { .name = "UartDwnLdProc", .vaddr = (size_t) symbol_UartDwnLdProc },
     { .name = "UartGetCmdLn", .vaddr = (size_t) symbol_UartGetCmdLn },
@@ -5673,23 +5647,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_ZN3nvs12NVSPartitionD0Ev", .vaddr = (size_t) symbol__ZN3nvs12NVSPartitionD0Ev },
     { .name = "_ZN3nvs12NVSPartitionD1Ev", .vaddr = (size_t) symbol__ZN3nvs12NVSPartitionD1Ev },
     { .name = "_ZN3nvs12NVSPartitionD2Ev", .vaddr = (size_t) symbol__ZN3nvs12NVSPartitionD2Ev },
-    { .name = "_ZN3nvs15NVSHandleLocked10erase_itemEPKc", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked10erase_itemEPKc },
-    { .name = "_ZN3nvs15NVSHandleLocked10get_stringEPKcPcj", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked10get_stringEPKcPcj },
-    { .name = "_ZN3nvs15NVSHandleLocked10set_stringEPKcS2_", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked10set_stringEPKcS2_ },
-    { .name = "_ZN3nvs15NVSHandleLocked13get_item_sizeENS_8ItemTypeEPKcRj", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked13get_item_sizeENS_8ItemTypeEPKcRj },
-    { .name = "_ZN3nvs15NVSHandleLocked14get_typed_itemENS_8ItemTypeEPKcPvj", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked14get_typed_itemENS_8ItemTypeEPKcPvj },
-    { .name = "_ZN3nvs15NVSHandleLocked14set_typed_itemENS_8ItemTypeEPKcPKvj", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked14set_typed_itemENS_8ItemTypeEPKcPKvj },
-    { .name = "_ZN3nvs15NVSHandleLocked20get_used_entry_countERj", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked20get_used_entry_countERj },
-    { .name = "_ZN3nvs15NVSHandleLocked6commitEv", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked6commitEv },
-    { .name = "_ZN3nvs15NVSHandleLocked8find_keyEPKcR10nvs_type_t", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked8find_keyEPKcR10nvs_type_t },
-    { .name = "_ZN3nvs15NVSHandleLocked8get_blobEPKcPvj", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked8get_blobEPKcPvj },
-    { .name = "_ZN3nvs15NVSHandleLocked8set_blobEPKcPKvj", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked8set_blobEPKcPKvj },
-    { .name = "_ZN3nvs15NVSHandleLocked9erase_allEv", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLocked9erase_allEv },
-    { .name = "_ZN3nvs15NVSHandleLockedC1EPNS_15NVSHandleSimpleE", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLockedC1EPNS_15NVSHandleSimpleE },
-    { .name = "_ZN3nvs15NVSHandleLockedC2EPNS_15NVSHandleSimpleE", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLockedC2EPNS_15NVSHandleSimpleE },
-    { .name = "_ZN3nvs15NVSHandleLockedD0Ev", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLockedD0Ev },
-    { .name = "_ZN3nvs15NVSHandleLockedD1Ev", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLockedD1Ev },
-    { .name = "_ZN3nvs15NVSHandleLockedD2Ev", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleLockedD2Ev },
     { .name = "_ZN3nvs15NVSHandleSimple10erase_itemEPKc", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleSimple10erase_itemEPKc },
     { .name = "_ZN3nvs15NVSHandleSimple10get_stringEPKcPcj", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleSimple10get_stringEPKcPcj },
     { .name = "_ZN3nvs15NVSHandleSimple10set_stringEPKcS2_", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleSimple10set_stringEPKcS2_ },
@@ -5711,7 +5668,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_ZN3nvs15NVSHandleSimpleD0Ev", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleSimpleD0Ev },
     { .name = "_ZN3nvs15NVSHandleSimpleD1Ev", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleSimpleD1Ev },
     { .name = "_ZN3nvs15NVSHandleSimpleD2Ev", .vaddr = (size_t) symbol__ZN3nvs15NVSHandleSimpleD2Ev },
-    { .name = "_ZN3nvs15open_nvs_handleEPKc15nvs_open_mode_tPi", .vaddr = (size_t) symbol__ZN3nvs15open_nvs_handleEPKc15nvs_open_mode_tPi },
     { .name = "_ZN3nvs16partition_lookup20lookup_nvs_partitionEPKcPPNS_12NVSPartitionE", .vaddr = (size_t) symbol__ZN3nvs16partition_lookup20lookup_nvs_partitionEPKcPPNS_12NVSPartitionE },
     { .name = "_ZN3nvs16partition_lookup30lookup_nvs_encrypted_partitionEPKcP13nvs_sec_cfg_tPPNS_12NVSPartitionE", .vaddr = (size_t) symbol__ZN3nvs16partition_lookup30lookup_nvs_encrypted_partitionEPKcP13nvs_sec_cfg_tPPNS_12NVSPartitionE },
     { .name = "_ZN3nvs19NVSPartitionManager11init_customEPNS_9PartitionEmm", .vaddr = (size_t) symbol__ZN3nvs19NVSPartitionManager11init_customEPNS_9PartitionEmm },
@@ -5735,7 +5691,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_ZN3nvs21NVSEncryptedPartitionD0Ev", .vaddr = (size_t) symbol__ZN3nvs21NVSEncryptedPartitionD0Ev },
     { .name = "_ZN3nvs21NVSEncryptedPartitionD1Ev", .vaddr = (size_t) symbol__ZN3nvs21NVSEncryptedPartitionD1Ev },
     { .name = "_ZN3nvs21NVSEncryptedPartitionD2Ev", .vaddr = (size_t) symbol__ZN3nvs21NVSEncryptedPartitionD2Ev },
-    { .name = "_ZN3nvs30open_nvs_handle_from_partitionEPKcS1_15nvs_open_mode_tPi", .vaddr = (size_t) symbol__ZN3nvs30open_nvs_handle_from_partitionEPKcS1_15nvs_open_mode_tPi },
     { .name = "_ZN3nvs4Item14calculateCrc32EPKhj", .vaddr = (size_t) symbol__ZN3nvs4Item14calculateCrc32EPKhj },
     { .name = "_ZN3nvs4Item6getKeyEPcj", .vaddr = (size_t) symbol__ZN3nvs4Item6getKeyEPcj },
     { .name = "_ZN3nvs4ItemC1EhNS_8ItemTypeEhPKch", .vaddr = (size_t) symbol__ZN3nvs4ItemC1EhNS_8ItemTypeEhPKch },
@@ -5896,8 +5851,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_ZNKSt9type_info15__is_function_pEv", .vaddr = (size_t) symbol__ZNKSt9type_info15__is_function_pEv },
     { .name = "_ZNSt10unique_ptrIA_N3nvs4PageESt14default_deleteIS2_EED1Ev", .vaddr = (size_t) symbol__ZNSt10unique_ptrIA_N3nvs4PageESt14default_deleteIS2_EED1Ev },
     { .name = "_ZNSt10unique_ptrIA_N3nvs4PageESt14default_deleteIS2_EED2Ev", .vaddr = (size_t) symbol__ZNSt10unique_ptrIA_N3nvs4PageESt14default_deleteIS2_EED2Ev },
-    { .name = "_ZNSt10unique_ptrIN3nvs15NVSHandleLockedESt14default_deleteIS1_EED1Ev", .vaddr = (size_t) symbol__ZNSt10unique_ptrIN3nvs15NVSHandleLockedESt14default_deleteIS1_EED1Ev },
-    { .name = "_ZNSt10unique_ptrIN3nvs15NVSHandleLockedESt14default_deleteIS1_EED2Ev", .vaddr = (size_t) symbol__ZNSt10unique_ptrIN3nvs15NVSHandleLockedESt14default_deleteIS1_EED2Ev },
     { .name = "_ZNSt9bad_allocD0Ev", .vaddr = (size_t) symbol__ZNSt9bad_allocD0Ev },
     { .name = "_ZNSt9bad_allocD1Ev", .vaddr = (size_t) symbol__ZNSt9bad_allocD1Ev },
     { .name = "_ZNSt9bad_allocD2Ev", .vaddr = (size_t) symbol__ZNSt9bad_allocD2Ev },
@@ -5919,7 +5872,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_ZTVN10__cxxabiv117__class_type_infoE", .vaddr = (size_t) symbol__ZTVN10__cxxabiv117__class_type_infoE },
     { .name = "_ZTVN10__cxxabiv120__si_class_type_infoE", .vaddr = (size_t) symbol__ZTVN10__cxxabiv120__si_class_type_infoE },
     { .name = "_ZTVN3nvs12NVSPartitionE", .vaddr = (size_t) symbol__ZTVN3nvs12NVSPartitionE },
-    { .name = "_ZTVN3nvs15NVSHandleLockedE", .vaddr = (size_t) symbol__ZTVN3nvs15NVSHandleLockedE },
     { .name = "_ZTVN3nvs15NVSHandleSimpleE", .vaddr = (size_t) symbol__ZTVN3nvs15NVSHandleSimpleE },
     { .name = "_ZTVN3nvs19NVSPartitionManagerE", .vaddr = (size_t) symbol__ZTVN3nvs19NVSPartitionManagerE },
     { .name = "_ZTVN3nvs21NVSEncryptedPartitionE", .vaddr = (size_t) symbol__ZTVN3nvs21NVSEncryptedPartitionE },
@@ -5934,7 +5886,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_Znaj", .vaddr = (size_t) symbol__Znaj },
     { .name = "_ZnajRKSt9nothrow_t", .vaddr = (size_t) symbol__ZnajRKSt9nothrow_t },
     { .name = "_Znwj", .vaddr = (size_t) symbol__Znwj },
-    { .name = "_ZnwjRKSt9nothrow_t", .vaddr = (size_t) symbol__ZnwjRKSt9nothrow_t },
     { .name = "__absvdi2", .vaddr = (size_t) symbol___absvdi2 },
     { .name = "__absvsi2", .vaddr = (size_t) symbol___absvsi2 },
     { .name = "__action_table", .vaddr = (size_t) symbol___action_table },
@@ -6364,6 +6315,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "_tzset_unlocked_r", .vaddr = (size_t) symbol__tzset_unlocked_r },
     { .name = "_ungetc_r", .vaddr = (size_t) symbol__ungetc_r },
     { .name = "_unlink_r", .vaddr = (size_t) symbol__unlink_r },
+    { .name = "_usb_utmi_hal_disable", .vaddr = (size_t) symbol__usb_utmi_hal_disable },
+    { .name = "_usb_utmi_hal_init", .vaddr = (size_t) symbol__usb_utmi_hal_init },
+    { .name = "_usb_wrap_hal_disable", .vaddr = (size_t) symbol__usb_wrap_hal_disable },
+    { .name = "_usb_wrap_hal_init", .vaddr = (size_t) symbol__usb_wrap_hal_init },
     { .name = "_user_strerror", .vaddr = (size_t) symbol__user_strerror },
     { .name = "_vector_table", .vaddr = (size_t) symbol__vector_table },
     { .name = "_vfiprintf_r", .vaddr = (size_t) symbol__vfiprintf_r },
@@ -6993,6 +6948,13 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "efuse_hal_get_disable_wafer_version_major", .vaddr = (size_t) symbol_efuse_hal_get_disable_wafer_version_major },
     { .name = "efuse_hal_get_major_chip_version", .vaddr = (size_t) symbol_efuse_hal_get_major_chip_version },
     { .name = "efuse_hal_get_minor_chip_version", .vaddr = (size_t) symbol_efuse_hal_get_minor_chip_version },
+    { .name = "enum_cancel", .vaddr = (size_t) symbol_enum_cancel },
+    { .name = "enum_install", .vaddr = (size_t) symbol_enum_install },
+    { .name = "enum_proceed", .vaddr = (size_t) symbol_enum_proceed },
+    { .name = "enum_process", .vaddr = (size_t) symbol_enum_process },
+    { .name = "enum_stage_strings", .vaddr = (size_t) symbol_enum_stage_strings },
+    { .name = "enum_start", .vaddr = (size_t) symbol_enum_start },
+    { .name = "enum_uninstall", .vaddr = (size_t) symbol_enum_uninstall },
     { .name = "environ", .vaddr = (size_t) symbol_environ },
     { .name = "erf", .vaddr = (size_t) symbol_erf },
     { .name = "erfc", .vaddr = (size_t) symbol_erfc },
@@ -7345,6 +7307,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_rom_gpio_pad_pullup_only", .vaddr = (size_t) symbol_esp_rom_gpio_pad_pullup_only },
     { .name = "esp_rom_gpio_pad_select_gpio", .vaddr = (size_t) symbol_esp_rom_gpio_pad_select_gpio },
     { .name = "esp_rom_gpio_pad_set_drv", .vaddr = (size_t) symbol_esp_rom_gpio_pad_set_drv },
+    { .name = "esp_rom_gpio_pad_unhold", .vaddr = (size_t) symbol_esp_rom_gpio_pad_unhold },
     { .name = "esp_rom_install_uart_printf", .vaddr = (size_t) symbol_esp_rom_install_uart_printf },
     { .name = "esp_rom_km_huk_conf", .vaddr = (size_t) symbol_esp_rom_km_huk_conf },
     { .name = "esp_rom_km_huk_risk", .vaddr = (size_t) symbol_esp_rom_km_huk_risk },
@@ -7591,6 +7554,29 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "expf", .vaddr = (size_t) symbol_expf },
     { .name = "expm1", .vaddr = (size_t) symbol_expm1 },
     { .name = "expm1f", .vaddr = (size_t) symbol_expm1f },
+    { .name = "ext_hub_dev_gone", .vaddr = (size_t) symbol_ext_hub_dev_gone },
+    { .name = "ext_hub_get_client", .vaddr = (size_t) symbol_ext_hub_get_client },
+    { .name = "ext_hub_get_handle", .vaddr = (size_t) symbol_ext_hub_get_handle },
+    { .name = "ext_hub_install", .vaddr = (size_t) symbol_ext_hub_install },
+    { .name = "ext_hub_mark_all_free", .vaddr = (size_t) symbol_ext_hub_mark_all_free },
+    { .name = "ext_hub_new_dev", .vaddr = (size_t) symbol_ext_hub_new_dev },
+    { .name = "ext_hub_port_active", .vaddr = (size_t) symbol_ext_hub_port_active },
+    { .name = "ext_hub_port_disable", .vaddr = (size_t) symbol_ext_hub_port_disable },
+    { .name = "ext_hub_port_get_speed", .vaddr = (size_t) symbol_ext_hub_port_get_speed },
+    { .name = "ext_hub_port_recycle", .vaddr = (size_t) symbol_ext_hub_port_recycle },
+    { .name = "ext_hub_port_reset", .vaddr = (size_t) symbol_ext_hub_port_reset },
+    { .name = "ext_hub_process", .vaddr = (size_t) symbol_ext_hub_process },
+    { .name = "ext_hub_request", .vaddr = (size_t) symbol_ext_hub_request },
+    { .name = "ext_hub_stage_strings", .vaddr = (size_t) symbol_ext_hub_stage_strings },
+    { .name = "ext_hub_status_handle_complete", .vaddr = (size_t) symbol_ext_hub_status_handle_complete },
+    { .name = "ext_hub_uninstall", .vaddr = (size_t) symbol_ext_hub_uninstall },
+    { .name = "ext_port_driver", .vaddr = (size_t) symbol_ext_port_driver },
+    { .name = "ext_port_get_context", .vaddr = (size_t) symbol_ext_port_get_context },
+    { .name = "ext_port_get_driver", .vaddr = (size_t) symbol_ext_port_get_driver },
+    { .name = "ext_port_get_port_num", .vaddr = (size_t) symbol_ext_port_get_port_num },
+    { .name = "ext_port_install", .vaddr = (size_t) symbol_ext_port_install },
+    { .name = "ext_port_process", .vaddr = (size_t) symbol_ext_port_process },
+    { .name = "ext_port_uninstall", .vaddr = (size_t) symbol_ext_port_uninstall },
     { .name = "f_close", .vaddr = (size_t) symbol_f_close },
     { .name = "f_closedir", .vaddr = (size_t) symbol_f_closedir },
     { .name = "f_fdisk", .vaddr = (size_t) symbol_f_fdisk },
@@ -7783,6 +7769,14 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "get_vfs_for_path", .vaddr = (size_t) symbol_get_vfs_for_path },
     { .name = "getenv", .vaddr = (size_t) symbol_getenv },
     { .name = "gettimeofday", .vaddr = (size_t) symbol_gettimeofday },
+    { .name = "gl_hidhost_init", .vaddr = (size_t) symbol_gl_hidhost_init },
+    { .name = "gl_hidhost_navigation_held", .vaddr = (size_t) symbol_gl_hidhost_navigation_held },
+    { .name = "gl_hidhost_scancode_held", .vaddr = (size_t) symbol_gl_hidhost_scancode_held },
+    { .name = "gl_input_get_queue", .vaddr = (size_t) symbol_gl_input_get_queue },
+    { .name = "gl_input_init", .vaddr = (size_t) symbol_gl_input_init },
+    { .name = "gl_input_read_action", .vaddr = (size_t) symbol_gl_input_read_action },
+    { .name = "gl_input_read_navigation_key", .vaddr = (size_t) symbol_gl_input_read_navigation_key },
+    { .name = "gl_input_read_scancode", .vaddr = (size_t) symbol_gl_input_read_scancode },
     { .name = "gmtime", .vaddr = (size_t) symbol_gmtime },
     { .name = "gmtime_r", .vaddr = (size_t) symbol_gmtime_r },
     { .name = "gpio_bypass_matrix_in", .vaddr = (size_t) symbol_gpio_bypass_matrix_in },
@@ -7838,6 +7832,26 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "graceloader_get_install_basepath", .vaddr = (size_t) symbol_graceloader_get_install_basepath },
     { .name = "hal_utils_calc_clk_div_frac_accurate", .vaddr = (size_t) symbol_hal_utils_calc_clk_div_frac_accurate },
     { .name = "hal_utils_calc_clk_div_frac_fast", .vaddr = (size_t) symbol_hal_utils_calc_clk_div_frac_fast },
+    { .name = "hcd_install", .vaddr = (size_t) symbol_hcd_install },
+    { .name = "hcd_pipe_alloc", .vaddr = (size_t) symbol_hcd_pipe_alloc },
+    { .name = "hcd_pipe_command", .vaddr = (size_t) symbol_hcd_pipe_command },
+    { .name = "hcd_pipe_free", .vaddr = (size_t) symbol_hcd_pipe_free },
+    { .name = "hcd_pipe_get_context", .vaddr = (size_t) symbol_hcd_pipe_get_context },
+    { .name = "hcd_pipe_get_mps", .vaddr = (size_t) symbol_hcd_pipe_get_mps },
+    { .name = "hcd_pipe_get_num_urbs", .vaddr = (size_t) symbol_hcd_pipe_get_num_urbs },
+    { .name = "hcd_pipe_get_state", .vaddr = (size_t) symbol_hcd_pipe_get_state },
+    { .name = "hcd_pipe_update_dev_addr", .vaddr = (size_t) symbol_hcd_pipe_update_dev_addr },
+    { .name = "hcd_pipe_update_mps", .vaddr = (size_t) symbol_hcd_pipe_update_mps },
+    { .name = "hcd_port_command", .vaddr = (size_t) symbol_hcd_port_command },
+    { .name = "hcd_port_deinit", .vaddr = (size_t) symbol_hcd_port_deinit },
+    { .name = "hcd_port_get_speed", .vaddr = (size_t) symbol_hcd_port_get_speed },
+    { .name = "hcd_port_get_state", .vaddr = (size_t) symbol_hcd_port_get_state },
+    { .name = "hcd_port_handle_event", .vaddr = (size_t) symbol_hcd_port_handle_event },
+    { .name = "hcd_port_init", .vaddr = (size_t) symbol_hcd_port_init },
+    { .name = "hcd_port_recover", .vaddr = (size_t) symbol_hcd_port_recover },
+    { .name = "hcd_uninstall", .vaddr = (size_t) symbol_hcd_uninstall },
+    { .name = "hcd_urb_dequeue", .vaddr = (size_t) symbol_hcd_urb_dequeue },
+    { .name = "hcd_urb_enqueue", .vaddr = (size_t) symbol_hcd_urb_enqueue },
     { .name = "hci_drv_init", .vaddr = (size_t) symbol_hci_drv_init },
     { .name = "hci_drv_show_configuration", .vaddr = (size_t) symbol_hci_drv_show_configuration },
     { .name = "hci_rx_handler", .vaddr = (size_t) symbol_hci_rx_handler },
@@ -7869,6 +7883,15 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "heap_info__init", .vaddr = (size_t) symbol_heap_info__init },
     { .name = "heap_size_threshold__descriptor", .vaddr = (size_t) symbol_heap_size_threshold__descriptor },
     { .name = "heap_size_threshold__init", .vaddr = (size_t) symbol_heap_size_threshold__init },
+    { .name = "hid_class_request_set_idle", .vaddr = (size_t) symbol_hid_class_request_set_idle },
+    { .name = "hid_class_request_set_protocol", .vaddr = (size_t) symbol_hid_class_request_set_protocol },
+    { .name = "hid_host_device_close", .vaddr = (size_t) symbol_hid_host_device_close },
+    { .name = "hid_host_device_get_params", .vaddr = (size_t) symbol_hid_host_device_get_params },
+    { .name = "hid_host_device_get_raw_input_report_data", .vaddr = (size_t) symbol_hid_host_device_get_raw_input_report_data },
+    { .name = "hid_host_device_open", .vaddr = (size_t) symbol_hid_host_device_open },
+    { .name = "hid_host_device_start", .vaddr = (size_t) symbol_hid_host_device_start },
+    { .name = "hid_host_handle_events", .vaddr = (size_t) symbol_hid_host_handle_events },
+    { .name = "hid_host_install", .vaddr = (size_t) symbol_hid_host_install },
     { .name = "hosted_calloc", .vaddr = (size_t) symbol_hosted_calloc },
     { .name = "hosted_config_gpio", .vaddr = (size_t) symbol_hosted_config_gpio },
     { .name = "hosted_config_host_power_save", .vaddr = (size_t) symbol_hosted_config_host_power_save },
@@ -7931,6 +7954,18 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "hosted_usleep", .vaddr = (size_t) symbol_hosted_usleep },
     { .name = "hosted_wifi_event_post", .vaddr = (size_t) symbol_hosted_wifi_event_post },
     { .name = "hosted_write_gpio", .vaddr = (size_t) symbol_hosted_write_gpio },
+    { .name = "hub_dev_gone", .vaddr = (size_t) symbol_hub_dev_gone },
+    { .name = "hub_dev_new", .vaddr = (size_t) symbol_hub_dev_new },
+    { .name = "hub_install", .vaddr = (size_t) symbol_hub_install },
+    { .name = "hub_notify_all_free", .vaddr = (size_t) symbol_hub_notify_all_free },
+    { .name = "hub_port_active", .vaddr = (size_t) symbol_hub_port_active },
+    { .name = "hub_port_disable", .vaddr = (size_t) symbol_hub_port_disable },
+    { .name = "hub_port_recycle", .vaddr = (size_t) symbol_hub_port_recycle },
+    { .name = "hub_port_reset", .vaddr = (size_t) symbol_hub_port_reset },
+    { .name = "hub_process", .vaddr = (size_t) symbol_hub_process },
+    { .name = "hub_root_start", .vaddr = (size_t) symbol_hub_root_start },
+    { .name = "hub_root_stop", .vaddr = (size_t) symbol_hub_root_stop },
+    { .name = "hub_uninstall", .vaddr = (size_t) symbol_hub_uninstall },
     { .name = "hypot", .vaddr = (size_t) symbol_hypot },
     { .name = "hypotf", .vaddr = (size_t) symbol_hypotf },
     { .name = "i2c_acquire_bus_handle", .vaddr = (size_t) symbol_i2c_acquire_bus_handle },
@@ -7955,12 +7990,24 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "i2s_channel_disable", .vaddr = (size_t) symbol_i2s_channel_disable },
     { .name = "i2s_channel_enable", .vaddr = (size_t) symbol_i2s_channel_enable },
     { .name = "i2s_channel_get_info", .vaddr = (size_t) symbol_i2s_channel_get_info },
+    { .name = "i2s_channel_init_pdm_rx_mode", .vaddr = (size_t) symbol_i2s_channel_init_pdm_rx_mode },
+    { .name = "i2s_channel_init_pdm_tx_mode", .vaddr = (size_t) symbol_i2s_channel_init_pdm_tx_mode },
     { .name = "i2s_channel_init_std_mode", .vaddr = (size_t) symbol_i2s_channel_init_std_mode },
+    { .name = "i2s_channel_init_tdm_mode", .vaddr = (size_t) symbol_i2s_channel_init_tdm_mode },
     { .name = "i2s_channel_preload_data", .vaddr = (size_t) symbol_i2s_channel_preload_data },
     { .name = "i2s_channel_read", .vaddr = (size_t) symbol_i2s_channel_read },
+    { .name = "i2s_channel_reconfig_pdm_rx_clock", .vaddr = (size_t) symbol_i2s_channel_reconfig_pdm_rx_clock },
+    { .name = "i2s_channel_reconfig_pdm_rx_gpio", .vaddr = (size_t) symbol_i2s_channel_reconfig_pdm_rx_gpio },
+    { .name = "i2s_channel_reconfig_pdm_rx_slot", .vaddr = (size_t) symbol_i2s_channel_reconfig_pdm_rx_slot },
+    { .name = "i2s_channel_reconfig_pdm_tx_clock", .vaddr = (size_t) symbol_i2s_channel_reconfig_pdm_tx_clock },
+    { .name = "i2s_channel_reconfig_pdm_tx_gpio", .vaddr = (size_t) symbol_i2s_channel_reconfig_pdm_tx_gpio },
+    { .name = "i2s_channel_reconfig_pdm_tx_slot", .vaddr = (size_t) symbol_i2s_channel_reconfig_pdm_tx_slot },
     { .name = "i2s_channel_reconfig_std_clock", .vaddr = (size_t) symbol_i2s_channel_reconfig_std_clock },
     { .name = "i2s_channel_reconfig_std_gpio", .vaddr = (size_t) symbol_i2s_channel_reconfig_std_gpio },
     { .name = "i2s_channel_reconfig_std_slot", .vaddr = (size_t) symbol_i2s_channel_reconfig_std_slot },
+    { .name = "i2s_channel_reconfig_tdm_clock", .vaddr = (size_t) symbol_i2s_channel_reconfig_tdm_clock },
+    { .name = "i2s_channel_reconfig_tdm_gpio", .vaddr = (size_t) symbol_i2s_channel_reconfig_tdm_gpio },
+    { .name = "i2s_channel_reconfig_tdm_slot", .vaddr = (size_t) symbol_i2s_channel_reconfig_tdm_slot },
     { .name = "i2s_channel_register_event_callback", .vaddr = (size_t) symbol_i2s_channel_register_event_callback },
     { .name = "i2s_channel_tune_rate", .vaddr = (size_t) symbol_i2s_channel_tune_rate },
     { .name = "i2s_channel_write", .vaddr = (size_t) symbol_i2s_channel_write },
@@ -7981,6 +8028,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "i2s_hal_tdm_set_tx_slot", .vaddr = (size_t) symbol_i2s_hal_tdm_set_tx_slot },
     { .name = "i2s_init_dma_intr", .vaddr = (size_t) symbol_i2s_init_dma_intr },
     { .name = "i2s_new_channel", .vaddr = (size_t) symbol_i2s_new_channel },
+    { .name = "i2s_new_etm_event", .vaddr = (size_t) symbol_i2s_new_etm_event },
+    { .name = "i2s_new_etm_task", .vaddr = (size_t) symbol_i2s_new_etm_task },
     { .name = "i2s_output_gpio_reserve", .vaddr = (size_t) symbol_i2s_output_gpio_reserve },
     { .name = "i2s_output_gpio_revoke", .vaddr = (size_t) symbol_i2s_output_gpio_revoke },
     { .name = "i2s_periph_signal", .vaddr = (size_t) symbol_i2s_periph_signal },
@@ -8152,7 +8201,22 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "longjmp", .vaddr = (size_t) symbol_longjmp },
     { .name = "lp_gpio_connect_in_signal", .vaddr = (size_t) symbol_lp_gpio_connect_in_signal },
     { .name = "lp_gpio_connect_out_signal", .vaddr = (size_t) symbol_lp_gpio_connect_out_signal },
+    { .name = "lp_i2s_channel_disable", .vaddr = (size_t) symbol_lp_i2s_channel_disable },
+    { .name = "lp_i2s_channel_enable", .vaddr = (size_t) symbol_lp_i2s_channel_enable },
+    { .name = "lp_i2s_channel_init_pdm_rx_mode", .vaddr = (size_t) symbol_lp_i2s_channel_init_pdm_rx_mode },
+    { .name = "lp_i2s_channel_init_std_mode", .vaddr = (size_t) symbol_lp_i2s_channel_init_std_mode },
+    { .name = "lp_i2s_channel_read", .vaddr = (size_t) symbol_lp_i2s_channel_read },
+    { .name = "lp_i2s_channel_read_until_bytes", .vaddr = (size_t) symbol_lp_i2s_channel_read_until_bytes },
+    { .name = "lp_i2s_del_channel", .vaddr = (size_t) symbol_lp_i2s_del_channel },
+    { .name = "lp_i2s_get_soc_handle", .vaddr = (size_t) symbol_lp_i2s_get_soc_handle },
+    { .name = "lp_i2s_hal_init", .vaddr = (size_t) symbol_lp_i2s_hal_init },
+    { .name = "lp_i2s_new_channel", .vaddr = (size_t) symbol_lp_i2s_new_channel },
     { .name = "lp_i2s_periph_signal", .vaddr = (size_t) symbol_lp_i2s_periph_signal },
+    { .name = "lp_i2s_register_event_callbacks", .vaddr = (size_t) symbol_lp_i2s_register_event_callbacks },
+    { .name = "lp_i2s_vad_del_unit", .vaddr = (size_t) symbol_lp_i2s_vad_del_unit },
+    { .name = "lp_i2s_vad_disable", .vaddr = (size_t) symbol_lp_i2s_vad_disable },
+    { .name = "lp_i2s_vad_enable", .vaddr = (size_t) symbol_lp_i2s_vad_enable },
+    { .name = "lp_i2s_vad_new_unit", .vaddr = (size_t) symbol_lp_i2s_vad_new_unit },
     { .name = "lp_timer_hal_get_cycle_count", .vaddr = (size_t) symbol_lp_timer_hal_get_cycle_count },
     { .name = "lrint", .vaddr = (size_t) symbol_lrint },
     { .name = "lrintf", .vaddr = (size_t) symbol_lrintf },
@@ -8501,25 +8565,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "nextafterf", .vaddr = (size_t) symbol_nextafterf },
     { .name = "npl_funcs", .vaddr = (size_t) symbol_npl_funcs },
     { .name = "num_of_soc_mipi_dsi_phy_pll_ranges", .vaddr = (size_t) symbol_num_of_soc_mipi_dsi_phy_pll_ranges },
-    { .name = "nvs_bootloader_aes_crypt_ecb", .vaddr = (size_t) symbol_nvs_bootloader_aes_crypt_ecb },
-    { .name = "nvs_bootloader_aes_crypt_xts", .vaddr = (size_t) symbol_nvs_bootloader_aes_crypt_xts },
-    { .name = "nvs_bootloader_check_item_header_consistency", .vaddr = (size_t) symbol_nvs_bootloader_check_item_header_consistency },
-    { .name = "nvs_bootloader_check_parameters", .vaddr = (size_t) symbol_nvs_bootloader_check_parameters },
-    { .name = "nvs_bootloader_page_visitor_get_key_value_pairs", .vaddr = (size_t) symbol_nvs_bootloader_page_visitor_get_key_value_pairs },
-    { .name = "nvs_bootloader_page_visitor_get_namespaces", .vaddr = (size_t) symbol_nvs_bootloader_page_visitor_get_namespaces },
-    { .name = "nvs_bootloader_page_visitor_get_page_states", .vaddr = (size_t) symbol_nvs_bootloader_page_visitor_get_page_states },
-    { .name = "nvs_bootloader_read", .vaddr = (size_t) symbol_nvs_bootloader_read },
-    { .name = "nvs_bootloader_read_entries_block", .vaddr = (size_t) symbol_nvs_bootloader_read_entries_block },
-    { .name = "nvs_bootloader_read_next_single_entry_item", .vaddr = (size_t) symbol_nvs_bootloader_read_next_single_entry_item },
-    { .name = "nvs_bootloader_read_page_entry_states", .vaddr = (size_t) symbol_nvs_bootloader_read_page_entry_states },
-    { .name = "nvs_bootloader_read_page_header", .vaddr = (size_t) symbol_nvs_bootloader_read_page_header },
-    { .name = "nvs_bootloader_read_security_cfg", .vaddr = (size_t) symbol_nvs_bootloader_read_security_cfg },
-    { .name = "nvs_bootloader_secure_deinit", .vaddr = (size_t) symbol_nvs_bootloader_secure_deinit },
-    { .name = "nvs_bootloader_secure_init", .vaddr = (size_t) symbol_nvs_bootloader_secure_init },
-    { .name = "nvs_bootloader_visit_pages", .vaddr = (size_t) symbol_nvs_bootloader_visit_pages },
-    { .name = "nvs_bootloader_xts_aes_free", .vaddr = (size_t) symbol_nvs_bootloader_xts_aes_free },
-    { .name = "nvs_bootloader_xts_aes_init", .vaddr = (size_t) symbol_nvs_bootloader_xts_aes_init },
-    { .name = "nvs_bootloader_xts_aes_setkey", .vaddr = (size_t) symbol_nvs_bootloader_xts_aes_setkey },
     { .name = "nvs_close", .vaddr = (size_t) symbol_nvs_close },
     { .name = "nvs_commit", .vaddr = (size_t) symbol_nvs_commit },
     { .name = "nvs_dump", .vaddr = (size_t) symbol_nvs_dump },
@@ -8804,30 +8849,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "pax_mark_dirty0", .vaddr = (size_t) symbol_pax_mark_dirty0 },
     { .name = "pax_mark_dirty1", .vaddr = (size_t) symbol_pax_mark_dirty1 },
     { .name = "pax_mark_dirty2", .vaddr = (size_t) symbol_pax_mark_dirty2 },
-    { .name = "pax_mcrw0_blit", .vaddr = (size_t) symbol_pax_mcrw0_blit },
-    { .name = "pax_mcrw0_blit_char", .vaddr = (size_t) symbol_pax_mcrw0_blit_char },
-    { .name = "pax_mcrw0_blit_raw", .vaddr = (size_t) symbol_pax_mcrw0_blit_raw },
-    { .name = "pax_mcrw0_shaded_line", .vaddr = (size_t) symbol_pax_mcrw0_shaded_line },
-    { .name = "pax_mcrw0_shaded_quad", .vaddr = (size_t) symbol_pax_mcrw0_shaded_quad },
-    { .name = "pax_mcrw0_shaded_rect", .vaddr = (size_t) symbol_pax_mcrw0_shaded_rect },
-    { .name = "pax_mcrw0_shaded_tri", .vaddr = (size_t) symbol_pax_mcrw0_shaded_tri },
-    { .name = "pax_mcrw0_sprite", .vaddr = (size_t) symbol_pax_mcrw0_sprite },
-    { .name = "pax_mcrw0_unshaded_line", .vaddr = (size_t) symbol_pax_mcrw0_unshaded_line },
-    { .name = "pax_mcrw0_unshaded_quad", .vaddr = (size_t) symbol_pax_mcrw0_unshaded_quad },
-    { .name = "pax_mcrw0_unshaded_rect", .vaddr = (size_t) symbol_pax_mcrw0_unshaded_rect },
-    { .name = "pax_mcrw0_unshaded_tri", .vaddr = (size_t) symbol_pax_mcrw0_unshaded_tri },
-    { .name = "pax_mcrw1_blit", .vaddr = (size_t) symbol_pax_mcrw1_blit },
-    { .name = "pax_mcrw1_blit_char", .vaddr = (size_t) symbol_pax_mcrw1_blit_char },
-    { .name = "pax_mcrw1_blit_raw", .vaddr = (size_t) symbol_pax_mcrw1_blit_raw },
-    { .name = "pax_mcrw1_shaded_line", .vaddr = (size_t) symbol_pax_mcrw1_shaded_line },
-    { .name = "pax_mcrw1_shaded_quad", .vaddr = (size_t) symbol_pax_mcrw1_shaded_quad },
-    { .name = "pax_mcrw1_shaded_rect", .vaddr = (size_t) symbol_pax_mcrw1_shaded_rect },
-    { .name = "pax_mcrw1_shaded_tri", .vaddr = (size_t) symbol_pax_mcrw1_shaded_tri },
-    { .name = "pax_mcrw1_sprite", .vaddr = (size_t) symbol_pax_mcrw1_sprite },
-    { .name = "pax_mcrw1_unshaded_line", .vaddr = (size_t) symbol_pax_mcrw1_unshaded_line },
-    { .name = "pax_mcrw1_unshaded_quad", .vaddr = (size_t) symbol_pax_mcrw1_unshaded_quad },
-    { .name = "pax_mcrw1_unshaded_rect", .vaddr = (size_t) symbol_pax_mcrw1_unshaded_rect },
-    { .name = "pax_mcrw1_unshaded_tri", .vaddr = (size_t) symbol_pax_mcrw1_unshaded_tri },
     { .name = "pax_merge_index", .vaddr = (size_t) symbol_pax_merge_index },
     { .name = "pax_merge_pixel", .vaddr = (size_t) symbol_pax_merge_pixel },
     { .name = "pax_n_fonts", .vaddr = (size_t) symbol_pax_n_fonts },
@@ -8891,27 +8912,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "pax_recti_abs", .vaddr = (size_t) symbol_pax_recti_abs },
     { .name = "pax_recti_intersect", .vaddr = (size_t) symbol_pax_recti_intersect },
     { .name = "pax_render_engine_soft", .vaddr = (size_t) symbol_pax_render_engine_soft },
-    { .name = "pax_render_engine_softasync", .vaddr = (size_t) symbol_pax_render_engine_softasync },
-    { .name = "pax_render_funcs_mcr_thread0", .vaddr = (size_t) symbol_pax_render_funcs_mcr_thread0 },
-    { .name = "pax_render_funcs_mcr_thread1", .vaddr = (size_t) symbol_pax_render_funcs_mcr_thread1 },
     { .name = "pax_render_funcs_soft", .vaddr = (size_t) symbol_pax_render_funcs_soft },
-    { .name = "pax_render_funcs_softasync", .vaddr = (size_t) symbol_pax_render_funcs_softasync },
     { .name = "pax_reset_2d", .vaddr = (size_t) symbol_pax_reset_2d },
-    { .name = "pax_sasr_blit", .vaddr = (size_t) symbol_pax_sasr_blit },
-    { .name = "pax_sasr_blit_char", .vaddr = (size_t) symbol_pax_sasr_blit_char },
-    { .name = "pax_sasr_blit_char_impl", .vaddr = (size_t) symbol_pax_sasr_blit_char_impl },
-    { .name = "pax_sasr_blit_raw", .vaddr = (size_t) symbol_pax_sasr_blit_raw },
-    { .name = "pax_sasr_join", .vaddr = (size_t) symbol_pax_sasr_join },
-    { .name = "pax_sasr_shaded_line", .vaddr = (size_t) symbol_pax_sasr_shaded_line },
-    { .name = "pax_sasr_shaded_quad", .vaddr = (size_t) symbol_pax_sasr_shaded_quad },
-    { .name = "pax_sasr_shaded_rect", .vaddr = (size_t) symbol_pax_sasr_shaded_rect },
-    { .name = "pax_sasr_shaded_tri", .vaddr = (size_t) symbol_pax_sasr_shaded_tri },
-    { .name = "pax_sasr_sprite", .vaddr = (size_t) symbol_pax_sasr_sprite },
-    { .name = "pax_sasr_unshaded_line", .vaddr = (size_t) symbol_pax_sasr_unshaded_line },
-    { .name = "pax_sasr_unshaded_quad", .vaddr = (size_t) symbol_pax_sasr_unshaded_quad },
-    { .name = "pax_sasr_unshaded_rect", .vaddr = (size_t) symbol_pax_sasr_unshaded_rect },
-    { .name = "pax_sasr_unshaded_tri", .vaddr = (size_t) symbol_pax_sasr_unshaded_tri },
-    { .name = "pax_sasr_worker", .vaddr = (size_t) symbol_pax_sasr_worker },
     { .name = "pax_set_err", .vaddr = (size_t) symbol_pax_set_err },
     { .name = "pax_set_index", .vaddr = (size_t) symbol_pax_set_index },
     { .name = "pax_set_index_conv", .vaddr = (size_t) symbol_pax_set_index_conv },
@@ -8919,7 +8921,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "pax_set_pixel_raw", .vaddr = (size_t) symbol_pax_set_pixel_raw },
     { .name = "pax_set_render_engine_default", .vaddr = (size_t) symbol_pax_set_render_engine_default },
     { .name = "pax_set_renderer", .vaddr = (size_t) symbol_pax_set_renderer },
-    { .name = "pax_set_renderer_async", .vaddr = (size_t) symbol_pax_set_renderer_async },
     { .name = "pax_shade_arc", .vaddr = (size_t) symbol_pax_shade_arc },
     { .name = "pax_shade_circle", .vaddr = (size_t) symbol_pax_shade_circle },
     { .name = "pax_shade_line", .vaddr = (size_t) symbol_pax_shade_line },
@@ -8980,15 +8981,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "pax_vectorise_bezier", .vaddr = (size_t) symbol_pax_vectorise_bezier },
     { .name = "pax_vectorise_bezier_part", .vaddr = (size_t) symbol_pax_vectorise_bezier_part },
     { .name = "pax_vectorise_circle", .vaddr = (size_t) symbol_pax_vectorise_circle },
-    { .name = "paxmcr_line_shaded", .vaddr = (size_t) symbol_paxmcr_line_shaded },
-    { .name = "paxmcr_line_unshaded", .vaddr = (size_t) symbol_paxmcr_line_unshaded },
-    { .name = "paxmcr_overlay_buffer", .vaddr = (size_t) symbol_paxmcr_overlay_buffer },
-    { .name = "paxmcr_quad_shaded", .vaddr = (size_t) symbol_paxmcr_quad_shaded },
-    { .name = "paxmcr_quad_unshaded", .vaddr = (size_t) symbol_paxmcr_quad_unshaded },
-    { .name = "paxmcr_rect_shaded", .vaddr = (size_t) symbol_paxmcr_rect_shaded },
-    { .name = "paxmcr_rect_unshaded", .vaddr = (size_t) symbol_paxmcr_rect_unshaded },
-    { .name = "paxmcr_tri_shaded", .vaddr = (size_t) symbol_paxmcr_tri_shaded },
-    { .name = "paxmcr_tri_unshaded", .vaddr = (size_t) symbol_paxmcr_tri_unshaded },
     { .name = "pbuf_add_header", .vaddr = (size_t) symbol_pbuf_add_header },
     { .name = "pbuf_add_header_force", .vaddr = (size_t) symbol_pbuf_add_header_force },
     { .name = "pbuf_alloc", .vaddr = (size_t) symbol_pbuf_alloc },
@@ -9032,136 +9024,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "permanentmarker_r2_len", .vaddr = (size_t) symbol_permanentmarker_r2_len },
     { .name = "permanentmarker_ranges", .vaddr = (size_t) symbol_permanentmarker_ranges },
     { .name = "permanentmarker_ranges_len", .vaddr = (size_t) symbol_permanentmarker_ranges_len },
-    { .name = "pgui_adjust_scroll", .vaddr = (size_t) symbol_pgui_adjust_scroll },
-    { .name = "pgui_adjust_scroll_2d", .vaddr = (size_t) symbol_pgui_adjust_scroll_2d },
-    { .name = "pgui_calc1_button", .vaddr = (size_t) symbol_pgui_calc1_button },
-    { .name = "pgui_calc1_dropdown", .vaddr = (size_t) symbol_pgui_calc1_dropdown },
-    { .name = "pgui_calc1_grid", .vaddr = (size_t) symbol_pgui_calc1_grid },
-    { .name = "pgui_calc1_image", .vaddr = (size_t) symbol_pgui_calc1_image },
-    { .name = "pgui_calc1_text", .vaddr = (size_t) symbol_pgui_calc1_text },
-    { .name = "pgui_calc2_dropdown", .vaddr = (size_t) symbol_pgui_calc2_dropdown },
-    { .name = "pgui_calc2_grid", .vaddr = (size_t) symbol_pgui_calc2_grid },
-    { .name = "pgui_calc2_overlay", .vaddr = (size_t) symbol_pgui_calc2_overlay },
-    { .name = "pgui_calc2_textbox", .vaddr = (size_t) symbol_pgui_calc2_textbox },
-    { .name = "pgui_calc_layout", .vaddr = (size_t) symbol_pgui_calc_layout },
-    { .name = "pgui_child_append", .vaddr = (size_t) symbol_pgui_child_append },
-    { .name = "pgui_child_dropdown", .vaddr = (size_t) symbol_pgui_child_dropdown },
-    { .name = "pgui_child_get", .vaddr = (size_t) symbol_pgui_child_get },
-    { .name = "pgui_child_grid", .vaddr = (size_t) symbol_pgui_child_grid },
-    { .name = "pgui_child_insert", .vaddr = (size_t) symbol_pgui_child_insert },
-    { .name = "pgui_child_remove_i", .vaddr = (size_t) symbol_pgui_child_remove_i },
-    { .name = "pgui_child_remove_p", .vaddr = (size_t) symbol_pgui_child_remove_p },
-    { .name = "pgui_child_replace", .vaddr = (size_t) symbol_pgui_child_replace },
-    { .name = "pgui_clip_dropdown", .vaddr = (size_t) symbol_pgui_clip_dropdown },
-    { .name = "pgui_del_grid", .vaddr = (size_t) symbol_pgui_del_grid },
-    { .name = "pgui_del_image", .vaddr = (size_t) symbol_pgui_del_image },
-    { .name = "pgui_del_overrides", .vaddr = (size_t) symbol_pgui_del_overrides },
-    { .name = "pgui_del_text", .vaddr = (size_t) symbol_pgui_del_text },
-    { .name = "pgui_delete", .vaddr = (size_t) symbol_pgui_delete },
-    { .name = "pgui_delete_recursive", .vaddr = (size_t) symbol_pgui_delete_recursive },
-    { .name = "pgui_disable_flags", .vaddr = (size_t) symbol_pgui_disable_flags },
-    { .name = "pgui_draw", .vaddr = (size_t) symbol_pgui_draw },
-    { .name = "pgui_draw_dropdown", .vaddr = (size_t) symbol_pgui_draw_dropdown },
-    { .name = "pgui_draw_grid", .vaddr = (size_t) symbol_pgui_draw_grid },
-    { .name = "pgui_draw_image", .vaddr = (size_t) symbol_pgui_draw_image },
-    { .name = "pgui_draw_text", .vaddr = (size_t) symbol_pgui_draw_text },
-    { .name = "pgui_draw_textbox", .vaddr = (size_t) symbol_pgui_draw_textbox },
-    { .name = "pgui_drawutil_base", .vaddr = (size_t) symbol_pgui_drawutil_base },
-    { .name = "pgui_drawutil_border", .vaddr = (size_t) symbol_pgui_drawutil_border },
-    { .name = "pgui_drawutil_getcursor", .vaddr = (size_t) symbol_pgui_drawutil_getcursor },
-    { .name = "pgui_drawutil_scrollbar", .vaddr = (size_t) symbol_pgui_drawutil_scrollbar },
-    { .name = "pgui_drawutil_text", .vaddr = (size_t) symbol_pgui_drawutil_text },
-    { .name = "pgui_drawutil_textbox", .vaddr = (size_t) symbol_pgui_drawutil_textbox },
-    { .name = "pgui_effective_dd_prop", .vaddr = (size_t) symbol_pgui_effective_dd_prop },
-    { .name = "pgui_effective_dims", .vaddr = (size_t) symbol_pgui_effective_dims },
-    { .name = "pgui_effective_font", .vaddr = (size_t) symbol_pgui_effective_font },
-    { .name = "pgui_effective_font_size", .vaddr = (size_t) symbol_pgui_effective_font_size },
-    { .name = "pgui_effective_padding", .vaddr = (size_t) symbol_pgui_effective_padding },
-    { .name = "pgui_effective_palette", .vaddr = (size_t) symbol_pgui_effective_palette },
-    { .name = "pgui_effective_scroll", .vaddr = (size_t) symbol_pgui_effective_scroll },
-    { .name = "pgui_enable_flags", .vaddr = (size_t) symbol_pgui_enable_flags },
-    { .name = "pgui_event", .vaddr = (size_t) symbol_pgui_event },
-    { .name = "pgui_event_button", .vaddr = (size_t) symbol_pgui_event_button },
-    { .name = "pgui_event_dropdown", .vaddr = (size_t) symbol_pgui_event_dropdown },
-    { .name = "pgui_event_grid", .vaddr = (size_t) symbol_pgui_event_grid },
-    { .name = "pgui_event_textbox", .vaddr = (size_t) symbol_pgui_event_textbox },
-    { .name = "pgui_get_callback", .vaddr = (size_t) symbol_pgui_get_callback },
-    { .name = "pgui_get_col_growable", .vaddr = (size_t) symbol_pgui_get_col_growable },
-    { .name = "pgui_get_default_theme", .vaddr = (size_t) symbol_pgui_get_default_theme },
-    { .name = "pgui_get_flags", .vaddr = (size_t) symbol_pgui_get_flags },
-    { .name = "pgui_get_halign", .vaddr = (size_t) symbol_pgui_get_halign },
-    { .name = "pgui_get_pos", .vaddr = (size_t) symbol_pgui_get_pos },
-    { .name = "pgui_get_row_growable", .vaddr = (size_t) symbol_pgui_get_row_growable },
-    { .name = "pgui_get_selection", .vaddr = (size_t) symbol_pgui_get_selection },
-    { .name = "pgui_get_size", .vaddr = (size_t) symbol_pgui_get_size },
-    { .name = "pgui_get_text", .vaddr = (size_t) symbol_pgui_get_text },
-    { .name = "pgui_get_userdata", .vaddr = (size_t) symbol_pgui_get_userdata },
-    { .name = "pgui_get_valign", .vaddr = (size_t) symbol_pgui_get_valign },
-    { .name = "pgui_get_variant", .vaddr = (size_t) symbol_pgui_get_variant },
-    { .name = "pgui_grid_custominit", .vaddr = (size_t) symbol_pgui_grid_custominit },
-    { .name = "pgui_new_box", .vaddr = (size_t) symbol_pgui_new_box },
-    { .name = "pgui_new_button", .vaddr = (size_t) symbol_pgui_new_button },
-    { .name = "pgui_new_custom", .vaddr = (size_t) symbol_pgui_new_custom },
-    { .name = "pgui_new_dropdown", .vaddr = (size_t) symbol_pgui_new_dropdown },
-    { .name = "pgui_new_grid", .vaddr = (size_t) symbol_pgui_new_grid },
-    { .name = "pgui_new_image", .vaddr = (size_t) symbol_pgui_new_image },
-    { .name = "pgui_new_overlay", .vaddr = (size_t) symbol_pgui_new_overlay },
-    { .name = "pgui_new_text", .vaddr = (size_t) symbol_pgui_new_text },
-    { .name = "pgui_new_textbox", .vaddr = (size_t) symbol_pgui_new_textbox },
-    { .name = "pgui_override_dd_prop", .vaddr = (size_t) symbol_pgui_override_dd_prop },
-    { .name = "pgui_override_dims", .vaddr = (size_t) symbol_pgui_override_dims },
-    { .name = "pgui_override_font", .vaddr = (size_t) symbol_pgui_override_font },
-    { .name = "pgui_override_font_size", .vaddr = (size_t) symbol_pgui_override_font_size },
-    { .name = "pgui_override_padding1", .vaddr = (size_t) symbol_pgui_override_padding1 },
-    { .name = "pgui_override_padding4", .vaddr = (size_t) symbol_pgui_override_padding4 },
-    { .name = "pgui_override_palette", .vaddr = (size_t) symbol_pgui_override_palette },
-    { .name = "pgui_override_scroll", .vaddr = (size_t) symbol_pgui_override_scroll },
-    { .name = "pgui_override_theme", .vaddr = (size_t) symbol_pgui_override_theme },
-    { .name = "pgui_print_debug_info", .vaddr = (size_t) symbol_pgui_print_debug_info },
-    { .name = "pgui_print_debug_info_recursive", .vaddr = (size_t) symbol_pgui_print_debug_info_recursive },
-    { .name = "pgui_redraw", .vaddr = (size_t) symbol_pgui_redraw },
-    { .name = "pgui_run_callback", .vaddr = (size_t) symbol_pgui_run_callback },
-    { .name = "pgui_set_callback", .vaddr = (size_t) symbol_pgui_set_callback },
-    { .name = "pgui_set_col_growable", .vaddr = (size_t) symbol_pgui_set_col_growable },
-    { .name = "pgui_set_flags", .vaddr = (size_t) symbol_pgui_set_flags },
-    { .name = "pgui_set_halign", .vaddr = (size_t) symbol_pgui_set_halign },
-    { .name = "pgui_set_pos", .vaddr = (size_t) symbol_pgui_set_pos },
-    { .name = "pgui_set_row_growable", .vaddr = (size_t) symbol_pgui_set_row_growable },
-    { .name = "pgui_set_selection", .vaddr = (size_t) symbol_pgui_set_selection },
-    { .name = "pgui_set_size", .vaddr = (size_t) symbol_pgui_set_size },
-    { .name = "pgui_set_text", .vaddr = (size_t) symbol_pgui_set_text },
-    { .name = "pgui_set_userdata", .vaddr = (size_t) symbol_pgui_set_userdata },
-    { .name = "pgui_set_valign", .vaddr = (size_t) symbol_pgui_set_valign },
-    { .name = "pgui_set_variant", .vaddr = (size_t) symbol_pgui_set_variant },
-    { .name = "pgui_text_ctrl_left", .vaddr = (size_t) symbol_pgui_text_ctrl_left },
-    { .name = "pgui_text_ctrl_right", .vaddr = (size_t) symbol_pgui_text_ctrl_right },
-    { .name = "pgui_theme_light", .vaddr = (size_t) symbol_pgui_theme_light },
-    { .name = "pgui_type_box", .vaddr = (size_t) symbol_pgui_type_box },
-    { .name = "pgui_type_button", .vaddr = (size_t) symbol_pgui_type_button },
-    { .name = "pgui_type_create", .vaddr = (size_t) symbol_pgui_type_create },
-    { .name = "pgui_type_dropdown", .vaddr = (size_t) symbol_pgui_type_dropdown },
-    { .name = "pgui_type_get", .vaddr = (size_t) symbol_pgui_type_get },
-    { .name = "pgui_type_get_attr", .vaddr = (size_t) symbol_pgui_type_get_attr },
-    { .name = "pgui_type_get_calc1", .vaddr = (size_t) symbol_pgui_type_get_calc1 },
-    { .name = "pgui_type_get_calc2", .vaddr = (size_t) symbol_pgui_type_get_calc2 },
-    { .name = "pgui_type_get_child", .vaddr = (size_t) symbol_pgui_type_get_child },
-    { .name = "pgui_type_get_clip", .vaddr = (size_t) symbol_pgui_type_get_clip },
-    { .name = "pgui_type_get_del", .vaddr = (size_t) symbol_pgui_type_get_del },
-    { .name = "pgui_type_get_draw", .vaddr = (size_t) symbol_pgui_type_get_draw },
-    { .name = "pgui_type_get_event", .vaddr = (size_t) symbol_pgui_type_get_event },
-    { .name = "pgui_type_grid", .vaddr = (size_t) symbol_pgui_type_grid },
-    { .name = "pgui_type_image", .vaddr = (size_t) symbol_pgui_type_image },
-    { .name = "pgui_type_overlay", .vaddr = (size_t) symbol_pgui_type_overlay },
-    { .name = "pgui_type_set_attr", .vaddr = (size_t) symbol_pgui_type_set_attr },
-    { .name = "pgui_type_set_calc1", .vaddr = (size_t) symbol_pgui_type_set_calc1 },
-    { .name = "pgui_type_set_calc2", .vaddr = (size_t) symbol_pgui_type_set_calc2 },
-    { .name = "pgui_type_set_child", .vaddr = (size_t) symbol_pgui_type_set_child },
-    { .name = "pgui_type_set_clip", .vaddr = (size_t) symbol_pgui_type_set_clip },
-    { .name = "pgui_type_set_del", .vaddr = (size_t) symbol_pgui_type_set_del },
-    { .name = "pgui_type_set_draw", .vaddr = (size_t) symbol_pgui_type_set_draw },
-    { .name = "pgui_type_set_event", .vaddr = (size_t) symbol_pgui_type_set_event },
-    { .name = "pgui_type_text", .vaddr = (size_t) symbol_pgui_type_text },
-    { .name = "pgui_type_textbox", .vaddr = (size_t) symbol_pgui_type_textbox },
     { .name = "pmu_enable_unhold_pads", .vaddr = (size_t) symbol_pmu_enable_unhold_pads },
     { .name = "pmu_hal_hp_set_sleep_active_backup_disable", .vaddr = (size_t) symbol_pmu_hal_hp_set_sleep_active_backup_disable },
     { .name = "pmu_hal_hp_set_sleep_active_backup_enable", .vaddr = (size_t) symbol_pmu_hal_hp_set_sleep_active_backup_enable },
@@ -9177,6 +9039,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "pmu_lp_system_power_param_default", .vaddr = (size_t) symbol_pmu_lp_system_power_param_default },
     { .name = "pmu_sleep_disable_regdma_backup", .vaddr = (size_t) symbol_pmu_sleep_disable_regdma_backup },
     { .name = "pmu_sleep_enable_regdma_backup", .vaddr = (size_t) symbol_pmu_sleep_enable_regdma_backup },
+    { .name = "port_get_speed", .vaddr = (size_t) symbol_port_get_speed },
     { .name = "port_uxCoprocOwner", .vaddr = (size_t) symbol_port_uxCoprocOwner },
     { .name = "port_uxCriticalNesting", .vaddr = (size_t) symbol_port_uxCriticalNesting },
     { .name = "port_uxInterruptNesting", .vaddr = (size_t) symbol_port_uxInterruptNesting },
@@ -9268,15 +9131,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "pthread_setcancelstate", .vaddr = (size_t) symbol_pthread_setcancelstate },
     { .name = "pthread_setschedparam", .vaddr = (size_t) symbol_pthread_setschedparam },
     { .name = "pthread_setspecific", .vaddr = (size_t) symbol_pthread_setspecific },
-    { .name = "ptq_create", .vaddr = (size_t) symbol_ptq_create },
-    { .name = "ptq_create_max", .vaddr = (size_t) symbol_ptq_create_max },
-    { .name = "ptq_destroy", .vaddr = (size_t) symbol_ptq_destroy },
-    { .name = "ptq_get_length", .vaddr = (size_t) symbol_ptq_get_length },
-    { .name = "ptq_join", .vaddr = (size_t) symbol_ptq_join },
-    { .name = "ptq_receive_block", .vaddr = (size_t) symbol_ptq_receive_block },
-    { .name = "ptq_receive_nonblock", .vaddr = (size_t) symbol_ptq_receive_nonblock },
-    { .name = "ptq_send_block", .vaddr = (size_t) symbol_ptq_send_block },
-    { .name = "ptq_send_nonblock", .vaddr = (size_t) symbol_ptq_send_nonblock },
     { .name = "put_le16", .vaddr = (size_t) symbol_put_le16 },
     { .name = "put_le32", .vaddr = (size_t) symbol_put_le32 },
     { .name = "putc", .vaddr = (size_t) symbol_putc },
@@ -10127,6 +9981,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "sleep_retention_get_created_modules", .vaddr = (size_t) symbol_sleep_retention_get_created_modules },
     { .name = "sleep_retention_get_inited_modules", .vaddr = (size_t) symbol_sleep_retention_get_inited_modules },
     { .name = "sleep_retention_module_init", .vaddr = (size_t) symbol_sleep_retention_module_init },
+    { .name = "sleep_usb_suppress_deepsleep_leakage", .vaddr = (size_t) symbol_sleep_usb_suppress_deepsleep_leakage },
     { .name = "sniprintf", .vaddr = (size_t) symbol_sniprintf },
     { .name = "snprintf", .vaddr = (size_t) symbol_snprintf },
     { .name = "soc_get_available_memory_region_max_count", .vaddr = (size_t) symbol_soc_get_available_memory_region_max_count },
@@ -10576,6 +10431,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "udp_remove", .vaddr = (size_t) symbol_udp_remove },
     { .name = "ulTaskGenericNotifyTake", .vaddr = (size_t) symbol_ulTaskGenericNotifyTake },
     { .name = "ungetc", .vaddr = (size_t) symbol_ungetc },
+    { .name = "urb_alloc", .vaddr = (size_t) symbol_urb_alloc },
+    { .name = "urb_free", .vaddr = (size_t) symbol_urb_free },
     { .name = "usb_cancel_transfer", .vaddr = (size_t) symbol_usb_cancel_transfer },
     { .name = "usb_dc_attach", .vaddr = (size_t) symbol_usb_dc_attach },
     { .name = "usb_dc_check_poll_for_interrupts", .vaddr = (size_t) symbol_usb_dc_check_poll_for_interrupts },
@@ -10601,6 +10458,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "usb_dc_set_address", .vaddr = (size_t) symbol_usb_dc_set_address },
     { .name = "usb_dc_set_status_callback", .vaddr = (size_t) symbol_usb_dc_set_status_callback },
     { .name = "usb_deconfig", .vaddr = (size_t) symbol_usb_deconfig },
+    { .name = "usb_del_phy", .vaddr = (size_t) symbol_usb_del_phy },
     { .name = "usb_dev_deinit", .vaddr = (size_t) symbol_usb_dev_deinit },
     { .name = "usb_dev_get_configuration", .vaddr = (size_t) symbol_usb_dev_get_configuration },
     { .name = "usb_dev_resume", .vaddr = (size_t) symbol_usb_dev_resume },
@@ -10610,12 +10468,55 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "usb_disable", .vaddr = (size_t) symbol_usb_disable },
     { .name = "usb_dw_ctrl_deinit", .vaddr = (size_t) symbol_usb_dw_ctrl_deinit },
     { .name = "usb_dw_isr_handler", .vaddr = (size_t) symbol_usb_dw_isr_handler },
+    { .name = "usb_dwc_hal_chan_activate", .vaddr = (size_t) symbol_usb_dwc_hal_chan_activate },
+    { .name = "usb_dwc_hal_chan_alloc", .vaddr = (size_t) symbol_usb_dwc_hal_chan_alloc },
+    { .name = "usb_dwc_hal_chan_decode_intr", .vaddr = (size_t) symbol_usb_dwc_hal_chan_decode_intr },
+    { .name = "usb_dwc_hal_chan_free", .vaddr = (size_t) symbol_usb_dwc_hal_chan_free },
+    { .name = "usb_dwc_hal_chan_request_halt", .vaddr = (size_t) symbol_usb_dwc_hal_chan_request_halt },
+    { .name = "usb_dwc_hal_chan_set_ep_char", .vaddr = (size_t) symbol_usb_dwc_hal_chan_set_ep_char },
+    { .name = "usb_dwc_hal_core_soft_reset", .vaddr = (size_t) symbol_usb_dwc_hal_core_soft_reset },
+    { .name = "usb_dwc_hal_decode_intr", .vaddr = (size_t) symbol_usb_dwc_hal_decode_intr },
+    { .name = "usb_dwc_hal_deinit", .vaddr = (size_t) symbol_usb_dwc_hal_deinit },
+    { .name = "usb_dwc_hal_fifo_config_is_valid", .vaddr = (size_t) symbol_usb_dwc_hal_fifo_config_is_valid },
+    { .name = "usb_dwc_hal_get_chan_pending_intr", .vaddr = (size_t) symbol_usb_dwc_hal_get_chan_pending_intr },
+    { .name = "usb_dwc_hal_get_mps_limits", .vaddr = (size_t) symbol_usb_dwc_hal_get_mps_limits },
+    { .name = "usb_dwc_hal_init", .vaddr = (size_t) symbol_usb_dwc_hal_init },
+    { .name = "usb_dwc_hal_port_enable", .vaddr = (size_t) symbol_usb_dwc_hal_port_enable },
+    { .name = "usb_dwc_hal_set_fifo_config", .vaddr = (size_t) symbol_usb_dwc_hal_set_fifo_config },
+    { .name = "usb_dwc_info", .vaddr = (size_t) symbol_usb_dwc_info },
     { .name = "usb_enable", .vaddr = (size_t) symbol_usb_enable },
     { .name = "usb_ep_clear_stall", .vaddr = (size_t) symbol_usb_ep_clear_stall },
     { .name = "usb_ep_read_continue", .vaddr = (size_t) symbol_usb_ep_read_continue },
     { .name = "usb_ep_read_wait", .vaddr = (size_t) symbol_usb_ep_read_wait },
     { .name = "usb_ep_set_stall", .vaddr = (size_t) symbol_usb_ep_set_stall },
     { .name = "usb_get_descriptor", .vaddr = (size_t) symbol_usb_get_descriptor },
+    { .name = "usb_host_client_deregister", .vaddr = (size_t) symbol_usb_host_client_deregister },
+    { .name = "usb_host_client_handle_events", .vaddr = (size_t) symbol_usb_host_client_handle_events },
+    { .name = "usb_host_client_register", .vaddr = (size_t) symbol_usb_host_client_register },
+    { .name = "usb_host_device_close", .vaddr = (size_t) symbol_usb_host_device_close },
+    { .name = "usb_host_device_free_all", .vaddr = (size_t) symbol_usb_host_device_free_all },
+    { .name = "usb_host_device_open", .vaddr = (size_t) symbol_usb_host_device_open },
+    { .name = "usb_host_endpoint_clear", .vaddr = (size_t) symbol_usb_host_endpoint_clear },
+    { .name = "usb_host_endpoint_flush", .vaddr = (size_t) symbol_usb_host_endpoint_flush },
+    { .name = "usb_host_endpoint_halt", .vaddr = (size_t) symbol_usb_host_endpoint_halt },
+    { .name = "usb_host_get_active_config_descriptor", .vaddr = (size_t) symbol_usb_host_get_active_config_descriptor },
+    { .name = "usb_host_install", .vaddr = (size_t) symbol_usb_host_install },
+    { .name = "usb_host_interface_claim", .vaddr = (size_t) symbol_usb_host_interface_claim },
+    { .name = "usb_host_interface_release", .vaddr = (size_t) symbol_usb_host_interface_release },
+    { .name = "usb_host_lib_handle_events", .vaddr = (size_t) symbol_usb_host_lib_handle_events },
+    { .name = "usb_host_transfer_alloc", .vaddr = (size_t) symbol_usb_host_transfer_alloc },
+    { .name = "usb_host_transfer_free", .vaddr = (size_t) symbol_usb_host_transfer_free },
+    { .name = "usb_host_transfer_submit", .vaddr = (size_t) symbol_usb_host_transfer_submit },
+    { .name = "usb_host_transfer_submit_control", .vaddr = (size_t) symbol_usb_host_transfer_submit_control },
+    { .name = "usb_host_uninstall", .vaddr = (size_t) symbol_usb_host_uninstall },
+    { .name = "usb_new_phy", .vaddr = (size_t) symbol_usb_new_phy },
+    { .name = "usb_parse_endpoint_descriptor_by_address", .vaddr = (size_t) symbol_usb_parse_endpoint_descriptor_by_address },
+    { .name = "usb_parse_endpoint_descriptor_by_index", .vaddr = (size_t) symbol_usb_parse_endpoint_descriptor_by_index },
+    { .name = "usb_parse_interface_descriptor", .vaddr = (size_t) symbol_usb_parse_interface_descriptor },
+    { .name = "usb_parse_next_descriptor", .vaddr = (size_t) symbol_usb_parse_next_descriptor },
+    { .name = "usb_parse_next_descriptor_of_type", .vaddr = (size_t) symbol_usb_parse_next_descriptor_of_type },
+    { .name = "usb_phy_get_phy_status", .vaddr = (size_t) symbol_usb_phy_get_phy_status },
+    { .name = "usb_phy_otg_set_mode", .vaddr = (size_t) symbol_usb_phy_otg_set_mode },
     { .name = "usb_read", .vaddr = (size_t) symbol_usb_read },
     { .name = "usb_serial_device_rx_one_char", .vaddr = (size_t) symbol_usb_serial_device_rx_one_char },
     { .name = "usb_serial_device_rx_one_char_block", .vaddr = (size_t) symbol_usb_serial_device_rx_one_char_block },
@@ -10639,6 +10540,35 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "usb_transfer_sync", .vaddr = (size_t) symbol_usb_transfer_sync },
     { .name = "usb_write", .vaddr = (size_t) symbol_usb_write },
     { .name = "usb_write_would_block", .vaddr = (size_t) symbol_usb_write_would_block },
+    { .name = "usbh_dev_close", .vaddr = (size_t) symbol_usbh_dev_close },
+    { .name = "usbh_dev_enum_lock", .vaddr = (size_t) symbol_usbh_dev_enum_lock },
+    { .name = "usbh_dev_enum_unlock", .vaddr = (size_t) symbol_usbh_dev_enum_unlock },
+    { .name = "usbh_dev_get_addr", .vaddr = (size_t) symbol_usbh_dev_get_addr },
+    { .name = "usbh_dev_get_config_desc", .vaddr = (size_t) symbol_usbh_dev_get_config_desc },
+    { .name = "usbh_dev_get_info", .vaddr = (size_t) symbol_usbh_dev_get_info },
+    { .name = "usbh_dev_set_addr", .vaddr = (size_t) symbol_usbh_dev_set_addr },
+    { .name = "usbh_dev_set_config_desc", .vaddr = (size_t) symbol_usbh_dev_set_config_desc },
+    { .name = "usbh_dev_set_desc", .vaddr = (size_t) symbol_usbh_dev_set_desc },
+    { .name = "usbh_dev_set_ep0_mps", .vaddr = (size_t) symbol_usbh_dev_set_ep0_mps },
+    { .name = "usbh_dev_set_str_desc", .vaddr = (size_t) symbol_usbh_dev_set_str_desc },
+    { .name = "usbh_dev_submit_ctrl_urb", .vaddr = (size_t) symbol_usbh_dev_submit_ctrl_urb },
+    { .name = "usbh_devs_add", .vaddr = (size_t) symbol_usbh_devs_add },
+    { .name = "usbh_devs_is_uid_in_use", .vaddr = (size_t) symbol_usbh_devs_is_uid_in_use },
+    { .name = "usbh_devs_mark_all_free", .vaddr = (size_t) symbol_usbh_devs_mark_all_free },
+    { .name = "usbh_devs_new_dev_event", .vaddr = (size_t) symbol_usbh_devs_new_dev_event },
+    { .name = "usbh_devs_num", .vaddr = (size_t) symbol_usbh_devs_num },
+    { .name = "usbh_devs_open", .vaddr = (size_t) symbol_usbh_devs_open },
+    { .name = "usbh_devs_remove", .vaddr = (size_t) symbol_usbh_devs_remove },
+    { .name = "usbh_ep_alloc", .vaddr = (size_t) symbol_usbh_ep_alloc },
+    { .name = "usbh_ep_command", .vaddr = (size_t) symbol_usbh_ep_command },
+    { .name = "usbh_ep_dequeue_urb", .vaddr = (size_t) symbol_usbh_ep_dequeue_urb },
+    { .name = "usbh_ep_enqueue_urb", .vaddr = (size_t) symbol_usbh_ep_enqueue_urb },
+    { .name = "usbh_ep_free", .vaddr = (size_t) symbol_usbh_ep_free },
+    { .name = "usbh_ep_get_context", .vaddr = (size_t) symbol_usbh_ep_get_context },
+    { .name = "usbh_ep_get_handle", .vaddr = (size_t) symbol_usbh_ep_get_handle },
+    { .name = "usbh_install", .vaddr = (size_t) symbol_usbh_install },
+    { .name = "usbh_process", .vaddr = (size_t) symbol_usbh_process },
+    { .name = "usbh_uninstall", .vaddr = (size_t) symbol_usbh_uninstall },
     { .name = "usleep", .vaddr = (size_t) symbol_usleep },
     { .name = "utoa", .vaddr = (size_t) symbol_utoa },
     { .name = "uxListRemove", .vaddr = (size_t) symbol_uxListRemove },
@@ -10827,6 +10757,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 5408,
+    .symbols_len = 5373,
     .symbols     = symbols,
 };

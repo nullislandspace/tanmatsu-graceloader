@@ -22,6 +22,7 @@
 #include "sdcard.h"
 #include "fastopen.h"
 #include "graceloader.h"
+#include "gl_input.h"
 #include "esp_system.h"
 #include "sdkconfig.h"
 #include "bsp/device.h"
@@ -92,6 +93,11 @@ void app_main(void) {
     } else {
         ESP_LOGI(TAG, "SD card mounted at /sd");
     }
+
+    // Bring up the graceloader merged-input layer: native + USB HID.
+    // Apps that call gl_input_* see the unified view; classic
+    // bsp_input_* still works and gets USB-injected events too.
+    gl_input_init();
 
     // 3. Determine app path from boot selection
     char elf_path[256];
