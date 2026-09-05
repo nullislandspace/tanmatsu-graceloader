@@ -4430,7 +4430,6 @@ extern char const __attribute__((weak)) symbol_sairacondensed_ranges_len[] asm("
 extern char const __attribute__((weak)) symbol_sairaregular_ranges[] asm("sairaregular_ranges");
 extern char const __attribute__((weak)) symbol_sairaregular_ranges_len[] asm("sairaregular_ranges_len");
 extern char const __attribute__((weak)) symbol_sbrk[] asm("sbrk");
-extern char const __attribute__((weak)) symbol_scalbln[] asm("scalbln");
 extern char const __attribute__((weak)) symbol_scalblnf[] asm("scalblnf");
 extern char const __attribute__((weak)) symbol_scalbn[] asm("scalbn");
 extern char const __attribute__((weak)) symbol_scalbnf[] asm("scalbnf");
@@ -5227,7 +5226,6 @@ extern char const __attribute__((weak)) symbol_vRingbufferGetInfo[] asm("vRingbu
 extern char const __attribute__((weak)) symbol_vSemaphoreDeleteWithCaps[] asm("vSemaphoreDeleteWithCaps");
 extern char const __attribute__((weak)) symbol_vSystimerSetup[] asm("vSystimerSetup");
 extern char const __attribute__((weak)) symbol_vTaskDelay[] asm("vTaskDelay");
-extern char const __attribute__((weak)) symbol_vTaskDelayUntil[] asm("vTaskDelayUntil");
 extern char const __attribute__((weak)) symbol_vTaskDelete[] asm("vTaskDelete");
 extern char const __attribute__((weak)) symbol_vTaskGenericNotifyGiveFromISR[] asm("vTaskGenericNotifyGiveFromISR");
 extern char const __attribute__((weak)) symbol_vTaskGetSnapshot[] asm("vTaskGetSnapshot");
@@ -9805,7 +9803,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "sairaregular_ranges", .vaddr = (size_t) symbol_sairaregular_ranges },
     { .name = "sairaregular_ranges_len", .vaddr = (size_t) symbol_sairaregular_ranges_len },
     { .name = "sbrk", .vaddr = (size_t) symbol_sbrk },
-    { .name = "scalbln", .vaddr = (size_t) symbol_scalbln },
     { .name = "scalblnf", .vaddr = (size_t) symbol_scalblnf },
     { .name = "scalbn", .vaddr = (size_t) symbol_scalbn },
     { .name = "scalbnf", .vaddr = (size_t) symbol_scalbnf },
@@ -10602,7 +10599,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "vSemaphoreDeleteWithCaps", .vaddr = (size_t) symbol_vSemaphoreDeleteWithCaps },
     { .name = "vSystimerSetup", .vaddr = (size_t) symbol_vSystimerSetup },
     { .name = "vTaskDelay", .vaddr = (size_t) symbol_vTaskDelay },
-    { .name = "vTaskDelayUntil", .vaddr = (size_t) symbol_vTaskDelayUntil },
     { .name = "vTaskDelete", .vaddr = (size_t) symbol_vTaskDelete },
     { .name = "vTaskGenericNotifyGiveFromISR", .vaddr = (size_t) symbol_vTaskGenericNotifyGiveFromISR },
     { .name = "vTaskGetSnapshot", .vaddr = (size_t) symbol_vTaskGetSnapshot },

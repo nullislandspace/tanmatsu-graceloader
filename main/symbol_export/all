@@ -4423,7 +4423,6 @@ sairacondensed_ranges_len
 sairaregular_ranges
 sairaregular_ranges_len
 sbrk
-scalbln
 scalblnf
 scalbn
 scalbnf
@@ -5220,7 +5219,6 @@ vRingbufferGetInfo
 vSemaphoreDeleteWithCaps
 vSystimerSetup
 vTaskDelay
-vTaskDelayUntil
 vTaskDelete
 vTaskGenericNotifyGiveFromISR
 vTaskGetSnapshot

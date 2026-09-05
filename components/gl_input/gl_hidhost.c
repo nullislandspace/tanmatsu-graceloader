@@ -347,14 +347,15 @@ static void inject_ascii(char ascii, uint32_t modifiers) {
     if (ascii == 0) {
         return;
     }
-    // utf8 is a const-string pointer in the BSP definition; the BSP's
-    // own emitter sets it to NULL when only ASCII is meaningful.
+    // utf8 is an inline char[7] in the BSP definition; for plain ASCII the
+    // UTF-8 encoding is the same single byte.
     bsp_input_event_t ev = {
         .type                    = INPUT_EVENT_TYPE_KEYBOARD,
         .args_keyboard.ascii     = ascii,
-        .args_keyboard.utf8      = NULL,
         .args_keyboard.modifiers = modifiers,
     };
+    ev.args_keyboard.utf8[0] = ascii;
+    ev.args_keyboard.utf8[1] = '\0';
     bsp_input_inject_event(&ev);
 }
 
