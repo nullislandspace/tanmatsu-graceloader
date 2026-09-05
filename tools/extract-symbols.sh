@@ -73,6 +73,24 @@ fi
 
 ELF="$BUILD_DIR/application.elf"
 
+# TLS symbols (e.g. errno under PicoLibC in ESP-IDF 6) cannot be exported:
+# referencing them as plain symbols is a link error ("TLS definition ...
+# mismatches non-TLS reference"). Build a blacklist to filter them out.
+READELF="$(dirname "$NM")/riscv32-esp-elf-readelf"
+TLS_SYMS=$(mktemp)
+: > "$TLS_SYMS"
+if [ -x "$READELF" ]; then
+    # Scan both the linked ELF (when present) and every component archive,
+    # so the blacklist is complete even if the ELF failed to link.
+    { [ -f "$ELF" ] && "$READELF" -sW "$ELF" 2>/dev/null
+      find "$BUILD_DIR" -name '*.a' -exec "$READELF" -sW {} \; 2>/dev/null
+      # PicoLibC (ESP-IDF 6) keeps errno/stdio/localtime buffers in TLS
+      find "$(dirname "$NM")/../picolibc" -name '*.a' -exec "$READELF" -sW {} \; 2>/dev/null
+    } | awk '$4 == "TLS" {print $8}' \
+      | grep '^[A-Za-z_][A-Za-z0-9_]*$' | sort -u > "$TLS_SYMS"
+    echo "  Excluding $(wc -l < "$TLS_SYMS") TLS symbols"
+fi
+
 # --- Generate exported_symbols.ld (always) ---
 echo "Extracting symbols for exported_symbols.ld..."
 echo "Using nm: $NM"
@@ -82,7 +100,7 @@ ARCHIVE_SYMS=$(mktemp)
 
 if [ -f "$ELF" ]; then
     echo "  Extracting from: application.elf"
-    "$NM" -g --defined-only "$ELF" | awk '{print $3}' | grep '^[A-Za-z_][A-Za-z0-9_]*$' | sort -u > "$ELF_SYMS"
+    "$NM" -g --defined-only "$ELF" | awk '{print $3}' | grep '^[A-Za-z_][A-Za-z0-9_]*$' | grep -vxF -f "$TLS_SYMS" | sort -u > "$ELF_SYMS"
     echo "  $(wc -l < "$ELF_SYMS") symbols from ELF"
 else
     echo "  WARNING: application.elf not found"
@@ -103,7 +121,7 @@ for comp in "${COMPONENTS[@]}"; do
     fi
 done
 
-sort -u "$ARCHIVE_SYMS" | grep -v '^$' > "${ARCHIVE_SYMS}.sorted"
+sort -u "$ARCHIVE_SYMS" | grep -v '^$' | grep -vxF -f "$TLS_SYMS" > "${ARCHIVE_SYMS}.sorted"
 mv "${ARCHIVE_SYMS}.sorted" "$ARCHIVE_SYMS"
 echo "  $(wc -l < "$ARCHIVE_SYMS") symbols from archives ($found found, $missing missing)"
 
@@ -131,7 +149,7 @@ rm -f "$ARCHIVE_SYMS" "$EXTERN_SYMS"
 if [ "$GENERATE_ALL" = true ]; then
     if [ ! -f "$ELF" ]; then
         echo "ERROR: application.elf not found for --all"
-        rm -f "$ELF_SYMS"
+        rm -f "$ELF_SYMS" "$TLS_SYMS"
         exit 1
     fi
     echo ""
@@ -140,9 +158,9 @@ if [ "$GENERATE_ALL" = true ]; then
     # Filter to valid C identifiers only (letters, digits, underscores).
     # This excludes compiler internals like DW.ref.* that can't be used
     # as variable names in the kbelf symbol table.
-    "$NM" -g --defined-only "$ELF" | awk '{print $3}' | grep '^[A-Za-z_][A-Za-z0-9_]*$' | sort -u > "$SYMBOL_LIST"
+    "$NM" -g --defined-only "$ELF" | awk '{print $3}' | grep '^[A-Za-z_][A-Za-z0-9_]*$' | grep -vxF -f "$TLS_SYMS" | sort -u > "$SYMBOL_LIST"
     count=$(wc -l < "$SYMBOL_LIST")
     echo "Wrote $count symbols to main/symbol_export/all"
 fi
 
-rm -f "$ELF_SYMS"
+rm -f "$ELF_SYMS" "$TLS_SYMS"

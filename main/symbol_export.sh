@@ -27,7 +27,7 @@ for libname in $(ls | sort); do
         --kbelf "../../components/kbelf/src/kbelf_lib_${ident}.c" --kbelf-id "app_elf_lib_${ident}" --kbelf-path "lib${libname}.so" \
         --lib "../../output/fakelib/lib${libname}.so" \
         --assembler "$assembler" \
-        -F=-march=rv32imafc_zicsr_zifencei_xesppie -F=-mabi=ilp32f
+        -F=-march=rv32imafc_zicsr_zifencei_zaamo_zalrsc_xesploop_xespv2p1 -F=-mabi=ilp32f
 done
 
 echo "Done. Generated files:"

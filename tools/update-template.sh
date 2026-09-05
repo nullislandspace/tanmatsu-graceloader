@@ -82,6 +82,8 @@ HEADER_COMPONENTS=(
 
     # ESP-IDF platform essentials
     newlib
+    esp_libc     # ESP-IDF 6 renamed "newlib" -> "esp_libc" (holds esp_newlib.h)
+    esp_stdio
     freertos
     esp_common
     esp_system
@@ -96,6 +98,21 @@ HEADER_COMPONENTS=(
     esp_event
     pthread
 
+    # ESP-IDF 6 split the monolithic "hal" component into esp_hal_*
+    esp_hal_lcd
+    esp_hal_gpio
+    esp_hal_i2c
+    esp_hal_i2s
+    esp_hal_gpspi
+    esp_hal_ledc
+    esp_hal_sd
+    esp_hal_dma
+    esp_hal_clock
+    esp_hal_ppa
+    esp_hal_jpeg
+    esp_hal_timg
+
+    esp_blockdev
     # Drivers apps use directly
     driver
     esp_driver_gpio
