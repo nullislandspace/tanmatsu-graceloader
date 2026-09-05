@@ -111,6 +111,7 @@ HEADER_COMPONENTS=(
     esp_hal_ppa
     esp_hal_jpeg
     esp_hal_timg
+    esp_hal_usb
 
     esp_blockdev
     # Drivers apps use directly

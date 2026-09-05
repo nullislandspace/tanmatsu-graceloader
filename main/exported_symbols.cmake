@@ -2,6 +2,11 @@
 # Force-include exported symbols so linker doesn't strip them.
 # Edit by hand; this file is NOT auto-generated.
 target_link_options(${COMPONENT_LIB} INTERFACE
+    # libc functions apps use but the loader itself does not call;
+    # without --undefined, --gc-sections drops them from the ELF and
+    # they never reach the exported symbol table.
+    "-Wl,--undefined=sprintf"
+    "-Wl,--undefined=strtoull"
     "-Wl,--undefined=esp_log_write"
     "-Wl,--undefined=esp_log_timestamp"
     "-Wl,--undefined=esp_err_to_name"
