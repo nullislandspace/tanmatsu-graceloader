@@ -6,15 +6,36 @@
 #include "sd_pwr_ctrl.h"
 #include "sd_pwr_ctrl_by_on_chip_ldo.h"
 #include "sdmmc_cmd.h"
+#include "esp_idf_version.h"
+#include "esp_heap_caps.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
 static const char* TAG = "sdcard";
+
+// On ESP-IDF 6 the ESP32-P4's single SDMMC host controller is claimed by
+// ESP-Hosted when WiFi runs over the SDIO interface. Calling sdmmc_host_init()
+// again fails with ESP_ERR_NOT_FOUND ("no available sd host controller"), so
+// substitute no-ops and let ESP-Hosted own the controller.
+#if defined(CONFIG_ESP_HOSTED_SDIO_HOST_INTERFACE) && (ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(6, 0, 0))
+#define SDCARD_WORKAROUND_HOSTED_DOES_SDMMC_HOST_INIT 1
+static esp_err_t sdmmc_host_init_noop(void) {
+    return ESP_OK;
+}
+static esp_err_t sdmmc_host_deinit_noop(void) {
+    return ESP_OK;
+}
+#else
+#define SDCARD_WORKAROUND_HOSTED_DOES_SDMMC_HOST_INIT 0
+#endif
 static bool mounted = false;
 static sd_pwr_ctrl_handle_t pwr_ctrl_handle = NULL;
 
-// DMA buffer in internal RAM (required for SDMMC)
-static DRAM_DMA_ALIGNED_ATTR uint8_t dma_buf[512 * 4];
+// DMA buffer in internal RAM (required for SDMMC). ESP-IDF 6 calls
+// heap_caps_get_allocated_size() on this pointer, which asserts unless the
+// buffer really came from the heap - so it must be heap_caps_malloc'd, not
+// a static array.
+static uint8_t* dma_buf = NULL;
 
 esp_err_t sdcard_init(void) {
     esp_err_t res;
@@ -55,7 +76,19 @@ esp_err_t sdcard_init(void) {
     host.slot = SDMMC_HOST_SLOT_0;          // Use SLOT0 for native IOMUX pins
     host.max_freq_khz = SDMMC_FREQ_HIGHSPEED;  // 40MHz
     host.pwr_ctrl_handle = pwr_ctrl_handle;
+    if (dma_buf == NULL) {
+        dma_buf = heap_caps_malloc(512 * 4, MALLOC_CAP_DMA | MALLOC_CAP_INTERNAL);
+        if (dma_buf == NULL) {
+            ESP_LOGE(TAG, "Failed to allocate DMA buffer for SD card");
+            return ESP_ERR_NO_MEM;
+        }
+    }
     host.dma_aligned_buffer = dma_buf;
+#if SDCARD_WORKAROUND_HOSTED_DOES_SDMMC_HOST_INIT
+    // ESP-Hosted already owns the shared SDMMC host controller.
+    host.init   = &sdmmc_host_init_noop;
+    host.deinit = &sdmmc_host_deinit_noop;
+#endif
 
     // SDMMC slot configuration with Tanmatsu pinout
     sdmmc_slot_config_t slot_config = SDMMC_SLOT_CONFIG_DEFAULT();
