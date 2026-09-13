@@ -129,30 +129,27 @@ update-template:
 .PHONY: sync-template
 sync-template: build
 	@echo ""
-	@echo "=== Step 1/8: Extracting archive symbols -> exported_symbols.ld ==="
+	@echo "=== Step 1/7: Extracting archive symbols -> exported_symbols.ld ==="
 	bash tools/extract-symbols.sh
 	@echo ""
-	@echo "=== Step 2/8: Rebuilding with EXTERN'd symbols ==="
+	@echo "=== Step 2/7: Rebuilding with EXTERN'd symbols ==="
 	rm -f $(BUILD)/application.elf
 	$(MAKE) build
 	@echo ""
-	@echo "=== Step 3/8: Extracting ELF symbols -> symbol_export/all ==="
+	@echo "=== Step 3/7: Extracting ELF symbols -> symbol_export/all ==="
 	bash tools/extract-symbols.sh --all
 	@echo ""
-	@echo "=== Step 4/8: Regenerating kbelf tables and fakelib ==="
+	@echo "=== Step 4/7: Regenerating kbelf tables and fakelib ==="
 	source "$(IDF_SOURCE)" >/dev/null && cd main && bash symbol_export.sh
 	@echo ""
-	@echo "=== Step 5/8: Rebuilding with updated kbelf tables ==="
+	@echo "=== Step 5/7: Rebuilding with updated kbelf tables ==="
 	rm -f $(BUILD)/application.elf
 	$(MAKE) build
 	@echo ""
-	@echo "=== Step 6/8: Re-extracting final ELF symbols ==="
-	bash tools/extract-symbols.sh --all
+	@echo "=== Step 6/7: Checking that the final ELF matches the exported symbol list ==="
+	bash tools/extract-symbols.sh --check
 	@echo ""
-	@echo "=== Step 7/8: Regenerating fakelib from final ELF ==="
-	source "$(IDF_SOURCE)" >/dev/null && cd main && bash symbol_export.sh
-	@echo ""
-	@echo "=== Step 8/8: Updating template app ==="
+	@echo "=== Step 7/7: Updating template app ==="
 	TEMPLATE_PATH="$(TEMPLATE_PATH)" DEVICE="$(DEVICE)" bash tools/update-template.sh
 	@echo ""
 	@echo "=== Template synced ==="

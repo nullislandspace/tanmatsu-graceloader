@@ -344,4 +344,24 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=nvs_settings_set_owner_birthday_day"
     "-Wl,--undefined=nvs_settings_get_owner_birthday_month"
     "-Wl,--undefined=nvs_settings_set_owner_birthday_month"
+    # Display functions added in badge-bsp 1.5.0. Tanmatsu has no implementation, they only exist as weak
+    # stubs in libbsp_stub.a (not scanned by tools/extract-symbols.sh), so they have to be forced in here.
+    "-Wl,--undefined=bsp_display_wait"
+    "-Wl,--undefined=bsp_display_get_busy"
+    "-Wl,--undefined=bsp_display_interrupt"
+    # Standard mode I2S API for apps that stream audio to the codec. esp_driver_i2s is not scanned by
+    # tools/extract-symbols.sh (that would drag in the unusable PDM, TDM, ETM and LP I2S drivers).
+    "-Wl,--undefined=i2s_new_channel"
+    "-Wl,--undefined=i2s_del_channel"
+    "-Wl,--undefined=i2s_channel_get_info"
+    "-Wl,--undefined=i2s_channel_init_std_mode"
+    "-Wl,--undefined=i2s_channel_reconfig_std_clock"
+    "-Wl,--undefined=i2s_channel_reconfig_std_slot"
+    "-Wl,--undefined=i2s_channel_reconfig_std_gpio"
+    "-Wl,--undefined=i2s_channel_enable"
+    "-Wl,--undefined=i2s_channel_disable"
+    "-Wl,--undefined=i2s_channel_write"
+    "-Wl,--undefined=i2s_channel_read"
+    "-Wl,--undefined=i2s_channel_preload_data"
+    "-Wl,--undefined=i2s_channel_register_event_callback"
 )
