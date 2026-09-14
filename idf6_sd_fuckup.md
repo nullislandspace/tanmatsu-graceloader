@@ -8,6 +8,14 @@ committed (`ee85b37`). The attribution is [espressif/esp-idf#16233][16233],
 which Espressif filed and then closed *"Resolution: NA"* — i.e. acknowledged
 and not fixed.
 
+> **Update 2026-09-14 — read §11 first.** A side-by-side reading of the
+> IDF 5.5.1 and 6.0.2 SDMMC drivers found that IDF 5.5.1 *already* shared one
+> controller between the SD card and ESP-Hosted, with the same primitives, and
+> an IDF 5.5.1 app with ESP-Hosted active does large direct-to-PSRAM reads
+> without error. The attribution to controller sharing in §5 is therefore
+> much weaker than it reads, and the root cause is **open**. A test app to
+> settle it is prepared in `../tanmatsu-idf6tests`.
+
 [16233]: https://github.com/espressif/esp-idf/issues/16233
 
 ---
@@ -337,7 +345,178 @@ None of these were run; recording them so the next person does not start over.
 > interrupt watchdog (note `CONFIG_ESP_MM_CACHE_MSYNC_C2M_CHUNKED_OPS` is off,
 > so a large `esp_cache_msync()` runs with interrupts disabled).
 
-## 11. References
+## 11. Re-analysis, 2026-09-14: what differs between 5.5.1 and 6.0.2, and what does not
+
+Done while porting BlinkenSisters (`tanmatsu-blinkensisters`), which runs on
+IDF 5.5.1 / badge-bsp 0.8.0 and was being considered for IDF 6.0.2 /
+badge-bsp 1.5.0 (1.5.0 declares `idf: '>=6.0.2'`, so the BSP upgrade forces
+IDF 6). Sources compared: `/home/cavac/idf/v5.5.1/esp-idf` and
+`/home/cavac/idf/v6.0.2/esp-idf`.
+
+### 11.1 New evidence: sharing plus large PSRAM reads works on IDF 5.5.1
+
+BlinkenSisters on IDF 5.5.1 brings ESP-Hosted up at boot (tanmatsu-wifi
+1.2.0, SDIO slot 1), connects to WiFi, and constantly reads large files
+straight into PSRAM: hardware-JPEG input buffers up to ~2 MB, PNGs, WAVs,
+whole `.bmf` archives unpacked at ~1 MB/s. On the device (2026-09-14) it
+downloaded ~70 MB over HTTPS while writing to the card (SHA-256 verified),
+unpacked all of it, and a self-test loaded all 36 levels of six addons
+without a single read error.
+
+So *SD card and ESP-Hosted on one controller* plus *large DMA reads into
+PSRAM* is fine on 5.5.1. Whatever breaks is something IDF 6 changed, not the
+sharing as such.
+
+(One IDF 5.5.1 problem did show up there, unrelated to 6.0: newlib's 8 KB
+stdio buffer, a "small" allocation, spilled into RTC fast memory once
+internal SRAM was fragmented, and the SDMMC DMA path rejects that address —
+`esp_cache_msync: invalid addr`. Fixed with
+`CONFIG_ESP_SYSTEM_ALLOW_RTC_FAST_MEM_AS_HEAP=n` and a `fastopen()` that
+gives SD files a cache-aligned PSRAM stdio buffer. Note the interaction with
+§9: that makes *every* buffered read a PSRAM DMA destination, which is exactly
+the pattern suspected on IDF 6.)
+
+### 11.2 IDF 5.5.1 already shares the controller
+
+`components/esp_driver_sdmmc/src/sdmmc_host.c` (5.5.1):
+
+- one global host context `s_host_ctx`, one DMA ring `s_dma_desc[4]`
+  (`SDMMC_DMA_DESC_CNT`), one request mutex `s_request_mutex`, one ISR
+  `sdmmc_isr`, one event queue;
+- per-slot saved settings in `s_host_ctx.slot_ctx[slot]` (`slot_host_div`,
+  `slot_ll_delay_phase`, `slot_freq_khz`);
+- `sdmmc_host_change_to_slot()` (`:951`) applies them — clock divider,
+  input delay, data timeout, then `esp_rom_delay_us(10)` — called from the
+  command start path (`:428`) **only when `active_slot_num` changes**.
+
+IDF 6.0.2's legacy API is a thin wrapper over the new driver
+(`legacy/src/sdmmc_host.c:26-28`: one `s_ctlr`, `s_slot0`, `s_slot1`).
+With graceloader's no-op `host.init`, the SD card's slot 0 is simply added to
+the controller ESP-Hosted created. Structurally that is the same arrangement
+as 5.5.1: one controller, two slots, one ring, one mutex, one ISR.
+
+### 11.3 What stays the same (verified)
+
+| Area | 5.5.1 | 6.0.2 | Result |
+|---|---|---|---|
+| SDMMC register layout | `soc/esp32p4/register/soc/sdmmc_struct.h` | `register/hw_ver1/soc/sdmmc_struct.h` | **byte-identical** |
+| HP clock/reset structs | `hp_sys_clkrst_struct.h`, `hp_system_struct.h` | `hw_ver1/...` | identical |
+| Chip revision | rev v1.3 | `CONFIG_ESP32P4_SELECTS_REV_LESS_V3=y` in graceloader | correct; selects the `hw_ver1` headers |
+| LL clock divider | `sdmmc_ll_set_clock_div` | same | same writes (macro wrapper only) |
+| LL input delay, low-speed | `sdmmc_ll_set_din_delay` → `reg_sdio_ls_sam_clk_edge_sel` | `sdmmc_ll_set_din_delay_phase(..., LS)` → same field | same |
+| ISR | `sdmmc_isr` | `sd_host_isr` | same logic; 6.0.2 adds optional callbacks |
+| DMA free count | `get_free_descriptors_count` | `sd_host_get_free_descriptors_count` | identical (counts modulo ring size in both) |
+| DMA prepare | `sdmmc_host_dma_prepare` | `sd_host_dma_prepare` | identical |
+| DMA fill | `fill_dma_descriptors` | `sd_host_fill_dma_descriptors` | identical except the wrap (§8, §11.4) |
+| Data cache sync | C2M over `buflen` before, M2C after | same | identical |
+| Buffer alignment check | `sdmmc_host_check_buffer_alignment` | `sd_host_check_buffer_alignment` | identical logic |
+| Event queue length | `SDMMC_EVENT_QUEUE_LENGTH` | legacy wrapper passes `SDMMC_EVENT_QUEUE_LENGTH` | same (the new API's default would be 4) |
+| Transaction serialisation | `s_request_mutex` | `ctlr->mutex` | equivalent |
+| Slot 0 settings in use | 40 MHz, 4-bit, delay phase 0 | same | same |
+| Slot 1 (ESP-Hosted) settings | 40 MHz, 4-bit, delay phase 0, GPIO matrix | same | same |
+
+### 11.4 What differs
+
+1. **Reconfiguration before every command, not on slot change.**
+   `sd_host_slot_sdmmc_do_transaction()` (`src/sd_trans_sdmmc.c:480ff`) runs,
+   for the current slot, on every command:
+   - clock: re-programs only if the real frequency (shared host divider +
+     slot card divider) differs from the slot's — for 40 MHz on both slots
+     it does not;
+   - `sd_host_slot_set_bus_width()`: in 4-bit mode calls `configure_pin()` on
+     **D3 every time**. Slot 0 uses IOMUX pins: a re-mux plus drive strength 3,
+     harmless. Slot 1 (ESP-Hosted) uses the GPIO matrix:
+     `configure_pin_gpio_matrix()` starts with **`gpio_reset_pin(D3)`**,
+     so the radio's D3 line is reset and reconnected before each of its
+     commands. That can disturb the radio link; it does not touch slot 0's
+     data;
+   - sampling mode (DDR off), delay line (SDR104 only, not used);
+   - `sd_host_set_delay_phase()` writes the input **and output** delay phase
+     of the whole controller (5.5.1 only set input). The output write only
+     happens in high-speed (SDR104) mode, so at 40 MHz it is a no-op, and the
+     input write puts back the same phase 0.
+
+   With the Tanmatsu's settings every write restores the value already there,
+   except the D3 pin reset on slot 1.
+
+2. **The descriptor ring wrap (§8).** `sd_host_fill_dma_descriptors()` wraps
+   links and `next_desc` on its `num_desc` argument. Traced by hand for
+   refill counts 1–3: after any refill from descriptor 0 (the only place
+   refills start, because the buggy wrap always returns `next_desc` to 0),
+   the chain order equals the fill order, and the last filled descriptor
+   links back to descriptor 0, where the DMA suspends until the next refill
+   and resume. Data lands in order; the cost is extra DU suspends. Agrees with
+   the §8 simulation. **It is still the only code change inside the >16 KB,
+   ISR-refill path** — which the §5 size argument points at — so it stays on
+   the test list.
+
+3. **Controller registration.** The mount failure itself
+   (`sd_host_claim_controller`, `SDMMC_LL_HOST_CTLR_NUMS 1U`), worked around
+   with the no-op init. Registration only; not a data-path change.
+
+4. **Not compared in this pass.** The toolchain (gcc 15.2 vs 14.2 — the
+   descriptors are bitfield structs written field by field before a single
+   `esp_cache_msync`, so code generation is not obviously irrelevant), FatFs
+   (`FF_USE_DYN_BUFFER`), `esp_mm`/cache HAL, the PSRAM driver. §6 records
+   earlier comparisons of these as equivalent.
+
+### 11.5 Conclusion
+
+The IDF 6.0.2 SDMMC driver, as the Tanmatsu exercises it, shows **no
+mechanism** that would put wrong bytes into a correctly cache-synced PSRAM
+buffer, and the sharing it has was already there in 5.5.1, where it works.
+§5's attribution to ESP-Hosted sharing is not supported by the code; the root
+cause is open.
+
+The strongest unused clue is §3's: after the cache fix the wrong data was
+**deterministic** (`raw == afterInval != file`, stable across runs). Races
+rarely produce that. Nobody looked at *which* bytes were wrong, and the
+pattern would say where to look:
+
+| Pattern of bad bytes | Points at |
+|---|---|
+| whole 4096-byte runs duplicated, swapped or from another offset | DMA descriptor chain / refill |
+| 512-byte units | sector / FatFs level |
+| 64- or 128-byte granularity | cache lines (L1 64 B, L2 64 B) |
+| zeros or stale data from some offset on | transfer length / early termination |
+| scattered bits | signal integrity (timing, pin reconfiguration) |
+
+### 11.6 Upstream status, checked 2026-09-14
+
+- [espressif/esp-idf#16233][16233], [espressif/esp-idf#17889][17889] and
+  [espressif/esp-hosted-mcu#124][124]: all describe only the
+  "no available sd host controller" mount failure. No mention of data
+  corruption, no workaround beyond the no-op init, no public fix
+  (labelled done internally, resolution "NA").
+
+[17889]: https://github.com/espressif/esp-idf/issues/17889
+[124]: https://github.com/espressif/esp-hosted-mcu/issues/124
+
+### 11.7 Test plan — `../tanmatsu-idf6tests`
+
+A standalone app on IDF 6.0.2 / badge-bsp 1.5.0, launched from the SD card
+like any other, that:
+
+1. writes a pattern file whose every 4-byte word encodes its own file offset
+   (so a misplaced byte reveals where it came from), through a small
+   internal-RAM buffer, and verifies it the same way as a baseline;
+2. reads it back with single `fread()` calls of 4 KB … 4 MB into cache-aligned
+   PSRAM, plain PSRAM and internal RAM, unbuffered so FatFs gets the whole
+   request, at file offset 0 and at a sector-aligned offset;
+3. reports each case OK/BAD with the bad-byte count, the bad runs (offset,
+   length, granularity) and where the misplaced data came from, on screen,
+   on the console and in `/sd/idf6test/results-<variant>.txt`.
+
+Build variants (each its own app slug, so all can be installed side by side):
+
+| Variant | Change | Question it answers |
+|---|---|---|
+| `base` | as graceloader: ESP-Hosted on, no-op mount init | reproduces the failure? |
+| `nohosted` | ESP-Hosted and WiFi compiled out, normal mount | is sharing involved at all? (§10.1) |
+| `ringfix` | `esp_driver_sdmmc` override with the §8 wrap fixed | is the ring wrap involved? (§10.3) |
+| `chunkedmsync` | `CONFIG_ESP_MM_CACHE_MSYNC_C2M_CHUNKED_OPS=y` | is the cache sync involved? |
+
+## 12. References
 
 - [espressif/esp-idf#16233 — SDMMC and ESP-Hosted SDIO cannot coexist][16233]
 - [`sd_trans_sdmmc.c` commit history](https://github.com/espressif/esp-idf/commits/master/components/esp_driver_sdmmc/src/sd_trans_sdmmc.c) — `402bf0c` is the rewrite
