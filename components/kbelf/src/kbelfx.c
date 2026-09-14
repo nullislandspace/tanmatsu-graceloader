@@ -109,31 +109,11 @@ long kbelfx_load(kbelf_inst inst, void* fd, kbelf_laddr laddr, kbelf_laddr file_
     ESP_LOGI(TAG, "Loading 0x%x bytes from 0x%x to %p", (int)file_size, (int)ftell(fd), (void*)laddr);
     memset((void*)(laddr + file_size), 0, mem_size - file_size);
 
-    // Read the segment through an internal-RAM staging buffer and copy it into
-    // place with the CPU. The destination is PSRAM, and a large fread() is
-    // handed straight to the filesystem, so SDMMC DMAs directly into PSRAM --
-    // which was measured to deliver wrong data there (verified by checksum:
-    // memory and file disagreed even with the caches flushed beforehand).
-    // Staging keeps DMA in internal RAM, where it is reliable, and makes every
-    // write to the segment an ordinary CPU store.
-    long nread = 0;
-    uint8_t* stage = heap_caps_malloc(4096, MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
-    if (stage) {
-        while (nread < (long)file_size) {
-            size_t want = (size_t)file_size - (size_t)nread;
-            if (want > 4096) want = 4096;
-            size_t got = fread(stage, 1, want, fd);
-            if (got == 0) break;
-            memcpy((void*)(laddr + nread), stage, got);
-            nread += (long)got;
-            if (got < want) break;
-        }
-        free(stage);
-    } else {
-        ESP_LOGW(TAG, "no internal RAM for staging buffer, reading direct");
-        nread = fread((void*)laddr, 1, file_size, fd);
-    }
-    return nread;
+    // A plain fread() straight into PSRAM. SDMMC DMAs directly into the
+    // segment; this is only safe because main.c holds ESP_PM_CPU_FREQ_MAX
+    // (see there). Before that lock existed, this read came back corrupted and
+    // was staged through a 4 KB internal buffer, at half the speed.
+    return fread((void*)laddr, 1, file_size, fd);
 }
 
 int kbelfx_seek(void* fd, long pos) {
