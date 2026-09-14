@@ -736,6 +736,8 @@ __wrap___bufio_setvbuf
 __wrap___cxa_allocate_exception
 __wrap___cxa_throw
 __wrap___gxx_personality_v0
+__wrap_bsp_audio_get_volume
+__wrap_bsp_audio_set_volume
 __wtime_am_pm
 __wtime_mon
 __wtime_month

@@ -2,6 +2,7 @@ idf_component_register(
     SRCS
         "main.c"
         "sdcard.c"
+        "volume_limit.c"
     PRIV_REQUIRES
         fatfs
         nvs_flash
@@ -40,6 +41,17 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=getenv"
     "-Wl,--undefined=vsnprintf"
     "-Wl,--undefined=graceloader_get_install_basepath"
+)
+
+# Audio volume limit for apps, see volume_limit.c. --wrap redirects every reference to these BSP functions
+# (including the kbelf export table used by apps) to the __wrap_ versions. The export table only holds weak
+# references, which don't pull objects out of an archive, so the wrappers are force-included explicitly;
+# otherwise the table entries would silently resolve to address 0.
+target_link_options(${COMPONENT_LIB} INTERFACE
+    "-Wl,--wrap=bsp_audio_set_volume"
+    "-Wl,--wrap=bsp_audio_get_volume"
+    "-Wl,--undefined=__wrap_bsp_audio_set_volume"
+    "-Wl,--undefined=__wrap_bsp_audio_get_volume"
 )
 
 idf_build_set_property(COMPILE_OPTIONS "-Wno-error=unused-variable" APPEND)

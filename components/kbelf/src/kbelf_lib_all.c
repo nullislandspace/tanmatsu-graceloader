@@ -743,6 +743,8 @@ extern char const __attribute__((weak)) symbol___wrap___bufio_setvbuf[] asm("__w
 extern char const __attribute__((weak)) symbol___wrap___cxa_allocate_exception[] asm("__wrap___cxa_allocate_exception");
 extern char const __attribute__((weak)) symbol___wrap___cxa_throw[] asm("__wrap___cxa_throw");
 extern char const __attribute__((weak)) symbol___wrap___gxx_personality_v0[] asm("__wrap___gxx_personality_v0");
+extern char const __attribute__((weak)) symbol___wrap_bsp_audio_get_volume[] asm("__wrap_bsp_audio_get_volume");
+extern char const __attribute__((weak)) symbol___wrap_bsp_audio_set_volume[] asm("__wrap_bsp_audio_set_volume");
 extern char const __attribute__((weak)) symbol___wtime_am_pm[] asm("__wtime_am_pm");
 extern char const __attribute__((weak)) symbol___wtime_mon[] asm("__wtime_mon");
 extern char const __attribute__((weak)) symbol___wtime_month[] asm("__wtime_month");
@@ -6070,6 +6072,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__wrap___cxa_allocate_exception", .vaddr = (size_t) symbol___wrap___cxa_allocate_exception },
     { .name = "__wrap___cxa_throw", .vaddr = (size_t) symbol___wrap___cxa_throw },
     { .name = "__wrap___gxx_personality_v0", .vaddr = (size_t) symbol___wrap___gxx_personality_v0 },
+    { .name = "__wrap_bsp_audio_get_volume", .vaddr = (size_t) symbol___wrap_bsp_audio_get_volume },
+    { .name = "__wrap_bsp_audio_set_volume", .vaddr = (size_t) symbol___wrap_bsp_audio_set_volume },
     { .name = "__wtime_am_pm", .vaddr = (size_t) symbol___wtime_am_pm },
     { .name = "__wtime_mon", .vaddr = (size_t) symbol___wtime_mon },
     { .name = "__wtime_month", .vaddr = (size_t) symbol___wtime_month },
@@ -10661,6 +10665,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 5325,
+    .symbols_len = 5327,
     .symbols     = symbols,
 };
