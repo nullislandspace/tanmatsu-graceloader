@@ -14,6 +14,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include "esp_log.h"
+#include "esp_pm.h"
 #include "esp_vfs_fat.h"
 #include "hal/cache_hal.h"
 #include "soc/soc.h"
@@ -31,6 +32,16 @@
 #include "hal/usb_serial_jtag_ll.h"
 
 static const char TAG[] = "graceloader";
+
+// Held for the whole lifetime of graceloader and the app it runs, never
+// released. With CONFIG_PM_ENABLE, DFS would otherwise scale the CPU below the
+// PSRAM speed whenever it is idle, and on the ESP32-P4 that switches the PSRAM
+// MSPI interface to low-speed mode -- also in the middle of SD card DMA
+// transfers into PSRAM, which corrupts memory or locks up (the SDMMC driver
+// only holds ESP_PM_APB_FREQ_MAX). The MIPI DSI driver holds the same lock
+// while the display runs, but graceloader loads apps before any display
+// exists. See idf6_sd_fuckup.md §12.
+static esp_pm_lock_handle_t cpu_max_lock = NULL;
 
 // Install basepath — set before loading app.so, readable by the app
 static char install_basepath[256] = "";
@@ -55,6 +66,13 @@ static bool file_exists(const char* path) {
 
 void app_main(void) {
     ESP_LOGI(TAG, "Graceloader starting...");
+
+    esp_err_t pm_res = esp_pm_lock_create(ESP_PM_CPU_FREQ_MAX, 0, "graceloader", &cpu_max_lock);
+    if (pm_res == ESP_OK) {
+        esp_pm_lock_acquire(cpu_max_lock);
+    } else if (pm_res != ESP_ERR_NOT_SUPPORTED) {  // NOT_SUPPORTED: power management is disabled
+        ESP_LOGE(TAG, "Failed to create CPU frequency lock: %s", esp_err_to_name(pm_res));
+    }
 
     // Switch USB from badgelink mode to flash/monitor mode
     const usb_serial_jtag_pull_override_vals_t override_disable_usb = {

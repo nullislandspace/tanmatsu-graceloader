@@ -17,6 +17,7 @@ idf_component_register(
         esp_system
         heap
         gl_input
+        esp_pm
     INCLUDE_DIRS
         "."
 )
