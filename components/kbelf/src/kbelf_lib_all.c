@@ -1807,6 +1807,8 @@ extern char const __attribute__((weak)) symbol_esp_vfs_unregister_fs[] asm("esp_
 extern char const __attribute__((weak)) symbol_esp_vfs_unregister_fs_with_id[] asm("esp_vfs_unregister_fs_with_id");
 extern char const __attribute__((weak)) symbol_esp_vfs_unregister_with_id[] asm("esp_vfs_unregister_with_id");
 extern char const __attribute__((weak)) symbol_esp_vfs_usb_serial_jtag_get_vfs[] asm("esp_vfs_usb_serial_jtag_get_vfs");
+extern char const __attribute__((weak)) symbol_esp_vfs_usb_serial_jtag_use_driver[] asm("esp_vfs_usb_serial_jtag_use_driver");
+extern char const __attribute__((weak)) symbol_esp_vfs_usb_serial_jtag_use_nonblocking[] asm("esp_vfs_usb_serial_jtag_use_nonblocking");
 extern char const __attribute__((weak)) symbol_esp_vfs_write[] asm("esp_vfs_write");
 extern char const __attribute__((weak)) symbol_esp_wifi_internal_free_rx_buffer[] asm("esp_wifi_internal_free_rx_buffer");
 extern char const __attribute__((weak)) symbol_esp_wifi_remote_channel_rx[] asm("esp_wifi_remote_channel_rx");
@@ -5096,12 +5098,20 @@ extern char const __attribute__((weak)) symbol_usb_serial_device_rx_one_char_blo
 extern char const __attribute__((weak)) symbol_usb_serial_device_tx_flush[] asm("usb_serial_device_tx_flush");
 extern char const __attribute__((weak)) symbol_usb_serial_device_tx_one_char[] asm("usb_serial_device_tx_one_char");
 extern char const __attribute__((weak)) symbol_usb_serial_jtag_connection_monitor_include[] asm("usb_serial_jtag_connection_monitor_include");
+extern char const __attribute__((weak)) symbol_usb_serial_jtag_driver_install[] asm("usb_serial_jtag_driver_install");
+extern char const __attribute__((weak)) symbol_usb_serial_jtag_driver_uninstall[] asm("usb_serial_jtag_driver_uninstall");
 extern char const __attribute__((weak)) symbol_usb_serial_jtag_get_read_bytes_available[] asm("usb_serial_jtag_get_read_bytes_available");
 extern char const __attribute__((weak)) symbol_usb_serial_jtag_is_connected[] asm("usb_serial_jtag_is_connected");
 extern char const __attribute__((weak)) symbol_usb_serial_jtag_is_driver_installed[] asm("usb_serial_jtag_is_driver_installed");
+extern char const __attribute__((weak)) symbol_usb_serial_jtag_read_bytes[] asm("usb_serial_jtag_read_bytes");
+extern char const __attribute__((weak)) symbol_usb_serial_jtag_read_ready[] asm("usb_serial_jtag_read_ready");
 extern char const __attribute__((weak)) symbol_usb_serial_jtag_set_select_notif_callback[] asm("usb_serial_jtag_set_select_notif_callback");
 extern char const __attribute__((weak)) symbol_usb_serial_jtag_vfs_include_dev_init[] asm("usb_serial_jtag_vfs_include_dev_init");
 extern char const __attribute__((weak)) symbol_usb_serial_jtag_vfs_register[] asm("usb_serial_jtag_vfs_register");
+extern char const __attribute__((weak)) symbol_usb_serial_jtag_vfs_use_driver[] asm("usb_serial_jtag_vfs_use_driver");
+extern char const __attribute__((weak)) symbol_usb_serial_jtag_vfs_use_nonblocking[] asm("usb_serial_jtag_vfs_use_nonblocking");
+extern char const __attribute__((weak)) symbol_usb_serial_jtag_wait_tx_done[] asm("usb_serial_jtag_wait_tx_done");
+extern char const __attribute__((weak)) symbol_usb_serial_jtag_write_bytes[] asm("usb_serial_jtag_write_bytes");
 extern char const __attribute__((weak)) symbol_usb_serial_jtag_write_ready[] asm("usb_serial_jtag_write_ready");
 extern char const __attribute__((weak)) symbol_usb_serial_otg_rx_one_char[] asm("usb_serial_otg_rx_one_char");
 extern char const __attribute__((weak)) symbol_usb_serial_otg_rx_one_char_block[] asm("usb_serial_otg_rx_one_char_block");
@@ -5175,7 +5185,10 @@ extern char const __attribute__((weak)) symbol_vPortYieldOtherCore[] asm("vPortY
 extern char const __attribute__((weak)) symbol_vQueueDelete[] asm("vQueueDelete");
 extern char const __attribute__((weak)) symbol_vQueueDeleteWithCaps[] asm("vQueueDeleteWithCaps");
 extern char const __attribute__((weak)) symbol_vQueueWaitForMessageRestricted[] asm("vQueueWaitForMessageRestricted");
+extern char const __attribute__((weak)) symbol_vRingbufferDelete[] asm("vRingbufferDelete");
 extern char const __attribute__((weak)) symbol_vRingbufferGetInfo[] asm("vRingbufferGetInfo");
+extern char const __attribute__((weak)) symbol_vRingbufferReturnItem[] asm("vRingbufferReturnItem");
+extern char const __attribute__((weak)) symbol_vRingbufferReturnItemFromISR[] asm("vRingbufferReturnItemFromISR");
 extern char const __attribute__((weak)) symbol_vSemaphoreDeleteWithCaps[] asm("vSemaphoreDeleteWithCaps");
 extern char const __attribute__((weak)) symbol_vSystimerSetup[] asm("vSystimerSetup");
 extern char const __attribute__((weak)) symbol_vTaskDelay[] asm("vTaskDelay");
@@ -5190,6 +5203,7 @@ extern char const __attribute__((weak)) symbol_vTaskPriorityDisinheritAfterTimeo
 extern char const __attribute__((weak)) symbol_vTaskPrioritySet[] asm("vTaskPrioritySet");
 extern char const __attribute__((weak)) symbol_vTaskRemoveFromUnorderedEventList[] asm("vTaskRemoveFromUnorderedEventList");
 extern char const __attribute__((weak)) symbol_vTaskSetThreadLocalStoragePointerAndDelCallback[] asm("vTaskSetThreadLocalStoragePointerAndDelCallback");
+extern char const __attribute__((weak)) symbol_vTaskSetTimeOutState[] asm("vTaskSetTimeOutState");
 extern char const __attribute__((weak)) symbol_vTaskStartScheduler[] asm("vTaskStartScheduler");
 extern char const __attribute__((weak)) symbol_vTaskSuspend[] asm("vTaskSuspend");
 extern char const __attribute__((weak)) symbol_vTaskSuspendAll[] asm("vTaskSuspendAll");
@@ -5303,7 +5317,12 @@ extern char const __attribute__((weak)) symbol_xQueueReceive[] asm("xQueueReceiv
 extern char const __attribute__((weak)) symbol_xQueueReceiveFromISR[] asm("xQueueReceiveFromISR");
 extern char const __attribute__((weak)) symbol_xQueueSemaphoreTake[] asm("xQueueSemaphoreTake");
 extern char const __attribute__((weak)) symbol_xQueueTakeMutexRecursive[] asm("xQueueTakeMutexRecursive");
+extern char const __attribute__((weak)) symbol_xRingbufferCreate[] asm("xRingbufferCreate");
 extern char const __attribute__((weak)) symbol_xRingbufferGetCurFreeSize[] asm("xRingbufferGetCurFreeSize");
+extern char const __attribute__((weak)) symbol_xRingbufferReceiveUpTo[] asm("xRingbufferReceiveUpTo");
+extern char const __attribute__((weak)) symbol_xRingbufferReceiveUpToFromISR[] asm("xRingbufferReceiveUpToFromISR");
+extern char const __attribute__((weak)) symbol_xRingbufferSend[] asm("xRingbufferSend");
+extern char const __attribute__((weak)) symbol_xRingbufferSendFromISR[] asm("xRingbufferSendFromISR");
 extern char const __attribute__((weak)) symbol_xSemaphoreCreateGenericWithCaps[] asm("xSemaphoreCreateGenericWithCaps");
 extern char const __attribute__((weak)) symbol_xTaskCheckForTimeOut[] asm("xTaskCheckForTimeOut");
 extern char const __attribute__((weak)) symbol_xTaskCreatePinnedToCore[] asm("xTaskCreatePinnedToCore");
@@ -7136,6 +7155,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_vfs_unregister_fs_with_id", .vaddr = (size_t) symbol_esp_vfs_unregister_fs_with_id },
     { .name = "esp_vfs_unregister_with_id", .vaddr = (size_t) symbol_esp_vfs_unregister_with_id },
     { .name = "esp_vfs_usb_serial_jtag_get_vfs", .vaddr = (size_t) symbol_esp_vfs_usb_serial_jtag_get_vfs },
+    { .name = "esp_vfs_usb_serial_jtag_use_driver", .vaddr = (size_t) symbol_esp_vfs_usb_serial_jtag_use_driver },
+    { .name = "esp_vfs_usb_serial_jtag_use_nonblocking", .vaddr = (size_t) symbol_esp_vfs_usb_serial_jtag_use_nonblocking },
     { .name = "esp_vfs_write", .vaddr = (size_t) symbol_esp_vfs_write },
     { .name = "esp_wifi_internal_free_rx_buffer", .vaddr = (size_t) symbol_esp_wifi_internal_free_rx_buffer },
     { .name = "esp_wifi_remote_channel_rx", .vaddr = (size_t) symbol_esp_wifi_remote_channel_rx },
@@ -10425,12 +10446,20 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "usb_serial_device_tx_flush", .vaddr = (size_t) symbol_usb_serial_device_tx_flush },
     { .name = "usb_serial_device_tx_one_char", .vaddr = (size_t) symbol_usb_serial_device_tx_one_char },
     { .name = "usb_serial_jtag_connection_monitor_include", .vaddr = (size_t) symbol_usb_serial_jtag_connection_monitor_include },
+    { .name = "usb_serial_jtag_driver_install", .vaddr = (size_t) symbol_usb_serial_jtag_driver_install },
+    { .name = "usb_serial_jtag_driver_uninstall", .vaddr = (size_t) symbol_usb_serial_jtag_driver_uninstall },
     { .name = "usb_serial_jtag_get_read_bytes_available", .vaddr = (size_t) symbol_usb_serial_jtag_get_read_bytes_available },
     { .name = "usb_serial_jtag_is_connected", .vaddr = (size_t) symbol_usb_serial_jtag_is_connected },
     { .name = "usb_serial_jtag_is_driver_installed", .vaddr = (size_t) symbol_usb_serial_jtag_is_driver_installed },
+    { .name = "usb_serial_jtag_read_bytes", .vaddr = (size_t) symbol_usb_serial_jtag_read_bytes },
+    { .name = "usb_serial_jtag_read_ready", .vaddr = (size_t) symbol_usb_serial_jtag_read_ready },
     { .name = "usb_serial_jtag_set_select_notif_callback", .vaddr = (size_t) symbol_usb_serial_jtag_set_select_notif_callback },
     { .name = "usb_serial_jtag_vfs_include_dev_init", .vaddr = (size_t) symbol_usb_serial_jtag_vfs_include_dev_init },
     { .name = "usb_serial_jtag_vfs_register", .vaddr = (size_t) symbol_usb_serial_jtag_vfs_register },
+    { .name = "usb_serial_jtag_vfs_use_driver", .vaddr = (size_t) symbol_usb_serial_jtag_vfs_use_driver },
+    { .name = "usb_serial_jtag_vfs_use_nonblocking", .vaddr = (size_t) symbol_usb_serial_jtag_vfs_use_nonblocking },
+    { .name = "usb_serial_jtag_wait_tx_done", .vaddr = (size_t) symbol_usb_serial_jtag_wait_tx_done },
+    { .name = "usb_serial_jtag_write_bytes", .vaddr = (size_t) symbol_usb_serial_jtag_write_bytes },
     { .name = "usb_serial_jtag_write_ready", .vaddr = (size_t) symbol_usb_serial_jtag_write_ready },
     { .name = "usb_serial_otg_rx_one_char", .vaddr = (size_t) symbol_usb_serial_otg_rx_one_char },
     { .name = "usb_serial_otg_rx_one_char_block", .vaddr = (size_t) symbol_usb_serial_otg_rx_one_char_block },
@@ -10504,7 +10533,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "vQueueDelete", .vaddr = (size_t) symbol_vQueueDelete },
     { .name = "vQueueDeleteWithCaps", .vaddr = (size_t) symbol_vQueueDeleteWithCaps },
     { .name = "vQueueWaitForMessageRestricted", .vaddr = (size_t) symbol_vQueueWaitForMessageRestricted },
+    { .name = "vRingbufferDelete", .vaddr = (size_t) symbol_vRingbufferDelete },
     { .name = "vRingbufferGetInfo", .vaddr = (size_t) symbol_vRingbufferGetInfo },
+    { .name = "vRingbufferReturnItem", .vaddr = (size_t) symbol_vRingbufferReturnItem },
+    { .name = "vRingbufferReturnItemFromISR", .vaddr = (size_t) symbol_vRingbufferReturnItemFromISR },
     { .name = "vSemaphoreDeleteWithCaps", .vaddr = (size_t) symbol_vSemaphoreDeleteWithCaps },
     { .name = "vSystimerSetup", .vaddr = (size_t) symbol_vSystimerSetup },
     { .name = "vTaskDelay", .vaddr = (size_t) symbol_vTaskDelay },
@@ -10519,6 +10551,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "vTaskPrioritySet", .vaddr = (size_t) symbol_vTaskPrioritySet },
     { .name = "vTaskRemoveFromUnorderedEventList", .vaddr = (size_t) symbol_vTaskRemoveFromUnorderedEventList },
     { .name = "vTaskSetThreadLocalStoragePointerAndDelCallback", .vaddr = (size_t) symbol_vTaskSetThreadLocalStoragePointerAndDelCallback },
+    { .name = "vTaskSetTimeOutState", .vaddr = (size_t) symbol_vTaskSetTimeOutState },
     { .name = "vTaskStartScheduler", .vaddr = (size_t) symbol_vTaskStartScheduler },
     { .name = "vTaskSuspend", .vaddr = (size_t) symbol_vTaskSuspend },
     { .name = "vTaskSuspendAll", .vaddr = (size_t) symbol_vTaskSuspendAll },
@@ -10632,7 +10665,12 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "xQueueReceiveFromISR", .vaddr = (size_t) symbol_xQueueReceiveFromISR },
     { .name = "xQueueSemaphoreTake", .vaddr = (size_t) symbol_xQueueSemaphoreTake },
     { .name = "xQueueTakeMutexRecursive", .vaddr = (size_t) symbol_xQueueTakeMutexRecursive },
+    { .name = "xRingbufferCreate", .vaddr = (size_t) symbol_xRingbufferCreate },
     { .name = "xRingbufferGetCurFreeSize", .vaddr = (size_t) symbol_xRingbufferGetCurFreeSize },
+    { .name = "xRingbufferReceiveUpTo", .vaddr = (size_t) symbol_xRingbufferReceiveUpTo },
+    { .name = "xRingbufferReceiveUpToFromISR", .vaddr = (size_t) symbol_xRingbufferReceiveUpToFromISR },
+    { .name = "xRingbufferSend", .vaddr = (size_t) symbol_xRingbufferSend },
+    { .name = "xRingbufferSendFromISR", .vaddr = (size_t) symbol_xRingbufferSendFromISR },
     { .name = "xSemaphoreCreateGenericWithCaps", .vaddr = (size_t) symbol_xSemaphoreCreateGenericWithCaps },
     { .name = "xTaskCheckForTimeOut", .vaddr = (size_t) symbol_xTaskCheckForTimeOut },
     { .name = "xTaskCreatePinnedToCore", .vaddr = (size_t) symbol_xTaskCreatePinnedToCore },
@@ -10665,6 +10703,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 5327,
+    .symbols_len = 5346,
     .symbols     = symbols,
 };

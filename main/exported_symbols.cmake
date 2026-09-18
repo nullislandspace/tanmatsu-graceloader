@@ -364,4 +364,16 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=i2s_channel_read"
     "-Wl,--undefined=i2s_channel_preload_data"
     "-Wl,--undefined=i2s_channel_register_event_callback"
+    # USB serial/JTAG driver, for apps that read commands from the console (test automation). Reading
+    # the console through stdin polls the 64-byte hardware FIFO and loses bytes; the driver buffers RX in
+    # an interrupt. Only the VFS half of esp_driver_usb_serial_jtag was exported before. The two
+    # usb_serial_jtag_vfs_use_* calls let an app route stdio through the installed driver.
+    "-Wl,--undefined=usb_serial_jtag_driver_install"
+    "-Wl,--undefined=usb_serial_jtag_driver_uninstall"
+    "-Wl,--undefined=usb_serial_jtag_read_bytes"
+    "-Wl,--undefined=usb_serial_jtag_read_ready"
+    "-Wl,--undefined=usb_serial_jtag_write_bytes"
+    "-Wl,--undefined=usb_serial_jtag_wait_tx_done"
+    "-Wl,--undefined=usb_serial_jtag_vfs_use_driver"
+    "-Wl,--undefined=usb_serial_jtag_vfs_use_nonblocking"
 )

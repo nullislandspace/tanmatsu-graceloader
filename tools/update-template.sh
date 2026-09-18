@@ -126,6 +126,7 @@ HEADER_COMPONENTS=(
     esp_driver_gptimer
     esp_driver_uart
     esp_driver_ppa
+    esp_driver_usb_serial_jtag   # driver/usb_serial_jtag.h (console RX for test automation)
     esp_mm
     sdmmc
 
