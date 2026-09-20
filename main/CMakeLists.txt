@@ -3,6 +3,7 @@ idf_component_register(
         "main.c"
         "sdcard.c"
         "volume_limit.c"
+        "timezone.c"
     PRIV_REQUIRES
         fatfs
         nvs_flash

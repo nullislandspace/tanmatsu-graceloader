@@ -24,6 +24,7 @@
 #include "fastopen.h"
 #include "graceloader.h"
 #include "gl_input.h"
+#include "timezone.h"
 #include "esp_system.h"
 #include "sdkconfig.h"
 #include "bsp/device.h"
@@ -66,6 +67,10 @@ static bool file_exists(const char* path) {
 
 void app_main(void) {
     ESP_LOGI(TAG, "Graceloader starting...");
+
+    // Local time, before anything is mounted or written: FATFS stamps
+    // files from localtime_r, and a fresh boot starts at UTC.
+    graceloader_apply_timezone();
 
     esp_err_t pm_res = esp_pm_lock_create(ESP_PM_CPU_FREQ_MAX, 0, "graceloader", &cpu_max_lock);
     if (pm_res == ESP_OK) {
