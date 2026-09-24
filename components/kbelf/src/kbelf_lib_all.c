@@ -745,6 +745,7 @@ extern char const __attribute__((weak)) symbol___wrap___cxa_throw[] asm("__wrap_
 extern char const __attribute__((weak)) symbol___wrap___gxx_personality_v0[] asm("__wrap___gxx_personality_v0");
 extern char const __attribute__((weak)) symbol___wrap_bsp_audio_get_volume[] asm("__wrap_bsp_audio_get_volume");
 extern char const __attribute__((weak)) symbol___wrap_bsp_audio_set_volume[] asm("__wrap_bsp_audio_set_volume");
+extern char const __attribute__((weak)) symbol___wrap_esp_lcd_dpi_panel_register_event_callbacks[] asm("__wrap_esp_lcd_dpi_panel_register_event_callbacks");
 extern char const __attribute__((weak)) symbol___wtime_am_pm[] asm("__wtime_am_pm");
 extern char const __attribute__((weak)) symbol___wtime_mon[] asm("__wtime_mon");
 extern char const __attribute__((weak)) symbol___wtime_month[] asm("__wtime_month");
@@ -1481,6 +1482,7 @@ extern char const __attribute__((weak)) symbol_esp_ipc_isr_waiting_for_finish_cm
 extern char const __attribute__((weak)) symbol_esp_isr_names[] asm("esp_isr_names");
 extern char const __attribute__((weak)) symbol_esp_lcd_del_dsi_bus[] asm("esp_lcd_del_dsi_bus");
 extern char const __attribute__((weak)) symbol_esp_lcd_dpi_panel_enable_dma2d[] asm("esp_lcd_dpi_panel_enable_dma2d");
+extern char const __attribute__((weak)) symbol_esp_lcd_dpi_panel_get_frame_buffer[] asm("esp_lcd_dpi_panel_get_frame_buffer");
 extern char const __attribute__((weak)) symbol_esp_lcd_dpi_panel_register_event_callbacks[] asm("esp_lcd_dpi_panel_register_event_callbacks");
 extern char const __attribute__((weak)) symbol_esp_lcd_dpi_panel_register_hooks[] asm("esp_lcd_dpi_panel_register_hooks");
 extern char const __attribute__((weak)) symbol_esp_lcd_new_dsi_bus[] asm("esp_lcd_new_dsi_bus");
@@ -2184,6 +2186,8 @@ extern char const __attribute__((weak)) symbol_gpio_sleep_sel_en[] asm("gpio_sle
 extern char const __attribute__((weak)) symbol_gpio_sleep_set_direction[] asm("gpio_sleep_set_direction");
 extern char const __attribute__((weak)) symbol_gpio_sleep_set_pull_mode[] asm("gpio_sleep_set_pull_mode");
 extern char const __attribute__((weak)) symbol_gpio_uninstall_isr_service[] asm("gpio_uninstall_isr_service");
+extern char const __attribute__((weak)) symbol_graceloader_apply_timezone[] asm("graceloader_apply_timezone");
+extern char const __attribute__((weak)) symbol_graceloader_display_register_callbacks[] asm("graceloader_display_register_callbacks");
 extern char const __attribute__((weak)) symbol_graceloader_get_install_basepath[] asm("graceloader_get_install_basepath");
 extern char const __attribute__((weak)) symbol_hal_utils_calc_clk_div_frac_accurate[] asm("hal_utils_calc_clk_div_frac_accurate");
 extern char const __attribute__((weak)) symbol_hal_utils_calc_clk_div_frac_fast[] asm("hal_utils_calc_clk_div_frac_fast");
@@ -4540,6 +4544,7 @@ extern char const __attribute__((weak)) symbol_serial_ll_init[] asm("serial_ll_i
 extern char const __attribute__((weak)) symbol_serial_ll_rx_handler[] asm("serial_ll_rx_handler");
 extern char const __attribute__((weak)) symbol_serial_rx_handler[] asm("serial_rx_handler");
 extern char const __attribute__((weak)) symbol_set_event_callback[] asm("set_event_callback");
+extern char const __attribute__((weak)) symbol_setenv[] asm("setenv");
 extern char const __attribute__((weak)) symbol_setjmp[] asm("setjmp");
 extern char const __attribute__((weak)) symbol_settimeofday[] asm("settimeofday");
 extern char const __attribute__((weak)) symbol_setup_transport[] asm("setup_transport");
@@ -6093,6 +6098,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__wrap___gxx_personality_v0", .vaddr = (size_t) symbol___wrap___gxx_personality_v0 },
     { .name = "__wrap_bsp_audio_get_volume", .vaddr = (size_t) symbol___wrap_bsp_audio_get_volume },
     { .name = "__wrap_bsp_audio_set_volume", .vaddr = (size_t) symbol___wrap_bsp_audio_set_volume },
+    { .name = "__wrap_esp_lcd_dpi_panel_register_event_callbacks", .vaddr = (size_t) symbol___wrap_esp_lcd_dpi_panel_register_event_callbacks },
     { .name = "__wtime_am_pm", .vaddr = (size_t) symbol___wtime_am_pm },
     { .name = "__wtime_mon", .vaddr = (size_t) symbol___wtime_mon },
     { .name = "__wtime_month", .vaddr = (size_t) symbol___wtime_month },
@@ -6829,6 +6835,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_isr_names", .vaddr = (size_t) symbol_esp_isr_names },
     { .name = "esp_lcd_del_dsi_bus", .vaddr = (size_t) symbol_esp_lcd_del_dsi_bus },
     { .name = "esp_lcd_dpi_panel_enable_dma2d", .vaddr = (size_t) symbol_esp_lcd_dpi_panel_enable_dma2d },
+    { .name = "esp_lcd_dpi_panel_get_frame_buffer", .vaddr = (size_t) symbol_esp_lcd_dpi_panel_get_frame_buffer },
     { .name = "esp_lcd_dpi_panel_register_event_callbacks", .vaddr = (size_t) symbol_esp_lcd_dpi_panel_register_event_callbacks },
     { .name = "esp_lcd_dpi_panel_register_hooks", .vaddr = (size_t) symbol_esp_lcd_dpi_panel_register_hooks },
     { .name = "esp_lcd_new_dsi_bus", .vaddr = (size_t) symbol_esp_lcd_new_dsi_bus },
@@ -7532,6 +7539,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "gpio_sleep_set_direction", .vaddr = (size_t) symbol_gpio_sleep_set_direction },
     { .name = "gpio_sleep_set_pull_mode", .vaddr = (size_t) symbol_gpio_sleep_set_pull_mode },
     { .name = "gpio_uninstall_isr_service", .vaddr = (size_t) symbol_gpio_uninstall_isr_service },
+    { .name = "graceloader_apply_timezone", .vaddr = (size_t) symbol_graceloader_apply_timezone },
+    { .name = "graceloader_display_register_callbacks", .vaddr = (size_t) symbol_graceloader_display_register_callbacks },
     { .name = "graceloader_get_install_basepath", .vaddr = (size_t) symbol_graceloader_get_install_basepath },
     { .name = "hal_utils_calc_clk_div_frac_accurate", .vaddr = (size_t) symbol_hal_utils_calc_clk_div_frac_accurate },
     { .name = "hal_utils_calc_clk_div_frac_fast", .vaddr = (size_t) symbol_hal_utils_calc_clk_div_frac_fast },
@@ -9888,6 +9897,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "serial_ll_rx_handler", .vaddr = (size_t) symbol_serial_ll_rx_handler },
     { .name = "serial_rx_handler", .vaddr = (size_t) symbol_serial_rx_handler },
     { .name = "set_event_callback", .vaddr = (size_t) symbol_set_event_callback },
+    { .name = "setenv", .vaddr = (size_t) symbol_setenv },
     { .name = "setjmp", .vaddr = (size_t) symbol_setjmp },
     { .name = "settimeofday", .vaddr = (size_t) symbol_settimeofday },
     { .name = "setup_transport", .vaddr = (size_t) symbol_setup_transport },
@@ -10703,6 +10713,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 5346,
+    .symbols_len = 5351,
     .symbols     = symbols,
 };

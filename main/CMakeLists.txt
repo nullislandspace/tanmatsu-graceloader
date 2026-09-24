@@ -1,5 +1,11 @@
+set(display_srcs "")
+if(CONFIG_SOC_MIPI_DSI_SUPPORTED)
+    list(APPEND display_srcs "display_callbacks.c")
+endif()
+
 idf_component_register(
     SRCS
+        ${display_srcs}
         "main.c"
         "sdcard.c"
         "volume_limit.c"
@@ -19,6 +25,7 @@ idf_component_register(
         heap
         gl_input
         esp_pm
+        spi_flash
     INCLUDE_DIRS
         "."
 )
@@ -55,6 +62,17 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=__wrap_bsp_audio_set_volume"
     "-Wl,--undefined=__wrap_bsp_audio_get_volume"
 )
+
+# DPI panel event callbacks for apps, see display_callbacks.c. The BSP's registration is wrapped so graceloader's
+# IRAM trampolines own the driver's callback slot and chain the BSP's callbacks with the app's. Force-included for
+# the same reason as the volume wrappers above.
+if(CONFIG_SOC_MIPI_DSI_SUPPORTED)
+    target_link_options(${COMPONENT_LIB} INTERFACE
+        "-Wl,--wrap=esp_lcd_dpi_panel_register_event_callbacks"
+        "-Wl,--undefined=__wrap_esp_lcd_dpi_panel_register_event_callbacks"
+        "-Wl,--undefined=graceloader_display_register_callbacks"
+    )
+endif()
 
 idf_build_set_property(COMPILE_OPTIONS "-Wno-error=unused-variable" APPEND)
 idf_build_set_property(COMPILE_OPTIONS "-Wno-error=unused-const-variable" APPEND)

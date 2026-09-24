@@ -349,6 +349,9 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=bsp_display_wait"
     "-Wl,--undefined=bsp_display_get_busy"
     "-Wl,--undefined=bsp_display_interrupt"
+    # The DPI driver's own frame buffers, for apps that draw into them directly (num_fbs > 1) and present with
+    # esp_lcd_panel_draw_bitmap() without a copy. Nothing in graceloader calls it.
+    "-Wl,--undefined=esp_lcd_dpi_panel_get_frame_buffer"
     # Standard mode I2S API for apps that stream audio to the codec. esp_driver_i2s is not scanned by
     # tools/extract-symbols.sh (that would drag in the unusable PDM, TDM, ETM and LP I2S drivers).
     "-Wl,--undefined=i2s_new_channel"

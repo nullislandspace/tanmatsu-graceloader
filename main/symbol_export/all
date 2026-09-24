@@ -738,6 +738,7 @@ __wrap___cxa_throw
 __wrap___gxx_personality_v0
 __wrap_bsp_audio_get_volume
 __wrap_bsp_audio_set_volume
+__wrap_esp_lcd_dpi_panel_register_event_callbacks
 __wtime_am_pm
 __wtime_mon
 __wtime_month
@@ -1474,6 +1475,7 @@ esp_ipc_isr_waiting_for_finish_cmd
 esp_isr_names
 esp_lcd_del_dsi_bus
 esp_lcd_dpi_panel_enable_dma2d
+esp_lcd_dpi_panel_get_frame_buffer
 esp_lcd_dpi_panel_register_event_callbacks
 esp_lcd_dpi_panel_register_hooks
 esp_lcd_new_dsi_bus
@@ -2177,6 +2179,8 @@ gpio_sleep_sel_en
 gpio_sleep_set_direction
 gpio_sleep_set_pull_mode
 gpio_uninstall_isr_service
+graceloader_apply_timezone
+graceloader_display_register_callbacks
 graceloader_get_install_basepath
 hal_utils_calc_clk_div_frac_accurate
 hal_utils_calc_clk_div_frac_fast
@@ -4533,6 +4537,7 @@ serial_ll_init
 serial_ll_rx_handler
 serial_rx_handler
 set_event_callback
+setenv
 setjmp
 settimeofday
 setup_transport
