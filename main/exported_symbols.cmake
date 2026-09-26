@@ -379,4 +379,37 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=usb_serial_jtag_wait_tx_done"
     "-Wl,--undefined=usb_serial_jtag_vfs_use_driver"
     "-Wl,--undefined=usb_serial_jtag_vfs_use_nonblocking"
+    # The hardware H.264 encoder (espressif/esp_h264, encoder API only; nothing references the
+    # software codecs or the decoder, so their prebuilt libraries are not linked). Compiled into an
+    # app the same encoder never signals frame done: the reference-frame DMA it starts from its ISR
+    # stalls under graceloader, while a plain IDF 6 app runs it fine (tanmatsu-nfmtest-grace,
+    # tanmatsu-h264test). Built into the loader it is set up as in a plain app.
+    "-Wl,--undefined=esp_h264_enc_hw_new"
+    "-Wl,--undefined=esp_h264_enc_open"
+    "-Wl,--undefined=esp_h264_enc_process"
+    "-Wl,--undefined=esp_h264_enc_close"
+    "-Wl,--undefined=esp_h264_enc_del"
+    "-Wl,--undefined=esp_h264_enc_hw_get_param_hd"
+    "-Wl,--undefined=esp_h264_enc_get_resolution"
+    "-Wl,--undefined=esp_h264_enc_set_fps"
+    "-Wl,--undefined=esp_h264_enc_get_fps"
+    "-Wl,--undefined=esp_h264_enc_set_gop"
+    "-Wl,--undefined=esp_h264_enc_get_gop"
+    "-Wl,--undefined=esp_h264_enc_set_bitrate"
+    "-Wl,--undefined=esp_h264_enc_get_bitrate"
+    "-Wl,--undefined=esp_h264_enc_get_bpp"
+    "-Wl,--undefined=esp_h264_enc_force_idr"
+    "-Wl,--undefined=esp_h264_enc_hw_cfg_roi"
+    "-Wl,--undefined=esp_h264_enc_hw_get_roi_cfg_info"
+    "-Wl,--undefined=esp_h264_enc_hw_set_roi_region"
+    "-Wl,--undefined=esp_h264_enc_hw_get_roi_region"
+    "-Wl,--undefined=esp_h264_enc_hw_cfg_mv"
+    "-Wl,--undefined=esp_h264_enc_hw_get_mv_cfg_info"
+    "-Wl,--undefined=esp_h264_enc_hw_set_mv_pkt"
+    "-Wl,--undefined=esp_h264_enc_hw_get_mv_data_len"
+    "-Wl,--undefined=esp_h264_get_version"
+    "-Wl,--undefined=esp_h264_aligned_calloc"
+    "-Wl,--undefined=esp_h264_aligned_malloc"
+    "-Wl,--undefined=esp_h264_calloc_prefer"
+    "-Wl,--undefined=esp_h264_malloc_prefer"
 )

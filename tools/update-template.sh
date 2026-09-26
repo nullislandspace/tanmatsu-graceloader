@@ -79,6 +79,7 @@ HEADER_COMPONENTS=(
     nicolaielectronics__tanmatsu-settings
     nvs_flash
     gl_input
+    espressif__esp_h264   # the hardware H.264 encoder API
 
     # ESP-IDF platform essentials
     newlib

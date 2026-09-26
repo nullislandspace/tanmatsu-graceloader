@@ -6,3 +6,4 @@ dependencies:
   robotman2412/pax-codecs: "=1.0.1"
   badgeteam/appfs: "=2.1.0"
   nicolaielectronics/tanmatsu-settings: "=1.2.0"
+  espressif/esp_h264: "=1.4.0"

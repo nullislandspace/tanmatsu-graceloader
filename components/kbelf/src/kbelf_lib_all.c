@@ -1434,6 +1434,60 @@ extern char const __attribute__((weak)) symbol_esp_flash_write_encrypted[] asm("
 extern char const __attribute__((weak)) symbol_esp_get_free_heap_size[] asm("esp_get_free_heap_size");
 extern char const __attribute__((weak)) symbol_esp_gpio_reserve[] asm("esp_gpio_reserve");
 extern char const __attribute__((weak)) symbol_esp_gpio_revoke[] asm("esp_gpio_revoke");
+extern char const __attribute__((weak)) symbol_esp_h264_aligned_calloc[] asm("esp_h264_aligned_calloc");
+extern char const __attribute__((weak)) symbol_esp_h264_aligned_malloc[] asm("esp_h264_aligned_malloc");
+extern char const __attribute__((weak)) symbol_esp_h264_cache_check_and_invalidate[] asm("esp_h264_cache_check_and_invalidate");
+extern char const __attribute__((weak)) symbol_esp_h264_cache_check_and_writeback[] asm("esp_h264_cache_check_and_writeback");
+extern char const __attribute__((weak)) symbol_esp_h264_calloc_prefer[] asm("esp_h264_calloc_prefer");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_close[] asm("esp_h264_enc_close");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_del[] asm("esp_h264_enc_del");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_force_idr[] asm("esp_h264_enc_force_idr");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_get_bitrate[] asm("esp_h264_enc_get_bitrate");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_get_fps[] asm("esp_h264_enc_get_fps");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_get_gop[] asm("esp_h264_enc_get_gop");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_get_resolution[] asm("esp_h264_enc_get_resolution");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_cfg_dma_db_ref[] asm("esp_h264_enc_hw_cfg_dma_db_ref");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_cfg_dma_dbtmp[] asm("esp_h264_enc_hw_cfg_dma_dbtmp");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_cfg_dma_mvm[] asm("esp_h264_enc_hw_cfg_dma_mvm");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_cfg_dma_yuv_bs[] asm("esp_h264_enc_hw_cfg_dma_yuv_bs");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_cfg_mv[] asm("esp_h264_enc_hw_cfg_mv");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_cfg_roi[] asm("esp_h264_enc_hw_cfg_roi");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_del_param[] asm("esp_h264_enc_hw_del_param");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_mbres[] asm("esp_h264_enc_hw_get_mbres");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_mutex[] asm("esp_h264_enc_hw_get_mutex");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_mv_cfg_info[] asm("esp_h264_enc_hw_get_mv_cfg_info");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_mv_data_len[] asm("esp_h264_enc_hw_get_mv_data_len");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_nal[] asm("esp_h264_enc_hw_get_nal");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_param_hd[] asm("esp_h264_enc_hw_get_param_hd");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_qp_init[] asm("esp_h264_enc_hw_get_qp_init");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_rc_hd[] asm("esp_h264_enc_hw_get_rc_hd");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_roi_cfg_info[] asm("esp_h264_enc_hw_get_roi_cfg_info");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_get_roi_region[] asm("esp_h264_enc_hw_get_roi_region");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_max_db_tmp_buffer_size[] asm("esp_h264_enc_hw_max_db_tmp_buffer_size");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_new[] asm("esp_h264_enc_hw_new");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_new_param[] asm("esp_h264_enc_hw_new_param");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_rc_del[] asm("esp_h264_enc_hw_rc_del");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_rc_new[] asm("esp_h264_enc_hw_rc_new");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_rc_set_bt_fps[] asm("esp_h264_enc_hw_rc_set_bt_fps");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_res_check[] asm("esp_h264_enc_hw_res_check");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_set_mv_pkt[] asm("esp_h264_enc_hw_set_mv_pkt");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_set_qp[] asm("esp_h264_enc_hw_set_qp");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_set_rc_rate_pred[] asm("esp_h264_enc_hw_set_rc_rate_pred");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_set_roi_region[] asm("esp_h264_enc_hw_set_roi_region");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_set_slice[] asm("esp_h264_enc_hw_set_slice");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_slice_header_align8[] asm("esp_h264_enc_hw_slice_header_align8");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_hw_take_force_idr[] asm("esp_h264_enc_hw_take_force_idr");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_open[] asm("esp_h264_enc_open");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_process[] asm("esp_h264_enc_process");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_set_bitrate[] asm("esp_h264_enc_set_bitrate");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_set_fps[] asm("esp_h264_enc_set_fps");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_set_gop[] asm("esp_h264_enc_set_gop");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_set_pps[] asm("esp_h264_enc_set_pps");
+extern char const __attribute__((weak)) symbol_esp_h264_enc_set_sps[] asm("esp_h264_enc_set_sps");
+extern char const __attribute__((weak)) symbol_esp_h264_get_version[] asm("esp_h264_get_version");
+extern char const __attribute__((weak)) symbol_esp_h264_malloc_prefer[] asm("esp_h264_malloc_prefer");
+extern char const __attribute__((weak)) symbol_esp_h264_rc_end[] asm("esp_h264_rc_end");
+extern char const __attribute__((weak)) symbol_esp_h264_rc_start[] asm("esp_h264_rc_start");
 extern char const __attribute__((weak)) symbol_esp_heap_adjust_alignment_to_hw[] asm("esp_heap_adjust_alignment_to_hw");
 extern char const __attribute__((weak)) symbol_esp_hosted_add_channel[] asm("esp_hosted_add_channel");
 extern char const __attribute__((weak)) symbol_esp_hosted_cli_start[] asm("esp_hosted_cli_start");
@@ -2189,6 +2243,51 @@ extern char const __attribute__((weak)) symbol_gpio_uninstall_isr_service[] asm(
 extern char const __attribute__((weak)) symbol_graceloader_apply_timezone[] asm("graceloader_apply_timezone");
 extern char const __attribute__((weak)) symbol_graceloader_display_register_callbacks[] asm("graceloader_display_register_callbacks");
 extern char const __attribute__((weak)) symbol_graceloader_get_install_basepath[] asm("graceloader_get_install_basepath");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_cfg_bs_dsc[] asm("h264_dma_hal_cfg_bs_dsc");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_cfg_db12_4_dsc[] asm("h264_dma_hal_cfg_db12_4_dsc");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_cfg_dbtmp_dsc[] asm("h264_dma_hal_cfg_dbtmp_dsc");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_cfg_mvm_dsc[] asm("h264_dma_hal_cfg_mvm_dsc");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_cfg_ref_dsc[] asm("h264_dma_hal_cfg_ref_dsc");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_cfg_yuv_dsc[] asm("h264_dma_hal_cfg_yuv_dsc");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_clear_intr[] asm("h264_dma_hal_clear_intr");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_deinit[] asm("h264_dma_hal_deinit");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_get_bs_intr[] asm("h264_dma_hal_get_bs_intr");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_init[] asm("h264_dma_hal_init");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_reset_counter_db[] asm("h264_dma_hal_reset_counter_db");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_reset_counter_dbtmp[] asm("h264_dma_hal_reset_counter_dbtmp");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_reset_counter_ref[] asm("h264_dma_hal_reset_counter_ref");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_start_ref_dma[] asm("h264_dma_hal_start_ref_dma");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_start_rx_bs_dma[] asm("h264_dma_hal_start_rx_bs_dma");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_start_rx_db12_4_dma[] asm("h264_dma_hal_start_rx_db12_4_dma");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_start_rx_dbtmp_dma[] asm("h264_dma_hal_start_rx_dbtmp_dma");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_start_rx_mvm_dma[] asm("h264_dma_hal_start_rx_mvm_dma");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_start_tx_db12_4_dma[] asm("h264_dma_hal_start_tx_db12_4_dma");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_start_tx_dbtmp_dma[] asm("h264_dma_hal_start_tx_dbtmp_dma");
+extern char const __attribute__((weak)) symbol_h264_dma_hal_start_yuv_dma[] asm("h264_dma_hal_start_yuv_dma");
+extern char const __attribute__((weak)) symbol_h264_hal_clear_intr_status[] asm("h264_hal_clear_intr_status");
+extern char const __attribute__((weak)) symbol_h264_hal_dma_move_start[] asm("h264_hal_dma_move_start");
+extern char const __attribute__((weak)) symbol_h264_hal_ena_intr[] asm("h264_hal_ena_intr");
+extern char const __attribute__((weak)) symbol_h264_hal_get_bs_bit_overflow[] asm("h264_hal_get_bs_bit_overflow");
+extern char const __attribute__((weak)) symbol_h264_hal_get_coded_len[] asm("h264_hal_get_coded_len");
+extern char const __attribute__((weak)) symbol_h264_hal_get_intr_status[] asm("h264_hal_get_intr_status");
+extern char const __attribute__((weak)) symbol_h264_hal_get_mbres[] asm("h264_hal_get_mbres");
+extern char const __attribute__((weak)) symbol_h264_hal_get_mv_mode[] asm("h264_hal_get_mv_mode");
+extern char const __attribute__((weak)) symbol_h264_hal_get_mvm_data_len[] asm("h264_hal_get_mvm_data_len");
+extern char const __attribute__((weak)) symbol_h264_hal_get_param_dev0[] asm("h264_hal_get_param_dev0");
+extern char const __attribute__((weak)) symbol_h264_hal_get_rc_bits_mad_qpsum[] asm("h264_hal_get_rc_bits_mad_qpsum");
+extern char const __attribute__((weak)) symbol_h264_hal_get_roi_mode[] asm("h264_hal_get_roi_mode");
+extern char const __attribute__((weak)) symbol_h264_hal_get_roi_reg[] asm("h264_hal_get_roi_reg");
+extern char const __attribute__((weak)) symbol_h264_hal_init[] asm("h264_hal_init");
+extern char const __attribute__((weak)) symbol_h264_hal_reset[] asm("h264_hal_reset");
+extern char const __attribute__((weak)) symbol_h264_hal_set_gop[] asm("h264_hal_set_gop");
+extern char const __attribute__((weak)) symbol_h264_hal_set_mbres[] asm("h264_hal_set_mbres");
+extern char const __attribute__((weak)) symbol_h264_hal_set_mv_mode[] asm("h264_hal_set_mv_mode");
+extern char const __attribute__((weak)) symbol_h264_hal_set_qp[] asm("h264_hal_set_qp");
+extern char const __attribute__((weak)) symbol_h264_hal_set_rc_rate_pred[] asm("h264_hal_set_rc_rate_pred");
+extern char const __attribute__((weak)) symbol_h264_hal_set_roi_mode[] asm("h264_hal_set_roi_mode");
+extern char const __attribute__((weak)) symbol_h264_hal_set_roi_reg[] asm("h264_hal_set_roi_reg");
+extern char const __attribute__((weak)) symbol_h264_hal_set_slice_header[] asm("h264_hal_set_slice_header");
+extern char const __attribute__((weak)) symbol_h264_hal_set_start[] asm("h264_hal_set_start");
 extern char const __attribute__((weak)) symbol_hal_utils_calc_clk_div_frac_accurate[] asm("hal_utils_calc_clk_div_frac_accurate");
 extern char const __attribute__((weak)) symbol_hal_utils_calc_clk_div_frac_fast[] asm("hal_utils_calc_clk_div_frac_fast");
 extern char const __attribute__((weak)) symbol_hcd_pipe_alloc[] asm("hcd_pipe_alloc");
@@ -6787,6 +6886,60 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_get_free_heap_size", .vaddr = (size_t) symbol_esp_get_free_heap_size },
     { .name = "esp_gpio_reserve", .vaddr = (size_t) symbol_esp_gpio_reserve },
     { .name = "esp_gpio_revoke", .vaddr = (size_t) symbol_esp_gpio_revoke },
+    { .name = "esp_h264_aligned_calloc", .vaddr = (size_t) symbol_esp_h264_aligned_calloc },
+    { .name = "esp_h264_aligned_malloc", .vaddr = (size_t) symbol_esp_h264_aligned_malloc },
+    { .name = "esp_h264_cache_check_and_invalidate", .vaddr = (size_t) symbol_esp_h264_cache_check_and_invalidate },
+    { .name = "esp_h264_cache_check_and_writeback", .vaddr = (size_t) symbol_esp_h264_cache_check_and_writeback },
+    { .name = "esp_h264_calloc_prefer", .vaddr = (size_t) symbol_esp_h264_calloc_prefer },
+    { .name = "esp_h264_enc_close", .vaddr = (size_t) symbol_esp_h264_enc_close },
+    { .name = "esp_h264_enc_del", .vaddr = (size_t) symbol_esp_h264_enc_del },
+    { .name = "esp_h264_enc_force_idr", .vaddr = (size_t) symbol_esp_h264_enc_force_idr },
+    { .name = "esp_h264_enc_get_bitrate", .vaddr = (size_t) symbol_esp_h264_enc_get_bitrate },
+    { .name = "esp_h264_enc_get_fps", .vaddr = (size_t) symbol_esp_h264_enc_get_fps },
+    { .name = "esp_h264_enc_get_gop", .vaddr = (size_t) symbol_esp_h264_enc_get_gop },
+    { .name = "esp_h264_enc_get_resolution", .vaddr = (size_t) symbol_esp_h264_enc_get_resolution },
+    { .name = "esp_h264_enc_hw_cfg_dma_db_ref", .vaddr = (size_t) symbol_esp_h264_enc_hw_cfg_dma_db_ref },
+    { .name = "esp_h264_enc_hw_cfg_dma_dbtmp", .vaddr = (size_t) symbol_esp_h264_enc_hw_cfg_dma_dbtmp },
+    { .name = "esp_h264_enc_hw_cfg_dma_mvm", .vaddr = (size_t) symbol_esp_h264_enc_hw_cfg_dma_mvm },
+    { .name = "esp_h264_enc_hw_cfg_dma_yuv_bs", .vaddr = (size_t) symbol_esp_h264_enc_hw_cfg_dma_yuv_bs },
+    { .name = "esp_h264_enc_hw_cfg_mv", .vaddr = (size_t) symbol_esp_h264_enc_hw_cfg_mv },
+    { .name = "esp_h264_enc_hw_cfg_roi", .vaddr = (size_t) symbol_esp_h264_enc_hw_cfg_roi },
+    { .name = "esp_h264_enc_hw_del_param", .vaddr = (size_t) symbol_esp_h264_enc_hw_del_param },
+    { .name = "esp_h264_enc_hw_get_mbres", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_mbres },
+    { .name = "esp_h264_enc_hw_get_mutex", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_mutex },
+    { .name = "esp_h264_enc_hw_get_mv_cfg_info", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_mv_cfg_info },
+    { .name = "esp_h264_enc_hw_get_mv_data_len", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_mv_data_len },
+    { .name = "esp_h264_enc_hw_get_nal", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_nal },
+    { .name = "esp_h264_enc_hw_get_param_hd", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_param_hd },
+    { .name = "esp_h264_enc_hw_get_qp_init", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_qp_init },
+    { .name = "esp_h264_enc_hw_get_rc_hd", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_rc_hd },
+    { .name = "esp_h264_enc_hw_get_roi_cfg_info", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_roi_cfg_info },
+    { .name = "esp_h264_enc_hw_get_roi_region", .vaddr = (size_t) symbol_esp_h264_enc_hw_get_roi_region },
+    { .name = "esp_h264_enc_hw_max_db_tmp_buffer_size", .vaddr = (size_t) symbol_esp_h264_enc_hw_max_db_tmp_buffer_size },
+    { .name = "esp_h264_enc_hw_new", .vaddr = (size_t) symbol_esp_h264_enc_hw_new },
+    { .name = "esp_h264_enc_hw_new_param", .vaddr = (size_t) symbol_esp_h264_enc_hw_new_param },
+    { .name = "esp_h264_enc_hw_rc_del", .vaddr = (size_t) symbol_esp_h264_enc_hw_rc_del },
+    { .name = "esp_h264_enc_hw_rc_new", .vaddr = (size_t) symbol_esp_h264_enc_hw_rc_new },
+    { .name = "esp_h264_enc_hw_rc_set_bt_fps", .vaddr = (size_t) symbol_esp_h264_enc_hw_rc_set_bt_fps },
+    { .name = "esp_h264_enc_hw_res_check", .vaddr = (size_t) symbol_esp_h264_enc_hw_res_check },
+    { .name = "esp_h264_enc_hw_set_mv_pkt", .vaddr = (size_t) symbol_esp_h264_enc_hw_set_mv_pkt },
+    { .name = "esp_h264_enc_hw_set_qp", .vaddr = (size_t) symbol_esp_h264_enc_hw_set_qp },
+    { .name = "esp_h264_enc_hw_set_rc_rate_pred", .vaddr = (size_t) symbol_esp_h264_enc_hw_set_rc_rate_pred },
+    { .name = "esp_h264_enc_hw_set_roi_region", .vaddr = (size_t) symbol_esp_h264_enc_hw_set_roi_region },
+    { .name = "esp_h264_enc_hw_set_slice", .vaddr = (size_t) symbol_esp_h264_enc_hw_set_slice },
+    { .name = "esp_h264_enc_hw_slice_header_align8", .vaddr = (size_t) symbol_esp_h264_enc_hw_slice_header_align8 },
+    { .name = "esp_h264_enc_hw_take_force_idr", .vaddr = (size_t) symbol_esp_h264_enc_hw_take_force_idr },
+    { .name = "esp_h264_enc_open", .vaddr = (size_t) symbol_esp_h264_enc_open },
+    { .name = "esp_h264_enc_process", .vaddr = (size_t) symbol_esp_h264_enc_process },
+    { .name = "esp_h264_enc_set_bitrate", .vaddr = (size_t) symbol_esp_h264_enc_set_bitrate },
+    { .name = "esp_h264_enc_set_fps", .vaddr = (size_t) symbol_esp_h264_enc_set_fps },
+    { .name = "esp_h264_enc_set_gop", .vaddr = (size_t) symbol_esp_h264_enc_set_gop },
+    { .name = "esp_h264_enc_set_pps", .vaddr = (size_t) symbol_esp_h264_enc_set_pps },
+    { .name = "esp_h264_enc_set_sps", .vaddr = (size_t) symbol_esp_h264_enc_set_sps },
+    { .name = "esp_h264_get_version", .vaddr = (size_t) symbol_esp_h264_get_version },
+    { .name = "esp_h264_malloc_prefer", .vaddr = (size_t) symbol_esp_h264_malloc_prefer },
+    { .name = "esp_h264_rc_end", .vaddr = (size_t) symbol_esp_h264_rc_end },
+    { .name = "esp_h264_rc_start", .vaddr = (size_t) symbol_esp_h264_rc_start },
     { .name = "esp_heap_adjust_alignment_to_hw", .vaddr = (size_t) symbol_esp_heap_adjust_alignment_to_hw },
     { .name = "esp_hosted_add_channel", .vaddr = (size_t) symbol_esp_hosted_add_channel },
     { .name = "esp_hosted_cli_start", .vaddr = (size_t) symbol_esp_hosted_cli_start },
@@ -7542,6 +7695,51 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "graceloader_apply_timezone", .vaddr = (size_t) symbol_graceloader_apply_timezone },
     { .name = "graceloader_display_register_callbacks", .vaddr = (size_t) symbol_graceloader_display_register_callbacks },
     { .name = "graceloader_get_install_basepath", .vaddr = (size_t) symbol_graceloader_get_install_basepath },
+    { .name = "h264_dma_hal_cfg_bs_dsc", .vaddr = (size_t) symbol_h264_dma_hal_cfg_bs_dsc },
+    { .name = "h264_dma_hal_cfg_db12_4_dsc", .vaddr = (size_t) symbol_h264_dma_hal_cfg_db12_4_dsc },
+    { .name = "h264_dma_hal_cfg_dbtmp_dsc", .vaddr = (size_t) symbol_h264_dma_hal_cfg_dbtmp_dsc },
+    { .name = "h264_dma_hal_cfg_mvm_dsc", .vaddr = (size_t) symbol_h264_dma_hal_cfg_mvm_dsc },
+    { .name = "h264_dma_hal_cfg_ref_dsc", .vaddr = (size_t) symbol_h264_dma_hal_cfg_ref_dsc },
+    { .name = "h264_dma_hal_cfg_yuv_dsc", .vaddr = (size_t) symbol_h264_dma_hal_cfg_yuv_dsc },
+    { .name = "h264_dma_hal_clear_intr", .vaddr = (size_t) symbol_h264_dma_hal_clear_intr },
+    { .name = "h264_dma_hal_deinit", .vaddr = (size_t) symbol_h264_dma_hal_deinit },
+    { .name = "h264_dma_hal_get_bs_intr", .vaddr = (size_t) symbol_h264_dma_hal_get_bs_intr },
+    { .name = "h264_dma_hal_init", .vaddr = (size_t) symbol_h264_dma_hal_init },
+    { .name = "h264_dma_hal_reset_counter_db", .vaddr = (size_t) symbol_h264_dma_hal_reset_counter_db },
+    { .name = "h264_dma_hal_reset_counter_dbtmp", .vaddr = (size_t) symbol_h264_dma_hal_reset_counter_dbtmp },
+    { .name = "h264_dma_hal_reset_counter_ref", .vaddr = (size_t) symbol_h264_dma_hal_reset_counter_ref },
+    { .name = "h264_dma_hal_start_ref_dma", .vaddr = (size_t) symbol_h264_dma_hal_start_ref_dma },
+    { .name = "h264_dma_hal_start_rx_bs_dma", .vaddr = (size_t) symbol_h264_dma_hal_start_rx_bs_dma },
+    { .name = "h264_dma_hal_start_rx_db12_4_dma", .vaddr = (size_t) symbol_h264_dma_hal_start_rx_db12_4_dma },
+    { .name = "h264_dma_hal_start_rx_dbtmp_dma", .vaddr = (size_t) symbol_h264_dma_hal_start_rx_dbtmp_dma },
+    { .name = "h264_dma_hal_start_rx_mvm_dma", .vaddr = (size_t) symbol_h264_dma_hal_start_rx_mvm_dma },
+    { .name = "h264_dma_hal_start_tx_db12_4_dma", .vaddr = (size_t) symbol_h264_dma_hal_start_tx_db12_4_dma },
+    { .name = "h264_dma_hal_start_tx_dbtmp_dma", .vaddr = (size_t) symbol_h264_dma_hal_start_tx_dbtmp_dma },
+    { .name = "h264_dma_hal_start_yuv_dma", .vaddr = (size_t) symbol_h264_dma_hal_start_yuv_dma },
+    { .name = "h264_hal_clear_intr_status", .vaddr = (size_t) symbol_h264_hal_clear_intr_status },
+    { .name = "h264_hal_dma_move_start", .vaddr = (size_t) symbol_h264_hal_dma_move_start },
+    { .name = "h264_hal_ena_intr", .vaddr = (size_t) symbol_h264_hal_ena_intr },
+    { .name = "h264_hal_get_bs_bit_overflow", .vaddr = (size_t) symbol_h264_hal_get_bs_bit_overflow },
+    { .name = "h264_hal_get_coded_len", .vaddr = (size_t) symbol_h264_hal_get_coded_len },
+    { .name = "h264_hal_get_intr_status", .vaddr = (size_t) symbol_h264_hal_get_intr_status },
+    { .name = "h264_hal_get_mbres", .vaddr = (size_t) symbol_h264_hal_get_mbres },
+    { .name = "h264_hal_get_mv_mode", .vaddr = (size_t) symbol_h264_hal_get_mv_mode },
+    { .name = "h264_hal_get_mvm_data_len", .vaddr = (size_t) symbol_h264_hal_get_mvm_data_len },
+    { .name = "h264_hal_get_param_dev0", .vaddr = (size_t) symbol_h264_hal_get_param_dev0 },
+    { .name = "h264_hal_get_rc_bits_mad_qpsum", .vaddr = (size_t) symbol_h264_hal_get_rc_bits_mad_qpsum },
+    { .name = "h264_hal_get_roi_mode", .vaddr = (size_t) symbol_h264_hal_get_roi_mode },
+    { .name = "h264_hal_get_roi_reg", .vaddr = (size_t) symbol_h264_hal_get_roi_reg },
+    { .name = "h264_hal_init", .vaddr = (size_t) symbol_h264_hal_init },
+    { .name = "h264_hal_reset", .vaddr = (size_t) symbol_h264_hal_reset },
+    { .name = "h264_hal_set_gop", .vaddr = (size_t) symbol_h264_hal_set_gop },
+    { .name = "h264_hal_set_mbres", .vaddr = (size_t) symbol_h264_hal_set_mbres },
+    { .name = "h264_hal_set_mv_mode", .vaddr = (size_t) symbol_h264_hal_set_mv_mode },
+    { .name = "h264_hal_set_qp", .vaddr = (size_t) symbol_h264_hal_set_qp },
+    { .name = "h264_hal_set_rc_rate_pred", .vaddr = (size_t) symbol_h264_hal_set_rc_rate_pred },
+    { .name = "h264_hal_set_roi_mode", .vaddr = (size_t) symbol_h264_hal_set_roi_mode },
+    { .name = "h264_hal_set_roi_reg", .vaddr = (size_t) symbol_h264_hal_set_roi_reg },
+    { .name = "h264_hal_set_slice_header", .vaddr = (size_t) symbol_h264_hal_set_slice_header },
+    { .name = "h264_hal_set_start", .vaddr = (size_t) symbol_h264_hal_set_start },
     { .name = "hal_utils_calc_clk_div_frac_accurate", .vaddr = (size_t) symbol_hal_utils_calc_clk_div_frac_accurate },
     { .name = "hal_utils_calc_clk_div_frac_fast", .vaddr = (size_t) symbol_hal_utils_calc_clk_div_frac_fast },
     { .name = "hcd_pipe_alloc", .vaddr = (size_t) symbol_hcd_pipe_alloc },
@@ -10713,6 +10911,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 5351,
+    .symbols_len = 5450,
     .symbols     = symbols,
 };
