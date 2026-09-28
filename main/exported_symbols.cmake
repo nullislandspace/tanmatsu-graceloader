@@ -7,6 +7,18 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     # they never reach the exported symbol table.
     "-Wl,--undefined=sprintf"
     "-Wl,--undefined=strtoull"
+    # atoi/strtol and their siblings used to arrive here by ACCIDENT:
+    # nothing in the loader called them, but the WiFi stack did, so they
+    # landed in the ELF and therefore in the export table. Dropping
+    # ESP-Hosted took them with it and three apps stopped loading --
+    # nfmtest, paperclips, showreel, stuntracer and synthminer between
+    # them. An export that exists by accident is one that can leave by
+    # accident, so the whole integer-parsing family is named here on
+    # purpose. strtoul and strtoull were already explicit; these are the
+    # rest of the set, and each is a few dozen bytes.
+    "-Wl,--undefined=atoi"
+    "-Wl,--undefined=atol"
+    "-Wl,--undefined=strtol"
     "-Wl,--undefined=esp_log_write"
     "-Wl,--undefined=esp_log_timestamp"
     "-Wl,--undefined=esp_err_to_name"
