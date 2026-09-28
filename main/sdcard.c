@@ -115,6 +115,10 @@ esp_err_t sdcard_init(void) {
     }
 
     ESP_LOGI(TAG, "SD card mounted successfully");
+    // BEFORE anything writes: ESP-IDF's disk layer does not retry, and
+    // on this board one glitch costs a dead file handle and a leaked
+    // cluster that nothing will ever reclaim (sdcard_retry.c).
+    sdcard_install_retrying_diskio(card);
     sdmmc_card_print_info(stdout, card);
     mounted = true;
     return ESP_OK;

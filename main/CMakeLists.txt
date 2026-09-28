@@ -8,6 +8,7 @@ idf_component_register(
         ${display_srcs}
         "main.c"
         "sdcard.c"
+        "sdcard_retry.c"
         "volume_limit.c"
         "timezone.c"
     PRIV_REQUIRES
