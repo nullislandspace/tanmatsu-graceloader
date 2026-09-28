@@ -56,13 +56,45 @@
 
 static char const* TAG = "sdretry";
 
-// Four attempts and 5 ms between them. The gap matters more than the
-// count: back-to-back retries of a transaction that was disturbed by
-// something else on the controller tend to be disturbed again.
-#define SD_TRIES    4
-#define SD_GAP_MS   5
+// ESCALATING, because the cause is not pinned down and the two
+// candidates want opposite things.
+//
+// ESP_ERR_TIMEOUT arrives here from three different hardware
+// interrupts, and the driver does not say which at default log level
+// (the line that would, "error 0x%x (status=%08x)" in
+// process_cmd_response_status, is ESP_LOGD):
+//
+//   RTO  the card never answered the command
+//   DTO  the data phase ran past the controller's timeout counter
+//   EBE  the card's CRC-status token came back malformed on a write
+//
+// DTO is a card that is genuinely busy -- finishing a program or erase
+// cycle, which on a cheap card is 100-250 ms and on a bad one more. A
+// retry 5 ms later would land in the middle of the same cycle and fail
+// again, and four of those would burn the whole allowance in 20 ms and
+// give up while the card was still working. RTO and EBE are the
+// opposite: signalling, where the fast retry is the one that works and
+// waiting achieves nothing.
+//
+// So: fast first, then long enough to outlast a program cycle. The
+// first retry is 2 ms and costs nothing; the last leaves a third of a
+// second of quiet, which is past the point where a healthy card is
+// still thinking.
+static uint16_t const SD_BACKOFF_MS[] = {0, 2, 20, 100, 250};
+#define SD_TRIES ((int)(sizeof SD_BACKOFF_MS / sizeof SD_BACKOFF_MS[0]))
 
 static sdmmc_card_t* s_card;
+
+// How long the backoff had spent waiting by attempt `try`. Printed with
+// a success, because "worked on attempt 4, after 122 ms" says the card
+// needed the time, and "attempt 2, after 2 ms" says it did not -- which
+// is the difference between DTO and RTO/EBE without needing debug
+// logging turned on.
+static unsigned waited_ms(int try) {
+    unsigned ms = 0;
+    for (int i = 0; i <= try && i < SD_TRIES; i++) ms += SD_BACKOFF_MS[i];
+    return ms;
+}
 
 // What it cost, so a card or a controller that is genuinely unwell
 // cannot hide behind the retries.
@@ -73,12 +105,15 @@ static DRESULT sd_read(BYTE pdrv, BYTE* buff, DWORD sector, UINT count) {
     (void)pdrv;
     esp_err_t err = ESP_OK;
     for (int try = 0; try < SD_TRIES; try++) {
-        if (try > 0) vTaskDelay(pdMS_TO_TICKS(SD_GAP_MS));
+        if (SD_BACKOFF_MS[try] > 0) vTaskDelay(pdMS_TO_TICKS(SD_BACKOFF_MS[try]));
         err = sdmmc_read_sectors(s_card, buff, sector, count);
         if (err == ESP_OK) {
             if (try > 0) {
                 s_retried++;
-                ESP_LOGW(TAG, "read of sector %" PRIu32 " succeeded on attempt %d", (uint32_t)sector, try + 1);
+                // Which attempt worked is the diagnosis: attempt 2 is a
+                // glitch, attempt 4 or 5 is a card that needed the time.
+                ESP_LOGW(TAG, "read of sector %" PRIu32 " succeeded on attempt %d (after %u ms of waiting)",
+                         (uint32_t)sector, try + 1, (unsigned)waited_ms(try));
             }
             return RES_OK;
         }
@@ -93,7 +128,7 @@ static DRESULT sd_write(BYTE pdrv, BYTE const* buff, DWORD sector, UINT count) {
     (void)pdrv;
     esp_err_t err = ESP_OK;
     for (int try = 0; try < SD_TRIES; try++) {
-        if (try > 0) vTaskDelay(pdMS_TO_TICKS(SD_GAP_MS));
+        if (SD_BACKOFF_MS[try] > 0) vTaskDelay(pdMS_TO_TICKS(SD_BACKOFF_MS[try]));
         // Idempotent: the same bytes to the same sectors. A partially
         // written multi-sector run is simply written again from the
         // start.
@@ -101,7 +136,8 @@ static DRESULT sd_write(BYTE pdrv, BYTE const* buff, DWORD sector, UINT count) {
         if (err == ESP_OK) {
             if (try > 0) {
                 s_retried++;
-                ESP_LOGW(TAG, "write of sector %" PRIu32 " succeeded on attempt %d", (uint32_t)sector, try + 1);
+                ESP_LOGW(TAG, "write of sector %" PRIu32 " succeeded on attempt %d (after %u ms of waiting)",
+                         (uint32_t)sector, try + 1, (unsigned)waited_ms(try));
             }
             return RES_OK;
         }
@@ -155,8 +191,8 @@ void sdcard_install_retrying_diskio(sdmmc_card_t* card) {
         .ioctl  = &sd_ioctl,
     };
     ff_diskio_register(pdrv, &impl);
-    ESP_LOGI(TAG, "retrying disk layer installed on pdrv %u (%d tries, %d ms apart)", (unsigned)pdrv, SD_TRIES,
-             SD_GAP_MS);
+    ESP_LOGI(TAG, "retrying disk layer installed on pdrv %u (%d tries, up to %u ms of backoff)", (unsigned)pdrv,
+             SD_TRIES, waited_ms(SD_TRIES - 1));
 }
 
 void sdcard_retry_stats(uint32_t* retried, uint32_t* failed) {
