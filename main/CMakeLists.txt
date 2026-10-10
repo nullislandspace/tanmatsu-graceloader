@@ -24,6 +24,7 @@ idf_component_register(
         vfs
         esp_system
         heap
+        esp_hw_support
         gl_input
         esp_pm
         spi_flash

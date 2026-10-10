@@ -376,6 +376,24 @@ gives SD files a cache-aligned PSRAM stdio buffer. Note the interaction with
 §9: that makes *every* buffered read a PSRAM DMA destination, which is exactly
 the pattern suspected on IDF 6.)
 
+**Recurrence on 2026-10-10, and why the app-side half of that fix cannot be the
+whole fix.** The same refusal showed up on the tanmatsu run recorded in
+`claudeplans/synthminer.md` F-147, this time as `0x106` on writes of five
+sectors. The config was never turned off here, and it is now. But choosing the
+caps inside the loader is not enough: the app's buffers are not the loader's to
+choose — its statics live inside the kbelf segment allocation
+(`components/kbelf/src/kbelfx.c:72`), its stdio buffers come from `malloc`, and
+`f_write` hands the caller's buffer straight to `disk_write` for a sector-aligned
+run. SPM at 0x30100000 is in the heap unconditionally
+(`heap/port/esp32p4/memory_layout.c:115`), so `malloc` can still land there.
+
+So the fix moved to the point where the requirement actually bites:
+`main/sdcard_retry.c` checks the buffer against the two conditions the data
+phase enforces and, when it fails, runs the transaction on a buffer it allocated
+itself. That covers whatever the app was handed, and `fastopen()`'s
+`MALLOC_CAP_DMA|MALLOC_CAP_INTERNAL` no longer has to be right, because a buffer
+from SPM is bounced.
+
 ### 11.2 IDF 5.5.1 already shares the controller
 
 `components/esp_driver_sdmmc/src/sdmmc_host.c` (5.5.1):

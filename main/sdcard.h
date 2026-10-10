@@ -20,8 +20,10 @@ bool sdcard_is_mounted(void);
 // straight after mounting.
 void sdcard_install_retrying_diskio(sdmmc_card_t* card);
 
-// How many disk operations needed more than one attempt, and how many
-// ran out of attempts. Both zero on a healthy badge; if `retried`
-// climbs the controller is being disturbed, and if `failed` climbs the
-// card itself is in trouble.
-void sdcard_retry_stats(uint32_t* retried, uint32_t* failed);
+// How many disk operations needed more than one attempt, how many ran out
+// of attempts, and how many had to run on the bounce buffer because the
+// caller's buffer was not one the SDMMC data phase can use. All zero on a
+// healthy badge; if `retried` climbs the controller is being disturbed, if
+// `failed` climbs the card itself is in trouble, and if `bounced` climbs
+// malloc is handing the app buffers in a non-cacheable range.
+void sdcard_retry_stats(uint32_t* retried, uint32_t* failed, uint32_t* bounced);
