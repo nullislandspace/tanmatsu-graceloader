@@ -138,6 +138,7 @@ LP_IOMUX
 LP_SYS
 LP_TIMER
 LP_TOUCH
+LP_TSENS
 LP_UART
 LP_WDT
 MD5Final
@@ -898,6 +899,8 @@ abs
 access
 acos
 acosf
+adc_reset_lock_acquire
+adc_reset_lock_release
 adler32
 adler32_z
 aes_hal_mode_init
@@ -2231,6 +2234,7 @@ hcd_pipe_get_context
 hcd_pipe_get_mps
 hcd_pipe_get_num_urbs
 hcd_pipe_get_state
+hcd_pipe_get_xfer_size_limit
 hcd_pipe_update_dev_addr
 hcd_pipe_update_mps
 hcd_port_command
@@ -3561,6 +3565,8 @@ regi2c_enter_critical
 regi2c_exit_critical
 regi2c_read_impl
 regi2c_read_mask_impl
+regi2c_saradc_disable
+regi2c_saradc_enable
 regi2c_write_impl
 regi2c_write_mask_impl
 register_fd
@@ -4161,6 +4167,22 @@ tdefl_get_prev_return_status
 tdefl_init
 tdefl_write_image_to_png_file_in_memory
 tdefl_write_image_to_png_file_in_memory_ex
+temp_sensor_get_raw_value
+temperature_sensor_attributes
+temperature_sensor_disable
+temperature_sensor_enable
+temperature_sensor_get_celsius
+temperature_sensor_hal_get_degree
+temperature_sensor_hal_get_raw_value
+temperature_sensor_hal_init
+temperature_sensor_hal_sync_tsens_idx
+temperature_sensor_install
+temperature_sensor_power_acquire
+temperature_sensor_power_release
+temperature_sensor_register_callbacks
+temperature_sensor_set_absolute_threshold
+temperature_sensor_set_delta_threshold
+temperature_sensor_uninstall
 tgamma
 tgammaf
 time

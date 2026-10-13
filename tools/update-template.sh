@@ -111,6 +111,7 @@ HEADER_COMPONENTS=(
     esp_hal_clock
     esp_hal_ppa
     esp_hal_jpeg
+    esp_hal_ana_conv           # hal/temperature_sensor_types.h, pulled in by driver/temperature_sensor.h
     esp_hal_timg
     esp_hal_usb
     esp_driver_dma
@@ -128,6 +129,7 @@ HEADER_COMPONENTS=(
     esp_driver_uart
     esp_driver_ppa
     esp_driver_usb_serial_jtag   # driver/usb_serial_jtag.h (console RX for test automation)
+    esp_driver_tsens              # driver/temperature_sensor.h (SoC die temperature)
     esp_mm
     sdmmc
 
@@ -144,6 +146,13 @@ HEADER_COMPONENTS=(
     # Other utilities apps use
     esp_ringbuf
     esp_pm
+)
+
+# Headers whose API the loader deliberately does not export. Copying them would let an
+# app compile against a call that resolves to NULL at runtime, which is exactly what
+# the header allow-list exists to prevent.
+SKIP_HEADERS=(
+    driver/temperature_sensor_etm.h   # temperature_sensor_new_etm_task/event need the ETM component
 )
 
 # Extract all -I include paths from compile_commands.json
@@ -176,6 +185,18 @@ for dir in $ALL_DIRS; do
 
     (cd "$dir" && find . -type f \( -name "*.h" -o -name "*.inc" -o -name "*.hpp" \) -print0) | \
     while IFS= read -r -d '' file; do
+        rel="${file#./}"
+        skip=false
+        for skip_header in "${SKIP_HEADERS[@]}"; do
+            if [ "$rel" = "$skip_header" ]; then
+                skip=true
+                break
+            fi
+        done
+        if [ "$skip" = true ]; then
+            continue
+        fi
+
         dest_dir="$INCLUDE_DST/$(dirname "$file")"
         mkdir -p "$dest_dir"
         cp "$dir/$file" "$dest_dir/"

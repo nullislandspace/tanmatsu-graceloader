@@ -31,6 +31,12 @@
 
 set -e
 
+# The generated lists are committed to git, so their sort order has to be stable no
+# matter which locale the developer runs this in. Under a UTF-8 locale `sort` puts
+# __absvdi2 before ADC and folds case, which reshuffles every line of
+# symbol_export/all and kbelf_lib_all.c for no reason but a 10k-line diff.
+export LC_ALL=C
+
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 

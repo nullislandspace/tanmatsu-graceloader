@@ -145,6 +145,7 @@ extern char const __attribute__((weak)) symbol_LP_IOMUX[] asm("LP_IOMUX");
 extern char const __attribute__((weak)) symbol_LP_SYS[] asm("LP_SYS");
 extern char const __attribute__((weak)) symbol_LP_TIMER[] asm("LP_TIMER");
 extern char const __attribute__((weak)) symbol_LP_TOUCH[] asm("LP_TOUCH");
+extern char const __attribute__((weak)) symbol_LP_TSENS[] asm("LP_TSENS");
 extern char const __attribute__((weak)) symbol_LP_UART[] asm("LP_UART");
 extern char const __attribute__((weak)) symbol_LP_WDT[] asm("LP_WDT");
 extern char const __attribute__((weak)) symbol_MD5Final[] asm("MD5Final");
@@ -905,6 +906,8 @@ extern char const __attribute__((weak)) symbol_abs[] asm("abs");
 extern char const __attribute__((weak)) symbol_access[] asm("access");
 extern char const __attribute__((weak)) symbol_acos[] asm("acos");
 extern char const __attribute__((weak)) symbol_acosf[] asm("acosf");
+extern char const __attribute__((weak)) symbol_adc_reset_lock_acquire[] asm("adc_reset_lock_acquire");
+extern char const __attribute__((weak)) symbol_adc_reset_lock_release[] asm("adc_reset_lock_release");
 extern char const __attribute__((weak)) symbol_adler32[] asm("adler32");
 extern char const __attribute__((weak)) symbol_adler32_z[] asm("adler32_z");
 extern char const __attribute__((weak)) symbol_aes_hal_mode_init[] asm("aes_hal_mode_init");
@@ -2238,6 +2241,7 @@ extern char const __attribute__((weak)) symbol_hcd_pipe_get_context[] asm("hcd_p
 extern char const __attribute__((weak)) symbol_hcd_pipe_get_mps[] asm("hcd_pipe_get_mps");
 extern char const __attribute__((weak)) symbol_hcd_pipe_get_num_urbs[] asm("hcd_pipe_get_num_urbs");
 extern char const __attribute__((weak)) symbol_hcd_pipe_get_state[] asm("hcd_pipe_get_state");
+extern char const __attribute__((weak)) symbol_hcd_pipe_get_xfer_size_limit[] asm("hcd_pipe_get_xfer_size_limit");
 extern char const __attribute__((weak)) symbol_hcd_pipe_update_dev_addr[] asm("hcd_pipe_update_dev_addr");
 extern char const __attribute__((weak)) symbol_hcd_pipe_update_mps[] asm("hcd_pipe_update_mps");
 extern char const __attribute__((weak)) symbol_hcd_port_command[] asm("hcd_port_command");
@@ -3568,6 +3572,8 @@ extern char const __attribute__((weak)) symbol_regi2c_enter_critical[] asm("regi
 extern char const __attribute__((weak)) symbol_regi2c_exit_critical[] asm("regi2c_exit_critical");
 extern char const __attribute__((weak)) symbol_regi2c_read_impl[] asm("regi2c_read_impl");
 extern char const __attribute__((weak)) symbol_regi2c_read_mask_impl[] asm("regi2c_read_mask_impl");
+extern char const __attribute__((weak)) symbol_regi2c_saradc_disable[] asm("regi2c_saradc_disable");
+extern char const __attribute__((weak)) symbol_regi2c_saradc_enable[] asm("regi2c_saradc_enable");
 extern char const __attribute__((weak)) symbol_regi2c_write_impl[] asm("regi2c_write_impl");
 extern char const __attribute__((weak)) symbol_regi2c_write_mask_impl[] asm("regi2c_write_mask_impl");
 extern char const __attribute__((weak)) symbol_register_fd[] asm("register_fd");
@@ -4168,6 +4174,22 @@ extern char const __attribute__((weak)) symbol_tdefl_get_prev_return_status[] as
 extern char const __attribute__((weak)) symbol_tdefl_init[] asm("tdefl_init");
 extern char const __attribute__((weak)) symbol_tdefl_write_image_to_png_file_in_memory[] asm("tdefl_write_image_to_png_file_in_memory");
 extern char const __attribute__((weak)) symbol_tdefl_write_image_to_png_file_in_memory_ex[] asm("tdefl_write_image_to_png_file_in_memory_ex");
+extern char const __attribute__((weak)) symbol_temp_sensor_get_raw_value[] asm("temp_sensor_get_raw_value");
+extern char const __attribute__((weak)) symbol_temperature_sensor_attributes[] asm("temperature_sensor_attributes");
+extern char const __attribute__((weak)) symbol_temperature_sensor_disable[] asm("temperature_sensor_disable");
+extern char const __attribute__((weak)) symbol_temperature_sensor_enable[] asm("temperature_sensor_enable");
+extern char const __attribute__((weak)) symbol_temperature_sensor_get_celsius[] asm("temperature_sensor_get_celsius");
+extern char const __attribute__((weak)) symbol_temperature_sensor_hal_get_degree[] asm("temperature_sensor_hal_get_degree");
+extern char const __attribute__((weak)) symbol_temperature_sensor_hal_get_raw_value[] asm("temperature_sensor_hal_get_raw_value");
+extern char const __attribute__((weak)) symbol_temperature_sensor_hal_init[] asm("temperature_sensor_hal_init");
+extern char const __attribute__((weak)) symbol_temperature_sensor_hal_sync_tsens_idx[] asm("temperature_sensor_hal_sync_tsens_idx");
+extern char const __attribute__((weak)) symbol_temperature_sensor_install[] asm("temperature_sensor_install");
+extern char const __attribute__((weak)) symbol_temperature_sensor_power_acquire[] asm("temperature_sensor_power_acquire");
+extern char const __attribute__((weak)) symbol_temperature_sensor_power_release[] asm("temperature_sensor_power_release");
+extern char const __attribute__((weak)) symbol_temperature_sensor_register_callbacks[] asm("temperature_sensor_register_callbacks");
+extern char const __attribute__((weak)) symbol_temperature_sensor_set_absolute_threshold[] asm("temperature_sensor_set_absolute_threshold");
+extern char const __attribute__((weak)) symbol_temperature_sensor_set_delta_threshold[] asm("temperature_sensor_set_delta_threshold");
+extern char const __attribute__((weak)) symbol_temperature_sensor_uninstall[] asm("temperature_sensor_uninstall");
 extern char const __attribute__((weak)) symbol_tgamma[] asm("tgamma");
 extern char const __attribute__((weak)) symbol_tgammaf[] asm("tgammaf");
 extern char const __attribute__((weak)) symbol_time[] asm("time");
@@ -4653,6 +4675,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "LP_SYS", .vaddr = (size_t) symbol_LP_SYS },
     { .name = "LP_TIMER", .vaddr = (size_t) symbol_LP_TIMER },
     { .name = "LP_TOUCH", .vaddr = (size_t) symbol_LP_TOUCH },
+    { .name = "LP_TSENS", .vaddr = (size_t) symbol_LP_TSENS },
     { .name = "LP_UART", .vaddr = (size_t) symbol_LP_UART },
     { .name = "LP_WDT", .vaddr = (size_t) symbol_LP_WDT },
     { .name = "MD5Final", .vaddr = (size_t) symbol_MD5Final },
@@ -5413,6 +5436,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "access", .vaddr = (size_t) symbol_access },
     { .name = "acos", .vaddr = (size_t) symbol_acos },
     { .name = "acosf", .vaddr = (size_t) symbol_acosf },
+    { .name = "adc_reset_lock_acquire", .vaddr = (size_t) symbol_adc_reset_lock_acquire },
+    { .name = "adc_reset_lock_release", .vaddr = (size_t) symbol_adc_reset_lock_release },
     { .name = "adler32", .vaddr = (size_t) symbol_adler32 },
     { .name = "adler32_z", .vaddr = (size_t) symbol_adler32_z },
     { .name = "aes_hal_mode_init", .vaddr = (size_t) symbol_aes_hal_mode_init },
@@ -6746,6 +6771,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "hcd_pipe_get_mps", .vaddr = (size_t) symbol_hcd_pipe_get_mps },
     { .name = "hcd_pipe_get_num_urbs", .vaddr = (size_t) symbol_hcd_pipe_get_num_urbs },
     { .name = "hcd_pipe_get_state", .vaddr = (size_t) symbol_hcd_pipe_get_state },
+    { .name = "hcd_pipe_get_xfer_size_limit", .vaddr = (size_t) symbol_hcd_pipe_get_xfer_size_limit },
     { .name = "hcd_pipe_update_dev_addr", .vaddr = (size_t) symbol_hcd_pipe_update_dev_addr },
     { .name = "hcd_pipe_update_mps", .vaddr = (size_t) symbol_hcd_pipe_update_mps },
     { .name = "hcd_port_command", .vaddr = (size_t) symbol_hcd_port_command },
@@ -8076,6 +8102,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "regi2c_exit_critical", .vaddr = (size_t) symbol_regi2c_exit_critical },
     { .name = "regi2c_read_impl", .vaddr = (size_t) symbol_regi2c_read_impl },
     { .name = "regi2c_read_mask_impl", .vaddr = (size_t) symbol_regi2c_read_mask_impl },
+    { .name = "regi2c_saradc_disable", .vaddr = (size_t) symbol_regi2c_saradc_disable },
+    { .name = "regi2c_saradc_enable", .vaddr = (size_t) symbol_regi2c_saradc_enable },
     { .name = "regi2c_write_impl", .vaddr = (size_t) symbol_regi2c_write_impl },
     { .name = "regi2c_write_mask_impl", .vaddr = (size_t) symbol_regi2c_write_mask_impl },
     { .name = "register_fd", .vaddr = (size_t) symbol_register_fd },
@@ -8676,6 +8704,22 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "tdefl_init", .vaddr = (size_t) symbol_tdefl_init },
     { .name = "tdefl_write_image_to_png_file_in_memory", .vaddr = (size_t) symbol_tdefl_write_image_to_png_file_in_memory },
     { .name = "tdefl_write_image_to_png_file_in_memory_ex", .vaddr = (size_t) symbol_tdefl_write_image_to_png_file_in_memory_ex },
+    { .name = "temp_sensor_get_raw_value", .vaddr = (size_t) symbol_temp_sensor_get_raw_value },
+    { .name = "temperature_sensor_attributes", .vaddr = (size_t) symbol_temperature_sensor_attributes },
+    { .name = "temperature_sensor_disable", .vaddr = (size_t) symbol_temperature_sensor_disable },
+    { .name = "temperature_sensor_enable", .vaddr = (size_t) symbol_temperature_sensor_enable },
+    { .name = "temperature_sensor_get_celsius", .vaddr = (size_t) symbol_temperature_sensor_get_celsius },
+    { .name = "temperature_sensor_hal_get_degree", .vaddr = (size_t) symbol_temperature_sensor_hal_get_degree },
+    { .name = "temperature_sensor_hal_get_raw_value", .vaddr = (size_t) symbol_temperature_sensor_hal_get_raw_value },
+    { .name = "temperature_sensor_hal_init", .vaddr = (size_t) symbol_temperature_sensor_hal_init },
+    { .name = "temperature_sensor_hal_sync_tsens_idx", .vaddr = (size_t) symbol_temperature_sensor_hal_sync_tsens_idx },
+    { .name = "temperature_sensor_install", .vaddr = (size_t) symbol_temperature_sensor_install },
+    { .name = "temperature_sensor_power_acquire", .vaddr = (size_t) symbol_temperature_sensor_power_acquire },
+    { .name = "temperature_sensor_power_release", .vaddr = (size_t) symbol_temperature_sensor_power_release },
+    { .name = "temperature_sensor_register_callbacks", .vaddr = (size_t) symbol_temperature_sensor_register_callbacks },
+    { .name = "temperature_sensor_set_absolute_threshold", .vaddr = (size_t) symbol_temperature_sensor_set_absolute_threshold },
+    { .name = "temperature_sensor_set_delta_threshold", .vaddr = (size_t) symbol_temperature_sensor_set_delta_threshold },
+    { .name = "temperature_sensor_uninstall", .vaddr = (size_t) symbol_temperature_sensor_uninstall },
     { .name = "tgamma", .vaddr = (size_t) symbol_tgamma },
     { .name = "tgammaf", .vaddr = (size_t) symbol_tgammaf },
     { .name = "time", .vaddr = (size_t) symbol_time },
@@ -9023,6 +9067,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 4506,
+    .symbols_len = 4528,
     .symbols     = symbols,
 };

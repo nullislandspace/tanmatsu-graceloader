@@ -22,6 +22,7 @@ idf_component_register(
         esp_driver_sdmmc
         sdmmc
         vfs
+        esp_driver_tsens
         esp_system
         heap
         esp_hw_support

@@ -424,4 +424,17 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=esp_h264_aligned_malloc"
     "-Wl,--undefined=esp_h264_calloc_prefer"
     "-Wl,--undefined=esp_h264_malloc_prefer"
+    # The ESP32-P4's internal temperature sensor (the SoC die temperature the launcher
+    # shows on its power information screen). Nothing in the loader reads it, so without
+    # these the driver object is never pulled out of libesp_driver_tsens.a and apps get
+    # NULL entries for the whole API. The ETM glue (temperature_sensor_new_etm_task/
+    # new_etm_event) is left out: it needs the ETM component and no app can use it.
+    "-Wl,--undefined=temperature_sensor_install"
+    "-Wl,--undefined=temperature_sensor_uninstall"
+    "-Wl,--undefined=temperature_sensor_enable"
+    "-Wl,--undefined=temperature_sensor_disable"
+    "-Wl,--undefined=temperature_sensor_get_celsius"
+    "-Wl,--undefined=temperature_sensor_set_absolute_threshold"
+    "-Wl,--undefined=temperature_sensor_set_delta_threshold"
+    "-Wl,--undefined=temperature_sensor_register_callbacks"
 )
