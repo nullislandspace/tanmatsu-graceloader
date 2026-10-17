@@ -19,6 +19,12 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=atoi"
     "-Wl,--undefined=atol"
     "-Wl,--undefined=strtol"
+    # ctype case mapping. Nothing in the loader calls them, and <ctype.h> turns
+    # them into macros for most callers, so they never reach the ELF on their own.
+    # se_mp3's playlist comparator calls tolower(), which made SynthRacer fail to
+    # load with "Missing symbol: tolower".
+    "-Wl,--undefined=tolower"
+    "-Wl,--undefined=toupper"
     "-Wl,--undefined=esp_log_write"
     "-Wl,--undefined=esp_log_timestamp"
     "-Wl,--undefined=esp_err_to_name"

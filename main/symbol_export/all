@@ -4207,6 +4207,8 @@ tlsf_realloc
 tlsf_size
 tlsf_walk_pool
 toascii
+tolower
+toupper
 translate_path
 trunc
 truncf

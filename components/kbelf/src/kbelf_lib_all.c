@@ -4214,6 +4214,8 @@ extern char const __attribute__((weak)) symbol_tlsf_realloc[] asm("tlsf_realloc"
 extern char const __attribute__((weak)) symbol_tlsf_size[] asm("tlsf_size");
 extern char const __attribute__((weak)) symbol_tlsf_walk_pool[] asm("tlsf_walk_pool");
 extern char const __attribute__((weak)) symbol_toascii[] asm("toascii");
+extern char const __attribute__((weak)) symbol_tolower[] asm("tolower");
+extern char const __attribute__((weak)) symbol_toupper[] asm("toupper");
 extern char const __attribute__((weak)) symbol_translate_path[] asm("translate_path");
 extern char const __attribute__((weak)) symbol_trunc[] asm("trunc");
 extern char const __attribute__((weak)) symbol_truncf[] asm("truncf");
@@ -8744,6 +8746,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "tlsf_size", .vaddr = (size_t) symbol_tlsf_size },
     { .name = "tlsf_walk_pool", .vaddr = (size_t) symbol_tlsf_walk_pool },
     { .name = "toascii", .vaddr = (size_t) symbol_toascii },
+    { .name = "tolower", .vaddr = (size_t) symbol_tolower },
+    { .name = "toupper", .vaddr = (size_t) symbol_toupper },
     { .name = "translate_path", .vaddr = (size_t) symbol_translate_path },
     { .name = "trunc", .vaddr = (size_t) symbol_trunc },
     { .name = "truncf", .vaddr = (size_t) symbol_truncf },
@@ -9067,6 +9071,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 4528,
+    .symbols_len = 4530,
     .symbols     = symbols,
 };
