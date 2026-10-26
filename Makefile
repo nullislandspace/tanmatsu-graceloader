@@ -1,7 +1,13 @@
 # Device parameters
 DEVICE ?= tanmatsu
 PORT ?= /dev/ttyACM0
-BADGELINKPORT ?= $(PORT)
+# BadgeLink transport. Empty (the default) means "raw USB through libusb",
+# which is the only thing the Tanmatsu exposes in BadgeLink mode: a single
+# vendor-specific interface (16d0:0f9a, icFF), no CDC-ACM, therefore no
+# /dev/ttyACM* for it at all. Do not default this to $(PORT).
+# Set it to host:port to go through a TCP proxy (e.g. localhost:4003 from
+# tanmatsu-badgenet), or to a device path for the serial transport.
+BADGELINKPORT ?=
 
 # Build parameters
 IDF_VERSION ?= v6.0.2
@@ -64,8 +70,9 @@ all: build
 
 # Badgelink
 
-# Determine badgelink connection argument: --tcp for host:port, --port for serial devices
-BADGELINK_CONN := $(if $(findstring :,$(BADGELINKPORT)),--tcp $(BADGELINKPORT),--port $(BADGELINKPORT))
+# Determine badgelink connection argument: --tcp for host:port, --port for
+# serial devices, nothing at all for raw USB (badgelink.py then uses libusb).
+BADGELINK_CONN := $(if $(BADGELINKPORT),$(if $(findstring :,$(BADGELINKPORT)),--tcp $(BADGELINKPORT),--port $(BADGELINKPORT)),)
 
 .PHONY: badgelink
 badgelink:
@@ -292,8 +299,8 @@ mode_badgelink:
 # Ask the firmware (running in USB_DEVICE / BadgeLink mode) to switch its USB
 # back to flash/monitor (USB_DEBUG) mode via the BadgeLink `mode` command.
 # Prefers the badgelink checkout created by `make badgelink`; falls back to a
-# component copy. Uses BADGELINKPORT (defaults to PORT) for the connection:
-# host:port -> --tcp, plain path -> --port.
+# component copy. Uses BADGELINKPORT (defaults to raw USB) for the connection:
+# empty -> libusb, host:port -> --tcp, plain path -> --port.
 BADGELINK_CLONE_SH   := badgelink/tools/badgelink.sh
 BADGELINK_LOCAL_SH   := components/badgeteam__badgelink/tools/badgelink.sh
 BADGELINK_MANAGED_SH := managed_components/badgeteam__badgelink/tools/badgelink.sh
