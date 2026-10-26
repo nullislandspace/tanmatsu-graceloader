@@ -7,8 +7,6 @@ idf_component_register(
     SRCS
         ${display_srcs}
         "main.c"
-        "sdcard.c"
-        "sdcard_retry.c"
         "volume_limit.c"
         "timezone.c"
     PRIV_REQUIRES
@@ -17,7 +15,7 @@ idf_component_register(
         kbelf
         appfs
         esp_lcd
-        badge-bsp
+        badgeteam__badge-bsp
         pax-codecs
         esp_driver_sdmmc
         sdmmc

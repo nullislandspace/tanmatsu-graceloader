@@ -5,7 +5,7 @@ idf_component_register(
     INCLUDE_DIRS
         "include"
     PRIV_REQUIRES
-        badge-bsp
+        badgeteam__badge-bsp
         usb_host_hid
         freertos
         esp_common
