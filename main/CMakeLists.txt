@@ -9,6 +9,7 @@ idf_component_register(
         "main.c"
         "sdcard.c"
         "sdcard_retry.c"
+        "storage_shim.c"
         "volume_limit.c"
         "timezone.c"
     PRIV_REQUIRES
@@ -76,6 +77,17 @@ if(CONFIG_SOC_MIPI_DSI_SUPPORTED)
         "-Wl,--undefined=graceloader_display_register_callbacks"
     )
 endif()
+
+# BSP storage subsystem for apps, see storage_shim.c. graceloader owns the SD card LDO and /sd, so the BSP's own
+# storage init and mount entry points are wrapped. Force-included for the same reason as the volume wrappers above.
+target_link_options(${COMPONENT_LIB} INTERFACE
+    "-Wl,--wrap=bsp_storage_initialize"
+    "-Wl,--wrap=bsp_storage_mount"
+    "-Wl,--wrap=bsp_storage_mount_advanced"
+    "-Wl,--undefined=__wrap_bsp_storage_initialize"
+    "-Wl,--undefined=__wrap_bsp_storage_mount"
+    "-Wl,--undefined=__wrap_bsp_storage_mount_advanced"
+)
 
 idf_build_set_property(COMPILE_OPTIONS "-Wno-error=unused-variable" APPEND)
 idf_build_set_property(COMPILE_OPTIONS "-Wno-error=unused-const-variable" APPEND)

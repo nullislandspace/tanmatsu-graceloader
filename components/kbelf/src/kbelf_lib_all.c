@@ -744,6 +744,9 @@ extern char const __attribute__((weak)) symbol___wrap___cxa_throw[] asm("__wrap_
 extern char const __attribute__((weak)) symbol___wrap___gxx_personality_v0[] asm("__wrap___gxx_personality_v0");
 extern char const __attribute__((weak)) symbol___wrap_bsp_audio_get_volume[] asm("__wrap_bsp_audio_get_volume");
 extern char const __attribute__((weak)) symbol___wrap_bsp_audio_set_volume[] asm("__wrap_bsp_audio_set_volume");
+extern char const __attribute__((weak)) symbol___wrap_bsp_storage_initialize[] asm("__wrap_bsp_storage_initialize");
+extern char const __attribute__((weak)) symbol___wrap_bsp_storage_mount[] asm("__wrap_bsp_storage_mount");
+extern char const __attribute__((weak)) symbol___wrap_bsp_storage_mount_advanced[] asm("__wrap_bsp_storage_mount_advanced");
 extern char const __attribute__((weak)) symbol___wrap_esp_lcd_dpi_panel_register_event_callbacks[] asm("__wrap_esp_lcd_dpi_panel_register_event_callbacks");
 extern char const __attribute__((weak)) symbol___wtime_am_pm[] asm("__wtime_am_pm");
 extern char const __attribute__((weak)) symbol___wtime_mon[] asm("__wtime_mon");
@@ -1003,10 +1006,13 @@ extern char const __attribute__((weak)) symbol_bsp_display_get_panel_io[] asm("b
 extern char const __attribute__((weak)) symbol_bsp_display_get_parameters[] asm("bsp_display_get_parameters");
 extern char const __attribute__((weak)) symbol_bsp_display_get_tearing_effect_mode[] asm("bsp_display_get_tearing_effect_mode");
 extern char const __attribute__((weak)) symbol_bsp_display_get_tearing_effect_semaphore[] asm("bsp_display_get_tearing_effect_semaphore");
+extern char const __attribute__((weak)) symbol_bsp_display_get_vcom[] asm("bsp_display_get_vcom");
+extern char const __attribute__((weak)) symbol_bsp_display_get_vcom_default[] asm("bsp_display_get_vcom_default");
 extern char const __attribute__((weak)) symbol_bsp_display_initialize[] asm("bsp_display_initialize");
 extern char const __attribute__((weak)) symbol_bsp_display_interrupt[] asm("bsp_display_interrupt");
 extern char const __attribute__((weak)) symbol_bsp_display_set_backlight_brightness[] asm("bsp_display_set_backlight_brightness");
 extern char const __attribute__((weak)) symbol_bsp_display_set_tearing_effect_mode[] asm("bsp_display_set_tearing_effect_mode");
+extern char const __attribute__((weak)) symbol_bsp_display_set_vcom[] asm("bsp_display_set_vcom");
 extern char const __attribute__((weak)) symbol_bsp_display_wait[] asm("bsp_display_wait");
 extern char const __attribute__((weak)) symbol_bsp_i2c_primary_bus_claim[] asm("bsp_i2c_primary_bus_claim");
 extern char const __attribute__((weak)) symbol_bsp_i2c_primary_bus_get_handle[] asm("bsp_i2c_primary_bus_get_handle");
@@ -1068,6 +1074,15 @@ extern char const __attribute__((weak)) symbol_bsp_rtc_set_time[] asm("bsp_rtc_s
 extern char const __attribute__((weak)) symbol_bsp_rtc_update_time[] asm("bsp_rtc_update_time");
 extern char const __attribute__((weak)) symbol_bsp_sao_initialize[] asm("bsp_sao_initialize");
 extern char const __attribute__((weak)) symbol_bsp_sensor_initialize[] asm("bsp_sensor_initialize");
+extern char const __attribute__((weak)) symbol_bsp_storage_format[] asm("bsp_storage_format");
+extern char const __attribute__((weak)) symbol_bsp_storage_get_mounted[] asm("bsp_storage_get_mounted");
+extern char const __attribute__((weak)) symbol_bsp_storage_get_mountpoint[] asm("bsp_storage_get_mountpoint");
+extern char const __attribute__((weak)) symbol_bsp_storage_get_status[] asm("bsp_storage_get_status");
+extern char const __attribute__((weak)) symbol_bsp_storage_get_supported[] asm("bsp_storage_get_supported");
+extern char const __attribute__((weak)) symbol_bsp_storage_initialize[] asm("bsp_storage_initialize");
+extern char const __attribute__((weak)) symbol_bsp_storage_mount[] asm("bsp_storage_mount");
+extern char const __attribute__((weak)) symbol_bsp_storage_mount_advanced[] asm("bsp_storage_mount_advanced");
+extern char const __attribute__((weak)) symbol_bsp_storage_unmount[] asm("bsp_storage_unmount");
 extern char const __attribute__((weak)) symbol_bsp_tanmatsu_coprocessor_get_handle[] asm("bsp_tanmatsu_coprocessor_get_handle");
 extern char const __attribute__((weak)) symbol_bzero[] asm("bzero");
 extern char const __attribute__((weak)) symbol_cache_error_msg[] asm("cache_error_msg");
@@ -1495,6 +1510,7 @@ extern char const __attribute__((weak)) symbol_esp_ipc_isr_start_fl[] asm("esp_i
 extern char const __attribute__((weak)) symbol_esp_ipc_isr_waiting_for_finish_cmd[] asm("esp_ipc_isr_waiting_for_finish_cmd");
 extern char const __attribute__((weak)) symbol_esp_isr_names[] asm("esp_isr_names");
 extern char const __attribute__((weak)) symbol_esp_lcd_del_dsi_bus[] asm("esp_lcd_del_dsi_bus");
+extern char const __attribute__((weak)) symbol_esp_lcd_dpi_panel_disable_dma2d[] asm("esp_lcd_dpi_panel_disable_dma2d");
 extern char const __attribute__((weak)) symbol_esp_lcd_dpi_panel_enable_dma2d[] asm("esp_lcd_dpi_panel_enable_dma2d");
 extern char const __attribute__((weak)) symbol_esp_lcd_dpi_panel_get_frame_buffer[] asm("esp_lcd_dpi_panel_get_frame_buffer");
 extern char const __attribute__((weak)) symbol_esp_lcd_dpi_panel_register_event_callbacks[] asm("esp_lcd_dpi_panel_register_event_callbacks");
@@ -1506,6 +1522,7 @@ extern char const __attribute__((weak)) symbol_esp_lcd_new_panel_st7701[] asm("e
 extern char const __attribute__((weak)) symbol_esp_lcd_new_panel_st7701_mipi[] asm("esp_lcd_new_panel_st7701_mipi");
 extern char const __attribute__((weak)) symbol_esp_lcd_new_panel_st7701_rgb[] asm("esp_lcd_new_panel_st7701_rgb");
 extern char const __attribute__((weak)) symbol_esp_lcd_new_rgb_panel[] asm("esp_lcd_new_rgb_panel");
+extern char const __attribute__((weak)) symbol_esp_lcd_panel_del[] asm("esp_lcd_panel_del");
 extern char const __attribute__((weak)) symbol_esp_lcd_panel_draw_bitmap[] asm("esp_lcd_panel_draw_bitmap");
 extern char const __attribute__((weak)) symbol_esp_lcd_panel_init[] asm("esp_lcd_panel_init");
 extern char const __attribute__((weak)) symbol_esp_lcd_panel_io_del[] asm("esp_lcd_panel_io_del");
@@ -1777,6 +1794,9 @@ extern char const __attribute__((weak)) symbol_esp_vfs_fat_mount_initialized[] a
 extern char const __attribute__((weak)) symbol_esp_vfs_fat_partition_drive[] asm("esp_vfs_fat_partition_drive");
 extern char const __attribute__((weak)) symbol_esp_vfs_fat_register[] asm("esp_vfs_fat_register");
 extern char const __attribute__((weak)) symbol_esp_vfs_fat_register_cfg[] asm("esp_vfs_fat_register_cfg");
+extern char const __attribute__((weak)) symbol_esp_vfs_fat_sdcard_format[] asm("esp_vfs_fat_sdcard_format");
+extern char const __attribute__((weak)) symbol_esp_vfs_fat_sdcard_format_cfg[] asm("esp_vfs_fat_sdcard_format_cfg");
+extern char const __attribute__((weak)) symbol_esp_vfs_fat_sdcard_unmount[] asm("esp_vfs_fat_sdcard_unmount");
 extern char const __attribute__((weak)) symbol_esp_vfs_fat_sdmmc_mount[] asm("esp_vfs_fat_sdmmc_mount");
 extern char const __attribute__((weak)) symbol_esp_vfs_fat_sdmmc_sdcard_init[] asm("esp_vfs_fat_sdmmc_sdcard_init");
 extern char const __attribute__((weak)) symbol_esp_vfs_fat_spiflash_mount[] asm("esp_vfs_fat_spiflash_mount");
@@ -1976,6 +1996,7 @@ extern char const __attribute__((weak)) symbol_ff_disk_status[] asm("ff_disk_sta
 extern char const __attribute__((weak)) symbol_ff_disk_write[] asm("ff_disk_write");
 extern char const __attribute__((weak)) symbol_ff_diskio_get_drive[] asm("ff_diskio_get_drive");
 extern char const __attribute__((weak)) symbol_ff_diskio_get_pdrv_card[] asm("ff_diskio_get_pdrv_card");
+extern char const __attribute__((weak)) symbol_ff_diskio_get_pdrv_cnt_card[] asm("ff_diskio_get_pdrv_cnt_card");
 extern char const __attribute__((weak)) symbol_ff_diskio_get_sector_size[] asm("ff_diskio_get_sector_size");
 extern char const __attribute__((weak)) symbol_ff_diskio_is_registered[] asm("ff_diskio_is_registered");
 extern char const __attribute__((weak)) symbol_ff_diskio_register[] asm("ff_diskio_register");
@@ -2672,6 +2693,7 @@ extern char const __attribute__((weak)) symbol_mipi_dsi_hal_host_dpi_set_horizon
 extern char const __attribute__((weak)) symbol_mipi_dsi_hal_host_dpi_set_vertical_timing[] asm("mipi_dsi_hal_host_dpi_set_vertical_timing");
 extern char const __attribute__((weak)) symbol_mipi_dsi_hal_host_gen_read_dcs_command[] asm("mipi_dsi_hal_host_gen_read_dcs_command");
 extern char const __attribute__((weak)) symbol_mipi_dsi_hal_host_gen_read_short_packet[] asm("mipi_dsi_hal_host_gen_read_short_packet");
+extern char const __attribute__((weak)) symbol_mipi_dsi_hal_host_gen_read_timed_out[] asm("mipi_dsi_hal_host_gen_read_timed_out");
 extern char const __attribute__((weak)) symbol_mipi_dsi_hal_host_gen_write_dcs_command[] asm("mipi_dsi_hal_host_gen_write_dcs_command");
 extern char const __attribute__((weak)) symbol_mipi_dsi_hal_host_gen_write_short_packet[] asm("mipi_dsi_hal_host_gen_write_short_packet");
 extern char const __attribute__((weak)) symbol_mipi_dsi_hal_init[] asm("mipi_dsi_hal_init");
@@ -4053,7 +4075,10 @@ extern char const __attribute__((weak)) symbol_sscanf[] asm("sscanf");
 extern char const __attribute__((weak)) symbol_st7701_get_panel[] asm("st7701_get_panel");
 extern char const __attribute__((weak)) symbol_st7701_get_panel_io[] asm("st7701_get_panel_io");
 extern char const __attribute__((weak)) symbol_st7701_get_parameters[] asm("st7701_get_parameters");
+extern char const __attribute__((weak)) symbol_st7701_get_vcom[] asm("st7701_get_vcom");
+extern char const __attribute__((weak)) symbol_st7701_get_vcom_otp[] asm("st7701_get_vcom_otp");
 extern char const __attribute__((weak)) symbol_st7701_initialize[] asm("st7701_initialize");
+extern char const __attribute__((weak)) symbol_st7701_set_vcom[] asm("st7701_set_vcom");
 extern char const __attribute__((weak)) symbol_start_cpu0[] asm("start_cpu0");
 extern char const __attribute__((weak)) symbol_start_cpu_other_cores[] asm("start_cpu_other_cores");
 extern char const __attribute__((weak)) symbol_startup_resume_other_cores[] asm("startup_resume_other_cores");
@@ -5269,6 +5294,9 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__wrap___gxx_personality_v0", .vaddr = (size_t) symbol___wrap___gxx_personality_v0 },
     { .name = "__wrap_bsp_audio_get_volume", .vaddr = (size_t) symbol___wrap_bsp_audio_get_volume },
     { .name = "__wrap_bsp_audio_set_volume", .vaddr = (size_t) symbol___wrap_bsp_audio_set_volume },
+    { .name = "__wrap_bsp_storage_initialize", .vaddr = (size_t) symbol___wrap_bsp_storage_initialize },
+    { .name = "__wrap_bsp_storage_mount", .vaddr = (size_t) symbol___wrap_bsp_storage_mount },
+    { .name = "__wrap_bsp_storage_mount_advanced", .vaddr = (size_t) symbol___wrap_bsp_storage_mount_advanced },
     { .name = "__wrap_esp_lcd_dpi_panel_register_event_callbacks", .vaddr = (size_t) symbol___wrap_esp_lcd_dpi_panel_register_event_callbacks },
     { .name = "__wtime_am_pm", .vaddr = (size_t) symbol___wtime_am_pm },
     { .name = "__wtime_mon", .vaddr = (size_t) symbol___wtime_mon },
@@ -5528,10 +5556,13 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "bsp_display_get_parameters", .vaddr = (size_t) symbol_bsp_display_get_parameters },
     { .name = "bsp_display_get_tearing_effect_mode", .vaddr = (size_t) symbol_bsp_display_get_tearing_effect_mode },
     { .name = "bsp_display_get_tearing_effect_semaphore", .vaddr = (size_t) symbol_bsp_display_get_tearing_effect_semaphore },
+    { .name = "bsp_display_get_vcom", .vaddr = (size_t) symbol_bsp_display_get_vcom },
+    { .name = "bsp_display_get_vcom_default", .vaddr = (size_t) symbol_bsp_display_get_vcom_default },
     { .name = "bsp_display_initialize", .vaddr = (size_t) symbol_bsp_display_initialize },
     { .name = "bsp_display_interrupt", .vaddr = (size_t) symbol_bsp_display_interrupt },
     { .name = "bsp_display_set_backlight_brightness", .vaddr = (size_t) symbol_bsp_display_set_backlight_brightness },
     { .name = "bsp_display_set_tearing_effect_mode", .vaddr = (size_t) symbol_bsp_display_set_tearing_effect_mode },
+    { .name = "bsp_display_set_vcom", .vaddr = (size_t) symbol_bsp_display_set_vcom },
     { .name = "bsp_display_wait", .vaddr = (size_t) symbol_bsp_display_wait },
     { .name = "bsp_i2c_primary_bus_claim", .vaddr = (size_t) symbol_bsp_i2c_primary_bus_claim },
     { .name = "bsp_i2c_primary_bus_get_handle", .vaddr = (size_t) symbol_bsp_i2c_primary_bus_get_handle },
@@ -5593,6 +5624,15 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "bsp_rtc_update_time", .vaddr = (size_t) symbol_bsp_rtc_update_time },
     { .name = "bsp_sao_initialize", .vaddr = (size_t) symbol_bsp_sao_initialize },
     { .name = "bsp_sensor_initialize", .vaddr = (size_t) symbol_bsp_sensor_initialize },
+    { .name = "bsp_storage_format", .vaddr = (size_t) symbol_bsp_storage_format },
+    { .name = "bsp_storage_get_mounted", .vaddr = (size_t) symbol_bsp_storage_get_mounted },
+    { .name = "bsp_storage_get_mountpoint", .vaddr = (size_t) symbol_bsp_storage_get_mountpoint },
+    { .name = "bsp_storage_get_status", .vaddr = (size_t) symbol_bsp_storage_get_status },
+    { .name = "bsp_storage_get_supported", .vaddr = (size_t) symbol_bsp_storage_get_supported },
+    { .name = "bsp_storage_initialize", .vaddr = (size_t) symbol_bsp_storage_initialize },
+    { .name = "bsp_storage_mount", .vaddr = (size_t) symbol_bsp_storage_mount },
+    { .name = "bsp_storage_mount_advanced", .vaddr = (size_t) symbol_bsp_storage_mount_advanced },
+    { .name = "bsp_storage_unmount", .vaddr = (size_t) symbol_bsp_storage_unmount },
     { .name = "bsp_tanmatsu_coprocessor_get_handle", .vaddr = (size_t) symbol_bsp_tanmatsu_coprocessor_get_handle },
     { .name = "bzero", .vaddr = (size_t) symbol_bzero },
     { .name = "cache_error_msg", .vaddr = (size_t) symbol_cache_error_msg },
@@ -6020,6 +6060,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_ipc_isr_waiting_for_finish_cmd", .vaddr = (size_t) symbol_esp_ipc_isr_waiting_for_finish_cmd },
     { .name = "esp_isr_names", .vaddr = (size_t) symbol_esp_isr_names },
     { .name = "esp_lcd_del_dsi_bus", .vaddr = (size_t) symbol_esp_lcd_del_dsi_bus },
+    { .name = "esp_lcd_dpi_panel_disable_dma2d", .vaddr = (size_t) symbol_esp_lcd_dpi_panel_disable_dma2d },
     { .name = "esp_lcd_dpi_panel_enable_dma2d", .vaddr = (size_t) symbol_esp_lcd_dpi_panel_enable_dma2d },
     { .name = "esp_lcd_dpi_panel_get_frame_buffer", .vaddr = (size_t) symbol_esp_lcd_dpi_panel_get_frame_buffer },
     { .name = "esp_lcd_dpi_panel_register_event_callbacks", .vaddr = (size_t) symbol_esp_lcd_dpi_panel_register_event_callbacks },
@@ -6031,6 +6072,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_lcd_new_panel_st7701_mipi", .vaddr = (size_t) symbol_esp_lcd_new_panel_st7701_mipi },
     { .name = "esp_lcd_new_panel_st7701_rgb", .vaddr = (size_t) symbol_esp_lcd_new_panel_st7701_rgb },
     { .name = "esp_lcd_new_rgb_panel", .vaddr = (size_t) symbol_esp_lcd_new_rgb_panel },
+    { .name = "esp_lcd_panel_del", .vaddr = (size_t) symbol_esp_lcd_panel_del },
     { .name = "esp_lcd_panel_draw_bitmap", .vaddr = (size_t) symbol_esp_lcd_panel_draw_bitmap },
     { .name = "esp_lcd_panel_init", .vaddr = (size_t) symbol_esp_lcd_panel_init },
     { .name = "esp_lcd_panel_io_del", .vaddr = (size_t) symbol_esp_lcd_panel_io_del },
@@ -6302,6 +6344,9 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_vfs_fat_partition_drive", .vaddr = (size_t) symbol_esp_vfs_fat_partition_drive },
     { .name = "esp_vfs_fat_register", .vaddr = (size_t) symbol_esp_vfs_fat_register },
     { .name = "esp_vfs_fat_register_cfg", .vaddr = (size_t) symbol_esp_vfs_fat_register_cfg },
+    { .name = "esp_vfs_fat_sdcard_format", .vaddr = (size_t) symbol_esp_vfs_fat_sdcard_format },
+    { .name = "esp_vfs_fat_sdcard_format_cfg", .vaddr = (size_t) symbol_esp_vfs_fat_sdcard_format_cfg },
+    { .name = "esp_vfs_fat_sdcard_unmount", .vaddr = (size_t) symbol_esp_vfs_fat_sdcard_unmount },
     { .name = "esp_vfs_fat_sdmmc_mount", .vaddr = (size_t) symbol_esp_vfs_fat_sdmmc_mount },
     { .name = "esp_vfs_fat_sdmmc_sdcard_init", .vaddr = (size_t) symbol_esp_vfs_fat_sdmmc_sdcard_init },
     { .name = "esp_vfs_fat_spiflash_mount", .vaddr = (size_t) symbol_esp_vfs_fat_spiflash_mount },
@@ -6501,6 +6546,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "ff_disk_write", .vaddr = (size_t) symbol_ff_disk_write },
     { .name = "ff_diskio_get_drive", .vaddr = (size_t) symbol_ff_diskio_get_drive },
     { .name = "ff_diskio_get_pdrv_card", .vaddr = (size_t) symbol_ff_diskio_get_pdrv_card },
+    { .name = "ff_diskio_get_pdrv_cnt_card", .vaddr = (size_t) symbol_ff_diskio_get_pdrv_cnt_card },
     { .name = "ff_diskio_get_sector_size", .vaddr = (size_t) symbol_ff_diskio_get_sector_size },
     { .name = "ff_diskio_is_registered", .vaddr = (size_t) symbol_ff_diskio_is_registered },
     { .name = "ff_diskio_register", .vaddr = (size_t) symbol_ff_diskio_register },
@@ -7197,6 +7243,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "mipi_dsi_hal_host_dpi_set_vertical_timing", .vaddr = (size_t) symbol_mipi_dsi_hal_host_dpi_set_vertical_timing },
     { .name = "mipi_dsi_hal_host_gen_read_dcs_command", .vaddr = (size_t) symbol_mipi_dsi_hal_host_gen_read_dcs_command },
     { .name = "mipi_dsi_hal_host_gen_read_short_packet", .vaddr = (size_t) symbol_mipi_dsi_hal_host_gen_read_short_packet },
+    { .name = "mipi_dsi_hal_host_gen_read_timed_out", .vaddr = (size_t) symbol_mipi_dsi_hal_host_gen_read_timed_out },
     { .name = "mipi_dsi_hal_host_gen_write_dcs_command", .vaddr = (size_t) symbol_mipi_dsi_hal_host_gen_write_dcs_command },
     { .name = "mipi_dsi_hal_host_gen_write_short_packet", .vaddr = (size_t) symbol_mipi_dsi_hal_host_gen_write_short_packet },
     { .name = "mipi_dsi_hal_init", .vaddr = (size_t) symbol_mipi_dsi_hal_init },
@@ -8578,7 +8625,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "st7701_get_panel", .vaddr = (size_t) symbol_st7701_get_panel },
     { .name = "st7701_get_panel_io", .vaddr = (size_t) symbol_st7701_get_panel_io },
     { .name = "st7701_get_parameters", .vaddr = (size_t) symbol_st7701_get_parameters },
+    { .name = "st7701_get_vcom", .vaddr = (size_t) symbol_st7701_get_vcom },
+    { .name = "st7701_get_vcom_otp", .vaddr = (size_t) symbol_st7701_get_vcom_otp },
     { .name = "st7701_initialize", .vaddr = (size_t) symbol_st7701_initialize },
+    { .name = "st7701_set_vcom", .vaddr = (size_t) symbol_st7701_set_vcom },
     { .name = "start_cpu0", .vaddr = (size_t) symbol_start_cpu0 },
     { .name = "start_cpu_other_cores", .vaddr = (size_t) symbol_start_cpu_other_cores },
     { .name = "startup_resume_other_cores", .vaddr = (size_t) symbol_startup_resume_other_cores },
@@ -9057,6 +9107,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 4523,
+    .symbols_len = 4548,
     .symbols     = symbols,
 };

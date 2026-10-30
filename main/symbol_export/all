@@ -737,6 +737,9 @@ __wrap___cxa_throw
 __wrap___gxx_personality_v0
 __wrap_bsp_audio_get_volume
 __wrap_bsp_audio_set_volume
+__wrap_bsp_storage_initialize
+__wrap_bsp_storage_mount
+__wrap_bsp_storage_mount_advanced
 __wrap_esp_lcd_dpi_panel_register_event_callbacks
 __wtime_am_pm
 __wtime_mon
@@ -996,10 +999,13 @@ bsp_display_get_panel_io
 bsp_display_get_parameters
 bsp_display_get_tearing_effect_mode
 bsp_display_get_tearing_effect_semaphore
+bsp_display_get_vcom
+bsp_display_get_vcom_default
 bsp_display_initialize
 bsp_display_interrupt
 bsp_display_set_backlight_brightness
 bsp_display_set_tearing_effect_mode
+bsp_display_set_vcom
 bsp_display_wait
 bsp_i2c_primary_bus_claim
 bsp_i2c_primary_bus_get_handle
@@ -1061,6 +1067,15 @@ bsp_rtc_set_time
 bsp_rtc_update_time
 bsp_sao_initialize
 bsp_sensor_initialize
+bsp_storage_format
+bsp_storage_get_mounted
+bsp_storage_get_mountpoint
+bsp_storage_get_status
+bsp_storage_get_supported
+bsp_storage_initialize
+bsp_storage_mount
+bsp_storage_mount_advanced
+bsp_storage_unmount
 bsp_tanmatsu_coprocessor_get_handle
 bzero
 cache_error_msg
@@ -1488,6 +1503,7 @@ esp_ipc_isr_start_fl
 esp_ipc_isr_waiting_for_finish_cmd
 esp_isr_names
 esp_lcd_del_dsi_bus
+esp_lcd_dpi_panel_disable_dma2d
 esp_lcd_dpi_panel_enable_dma2d
 esp_lcd_dpi_panel_get_frame_buffer
 esp_lcd_dpi_panel_register_event_callbacks
@@ -1499,6 +1515,7 @@ esp_lcd_new_panel_st7701
 esp_lcd_new_panel_st7701_mipi
 esp_lcd_new_panel_st7701_rgb
 esp_lcd_new_rgb_panel
+esp_lcd_panel_del
 esp_lcd_panel_draw_bitmap
 esp_lcd_panel_init
 esp_lcd_panel_io_del
@@ -1770,6 +1787,9 @@ esp_vfs_fat_mount_initialized
 esp_vfs_fat_partition_drive
 esp_vfs_fat_register
 esp_vfs_fat_register_cfg
+esp_vfs_fat_sdcard_format
+esp_vfs_fat_sdcard_format_cfg
+esp_vfs_fat_sdcard_unmount
 esp_vfs_fat_sdmmc_mount
 esp_vfs_fat_sdmmc_sdcard_init
 esp_vfs_fat_spiflash_mount
@@ -1969,6 +1989,7 @@ ff_disk_status
 ff_disk_write
 ff_diskio_get_drive
 ff_diskio_get_pdrv_card
+ff_diskio_get_pdrv_cnt_card
 ff_diskio_get_sector_size
 ff_diskio_is_registered
 ff_diskio_register
@@ -2665,6 +2686,7 @@ mipi_dsi_hal_host_dpi_set_horizontal_timing
 mipi_dsi_hal_host_dpi_set_vertical_timing
 mipi_dsi_hal_host_gen_read_dcs_command
 mipi_dsi_hal_host_gen_read_short_packet
+mipi_dsi_hal_host_gen_read_timed_out
 mipi_dsi_hal_host_gen_write_dcs_command
 mipi_dsi_hal_host_gen_write_short_packet
 mipi_dsi_hal_init
@@ -4046,7 +4068,10 @@ sscanf
 st7701_get_panel
 st7701_get_panel_io
 st7701_get_parameters
+st7701_get_vcom
+st7701_get_vcom_otp
 st7701_initialize
+st7701_set_vcom
 start_cpu0
 start_cpu_other_cores
 startup_resume_other_cores
