@@ -2,6 +2,3 @@
 	path = lib/kbelf
 	url = https://github.com/nullislandspace/KiloElfLoader.git
 	branch = graceloader
-[submodule "components/badgeteam__badge-bsp"]
-	path = components/badgeteam__badge-bsp
-	url = https://github.com/nullislandspace/esp32-component-badge-bsp.git

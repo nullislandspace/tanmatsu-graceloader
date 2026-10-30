@@ -12,7 +12,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <inttypes.h>
 #include <sys/stat.h>
 #include "esp_log.h"
 #include "esp_pm.h"
@@ -21,7 +20,7 @@
 #include "soc/soc.h"
 #include "kbelf.h"
 #include "appfs.h"
-#include "bsp/storage.h"
+#include "sdcard.h"
 #include "fastopen.h"
 #include "graceloader.h"
 #include "gl_input.h"
@@ -111,21 +110,11 @@ void app_main(void) {
     }
 
     // 2. Mount SD card at /sd (non-fatal if absent)
-    // The BSP owns the SD power rail and the mount. Doing it here, through
-    // the same calls the app will make, is what keeps the on-chip LDO for the
-    // SD rail single-owner: an app that calls bsp_device_initialize() later
-    // reaches bsp_storage_initialize() again, and a second acquire of an
-    // adjustable LDO channel always fails.
-    res = bsp_storage_initialize();
+    res = sdcard_init();
     if (res != ESP_OK) {
-        ESP_LOGW(TAG, "SD card power rail unavailable: %s", esp_err_to_name(res));
+        ESP_LOGW(TAG, "SD card not available: %s", esp_err_to_name(res));
     } else {
-        res = bsp_storage_mount_advanced(BSP_STORAGE_TYPE_SDCARD, "/sd", 10, false);
-        if (res != ESP_OK) {
-            ESP_LOGW(TAG, "SD card not available: %s", esp_err_to_name(res));
-        } else {
-            ESP_LOGI(TAG, "SD card mounted at /sd");
-        }
+        ESP_LOGI(TAG, "SD card mounted at /sd");
     }
 
     // Bring up the graceloader merged-input layer: native + USB HID.
@@ -230,18 +219,6 @@ void app_main(void) {
 
     // 6. Cleanup after app returns
     ESP_LOGI(TAG, "App returned, cleaning up");
-
-#if CONFIG_BSP_TARGET_TANMATSU
-    // The disk layer the BSP installed says whether the card was well this
-    // run. Worth a line here: an app that lost writes silently leaves no
-    // other trace once the filesystem is unmounted.
-    uint32_t sd_retried = 0, sd_failed = 0, sd_bounced = 0;
-    bsp_storage_get_retry_stats(&sd_retried, &sd_failed, &sd_bounced);
-    if (sd_retried || sd_failed || sd_bounced) {
-        ESP_LOGW(TAG, "SD disk: %" PRIu32 " retried, %" PRIu32 " failed, %" PRIu32 " bounced",
-                 sd_retried, sd_failed, sd_bounced);
-    }
-#endif
 
     size_t fini_count = kbelf_dyn_fini_len(dyn);
     if (fini_count > 0) {

@@ -49,5 +49,3 @@ CONFIG_FATFS_STDIO_BUF_SIZE=8192
 # SD write using that buffer fails with 0x106. See idf6_sd_fuckup.md
 # section 11.1 and synthminer F-147.
 CONFIG_ESP_SYSTEM_ALLOW_RTC_FAST_MEM_AS_HEAP=n
-# Use vendored ESP HAL LCD component
-CONFIG_MIPI_DSI_ABSTRACTION_USE_VENDORED_ESP_HAL_LCD=y
