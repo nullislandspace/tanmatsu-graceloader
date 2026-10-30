@@ -24,7 +24,7 @@ app cannot do for itself or would get wrong:
   none set, UTC remains and a log line says so.
 - **A CPU frequency lock**, held for the whole lifetime: without it DFS can drop
   the CPU below PSRAM speed mid-DMA and corrupt memory (see `idf6_sd_fuckup.md`).
-- **Volume limiting** and the USB mode switch back to flash/monitor.
+- **The USB mode switch** back to flash/monitor.
 
 ## License
 

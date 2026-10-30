@@ -735,8 +735,6 @@ __wrap___bufio_setvbuf
 __wrap___cxa_allocate_exception
 __wrap___cxa_throw
 __wrap___gxx_personality_v0
-__wrap_bsp_audio_get_volume
-__wrap_bsp_audio_set_volume
 __wrap_bsp_storage_initialize
 __wrap_bsp_storage_mount
 __wrap_bsp_storage_mount_advanced

@@ -742,8 +742,6 @@ extern char const __attribute__((weak)) symbol___wrap___bufio_setvbuf[] asm("__w
 extern char const __attribute__((weak)) symbol___wrap___cxa_allocate_exception[] asm("__wrap___cxa_allocate_exception");
 extern char const __attribute__((weak)) symbol___wrap___cxa_throw[] asm("__wrap___cxa_throw");
 extern char const __attribute__((weak)) symbol___wrap___gxx_personality_v0[] asm("__wrap___gxx_personality_v0");
-extern char const __attribute__((weak)) symbol___wrap_bsp_audio_get_volume[] asm("__wrap_bsp_audio_get_volume");
-extern char const __attribute__((weak)) symbol___wrap_bsp_audio_set_volume[] asm("__wrap_bsp_audio_set_volume");
 extern char const __attribute__((weak)) symbol___wrap_bsp_storage_initialize[] asm("__wrap_bsp_storage_initialize");
 extern char const __attribute__((weak)) symbol___wrap_bsp_storage_mount[] asm("__wrap_bsp_storage_mount");
 extern char const __attribute__((weak)) symbol___wrap_bsp_storage_mount_advanced[] asm("__wrap_bsp_storage_mount_advanced");
@@ -5292,8 +5290,6 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "__wrap___cxa_allocate_exception", .vaddr = (size_t) symbol___wrap___cxa_allocate_exception },
     { .name = "__wrap___cxa_throw", .vaddr = (size_t) symbol___wrap___cxa_throw },
     { .name = "__wrap___gxx_personality_v0", .vaddr = (size_t) symbol___wrap___gxx_personality_v0 },
-    { .name = "__wrap_bsp_audio_get_volume", .vaddr = (size_t) symbol___wrap_bsp_audio_get_volume },
-    { .name = "__wrap_bsp_audio_set_volume", .vaddr = (size_t) symbol___wrap_bsp_audio_set_volume },
     { .name = "__wrap_bsp_storage_initialize", .vaddr = (size_t) symbol___wrap_bsp_storage_initialize },
     { .name = "__wrap_bsp_storage_mount", .vaddr = (size_t) symbol___wrap_bsp_storage_mount },
     { .name = "__wrap_bsp_storage_mount_advanced", .vaddr = (size_t) symbol___wrap_bsp_storage_mount_advanced },
@@ -9107,6 +9103,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 4548,
+    .symbols_len = 4546,
     .symbols     = symbols,
 };
