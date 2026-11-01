@@ -1139,6 +1139,7 @@ extern char const __attribute__((weak)) symbol_clock[] asm("clock");
 extern char const __attribute__((weak)) symbol_clock_gettime[] asm("clock_gettime");
 extern char const __attribute__((weak)) symbol_clock_settime[] asm("clock_settime");
 extern char const __attribute__((weak)) symbol_close[] asm("close");
+extern char const __attribute__((weak)) symbol_closedir[] asm("closedir");
 extern char const __attribute__((weak)) symbol_color_hal_pixel_format_fourcc_get_bit_depth[] asm("color_hal_pixel_format_fourcc_get_bit_depth");
 extern char const __attribute__((weak)) symbol_compress2[] asm("compress2");
 extern char const __attribute__((weak)) symbol_compressBound[] asm("compressBound");
@@ -1786,6 +1787,7 @@ extern char const __attribute__((weak)) symbol_esp_vApplicationIdleHook[] asm("e
 extern char const __attribute__((weak)) symbol_esp_vApplicationTickHook[] asm("esp_vApplicationTickHook");
 extern char const __attribute__((weak)) symbol_esp_vfs_access[] asm("esp_vfs_access");
 extern char const __attribute__((weak)) symbol_esp_vfs_close[] asm("esp_vfs_close");
+extern char const __attribute__((weak)) symbol_esp_vfs_closedir[] asm("esp_vfs_closedir");
 extern char const __attribute__((weak)) symbol_esp_vfs_dev_usb_serial_jtag_register[] asm("esp_vfs_dev_usb_serial_jtag_register");
 extern char const __attribute__((weak)) symbol_esp_vfs_fat_format_drive[] asm("esp_vfs_fat_format_drive");
 extern char const __attribute__((weak)) symbol_esp_vfs_fat_mount_initialized[] asm("esp_vfs_fat_mount_initialized");
@@ -1810,7 +1812,10 @@ extern char const __attribute__((weak)) symbol_esp_vfs_lseek[] asm("esp_vfs_lsee
 extern char const __attribute__((weak)) symbol_esp_vfs_mkdir[] asm("esp_vfs_mkdir");
 extern char const __attribute__((weak)) symbol_esp_vfs_null_register[] asm("esp_vfs_null_register");
 extern char const __attribute__((weak)) symbol_esp_vfs_open[] asm("esp_vfs_open");
+extern char const __attribute__((weak)) symbol_esp_vfs_opendir[] asm("esp_vfs_opendir");
 extern char const __attribute__((weak)) symbol_esp_vfs_read[] asm("esp_vfs_read");
+extern char const __attribute__((weak)) symbol_esp_vfs_readdir[] asm("esp_vfs_readdir");
+extern char const __attribute__((weak)) symbol_esp_vfs_readdir_r[] asm("esp_vfs_readdir_r");
 extern char const __attribute__((weak)) symbol_esp_vfs_register_fs[] asm("esp_vfs_register_fs");
 extern char const __attribute__((weak)) symbol_esp_vfs_rename[] asm("esp_vfs_rename");
 extern char const __attribute__((weak)) symbol_esp_vfs_rmdir[] asm("esp_vfs_rmdir");
@@ -2886,6 +2891,7 @@ extern char const __attribute__((weak)) symbol_nvs_settings_set_u16[] asm("nvs_s
 extern char const __attribute__((weak)) symbol_nvs_settings_set_u32[] asm("nvs_settings_set_u32");
 extern char const __attribute__((weak)) symbol_nvs_settings_set_u8[] asm("nvs_settings_set_u8");
 extern char const __attribute__((weak)) symbol_open[] asm("open");
+extern char const __attribute__((weak)) symbol_opendir[] asm("opendir");
 extern char const __attribute__((weak)) symbol_panicHandler[] asm("panicHandler");
 extern char const __attribute__((weak)) symbol_panic_abort[] asm("panic_abort");
 extern char const __attribute__((weak)) symbol_panic_arch_fill_info[] asm("panic_arch_fill_info");
@@ -3550,6 +3556,8 @@ extern char const __attribute__((weak)) symbol_pxPortUpdateCoprocOwner[] asm("px
 extern char const __attribute__((weak)) symbol_qsort[] asm("qsort");
 extern char const __attribute__((weak)) symbol_rand[] asm("rand");
 extern char const __attribute__((weak)) symbol_read[] asm("read");
+extern char const __attribute__((weak)) symbol_readdir[] asm("readdir");
+extern char const __attribute__((weak)) symbol_readdir_r[] asm("readdir_r");
 extern char const __attribute__((weak)) symbol_realloc[] asm("realloc");
 extern char const __attribute__((weak)) symbol_recv_packet[] asm("recv_packet");
 extern char const __attribute__((weak)) symbol_regdma_find_module_link_head[] asm("regdma_find_module_link_head");
@@ -3593,6 +3601,8 @@ extern char const __attribute__((weak)) symbol_register_fd[] asm("register_fd");
 extern char const __attribute__((weak)) symbol_registered_heaps[] asm("registered_heaps");
 extern char const __attribute__((weak)) symbol_remainder[] asm("remainder");
 extern char const __attribute__((weak)) symbol_remainderf[] asm("remainderf");
+extern char const __attribute__((weak)) symbol_remove[] asm("remove");
+extern char const __attribute__((weak)) symbol_rename[] asm("rename");
 extern char const __attribute__((weak)) symbol_rint[] asm("rint");
 extern char const __attribute__((weak)) symbol_rintf[] asm("rintf");
 extern char const __attribute__((weak)) symbol_rmdir[] asm("rmdir");
@@ -4253,6 +4263,7 @@ extern char const __attribute__((weak)) symbol_uart_tx_switch[] asm("uart_tx_swi
 extern char const __attribute__((weak)) symbol_uart_tx_wait_idle[] asm("uart_tx_wait_idle");
 extern char const __attribute__((weak)) symbol_ulTaskGenericNotifyTake[] asm("ulTaskGenericNotifyTake");
 extern char const __attribute__((weak)) symbol_ungetc[] asm("ungetc");
+extern char const __attribute__((weak)) symbol_unlink[] asm("unlink");
 extern char const __attribute__((weak)) symbol_unregister_fd[] asm("unregister_fd");
 extern char const __attribute__((weak)) symbol_urb_alloc[] asm("urb_alloc");
 extern char const __attribute__((weak)) symbol_urb_free[] asm("urb_free");
@@ -5687,6 +5698,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "clock_gettime", .vaddr = (size_t) symbol_clock_gettime },
     { .name = "clock_settime", .vaddr = (size_t) symbol_clock_settime },
     { .name = "close", .vaddr = (size_t) symbol_close },
+    { .name = "closedir", .vaddr = (size_t) symbol_closedir },
     { .name = "color_hal_pixel_format_fourcc_get_bit_depth", .vaddr = (size_t) symbol_color_hal_pixel_format_fourcc_get_bit_depth },
     { .name = "compress2", .vaddr = (size_t) symbol_compress2 },
     { .name = "compressBound", .vaddr = (size_t) symbol_compressBound },
@@ -6334,6 +6346,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_vApplicationTickHook", .vaddr = (size_t) symbol_esp_vApplicationTickHook },
     { .name = "esp_vfs_access", .vaddr = (size_t) symbol_esp_vfs_access },
     { .name = "esp_vfs_close", .vaddr = (size_t) symbol_esp_vfs_close },
+    { .name = "esp_vfs_closedir", .vaddr = (size_t) symbol_esp_vfs_closedir },
     { .name = "esp_vfs_dev_usb_serial_jtag_register", .vaddr = (size_t) symbol_esp_vfs_dev_usb_serial_jtag_register },
     { .name = "esp_vfs_fat_format_drive", .vaddr = (size_t) symbol_esp_vfs_fat_format_drive },
     { .name = "esp_vfs_fat_mount_initialized", .vaddr = (size_t) symbol_esp_vfs_fat_mount_initialized },
@@ -6358,7 +6371,10 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "esp_vfs_mkdir", .vaddr = (size_t) symbol_esp_vfs_mkdir },
     { .name = "esp_vfs_null_register", .vaddr = (size_t) symbol_esp_vfs_null_register },
     { .name = "esp_vfs_open", .vaddr = (size_t) symbol_esp_vfs_open },
+    { .name = "esp_vfs_opendir", .vaddr = (size_t) symbol_esp_vfs_opendir },
     { .name = "esp_vfs_read", .vaddr = (size_t) symbol_esp_vfs_read },
+    { .name = "esp_vfs_readdir", .vaddr = (size_t) symbol_esp_vfs_readdir },
+    { .name = "esp_vfs_readdir_r", .vaddr = (size_t) symbol_esp_vfs_readdir_r },
     { .name = "esp_vfs_register_fs", .vaddr = (size_t) symbol_esp_vfs_register_fs },
     { .name = "esp_vfs_rename", .vaddr = (size_t) symbol_esp_vfs_rename },
     { .name = "esp_vfs_rmdir", .vaddr = (size_t) symbol_esp_vfs_rmdir },
@@ -7434,6 +7450,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "nvs_settings_set_u32", .vaddr = (size_t) symbol_nvs_settings_set_u32 },
     { .name = "nvs_settings_set_u8", .vaddr = (size_t) symbol_nvs_settings_set_u8 },
     { .name = "open", .vaddr = (size_t) symbol_open },
+    { .name = "opendir", .vaddr = (size_t) symbol_opendir },
     { .name = "panicHandler", .vaddr = (size_t) symbol_panicHandler },
     { .name = "panic_abort", .vaddr = (size_t) symbol_panic_abort },
     { .name = "panic_arch_fill_info", .vaddr = (size_t) symbol_panic_arch_fill_info },
@@ -8098,6 +8115,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "qsort", .vaddr = (size_t) symbol_qsort },
     { .name = "rand", .vaddr = (size_t) symbol_rand },
     { .name = "read", .vaddr = (size_t) symbol_read },
+    { .name = "readdir", .vaddr = (size_t) symbol_readdir },
+    { .name = "readdir_r", .vaddr = (size_t) symbol_readdir_r },
     { .name = "realloc", .vaddr = (size_t) symbol_realloc },
     { .name = "recv_packet", .vaddr = (size_t) symbol_recv_packet },
     { .name = "regdma_find_module_link_head", .vaddr = (size_t) symbol_regdma_find_module_link_head },
@@ -8141,6 +8160,8 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "registered_heaps", .vaddr = (size_t) symbol_registered_heaps },
     { .name = "remainder", .vaddr = (size_t) symbol_remainder },
     { .name = "remainderf", .vaddr = (size_t) symbol_remainderf },
+    { .name = "remove", .vaddr = (size_t) symbol_remove },
+    { .name = "rename", .vaddr = (size_t) symbol_rename },
     { .name = "rint", .vaddr = (size_t) symbol_rint },
     { .name = "rintf", .vaddr = (size_t) symbol_rintf },
     { .name = "rmdir", .vaddr = (size_t) symbol_rmdir },
@@ -8801,6 +8822,7 @@ static kbelf_builtin_sym const symbols[] = {
     { .name = "uart_tx_wait_idle", .vaddr = (size_t) symbol_uart_tx_wait_idle },
     { .name = "ulTaskGenericNotifyTake", .vaddr = (size_t) symbol_ulTaskGenericNotifyTake },
     { .name = "ungetc", .vaddr = (size_t) symbol_ungetc },
+    { .name = "unlink", .vaddr = (size_t) symbol_unlink },
     { .name = "unregister_fd", .vaddr = (size_t) symbol_unregister_fd },
     { .name = "urb_alloc", .vaddr = (size_t) symbol_urb_alloc },
     { .name = "urb_free", .vaddr = (size_t) symbol_urb_free },
@@ -9103,6 +9125,6 @@ static kbelf_builtin_sym const symbols[] = {
 
 kbelf_builtin_lib const app_elf_lib_all = {
     .path        = "liball.so",
-    .symbols_len = 4546,
+    .symbols_len = 4557,
     .symbols     = symbols,
 };

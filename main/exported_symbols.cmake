@@ -443,4 +443,33 @@ target_link_options(${COMPONENT_LIB} INTERFACE
     "-Wl,--undefined=temperature_sensor_set_absolute_threshold"
     "-Wl,--undefined=temperature_sensor_set_delta_threshold"
     "-Wl,--undefined=temperature_sensor_register_callbacks"
+    # Directory and file-management calls, for apps that list, rename and delete
+    # files (the launcher's file browser and installer do exactly this, and any
+    # app that keeps its own saves needs it too). open()/read()/write()/close()
+    # always reached the export table because the loader itself calls them;
+    # nothing in the loader ever opendir()s, renames or unlinks, so --gc-sections
+    # dropped the whole family and an app calling opendir() failed to load with
+    # "Missing symbol: opendir". These are the real VFS entry points --
+    # components/vfs/vfs_calls.c (opendir/readdir/readdir_r/closedir/access/
+    # mkdir/rmdir) and components/esp_libc/src/syscalls.c (unlink/rename/stat/
+    # fstat) -- whose strong definitions override the weak nosys_* stubs in
+    # picolibc's libc.a. stat()/fstat() are named here as well: they were
+    # already in the ELF, but only by accident, and an export that exists by
+    # accident is one that can leave by accident (see the atoi note above).
+    # st_size and the timestamps an app reads out of struct stat come from here.
+    # rewinddir()/seekdir()/telldir()/lstat() are deliberately NOT here: ESP-IDF
+    # implements none of them, so forcing them in would export a stub that only
+    # ever returns ENOSYS.
+    "-Wl,--undefined=opendir"
+    "-Wl,--undefined=readdir"
+    "-Wl,--undefined=readdir_r"
+    "-Wl,--undefined=closedir"
+    "-Wl,--undefined=access"
+    "-Wl,--undefined=mkdir"
+    "-Wl,--undefined=rmdir"
+    "-Wl,--undefined=rename"
+    "-Wl,--undefined=unlink"
+    "-Wl,--undefined=remove"
+    "-Wl,--undefined=stat"
+    "-Wl,--undefined=fstat"
 )

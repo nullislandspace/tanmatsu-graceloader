@@ -1132,6 +1132,7 @@ clock
 clock_gettime
 clock_settime
 close
+closedir
 color_hal_pixel_format_fourcc_get_bit_depth
 compress2
 compressBound
@@ -1779,6 +1780,7 @@ esp_vApplicationIdleHook
 esp_vApplicationTickHook
 esp_vfs_access
 esp_vfs_close
+esp_vfs_closedir
 esp_vfs_dev_usb_serial_jtag_register
 esp_vfs_fat_format_drive
 esp_vfs_fat_mount_initialized
@@ -1803,7 +1805,10 @@ esp_vfs_lseek
 esp_vfs_mkdir
 esp_vfs_null_register
 esp_vfs_open
+esp_vfs_opendir
 esp_vfs_read
+esp_vfs_readdir
+esp_vfs_readdir_r
 esp_vfs_register_fs
 esp_vfs_rename
 esp_vfs_rmdir
@@ -2879,6 +2884,7 @@ nvs_settings_set_u16
 nvs_settings_set_u32
 nvs_settings_set_u8
 open
+opendir
 panicHandler
 panic_abort
 panic_arch_fill_info
@@ -3543,6 +3549,8 @@ pxPortUpdateCoprocOwner
 qsort
 rand
 read
+readdir
+readdir_r
 realloc
 recv_packet
 regdma_find_module_link_head
@@ -3586,6 +3594,8 @@ register_fd
 registered_heaps
 remainder
 remainderf
+remove
+rename
 rint
 rintf
 rmdir
@@ -4246,6 +4256,7 @@ uart_tx_switch
 uart_tx_wait_idle
 ulTaskGenericNotifyTake
 ungetc
+unlink
 unregister_fd
 urb_alloc
 urb_free
